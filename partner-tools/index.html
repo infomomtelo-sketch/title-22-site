@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Referral Link Generator — Internal</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@600;700&family=Public+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  .tool-box {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.75rem;
+    margin: 1.5rem 0;
+  }
+  .tool-box label { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 0.4rem; }
+  .tool-box input {
+    width: 100%;
+    font-family: "Public Sans", sans-serif;
+    font-size: 1rem;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+  }
+  .result-row {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    flex-wrap: wrap;
+    background: var(--sage);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    word-break: break-all;
+  }
+  .copy-btn {
+    font-family: "Public Sans", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: var(--pine);
+    color: var(--white);
+    border: none;
+    border-radius: 999px;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .copy-btn:hover { background: var(--deep); }
+  .history { margin-top: 2rem; }
+  .history table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .history th, .history td { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--line); }
+  .history th { color: var(--muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .history a { font-family: "IBM Plex Mono", monospace; font-size: 0.82rem; }
+  .empty-note { color: var(--muted); font-size: 0.9rem; }
+  .warn {
+    background: #fdf3e7;
+    border: 1px solid var(--marigold);
+    border-radius: 8px;
+    padding: 0.9rem 1.1rem;
+    font-size: 0.85rem;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">title<span class="tld">-22</span>.com</a>
+    <nav class="nav" aria-label="Main">
+      <a href="/">Home</a>
+      <a href="https://title22.app" class="btn">Open Title22</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding-bottom: 1rem;">
+    <div class="wrap">
+      <p class="eyebrow">Internal tool · not indexed, not linked in nav</p>
+      <h1>Referral link generator</h1>
+      <p class="lede">Generate a unique signup link for a CE/ICTP trainer partner. This tool only creates the link — for it to actually track signups, the app-side code below needs to be deployed to title22.app first.</p>
+    </div>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="wrap">
+      <div class="warn">
+        <strong>Links won't track anything yet.</strong> This page just generates the URL format. Signups won't be attributed to a trainer until the Supabase + signup-page changes below are live on title22.app.
+      </div>
+
+      <div class="tool-box">
+        <label for="trainerName">Trainer or partner name</label>
+        <input type="text" id="trainerName" placeholder="e.g. Sunrise CE Training">
+        <button class="btn" onclick="generateLink()" type="button">Generate link</button>
+
+        <div id="resultWrap" style="margin-top: 1.25rem; display: none;">
+          <div class="result-row">
+            <span id="resultLink"></span>
+            <button class="copy-btn" onclick="copyLink()" type="button">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="history">
+        <h3>Previously generated (this browser only)</h3>
+        <div id="historyEmpty" class="empty-note">Nothing generated yet.</div>
+        <table id="historyTable" style="display: none;">
+          <thead><tr><th>Trainer</th><th>Code</th><th>Link</th></tr></thead>
+          <tbody id="historyBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>© 2026 RunP8 LLC · Internal tool</div>
+    <div><a href="/">Back to site</a></div>
+  </div>
+</footer>
+
+<script>
+  const STORE_KEY = 'title22_referral_links_v1';
+
+  function slugify(name) {
+    return name.trim().toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '')
+      .slice(0, 24);
+  }
+
+  function randomSuffix() {
+    return Math.random().toString(36).slice(2, 6);
+  }
+
+  function loadHistory() {
+    try {
+      return JSON.parse(localStorage.getItem(STORE_KEY) || '[]');
+    } catch (e) { return []; }
+  }
+
+  function saveHistory(list) {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(list)); } catch (e) {}
+  }
+
+  function renderHistory() {
+    const list = loadHistory();
+    const empty = document.getElementById('historyEmpty');
+    const table = document.getElementById('historyTable');
+    const body = document.getElementById('historyBody');
+    body.innerHTML = '';
+    if (list.length === 0) {
+      empty.style.display = 'block';
+      table.style.display = 'none';
+      return;
+    }
+    empty.style.display = 'none';
+    table.style.display = 'table';
+    list.slice().reverse().forEach(item => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${item.name}</td><td>${item.code}</td><td><a href="${item.link}">${item.link}</a></td>`;
+      body.appendChild(tr);
+    });
+  }
+
+  function generateLink() {
+    const nameInput = document.getElementById('trainerName');
+    const name = nameInput.value.trim();
+    if (!name) { nameInput.focus(); return; }
+    const code = `${slugify(name)}-${randomSuffix()}`;
+    const link = `https://title22.app/signup?ref=${code}`;
+
+    document.getElementById('resultLink').textContent = link;
+    document.getElementById('resultWrap').style.display = 'block';
+
+    const list = loadHistory();
+    list.push({ name, code, link });
+    saveHistory(list);
+    renderHistory();
+  }
+
+  function copyLink() {
+    const text = document.getElementById('resultLink').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.querySelector('.copy-btn');
+      const original = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => { btn.textContent = original; }, 1500);
+    });
+  }
+
+  renderHistory();
+</script>
+
+</body>
+</html>
