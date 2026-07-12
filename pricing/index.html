@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing — Title22 RCFE Compliance Software</title>
+<meta name="description" content="Title22 pricing for single facilities and multi-facility operators. Start with a free trial, no credit card required.">
+<link rel="canonical" href="https://title-22.com/pricing/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@600;700&family=Public+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  .price-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  @media (max-width: 60rem) { .price-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 32rem) { .price-grid { grid-template-columns: 1fr; } }
+  .price-card {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .price-card.featured { border-color: var(--pine); border-width: 2px; position: relative; }
+  .price-card .plan-name { font-family: "Zilla Slab", serif; font-weight: 700; font-size: 1.2rem; margin-bottom: 0.25rem; }
+  .price-card .plan-amt { font-size: 1.9rem; font-weight: 700; margin: 0.5rem 0; }
+  .price-card .plan-amt small { font-size: 0.9rem; font-weight: 400; color: var(--muted); }
+  .price-card ul { list-style: none; padding: 0; margin: 1rem 0; flex-grow: 1; }
+  .price-card li { padding: 0.4rem 0; font-size: 0.92rem; color: var(--muted); border-bottom: 1px dashed var(--line); }
+  .badge {
+    position: absolute; top: -0.7rem; left: 1rem;
+    background: var(--marigold); color: var(--ink);
+    font-family: "IBM Plex Mono", monospace; font-size: 0.7rem;
+    padding: 0.15rem 0.5rem; border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+
+<!-- EDITORIAL NOTE (remove before publishing):
+     Tier names and amounts below are PLACEHOLDERS only.
+     Replace with the real profiles.plan tier names/prices from
+     the app's Stripe PLAN_MAP before this page goes live. -->
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">title<span class="tld">-22</span>.com</a>
+    <nav class="nav" aria-label="Main">
+      <a href="/features/">Features</a>
+      <a href="/demo/">Demo</a>
+      <a href="/for-trainers/">For Trainers</a>
+      <a href="/pricing/" aria-current="page">Pricing</a>
+      <a href="/blog/">Blog</a>
+      <a href="https://title22.app" class="btn">Open Title22</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding-bottom: 1rem;">
+    <div class="wrap">
+      <p class="eyebrow">Pricing</p>
+      <h1>Simple plans for one facility or twenty.</h1>
+      <p class="lede">Every plan includes MAR, role-based caregiver access, and the AI daily briefing. Higher tiers add multi-facility management and priority support. No credit card required to start.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="price-grid">
+        <div class="price-card">
+          <div class="plan-name">Trial</div>
+          <div class="plan-amt">Free<small> / 14 days</small></div>
+          <ul>
+            <li>1 facility</li>
+            <li>Up to 10 residents</li>
+            <li>Full MAR &amp; RBAC</li>
+            <li>AI daily briefing</li>
+          </ul>
+          <a class="btn ghost" href="https://title22.app">Start free</a>
+        </div>
+        <div class="price-card featured">
+          <span class="badge">Most common</span>
+          <div class="plan-name">Starter</div>
+          <div class="plan-amt">$XX<small> / month</small></div>
+          <ul>
+            <li>1 facility</li>
+            <li>Up to 25 residents</li>
+            <li>Full MAR &amp; RBAC</li>
+            <li>AI daily briefing</li>
+            <li>Email support</li>
+          </ul>
+          <a class="btn" href="https://title22.app">Choose Starter</a>
+        </div>
+        <div class="price-card">
+          <div class="plan-name">Growth</div>
+          <div class="plan-amt">$XX<small> / month</small></div>
+          <ul>
+            <li>Up to 3 facilities</li>
+            <li>Unlimited residents</li>
+            <li>Everything in Starter</li>
+            <li>Priority support</li>
+          </ul>
+          <a class="btn ghost" href="https://title22.app">Choose Growth</a>
+        </div>
+        <div class="price-card">
+          <div class="plan-name">Multi-Facility</div>
+          <div class="plan-amt">Custom</div>
+          <ul>
+            <li>4+ facilities</li>
+            <li>Unlimited residents</li>
+            <li>Everything in Growth</li>
+            <li>Dedicated onboarding</li>
+          </ul>
+          <a class="btn ghost" href="mailto:hello@title-22.com?subject=Multi-facility%20pricing">Contact us</a>
+        </div>
+      </div>
+
+      <div class="trust">
+        <p><strong>A hard line we don't cross on any plan:</strong> Title22's AI never suggests, corrects, or comments on clinical dosage information. That's true whether you're on the free trial or the largest plan.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>© 2026 RunP8 LLC · Fresno, California</div>
+    <div><a href="/about/">About</a> · <a href="/for-trainers/">For Trainers</a> · <a href="/blog/">Blog</a> · <a href="https://title22.app">Sign in</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
