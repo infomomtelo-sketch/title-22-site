@@ -20,13 +20,10 @@
 <meta property="og:video:height" content="1920">
 
 <!-- Twitter card -->
-<meta name="twitter:card" content="player">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Title22 — 2-minute walkthrough">
 <meta name="twitter:description" content="See how Title22 keeps RCFE facilities DSS-ready — checklist, readiness score, AI compliance assistant, digital MAR, and an immutable audit log. Two minutes.">
 <meta name="twitter:image" content="https://title-22.com/videos/title22-demo-poster.jpg">
-<meta name="twitter:player" content="https://title-22.com/demo/">
-<meta name="twitter:player:width" content="1080">
-<meta name="twitter:player:height" content="1920">
 
 <script type="application/ld+json">
 {
@@ -36,6 +33,7 @@
   "description": "See how Title22 keeps RCFE facilities DSS-ready — checklist, readiness score, AI compliance assistant, digital MAR, and an immutable audit log. Two minutes.",
   "thumbnailUrl": "https://title-22.com/videos/title22-demo-poster.jpg",
   "contentUrl": "https://title-22.com/videos/title22-demo-2min.mp4",
+  "embedUrl": "https://title-22.com/demo/",
   "uploadDate": "2026-07-29",
   "duration": "PT2M"
 }
@@ -239,6 +237,30 @@
   }
   .cc-btn.active { background: var(--pine); color: var(--white); border-color: var(--pine); }
   .cc-btn:hover:not(.active) { background: var(--sage); border-color: var(--pine); }
+
+  /* Trainer section */
+  .trainer-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 220px) 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  @media (max-width: 45rem) {
+    .trainer-grid { grid-template-columns: 1fr; }
+  }
+  .trainer-frame { max-width: 220px; max-height: 390px; margin: 0; }
+  @media (max-width: 45rem) {
+    .trainer-frame { max-width: 260px; max-height: 460px; margin: 0 auto; }
+  }
+
+  /* AI feature story grid */
+  .ai-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
 </style>
 </head>
 <body>
@@ -265,7 +287,8 @@
       <p class="lede" style="font-size:1.15rem;color:var(--muted);max-width:38rem">Checklist. Readiness score. AI compliance assistant. Digital MAR. Immutable audit log.</p>
 
       <div class="demo-grid">
-        <!-- Vertical video in a phone-shaped frame -->
+        <!-- Video column: phone-shaped frame + caption toggle stacked together -->
+        <div>
         <div class="video-frame" id="videoFrame">
           <video id="demoVideo"
                  src="/videos/title22-demo-2min.mp4"
@@ -284,10 +307,11 @@
 
         <div class="cc-row" role="group" aria-label="Caption language">
           <span class="cc-label">Captions</span>
-          <button class="cc-btn active" data-cc="en" data-track="cc-en">English</button>
-          <button class="cc-btn" data-cc="es" data-track="cc-es">Español</button>
-          <button class="cc-btn" data-cc="tl" data-track="cc-tl">Tagalog</button>
-          <button class="cc-btn" data-cc="off" data-track="cc-off">Off</button>
+          <button class="cc-btn active" data-cc="en">English</button>
+          <button class="cc-btn" data-cc="es">Español</button>
+          <button class="cc-btn" data-cc="tl">Tagalog</button>
+          <button class="cc-btn" data-cc="off">Off</button>
+        </div>
         </div>
 
         <!-- What's covered + CTAs + share -->
@@ -302,8 +326,8 @@
           </ul>
 
           <div class="cta-row" style="display:flex;gap:0.75rem;flex-wrap:wrap;margin:1.75rem 0 0">
-            <a class="btn" href="https://title22.app" data-track="start-free-trial">Start free trial</a>
-            <a class="btn ghost" href="mailto:hello@title-22.com?subject=Live%20demo%20request" data-track="book-walkthrough">Book a live walkthrough</a>
+            <a class="btn" href="https://title22.app" data-track="cta_try_it_live_click" data-track-props='{"location":"hero"}'>Try it live</a>
+            <a class="btn ghost" href="mailto:hello@title-22.com?subject=Live%20demo%20request" data-track="book-walkthrough">Book a walkthrough</a>
           </div>
 
           <div class="share-row">
@@ -332,28 +356,73 @@
   <section>
     <div class="wrap">
       <div class="section-head">
-        <h2>What you just watched</h2>
+        <p class="eyebrow" style="text-align:left">For CE &amp; ICTP trainers</p>
+        <h2>Teach it. Your graduates will run it.</h2>
+        <p>If you train RCFE administrators, Title22 gives your graduates a real tool to point to on day one — not just a certificate. Refer them in and earn 20% of every paid subscription, every month they stay subscribed.</p>
       </div>
-      <div class="pillars">
+
+      <div class="trainer-grid">
+        <div class="video-frame trainer-frame">
+          <video id="trainerVideo"
+                 src="/videos/title22-trainer-pitch.mp4"
+                 poster="/videos/title22-demo-poster.jpg"
+                 muted playsinline controls
+                 preload="metadata"
+                 aria-label="30-second pitch for RCFE certification trainers"></video>
+        </div>
+        <div>
+          <ul class="covers">
+            <li><span class="check"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8.5L6 12l7.5-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>A free classroom account, seeded for teaching</li>
+            <li><span class="check"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8.5L6 12l7.5-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Extended free trials for your graduates, in your name</li>
+            <li><span class="check"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8.5L6 12l7.5-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>20% recurring commission, no cap</li>
+          </ul>
+          <div class="cta-row" style="display:flex;gap:0.75rem;flex-wrap:wrap;margin:1.75rem 0 0">
+            <a class="btn" href="/for-trainers/" data-track="cta_trainer_signup_click">Become a training partner</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" style="text-align:left">Title22 AI</p>
+        <h2>Software that knows your facility, not just the regulation.</h2>
+      </div>
+      <div class="ai-grid">
         <div class="pillar">
-          <p class="kicker">Readiness score</p>
-          <h3>Know where you stand</h3>
-          <p style="color:var(--muted);margin:0">A live score across administrator, staff, and resident requirements — so gaps surface before an analyst finds them.</p>
+          <h3>AI Compliance Assistant</h3>
+          <p style="color:var(--muted);margin:0">Ask: "Is Room 4's medication log complete for July?" Get an answer grounded in the actual Title 22 section, with the citation attached.</p>
         </div>
         <div class="pillar">
-          <p class="kicker">AI assistant</p>
-          <h3>Answers from your data</h3>
-          <p style="color:var(--muted);margin:0">Ask a compliance question and get an answer grounded in your facility's actual records — not a generic FAQ.</p>
+          <h3>Readiness Score</h3>
+          <p style="color:var(--muted);margin:0">Upload a new CPR certification. The facility's readiness score moves from 91 to 94, live.</p>
         </div>
         <div class="pillar">
-          <p class="kicker">Audit log</p>
-          <h3>Immutable by design</h3>
-          <p style="color:var(--muted);margin:0">Every action recorded, timestamped, and attributed — visible to administrators only, editable by no one.</p>
+          <h3>Daily Briefing</h3>
+          <p style="color:var(--muted);margin:0">Every morning: 2 certifications expire this week, 1 incident follow-up is overdue, 3 checklist items are due.</p>
+        </div>
+        <div class="pillar">
+          <h3>AI Document Review</h3>
+          <p style="color:var(--muted);margin:0">Upload your medication policy. Get back: "Missing PRN documentation procedure — required under the applicable Title 22 section."</p>
+        </div>
+        <div class="pillar">
+          <h3>Incident Report Drafting</h3>
+          <p style="color:var(--muted);margin:0">Enter what happened in a few fields. Get a structured, compliant incident narrative back — edit it, then submit.</p>
+        </div>
+        <div class="pillar">
+          <h3>Deficiency Triage</h3>
+          <p style="color:var(--muted);margin:0">A citation comes in. Title22 ranks it by severity and drafts a corrective action plan before your next call with the analyst.</p>
+        </div>
+        <div class="pillar">
+          <h3>Immutable Audit Log</h3>
+          <p style="color:var(--muted);margin:0">Every entry: who, what, when. Nothing edited, nothing deleted — exportable as a single file for a surveyor.</p>
         </div>
       </div>
 
       <div class="trust">
-        <p><strong>A hard line we don't cross:</strong> nowhere in this walkthrough does the AI suggest, adjust, or comment on a dosage. It flags missing documentation — the clinical call always stays with the physician and pharmacist.</p>
+        <p><strong>A hard line we don't cross:</strong> nowhere in Title22 does the AI suggest, adjust, or comment on a dosage. It flags missing documentation — the clinical call always stays with the physician and pharmacist.</p>
       </div>
     </div>
   </section>
@@ -362,7 +431,7 @@
     <div class="wrap">
       <div class="cta-band">
         <h2>Ready to run a facility DSS is proud to inspect?</h2>
-        <a class="btn" href="https://title22.app" data-track="start-free-trial-band">Start free trial</a>
+        <a class="btn" href="https://title22.app" data-track="cta_try_it_live_click" data-track-props='{"location":"band"}'>Try it live</a>
       </div>
     </div>
   </section>
@@ -380,14 +449,23 @@
   var DEMO_URL = 'https://title-22.com/demo/';
 
   /* Analytics: fires to whichever provider is wired (Plausible, GA, or Umami).
-     No provider is loaded today — these become live the moment one is added. */
-  function track(name) {
-    if (typeof window.plausible === 'function') window.plausible(name);
-    if (typeof window.gtag === 'function') window.gtag('event', name);
-    if (window.umami && typeof window.umami.track === 'function') window.umami.track(name);
+     No provider is loaded today — this is a no-op until one is added. */
+  function trackEvent(name, props) {
+    if (typeof window.plausible === 'function') window.plausible(name, props ? { props: props } : undefined);
+    if (typeof window.gtag === 'function') window.gtag('event', name, props || {});
+    if (window.umami && typeof window.umami.track === 'function') window.umami.track(name, props);
   }
+  window.trackEvent = trackEvent;
+  var track = trackEvent; // internal alias
+
   document.querySelectorAll('[data-track]').forEach(function (el) {
-    el.addEventListener('click', function () { track(el.dataset.track); });
+    el.addEventListener('click', function () {
+      var props;
+      if (el.dataset.trackProps) {
+        try { props = JSON.parse(el.dataset.trackProps); } catch (e) {}
+      }
+      track(el.dataset.track, props);
+    });
   });
 
   /* Copy link */
@@ -441,6 +519,23 @@
     }
   });
 
+  /* Progress tracking: demo_play once, then demo_25/50/75/100_percent once each */
+  var playedOnce = false;
+  var percentsFired = {};
+  video.addEventListener('play', function () {
+    if (!playedOnce) { playedOnce = true; track('demo_play'); }
+  });
+  video.addEventListener('timeupdate', function () {
+    if (!video.duration) return;
+    var pct = (video.currentTime / video.duration) * 100;
+    [25, 50, 75, 100].forEach(function (mark) {
+      if (pct >= mark && !percentsFired[mark]) {
+        percentsFired[mark] = true;
+        track('demo_' + mark + '_percent');
+      }
+    });
+  });
+
   /* Caption language toggle: English / Español / Tagalog / Off */
   var ccButtons = Array.prototype.slice.call(document.querySelectorAll('.cc-btn'));
   function setCaptionLanguage(lang) {
@@ -452,7 +547,7 @@
   ccButtons.forEach(function (b) {
     b.addEventListener('click', function () {
       setCaptionLanguage(b.dataset.cc);
-      track(b.dataset.track);
+      track('caption_language_selected', { language: b.dataset.cc });
     });
   });
   setCaptionLanguage('en');

@@ -25,6 +25,15 @@ Narration timing (eight 15-second scenes): 0:00 panic intro · 0:15 meet
 Title22 · 0:30 checklist · 0:45 readiness score · 1:00 AI assistant ·
 1:15 digital MAR · 1:30 audit log · 1:45 outro.
 
+## Still pending
+
+- `title22-trainer-pitch.mp4` — a ~30s trainer-focused pitch, referenced by
+  the new "For CE & ICTP trainers" section on `/demo/`. The section is built
+  and styled but the `<video>` element points at a file that isn't here yet
+  — it 404s until this is dropped in. Poster currently falls back to the
+  main demo poster; swap it once the real file arrives if a dedicated frame
+  is wanted.
+
 To change the narration (wording, voice, or timing) or the translations, ask
 Claude — the generator script synthesizes each segment and rebuilds all three
 VTT files to match.
