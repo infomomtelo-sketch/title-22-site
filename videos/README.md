@@ -3,12 +3,17 @@
 This directory serves at `https://title-22.com/videos/`. Referenced by `/demo/`.
 
 - `title22-demo-2min.mp4` — the real demo video (1080×1920, 2:00, h264) you
-  provided, with a generated voiceover (natural neural voice, not the earlier
-  robotic one) muxed in as an AAC track.
+  provided, with narration + a generated background soundtrack muxed in as
+  a single AAC track.
 - `title22-demo-poster.jpg` — poster frame at 2s, used as the video poster and
   the Open Graph / Twitter share image.
-- `title22-demo-voiceover.m4a` — the standalone narration track, kept so audio
-  can be re-muxed if the footage is re-exported.
+- `title22-demo-voiceover.m4a` — the standalone narration track (no music),
+  kept so audio can be rebuilt if the footage is re-exported.
+- `title22-demo-mix.m4a` — narration + soundtrack, already mixed (this is
+  what's muxed into the MP4). The soundtrack is a simple generated pad chord
+  progression (C–Am–F–G), sidechain-ducked under the voice so it drops out
+  automatically whenever the narrator is speaking and swells slightly in the
+  gaps. Mixed at roughly -19dB average, limited to avoid clipping.
 - `captions/en.vtt`, `captions/es.vtt`, `captions/tl.vtt` — caption tracks,
   cue timings matched to the voiceover. The demo page has an
   English / Español / Tagalog / Off toggle (English shown by default).
