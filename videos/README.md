@@ -2,29 +2,18 @@
 
 This directory serves at `https://title-22.com/videos/`. Referenced by `/demo/`.
 
-## Already here
-
-- `title22-demo-voiceover.m4a` — generated 2:00 voiceover narration
-  (segments timed at 0:00 intro · 0:14 checklist · 0:36 readiness score ·
-  0:58 AI assistant · 1:20 MAR · 1:40 audit log · 1:52 outro)
-- `title22-demo-2min.vtt` — captions, cue timings match the voiceover exactly.
+- `title22-demo-2min.mp4` — the demo video (1080×1920, 2:00, h264) with the
+  generated voiceover muxed in as an AAC track.
+- `title22-demo-poster.jpg` — poster frame (2s, "Every panic." hook), used as
+  the video poster and the Open Graph / Twitter share image.
+- `title22-demo-2min.vtt` — captions; cue timings match the voiceover.
   Loaded by the demo page's `<track>` element (toggleable in the player).
+- `title22-demo-voiceover.m4a` — the standalone narration track, kept so the
+  audio can be re-muxed if the footage is re-exported.
 
-## Still to drop in
+Narration timing (eight 15-second scenes): 0:00 panic intro · 0:15 meet
+Title22 · 0:30 checklist · 0:45 readiness score · 1:00 AI assistant ·
+1:15 digital MAR · 1:30 audit log · 1:45 outro.
 
-- `title22-demo-2min.mp4` — 9:16 vertical, ~2 min, 1080×1920, h264.
-  **Mux the voiceover in first** so the published file has sound:
-
-  ```
-  ffmpeg -i title22-demo-2min-silent.mp4 -i title22-demo-voiceover.m4a \
-    -map 0:v -map 1:a -c:v copy -c:a copy -shortest title22-demo-2min.mp4
-  ```
-
-  (Or drop the silent file here and ask Claude to mux it.)
-
-- `title22-demo-poster.jpg` — poster frame (~2s into the video), used as the
-  video poster and the Open Graph / Twitter share image.
-
-If the video's scene changes don't land near the narration times above, ask
-Claude to re-time the segments — the generator script places each segment at a
-configurable start time.
+To change the narration (wording, voice, or timing), ask Claude — the
+generator script synthesizes each segment and rebuilds the VTT to match.
