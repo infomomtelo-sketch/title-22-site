@@ -5,26 +5,38 @@ different videos here, used by two different pages.
 
 ## `/demo/` — the shareable 2-minute demo
 
-- `title22-demo-2min.mp4` — the demo video (1080×1920 vertical, 2:00, h264)
-  with the generated voiceover muxed in as an AAC track.
-- `title22-demo-poster.jpg` — poster frame (2s, "Every panic." hook), used as
+- `title22-demo-2min.mp4` — the demo video (888×1920 vertical, 1:57, 30fps,
+  h264 High / yuv420p, faststart).
+- `title22-demo-poster.jpg` — poster frame (3s, "Every panic." hook), used as
   the video poster and the Open Graph / Twitter share image.
-- `title22-demo-2min.vtt` — English captions; cue timings match the voiceover.
-- `title22-demo-2min.es.vtt` — Spanish subtitles, same cue timings.
-- `title22-demo-2min.tl.vtt` — Tagalog subtitles, same cue timings.
-- `title22-demo-voiceover.m4a` — the standalone narration track, kept so the
-  audio can be re-muxed if the footage is re-exported.
+- `title22-demo-2min.es.vtt` — Spanish subtitles.
+- `title22-demo-2min.tl.vtt` — Tagalog subtitles.
+- `title22-demo-voiceover.m4a` — **retired.** The synthesized narration from
+  the previous cut, which is no longer the published video. Kept only as a
+  source asset; nothing references it.
 
-This one has spoken English narration. Spanish and Tagalog are subtitle
-tracks, not dubs. All three VTTs share identical cue boundaries, so re-timing
-the English file means re-timing the other two to match.
+**This cut has no spoken narration** — a music bed, with the English captions
+burned into the picture. That is why there is no English `.vtt`: a text track
+would double up on the burned-in text. The `.es`/`.tl` files translate those
+same on-screen captions.
 
-Narration timing (eight 15-second scenes): 0:00 panic intro · 0:15 meet
-Title22 · 0:30 checklist · 0:45 readiness score · 1:00 AI assistant ·
-1:15 digital MAR · 1:30 audit log · 1:45 outro.
+Scene boundaries, measured by OCR of the burned-in captions — the two VTTs are
+keyed to these, so re-cutting the footage means re-deriving them:
 
-To change the narration (wording, voice, or timing), ask Claude — the
-generator script synthesizes each segment and rebuilds the VTT to match.
+| Scene | Caption appears |
+|-------|-----------------|
+| pop quiz | 0:00.75 |
+| built by a licensed RCFE administrator | 0:15.375 |
+| every Title 22 requirement, tied to CCR code | 0:26.875 |
+| see your readiness score | 0:44.25 |
+| ask the AI: "Am I ready?" | 1:00.875 |
+| digital MAR | 1:14.25 |
+| immutable audit log | 1:29.375 |
+| start free | 1:43.875 |
+
+The previous cut ran 2:00 with eight evenly spaced 15-second scenes and a
+synthesized voiceover. This one is 1:57 with uneven scenes, so none of the old
+cue timings carry over.
 
 ## `/walkthrough/` — the ten-step instructional tour
 
