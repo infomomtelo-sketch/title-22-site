@@ -39,6 +39,9 @@
 }
 </script>
 
+<meta property="og:site_name" content="Title22">
+<meta property="og:image:alt" content="Title22 two-minute product walkthrough video">
+<meta name="twitter:image:alt" content="Title22 two-minute product walkthrough video">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,600;0,700;1,600&family=Public+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -262,6 +265,11 @@
     margin-top: 2rem;
   }
 </style>
+<style>
+  .transcript { border:1px solid var(--line); border-radius:10px; padding:1.25rem; background:var(--sage); }
+  .transcript p { margin:0 0 0.6rem; font-size:0.95rem; line-height:1.6; }
+  .transcript .ts { font-family:"IBM Plex Mono",monospace; font-size:0.8rem; color:var(--muted); margin-right:0.5rem; }
+</style>
 </head>
 <body>
 
@@ -274,7 +282,7 @@
       <a href="/for-trainers/">For Trainers</a>
       <a href="/pricing/">Pricing</a>
       <a href="/blog/">Blog</a>
-      <a href="https://title22.app" class="btn">Open Title22</a>
+      <a href="https://title22.app/?src=demo" class="btn">Open Title22</a>
     </nav>
   </div>
 </header>
@@ -328,6 +336,8 @@
           <div class="cta-row" style="display:flex;gap:0.75rem;flex-wrap:wrap;margin:1.75rem 0 0">
             <a class="btn" href="https://title22.app" data-track="cta_try_it_live_click" data-track-props='{"location":"hero"}'>Try it live</a>
             <a class="btn ghost" href="mailto:hello@title-22.com?subject=Live%20demo%20request" data-track="book-walkthrough">Book a walkthrough</a>
+            <a class="btn" href="https://title22.app/?src=demo" data-track="start-free-trial">Start free trial</a>
+            <a class="btn ghost" href="/walkthrough/" data-track="watch-full-walkthrough">Watch the walkthrough</a>
           </div>
 
           <div class="share-row">
@@ -432,15 +442,47 @@
       <div class="cta-band">
         <h2>Ready to run a facility DSS is proud to inspect?</h2>
         <a class="btn" href="https://title22.app" data-track="cta_try_it_live_click" data-track-props='{"location":"band"}'>Try it live</a>
+        <a class="btn" href="https://title22.app/?src=demo" data-track="start-free-trial-band">Start free trial</a>
       </div>
     </div>
   </section>
 </main>
 
+
+<section id="transcript">
+  <div class="wrap">
+    <h2>Full transcript</h2>
+    <p style="color:var(--muted);font-size:0.92rem;">Captions are available in the player (CC). The complete narration is below.</p>
+    <div class="transcript">
+      <p><span class="ts">00:01</span> DSS inspection day shouldn't feel like a pop quiz.</p>
+      <p><span class="ts">00:04</span> But in most facilities, every inspection turns into a panic.</p>
+      <p><span class="ts">00:16</span> Meet Title22 — the compliance system</p>
+      <p><span class="ts">00:18</span> built by a licensed RCFE administrator.</p>
+      <p><span class="ts">00:31</span> Every Title 22 requirement your facility has to meet is already loaded —</p>
+      <p><span class="ts">00:35</span> tied to the CCR code, and tracked.</p>
+      <p><span class="ts">00:46</span> Your readiness score updates in real time,</p>
+      <p><span class="ts">00:48</span> so you see exactly where you stand before DSS ever walks in.</p>
+      <p><span class="ts">01:01</span> Ask the AI compliance assistant: "Am I ready?"</p>
+      <p><span class="ts">01:03</span> It checks your facility's real data and shows what needs fixing — in seconds.</p>
+      <p><span class="ts">01:16</span> Medications live in a digital MAR.</p>
+      <p><span class="ts">01:18</span> Every dose signed, timestamped, and audit-ready.</p>
+      <p><span class="ts">01:31</span> And behind it all, an immutable audit log. Every change recorded, forever.</p>
+      <p><span class="ts">01:35</span> Visible to administrators only.</p>
+      <p><span class="ts">01:46</span> Title22. Run a facility DSS is proud to inspect.</p>
+      <p><span class="ts">01:50</span> Start free at title22.app — 14 days, no card.</p>
+    </div>
+    <p style="margin-top:1.25rem;">
+      <a class="btn" href="https://title22.app/?src=demo">Start free trial</a>
+      <a class="btn ghost" href="/videos/title22-demo-2min.mp4" download>Download the video</a>
+      <a class="btn ghost" href="/videos/title22-demo-2min.vtt" download>Download captions (.vtt)</a>
+    </p>
+  </div>
+</section>
+
 <footer class="site-foot">
   <div class="wrap">
-    <div>© 2026 RunP8 LLC · Fresno, California</div>
-    <div><a href="/about/">About</a> · <a href="/for-trainers/">For Trainers</a> · <a href="/pricing/">Pricing</a> · <a href="/blog/">Blog</a> · <a href="https://title22.app">Sign in</a></div>
+    <div>© 2026 title-22.com. All rights reserved.</div>
+    <div><a href="/about/">About</a> · <a href="/security/">Security</a> · <a href="/faq/">FAQ</a> · <a href="/for-trainers/">For Trainers</a> · <a href="/pricing/">Pricing</a> · <a href="/blog/">Blog</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy</a> · <a href="https://title22.app/?src=demo">Sign in</a></div>
   </div>
 </footer>
 

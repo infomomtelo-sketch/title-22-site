@@ -4,8 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pricing — Title22 RCFE Compliance Software</title>
-<meta name="description" content="Title22 pricing for single facilities and multi-facility operators. Start with a free trial, no credit card required.">
+<meta name="description" content="Title22 pricing for single facilities and multi-facility operators. The AI compliance assistant is included on every plan. Start with a free trial, no credit card required.">
 <link rel="canonical" href="https://title-22.com/pricing/">
+<meta property="og:site_name" content="Title22">
+<meta property="og:image" content="https://title-22.com/videos/title22-demo-poster.jpg">
+<meta property="og:image:alt" content="Title22 pricing plans for RCFE facilities">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pricing — Title22 RCFE Compliance Software">
+<meta name="twitter:description" content="Title22 pricing for single facilities and multi-facility operators. The AI compliance assistant is included on every plan. Start with a free trial, no credit card required.">
+<meta name="twitter:image" content="https://title-22.com/videos/title22-demo-poster.jpg">
+<meta name="twitter:image:alt" content="Title22 pricing plans for RCFE facilities">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@600;700&family=Public+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -13,12 +21,11 @@
 <style>
   .price-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     margin: 2rem 0;
   }
-  @media (max-width: 60rem) { .price-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 32rem) { .price-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 52rem) { .price-grid { grid-template-columns: 1fr; } }
   .price-card {
     border: 1px solid var(--line);
     border-radius: 10px;
@@ -42,8 +49,12 @@
 </head>
 <body>
 
-<!-- Prices synced with title22.app billing (Starter $49 / Pro $79 / Specialist $149 / Agency $249).
-     If you change Stripe prices, update BOTH this page and the app's billing tab. -->
+<!-- Prices synced with title22.app billing (Starter $49 / Pro $79 / Agency $249).
+     Pro covers up to 5 facilities. Specialist ($149) was RETIRED from the page Aug 2026 —
+     archive its Stripe price but keep it MAPPED in the webhook + title22-ai worker as a
+     legacy tier so no existing/renewing sub breaks. If you change Stripe prices, update
+     BOTH this page and the app's billing tab.
+     AI actions/month synced with the title22-ai worker LIMITS map (trial 50 / starter 50 / pro 200 / agency 500). -->
 
 <header class="site-head">
   <div class="wrap">
@@ -54,7 +65,7 @@
       <a href="/for-trainers/">For Trainers</a>
       <a href="/pricing/" aria-current="page">Pricing</a>
       <a href="/blog/">Blog</a>
-      <a href="https://title22.app" class="btn">Open Title22</a>
+      <a href="https://title22.app/?src=pricing" class="btn">Open Title22</a>
     </nav>
   </div>
 </header>
@@ -64,7 +75,7 @@
     <div class="wrap">
       <p class="eyebrow">Pricing</p>
       <h1>Simple plans for one facility or twenty.</h1>
-      <p class="lede">Every plan includes the digital MAR, resident and staff records, incident reports, and the compliance checklist with readiness score. Higher tiers add team roles, more facilities, and AI features. No credit card required to start.</p>
+      <p class="lede">Every plan includes the digital MAR, resident and staff records, incident reports, the compliance checklist with readiness score, and the AI compliance assistant with daily briefing — on every tier, including the free trial. Plans differ by how many facilities you run and how many AI actions you get each month. No credit card required to start.</p>
     </div>
   </section>
 
@@ -78,46 +89,39 @@
             <li>1 facility</li>
             <li>MAR, residents, staff, incidents</li>
             <li>Compliance checklist &amp; readiness score</li>
+            <li>AI compliance assistant &amp; daily briefing</li>
+            <li>50 AI actions / month</li>
             <li>14-day free trial included</li>
           </ul>
-          <a class="btn ghost" href="https://title22.app">Start free trial</a>
+          <a class="btn ghost" href="https://title22.app/?src=pricing">Start free trial</a>
         </div>
         <div class="price-card featured">
           <span class="badge">Most common</span>
           <div class="plan-name">Pro</div>
           <div class="plan-amt">$79<small> / month</small></div>
           <ul>
-            <li>Up to 3 facilities</li>
+            <li>Up to 5 facilities</li>
             <li>Everything in Starter</li>
             <li>Facility switching from one account</li>
             <li>Team roles &amp; caregiver access</li>
+            <li>200 AI actions / month</li>
           </ul>
-          <a class="btn" href="https://title22.app">Start free trial</a>
-        </div>
-        <div class="price-card">
-          <div class="plan-name">Specialist</div>
-          <div class="plan-amt">$149<small> / month</small></div>
-          <ul>
-            <li>Up to 5 facilities</li>
-            <li>Everything in Pro</li>
-            <li>AI compliance assistant</li>
-            <li>AI daily briefing</li>
-          </ul>
-          <a class="btn ghost" href="https://title22.app">Start free trial</a>
+          <a class="btn" href="https://title22.app/?src=pricing">Start free trial</a>
         </div>
         <div class="price-card">
           <div class="plan-name">Agency</div>
           <div class="plan-amt">$249<small> / month</small></div>
           <ul>
             <li>Unlimited facilities</li>
-            <li>Everything in Specialist</li>
+            <li>Everything in Pro</li>
+            <li>500 AI actions / month</li>
             <li>Built for multi-home operators</li>
           </ul>
-          <a class="btn ghost" href="https://title22.app">Start free trial</a>
+          <a class="btn ghost" href="https://title22.app/?src=pricing">Start free trial</a>
         </div>
       </div>
 
-      <p style="text-align:center;color:var(--muted);font-size:0.9rem;">Every plan starts with a 14-day free trial — no credit card required. Subscribe from inside the app when you're ready.</p>
+      <p style="text-align:center;color:var(--muted);font-size:0.9rem;">Every plan starts with a 14-day free trial — no credit card required. The AI assistant works during the trial too (50 actions). Subscribe from inside the app when you're ready.</p>
 
       <div class="trust">
         <p><strong>A hard line we don't cross on any plan:</strong> Title22's AI never suggests, corrects, or comments on clinical dosage information. That's true whether you're on the free trial or the largest plan.</p>
@@ -128,8 +132,8 @@
 
 <footer class="site-foot">
   <div class="wrap">
-    <div>© 2026 RunP8 LLC · Fresno, California</div>
-    <div><a href="/about/">About</a> · <a href="/for-trainers/">For Trainers</a> · <a href="/blog/">Blog</a> · <a href="https://title22.app">Sign in</a></div>
+    <div>© 2026 title-22.com. All rights reserved.</div>
+    <div><a href="/about/">About</a> · <a href="/security/">Security</a> · <a href="/faq/">FAQ</a> · <a href="/for-trainers/">For Trainers</a> · <a href="/pricing/">Pricing</a> · <a href="/blog/">Blog</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy</a> · <a href="https://title22.app/?src=pricing">Sign in</a></div>
   </div>
 </footer>
 

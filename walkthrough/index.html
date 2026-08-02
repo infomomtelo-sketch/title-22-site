@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Title22 — Guided walkthrough</title>
+<meta name="description" content="A full narrated tour of Title22 — how RCFE facilities stay DSS-ready with a live readiness score, an AI compliance assistant grounded in your records, a digital MAR, and an immutable audit log.">
+<link rel="canonical" href="https://title-22.com/walkthrough/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="video.other">
+<meta property="og:url" content="https://title-22.com/walkthrough/">
+<meta property="og:title" content="Title22 — Guided walkthrough">
+<meta property="og:description" content="A full narrated tour of Title22 — how RCFE facilities stay DSS-ready with a live readiness score, an AI compliance assistant grounded in your records, a digital MAR, and an immutable audit log.">
+<meta property="og:image" content="https://title-22.com/videos/title22-walkthrough-poster.jpg">
+<meta property="og:video" content="https://title-22.com/videos/title22-walkthrough.mp4">
+<meta property="og:video:secure_url" content="https://title-22.com/videos/title22-walkthrough.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1920">
+<meta property="og:video:height" content="1080">
+
+<!-- Twitter card -->
+<meta name="twitter:card" content="player">
+<meta name="twitter:title" content="Title22 — Guided walkthrough">
+<meta name="twitter:description" content="A full narrated tour of Title22 — how RCFE facilities stay DSS-ready: readiness score, AI compliance assistant, digital MAR, and an immutable audit log.">
+<meta name="twitter:image" content="https://title-22.com/videos/title22-walkthrough-poster.jpg">
+<meta name="twitter:player" content="https://title-22.com/walkthrough/">
+<meta name="twitter:player:width" content="1280">
+<meta name="twitter:player:height" content="720">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Title22 — Guided walkthrough",
+  "description": "A full narrated tour of Title22 — how RCFE facilities stay DSS-ready with a live readiness score, an AI compliance assistant grounded in the facility's actual records, a digital MAR, and an immutable audit log.",
+  "thumbnailUrl": "https://title-22.com/videos/title22-walkthrough-poster.jpg",
+  "contentUrl": "https://title-22.com/videos/title22-walkthrough.mp4",
+  "uploadDate": "2026-07-31",
+  "duration": "PT2M19S"
+}
+</script>
+
+<meta property="og:site_name" content="Title22">
+<meta property="og:image:alt" content="Title22 full product walkthrough video">
+<meta name="twitter:image:alt" content="Title22 full product walkthrough video">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,600;0,700;1,600&family=Public+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  .wt-hero {
+    background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+    padding: 3.5rem 0 2.75rem;
+  }
+  .wt-hero h1 { max-width: 34rem; }
+  .wt-hero h1 em { font-style: italic; color: var(--pine); }
+  .wt-lede { font-size: 1.15rem; color: var(--muted); max-width: 40rem; }
+
+  /* Landscape 16:9 player */
+  .wt-frame {
+    position: relative;
+    width: 100%;
+    max-width: 52rem;
+    margin: 2.25rem auto 0;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: 0 18px 50px -22px rgba(20, 60, 49, 0.5);
+  }
+  .wt-frame video { width: 100%; height: 100%; display: block; background: #000; }
+  .wt-overlay {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(180deg, rgba(20,60,49,.10), rgba(20,60,49,.40));
+    border: 0; cursor: pointer; transition: opacity .25s ease;
+  }
+  .wt-overlay.hidden { opacity: 0; pointer-events: none; }
+  .play-pill {
+    display: flex; align-items: center; gap: .55rem;
+    background: var(--white); color: var(--deep);
+    font-family: "Public Sans", sans-serif; font-weight: 600; font-size: 1rem;
+    padding: .7rem 1.25rem; border-radius: 999px;
+    box-shadow: 0 10px 26px -8px rgba(0,0,0,.45);
+  }
+  .play-pill .tri {
+    width: 0; height: 0; margin-left: 2px;
+    border-left: 15px solid var(--pine);
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+  }
+
+  .cta-row { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1.75rem; }
+  .meta-line { color: var(--muted); font-size: .92rem; margin-top: 1rem; }
+
+  .share { display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; margin-top: 1.25rem; }
+  .share .lbl { color: var(--muted); font-size: .85rem; margin-right: .15rem; }
+  .share-btn {
+    font-size: .9rem; border: 1px solid var(--line); background: var(--white);
+    color: var(--ink); border-radius: 8px; padding: .4rem .7rem;
+    text-decoration: none; cursor: pointer;
+  }
+  .share-btn:hover { background: var(--sage); }
+
+  .wt-points {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem; margin: 3.25rem 0 1rem;
+  }
+  .wt-points h3 { margin: .35rem 0 .35rem; }
+  .wt-points p { color: var(--muted); margin: 0; }
+  @media (max-width: 48rem) { .wt-points { grid-template-columns: 1fr; gap: 1.5rem; } }
+
+  .wt-band {
+    background: var(--sage);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    text-align: center;
+    padding: 2.75rem 0;
+    margin-top: 2.5rem;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">title<span class="tld">-22</span>.com</a>
+    <nav class="nav" aria-label="Main">
+      <a href="/features/">Features</a>
+      <a href="/demo/">Demo</a>
+      <a href="/for-trainers/">For Trainers</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/blog/">Blog</a>
+      <a href="https://title22.app/?src=walkthrough" class="btn">Open Title22</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wt-hero">
+  <div class="wrap">
+    <h1>A <em>guided</em> walkthrough of Title22</h1>
+    <p class="wt-lede">The full narrated tour — start to finish in about two and a half minutes. See exactly how a facility goes from scattered records to DSS-ready.</p>
+
+    <div class="wt-frame" id="wtFrame">
+      <video id="wtVideo"
+             src="/videos/title22-walkthrough.mp4"
+             poster="/videos/title22-walkthrough-poster.jpg"
+             preload="metadata"
+             playsinline controls>
+        Your browser doesn't support embedded video.
+        <a href="/videos/title22-walkthrough.mp4">Download the walkthrough (MP4)</a>.
+      </video>
+      <button class="wt-overlay" id="wtOverlay" aria-label="Play the guided walkthrough with sound">
+        <span class="play-pill"><span class="tri" aria-hidden="true"></span> Play walkthrough</span>
+      </button>
+    </div>
+
+    <p class="meta-line">Narrated · 2 min 19 sec · sound on</p>
+
+    <div class="cta-row">
+      <a class="btn" href="https://title22.app/?src=walkthrough" data-track="wt-start-free-trial">Start free trial</a>
+      <a class="btn ghost" href="mailto:hello@title-22.com?subject=Live%20walkthrough%20request" data-track="wt-book-walkthrough">Book a live Q&A</a>
+    </div>
+
+    <div class="share">
+      <span class="lbl">Share:</span>
+      <button class="share-btn" id="copyLinkBtn" data-track="wt-share-copy">🔗 <span id="copyLabel">Copy link</span></button>
+      <a class="share-btn" data-track="wt-share-email" href="mailto:?subject=Title22%20%E2%80%94%20guided%20walkthrough&body=A%20narrated%20tour%20of%20how%20Title22%20keeps%20RCFE%20facilities%20DSS-ready%3A%20https%3A%2F%2Ftitle-22.com%2Fwalkthrough%2F">✉️ Email</a>
+      <a class="share-btn" data-track="wt-share-linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftitle-22.com%2Fwalkthrough%2F" target="_blank" rel="noopener">in LinkedIn</a>
+      <a class="share-btn" data-track="wt-share-x" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Ftitle-22.com%2Fwalkthrough%2F&text=A%20guided%20tour%20of%20how%20Title22%20keeps%20RCFE%20facilities%20DSS-ready." target="_blank" rel="noopener">𝕏 Post</a>
+      <a class="share-btn" data-track="wt-share-whatsapp" href="https://wa.me/?text=A%20guided%20tour%20of%20how%20Title22%20keeps%20RCFE%20facilities%20DSS-ready%3A%20https%3A%2F%2Ftitle-22.com%2Fwalkthrough%2F" target="_blank" rel="noopener">💬 WhatsApp</a>
+    </div>
+
+    <div class="wt-points">
+      <div>
+        <span class="reg">Readiness score</span>
+        <h3>Gaps surface first</h3>
+        <p>A live score across administrator, staff, and resident requirements — so shortfalls show up before an analyst finds them.</p>
+      </div>
+      <div>
+        <span class="reg">AI assistant</span>
+        <h3>Grounded in your records</h3>
+        <p>Ask a compliance question and get an answer built on the facility's actual data — not a generic FAQ.</p>
+      </div>
+      <div>
+        <span class="reg">Audit log</span>
+        <h3>Immutable trail</h3>
+        <p>Every action recorded, timestamped, and attributed — visible to administrators, editable by no one.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<section class="wt-band">
+  <div class="wrap">
+    <h2 style="margin-bottom:.4rem">See it on your own facility</h2>
+    <p style="color:var(--muted);max-width:34rem;margin:0 auto 1.25rem">Start a free trial, load the sample facility, and ask the assistant “Am I ready for DSS?”</p>
+    <a class="btn" href="https://title22.app/?src=walkthrough" data-track="wt-start-free-trial-band">Start free trial</a>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>© 2026 title-22.com. All rights reserved.</div>
+    <div><a href="/about/">About</a> · <a href="/security/">Security</a> · <a href="/faq/">FAQ</a> · <a href="/for-trainers/">For Trainers</a> · <a href="/pricing/">Pricing</a> · <a href="/blog/">Blog</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy</a> · <a href="https://title22.app/?src=walkthrough">Sign in</a></div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var URL_SELF = 'https://title-22.com/walkthrough/';
+
+  /* Analytics: fires to whichever provider is wired (Plausible, GA, or Umami). */
+  function track(name) {
+    if (typeof window.plausible === 'function') window.plausible(name);
+    if (typeof window.gtag === 'function') window.gtag('event', name);
+    if (window.umami && typeof window.umami.track === 'function') window.umami.track(name);
+  }
+  document.querySelectorAll('[data-track]').forEach(function (el) {
+    el.addEventListener('click', function () { track(el.dataset.track); });
+  });
+
+  /* Copy link */
+  var copyBtn = document.getElementById('copyLinkBtn');
+  var copyLabel = document.getElementById('copyLabel');
+  copyBtn.addEventListener('click', function () {
+    function done() {
+      copyLabel.textContent = 'Copied ✓';
+      setTimeout(function () { copyLabel.textContent = 'Copy link'; }, 2000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(URL_SELF).then(done, done);
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = URL_SELF; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta); done();
+    }
+  });
+
+  /* Narrated video: click-to-play WITH SOUND (no muted autoplay).
+     The overlay plays with sound; native controls stay available. */
+  var video = document.getElementById('wtVideo');
+  var overlay = document.getElementById('wtOverlay');
+  function hideOverlay() { overlay.classList.add('hidden'); }
+
+  overlay.addEventListener('click', function () {
+    video.muted = false;
+    var p = video.play();
+    if (p && p.catch) p.catch(function () {});
+    hideOverlay();
+    track('wt-play');
+  });
+  video.addEventListener('play', hideOverlay);
+})();
+</script>
+</body>
+</html>
