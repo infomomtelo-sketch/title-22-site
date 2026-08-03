@@ -51,6 +51,17 @@ export async function onRequestPost({ request, env }) {
     return errorResponse(400, "Request body must be JSON.");
   }
 
+  /* Optional access gate. Every call costs real money, and the page is
+     reachable by anyone who has the URL, so set INSTRUCTOR_ACCESS_CODE on the
+     Pages project and hand trainers a link like /ai-instructor/?k=THECODE.
+     Leaving the variable unset keeps the endpoint open. */
+  if (env.INSTRUCTOR_ACCESS_CODE && !codesMatch(body.accessCode, env.INSTRUCTOR_ACCESS_CODE)) {
+    return errorResponse(
+      401,
+      "This tool needs the access link issued with your Title22 trainer account.",
+    );
+  }
+
   const levelCount = clamp(parseInt(body.levels, 10) || 5, MIN_LEVELS, MAX_LEVELS);
   const sourceType = body.sourceType;
 
@@ -514,6 +525,17 @@ function decodeBase64Utf8(base64) {
 
 function clamp(value, min, max) {
   return Math.min(max, Math.max(min, value));
+}
+
+/* Compare in time independent of how many characters match, so a caller can't
+   discover the code one character at a time by timing the response. */
+function codesMatch(supplied, expected) {
+  const a = String(supplied == null ? "" : supplied);
+  const b = String(expected);
+  if (a.length !== b.length) return false;
+  let diff = 0;
+  for (let i = 0; i < b.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return diff === 0;
 }
 
 function summarizeApiError(detail) {

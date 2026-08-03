@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Instructor — build a live class from any compliance document</title>
 <meta name="description" content="Drop in a DSS manual, a CDSS update, a facility policy book, or a URL. Title22's AI instructor compiles it into a multi-level live classroom: lecture, situational drill, and the regulation behind it.">
-<link rel="canonical" href="https://title-22.com/ai-instructor/">
+<!-- Unlisted: handed to a trainer with their title22.app trainer account, not a
+     public marketing page. noindex keeps it out of search; no canonical tag, so
+     the sitemap guard correctly treats it as intentionally unlisted. -->
+<meta name="robots" content="noindex, nofollow">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://title-22.com/ai-instructor/">
@@ -507,7 +510,12 @@
 
   async function buildCurriculum() {
     hideError();
-    var payload = { sourceType: activeType, levels: document.getElementById("level-count").value };
+    var payload = {
+      sourceType: activeType,
+      levels: document.getElementById("level-count").value,
+      // Trainers are given a link of the form /ai-instructor/?k=THECODE
+      accessCode: new URLSearchParams(location.search).get("k") || ""
+    };
 
     if (activeType === "url") {
       var url = document.getElementById("source-url").value.trim();
@@ -545,6 +553,22 @@
     var result = null;
     var failure = null;
 
+    function handleLine(line) {
+      if (!line) return;
+      var event;
+      try { event = JSON.parse(line); } catch (err) { return; }
+
+      if (event.type === "status") {
+        setBusy(true, event.message);
+      } else if (event.type === "progress") {
+        setBusy(true, "Writing the class — " + event.chars.toLocaleString() + " characters so far…");
+      } else if (event.type === "result") {
+        result = event.data;
+      } else if (event.type === "error") {
+        failure = event.message;
+      }
+    }
+
     while (true) {
       var chunk = await reader.read();
       if (chunk.done) break;
@@ -552,24 +576,13 @@
 
       var newline;
       while ((newline = buffer.indexOf("\n")) !== -1) {
-        var line = buffer.slice(0, newline).trim();
+        handleLine(buffer.slice(0, newline).trim());
         buffer = buffer.slice(newline + 1);
-        if (!line) continue;
-
-        var event;
-        try { event = JSON.parse(line); } catch (err) { continue; }
-
-        if (event.type === "status") {
-          setBusy(true, event.message);
-        } else if (event.type === "progress") {
-          setBusy(true, "Writing the class — " + event.chars.toLocaleString() + " characters so far…");
-        } else if (event.type === "result") {
-          result = event.data;
-        } else if (event.type === "error") {
-          failure = event.message;
-        }
       }
     }
+    // Non-streamed error replies (401, 500) are a single JSON object with no
+    // trailing newline, so the tail of the buffer still has to be handled.
+    handleLine(buffer.trim());
 
     setBusy(false);
     if (failure) throw new Error(failure);
