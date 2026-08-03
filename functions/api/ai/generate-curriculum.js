@@ -16,6 +16,7 @@ const MODEL = "claude-opus-5";
 const ANTHROPIC_VERSION = "2023-06-01";
 
 const MAX_SOURCE_CHARS = 250_000;
+const MAX_CHAT_GROUNDING_CHARS = 120_000;
 const MAX_FETCH_BYTES = 8 * 1024 * 1024;
 const MAX_UPLOAD_BYTES = 12 * 1024 * 1024;
 const FETCH_TIMEOUT_MS = 20_000;
@@ -25,6 +26,8 @@ const MAX_LEVELS = 8;
 
 /* Routes the model is allowed to hand back. Constraining this to an enum is
    what stops it inventing plausible-looking paths that 404 in the app. */
+const NO_ROUTE = "(not applicable)";
+
 const APP_ROUTES = [
   "/dashboard/staff-compliance",
   "/dashboard/mar-logs",
@@ -34,6 +37,7 @@ const APP_ROUTES = [
   "/dashboard/training-records",
   "/dashboard/facility-documents",
   "/dashboard/inspection-prep",
+  NO_ROUTE,
 ];
 
 export async function onRequestPost({ request, env }) {
@@ -86,12 +90,16 @@ export async function onRequestPost({ request, env }) {
 async function handleGeneration({ body, sourceType, levelCount, env, writer }) {
   let userContent;
   let sourceLabel;
+  // Text the class was built from, handed back so the follow-up conversation
+  // can stay grounded in the same material without re-fetching it.
+  let sourceText = null;
 
   if (sourceType === "url") {
     const url = normalizeUrl(body.url);
     sourceLabel = url;
     await emit(writer, { type: "status", message: `Retrieving ${url}` });
     const text = await fetchAsText(url);
+    sourceText = text;
     await emit(writer, {
       type: "status",
       message: `Read ${text.length.toLocaleString()} characters of source text.`,
@@ -106,6 +114,7 @@ async function handleGeneration({ body, sourceType, levelCount, env, writer }) {
       );
     }
     sourceLabel = "Pasted source text";
+    sourceText = truncate(text);
     userContent = [
       { type: "text", text: sourcePrompt(sourceLabel, truncate(text), levelCount) },
     ];
@@ -129,6 +138,7 @@ async function handleGeneration({ body, sourceType, levelCount, env, writer }) {
       if (text.trim().length < 200) {
         throw new HttpError(400, "That file didn't contain enough readable text.");
       }
+      sourceText = text;
       userContent = [{ type: "text", text: sourcePrompt(sourceLabel, text, levelCount) }];
     }
   } else {
@@ -142,6 +152,8 @@ async function handleGeneration({ body, sourceType, levelCount, env, writer }) {
 
   const curriculum = await callAnthropic({ env, userContent, levelCount, writer });
   curriculum.sourceLabel = sourceLabel;
+  // PDFs have no server-side extraction, so the client re-sends the file for chat.
+  curriculum.sourceText = sourceText ? sourceText.slice(0, MAX_CHAT_GROUNDING_CHARS) : null;
 
   await emit(writer, { type: "result", data: curriculum });
   await writer.close();
@@ -150,21 +162,22 @@ async function handleGeneration({ body, sourceType, levelCount, env, writer }) {
 /* ---------------------------------------------------------------- prompting */
 
 function systemPrompt(levelCount) {
-  return `You are a universal AI compliance instructor. You build live-classroom training from raw source material for Title22, a compliance platform used by California RCFE (Residential Care Facility for the Elderly) administrators.
+  return `You are a universal subject-matter instructor. You can teach ANY professional subject — compliance and regulation, clinical practice, trades and safety, software, finance, operations, hospitality, whatever the source material covers. Read the material, work out what subject it actually teaches, and teach that. Do not assume the subject is healthcare or regulatory unless the material is.
 
-Analyze the source material you are given and compile a progressive, multi-level curriculum of exactly ${levelCount} levels. Level 1 covers the most foundational concept in the source; each subsequent level builds on the ones before it and increases in operational difficulty.
+Analyze the source material and compile a progressive, multi-level curriculum of exactly ${levelCount} levels. Level 1 covers the most foundational concept in the source; each later level builds on the ones before it and increases in difficulty.
 
 Each level has three phases:
-- Phase 1 is a conversational lecture script — what an instructor would actually say out loud to teach this concept. Ground it in the real work of running a facility. 150-300 words.
-- Phase 2 is one high-stakes situational multiple-choice question that applies the level's concept to a realistic administrative decision. Exactly four options, exactly one correct. Distractors must be genuinely plausible choices a real administrator might make, not obvious throwaways. Every option carries feedback explaining why it is right, or specifically what it costs the facility — regulatory exposure, liability, or citation risk.
-- Phase 3 links the concept to the governing regulation.
+- Phase 1 is a conversational lecture script — what an instructor would actually say out loud to teach this concept. Ground it in the real work the learner does. 150-300 words.
+- Phase 2 is one high-stakes situational multiple-choice question applying the level's concept to a realistic decision in that field. Exactly four options, exactly one correct. Distractors must be genuinely plausible choices a competent practitioner might make, not obvious throwaways. Every option carries feedback explaining why it is right, or specifically what going wrong costs.
+- Phase 3 grounds the concept in whatever authority the source appeals to — a regulation, a standard, a manufacturer spec, a clinical guideline, an internal policy, or simply the source document itself.
 
-CITATION ACCURACY IS NON-NEGOTIABLE. Never invent a regulation number, section code, or quoted legal text.
-- Set citationFoundInSource to true ONLY when the citation code and the quoted lawSnippet both appear literally in the source material. In that case lawSnippet must be an exact quote from the source.
-- If the source does not state a specific code, set citationFoundInSource to false, put your best-supported general reference in citationCode (or the string "Not stated in source"), and write lawSnippet as a plain-language summary of the standard the source describes rather than a fabricated quotation.
-- Never present a summary as if it were quoted regulatory text.
+ACCURACY IS NON-NEGOTIABLE. Never invent a regulation number, section code, standard number, or quoted text.
+- Set foundInSource to true ONLY when the reference and the quoted standardText both appear literally in the source material. In that case standardText must be an exact quote from the source.
+- If the source states no specific reference, set foundInSource to false, put "Not stated in source" in referenceCode, and write standardText as a plain-language summary of the rule the source describes rather than a fabricated quotation.
+- Never present a summary as if it were a quotation.
+- authorityBody names whoever stands behind the rule (an agency, a standards body, the employer, the manufacturer). If the source is just an internal or unattributed document, say so plainly rather than guessing at an agency.
 
-appTargetRoute must be the single route inside Title22.app where an administrator would go to actually fix or document this issue. Choose only from the allowed values.
+appTargetRoute applies only when the subject is California RCFE compliance and the learner would act on it inside Title22.app. For every other subject, and whenever no route genuinely fits, use "${NO_ROUTE}".
 
 Write for practitioners: direct, concrete, no filler and no throat-clearing.`;
 }
@@ -221,21 +234,29 @@ const CURRICULUM_SCHEMA = {
           phase3_enforcement: {
             type: "object",
             properties: {
-              regulatoryBody: { type: "string" },
-              citationCode: { type: "string" },
-              lawSnippet: { type: "string" },
-              citationFoundInSource: {
+              authorityBody: {
+                type: "string",
+                description:
+                  "Who stands behind this rule — agency, standards body, employer, manufacturer, or the source document itself.",
+              },
+              referenceCode: {
+                type: "string",
+                description:
+                  'Section/standard/clause identifier, or "Not stated in source".',
+              },
+              standardText: { type: "string" },
+              foundInSource: {
                 type: "boolean",
                 description:
-                  "True only if this code and snippet appear literally in the source material.",
+                  "True only if the reference and the quoted text both appear literally in the source.",
               },
               appTargetRoute: { type: "string", enum: APP_ROUTES },
             },
             required: [
-              "regulatoryBody",
-              "citationCode",
-              "lawSnippet",
-              "citationFoundInSource",
+              "authorityBody",
+              "referenceCode",
+              "standardText",
+              "foundInSource",
               "appTargetRoute",
             ],
             additionalProperties: false,
