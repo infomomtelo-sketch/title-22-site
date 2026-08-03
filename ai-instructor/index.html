@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Instructor — build a live class from any compliance document</title>
+<meta name="description" content="Drop in a DSS manual, a CDSS update, a facility policy book, or a URL. Title22's AI instructor compiles it into a multi-level live classroom: lecture, situational drill, and the regulation behind it.">
+<link rel="canonical" href="https://title-22.com/ai-instructor/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://title-22.com/ai-instructor/">
+<meta property="og:title" content="AI Instructor — build a live class from any compliance document">
+<meta property="og:description" content="Drop in a DSS manual, a CDSS update, a facility policy book, or a URL. Title22's AI instructor compiles it into a multi-level live classroom.">
+<meta property="og:image" content="https://title-22.com/share-kit/title22-share-card-1200x630.png">
+<meta property="og:site_name" content="Title22">
+<meta property="og:image:alt" content="Title22 AI instructor for RCFE compliance training">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Instructor — build a live class from any compliance document">
+<meta name="twitter:description" content="Drop in a DSS manual, a CDSS update, a facility policy book, or a URL. Title22's AI instructor compiles it into a multi-level live classroom.">
+<meta name="twitter:image" content="https://title-22.com/share-kit/title22-share-card-1200x630.png">
+<meta name="twitter:image:alt" content="Title22 AI instructor for RCFE compliance training">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://title-22.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "AI Instructor",
+      "item": "https://title-22.com/ai-instructor/"
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@600;700&family=Public+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">title<span class="tld">-22</span>.com</a>
+    <nav class="nav" aria-label="Main">
+      <a href="/features/">Features</a>
+      <a href="/demo/">Demo</a>
+      <a href="/for-trainers/">For Trainers</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/blog/">Blog</a>
+      <a href="https://title22.app/?src=ai-instructor" class="btn">Open Title22</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding-bottom: 1.5rem;">
+    <div class="wrap">
+      <p class="eyebrow">Dynamic subject-matter instructor</p>
+      <h1>Turn any compliance document into a live class.</h1>
+      <p class="lede">Point it at a CDSS update, a DSS manual, or your own facility policy book. It reads the material, breaks it into progressive levels, and builds each one into the same three-phase class you already teach — lecture, drill, then the regulation behind it.</p>
+      <div class="reg-strip">
+        <span class="lbl">Built for</span>
+        <span class="reg">CE &amp; ICTP trainers</span>
+        <span class="reg">Facility administrators</span>
+        <span class="reg">Training vendors</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="ingest">
+        <h2>Source material</h2>
+        <p class="ingest-sub">Give it something to teach from. Everything below is read once to build the class — nothing is stored.</p>
+
+        <div class="ingest-tabs" role="tablist" aria-label="Source type">
+          <button type="button" class="ingest-tab" role="tab" id="tab-url" aria-selected="true" aria-controls="panel-url">Website URL</button>
+          <button type="button" class="ingest-tab" role="tab" id="tab-file" aria-selected="false" aria-controls="panel-file">Upload a document</button>
+          <button type="button" class="ingest-tab" role="tab" id="tab-text" aria-selected="false" aria-controls="panel-text">Paste text</button>
+        </div>
+
+        <form id="ingest-form" novalidate>
+          <div class="field" id="panel-url" role="tabpanel" aria-labelledby="tab-url">
+            <label for="source-url">Public page to read</label>
+            <input type="url" id="source-url" name="url" placeholder="https://www.cdss.ca.gov/inforesources/…" autocomplete="off">
+            <p class="hint">Works on regulation pages, provider letters, and policy pages. Script-rendered pages and PDFs won't read — upload those instead.</p>
+          </div>
+
+          <div class="field" id="panel-file" role="tabpanel" aria-labelledby="tab-file" hidden>
+            <label for="source-file">Policy document or manual</label>
+            <label class="dropzone" id="dropzone" for="source-file">
+              <span class="dz-main">Choose a file, or drop one here</span>
+              <span class="dz-sub">PDF, TXT, or Markdown — up to 12 MB</span>
+              <span class="dz-file" id="dz-file" hidden></span>
+            </label>
+            <input type="file" id="source-file" accept=".pdf,.txt,.md,.markdown" hidden>
+          </div>
+
+          <div class="field" id="panel-text" role="tabpanel" aria-labelledby="tab-text" hidden>
+            <label for="source-text">Paste the material</label>
+            <textarea id="source-text" placeholder="Paste the regulation text, policy section, or handout you want taught…"></textarea>
+            <p class="hint">Best when the source is behind a login or lives in a system that can't be linked.</p>
+          </div>
+
+          <div class="field">
+            <label for="level-count">How many levels</label>
+            <select id="level-count">
+              <option value="3">3 levels — short refresher</option>
+              <option value="5" selected>5 levels — standard class</option>
+              <option value="8">8 levels — full course</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn" id="submit-btn">Compile the class</button>
+        </form>
+
+        <div class="gen-status" id="gen-status" hidden>
+          <span class="spinner" aria-hidden="true"></span>
+          <span id="gen-status-text" role="status" aria-live="polite"></span>
+        </div>
+
+        <div class="notice error" id="gen-error" hidden>
+          <p id="gen-error-text"></p>
+        </div>
+      </div>
+
+      <div class="notice">
+        <p><strong>Verify before you teach it.</strong> This tool reads your source and writes the class from it. Citations it marks <span class="flag unverified">unverified</span> were not found verbatim in the material you supplied — check those against the official Title 22 or CDSS text before putting them in front of a class or an inspector.</p>
+      </div>
+
+      <div class="curriculum" id="curriculum" hidden>
+        <div class="curriculum-head">
+          <h2 id="c-subject"></h2>
+          <div class="source" id="c-source"></div>
+          <p class="summary" id="c-summary"></p>
+        </div>
+        <div class="level-rail" id="level-rail" role="tablist" aria-label="Curriculum levels"></div>
+        <div id="level-body"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>© 2026 title-22.com. All rights reserved.</div>
+    <div><a href="/about/">About</a> · <a href="/security/">Security</a> · <a href="/faq/">FAQ</a> · <a href="/for-trainers/">For Trainers</a> · <a href="/pricing/">Pricing</a> · <a href="/blog/">Blog</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy</a> · <a href="https://title22.app/?src=ai-instructor">Sign in</a></div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var APP_ORIGIN = "https://title22.app";
+
+  var form = document.getElementById("ingest-form");
+  var submitBtn = document.getElementById("submit-btn");
+  var statusBox = document.getElementById("gen-status");
+  var statusText = document.getElementById("gen-status-text");
+  var errorBox = document.getElementById("gen-error");
+  var errorText = document.getElementById("gen-error-text");
+  var fileInput = document.getElementById("source-file");
+  var dropzone = document.getElementById("dropzone");
+  var dzFile = document.getElementById("dz-file");
+
+  var TABS = [
+    { tab: "tab-url", panel: "panel-url", type: "url" },
+    { tab: "tab-file", panel: "panel-file", type: "file" },
+    { tab: "tab-text", panel: "panel-text", type: "text" }
+  ];
+  var activeType = "url";
+
+  TABS.forEach(function (entry) {
+    document.getElementById(entry.tab).addEventListener("click", function () {
+      activeType = entry.type;
+      TABS.forEach(function (other) {
+        var isActive = other === entry;
+        document.getElementById(other.tab).setAttribute("aria-selected", String(isActive));
+        document.getElementById(other.panel).hidden = !isActive;
+      });
+    });
+  });
+
+  /* ------------------------------------------------------------ file input */
+
+  fileInput.addEventListener("change", function () {
+    showChosenFile(fileInput.files[0]);
+  });
+
+  ["dragenter", "dragover"].forEach(function (evt) {
+    dropzone.addEventListener(evt, function (e) {
+      e.preventDefault();
+      dropzone.classList.add("is-over");
+    });
+  });
+  ["dragleave", "drop"].forEach(function (evt) {
+    dropzone.addEventListener(evt, function (e) {
+      e.preventDefault();
+      dropzone.classList.remove("is-over");
+    });
+  });
+  dropzone.addEventListener("drop", function (e) {
+    if (e.dataTransfer && e.dataTransfer.files.length) {
+      fileInput.files = e.dataTransfer.files;
+      showChosenFile(e.dataTransfer.files[0]);
+    }
+  });
+
+  function showChosenFile(file) {
+    if (!file) {
+      dzFile.hidden = true;
+      return;
+    }
+    dzFile.textContent = file.name + " · " + Math.round(file.size / 1024) + " KB";
+    dzFile.hidden = false;
+  }
+
+  /* --------------------------------------------------------------- submit */
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    buildCurriculum().catch(function (err) {
+      showError(err && err.message ? err.message : "Something went wrong.");
+      setBusy(false);
+    });
+  });
+
+  async function buildCurriculum() {
+    hideError();
+    var payload = { sourceType: activeType, levels: document.getElementById("level-count").value };
+
+    if (activeType === "url") {
+      var url = document.getElementById("source-url").value.trim();
+      if (!url) throw new Error("Enter the URL of the page you want taught.");
+      payload.url = url;
+    } else if (activeType === "text") {
+      var text = document.getElementById("source-text").value.trim();
+      if (text.length < 200) throw new Error("Paste at least a couple of paragraphs to build a class from.");
+      payload.text = text;
+    } else {
+      var file = fileInput.files[0];
+      if (!file) throw new Error("Choose a file to read.");
+      if (file.size > 12 * 1024 * 1024) throw new Error("That file is larger than the 12 MB limit.");
+      payload.fileName = file.name;
+      payload.mediaType = file.type || guessMediaType(file.name);
+      payload.data = await toBase64(file);
+    }
+
+    setBusy(true, "Sending the source material…");
+    document.getElementById("curriculum").hidden = true;
+
+    var response = await fetch("/api/ai/generate-curriculum", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok && !response.body) {
+      throw new Error("The curriculum engine is unreachable right now.");
+    }
+
+    var reader = response.body.getReader();
+    var decoder = new TextDecoder();
+    var buffer = "";
+    var result = null;
+    var failure = null;
+
+    while (true) {
+      var chunk = await reader.read();
+      if (chunk.done) break;
+      buffer += decoder.decode(chunk.value, { stream: true });
+
+      var newline;
+      while ((newline = buffer.indexOf("\n")) !== -1) {
+        var line = buffer.slice(0, newline).trim();
+        buffer = buffer.slice(newline + 1);
+        if (!line) continue;
+
+        var event;
+        try { event = JSON.parse(line); } catch (err) { continue; }
+
+        if (event.type === "status") {
+          setBusy(true, event.message);
+        } else if (event.type === "progress") {
+          setBusy(true, "Writing the class — " + event.chars.toLocaleString() + " characters so far…");
+        } else if (event.type === "result") {
+          result = event.data;
+        } else if (event.type === "error") {
+          failure = event.message;
+        }
+      }
+    }
+
+    setBusy(false);
+    if (failure) throw new Error(failure);
+    if (!result) throw new Error("The curriculum engine closed the connection before finishing.");
+    render(result);
+  }
+
+  function guessMediaType(name) {
+    if (/\.pdf$/i.test(name)) return "application/pdf";
+    if (/\.(md|markdown)$/i.test(name)) return "text/markdown";
+    return "text/plain";
+  }
+
+  function toBase64(file) {
+    return new Promise(function (resolve, reject) {
+      var reader = new FileReader();
+      reader.onload = function () {
+        var result = String(reader.result);
+        resolve(result.slice(result.indexOf(",") + 1));
+      };
+      reader.onerror = function () { reject(new Error("That file could not be read.")); };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  function setBusy(busy, message) {
+    submitBtn.disabled = busy;
+    submitBtn.textContent = busy ? "Compiling…" : "Compile the class";
+    statusBox.hidden = !busy;
+    if (message) statusText.textContent = message;
+  }
+
+  function showError(message) {
+    errorText.textContent = message;
+    errorBox.hidden = false;
+  }
+
+  function hideError() { errorBox.hidden = true; }
+
+  /* --------------------------------------------------------------- render */
+
+  function render(curriculum) {
+    var root = document.getElementById("curriculum");
+    document.getElementById("c-subject").textContent = curriculum.subject || "Generated curriculum";
+    document.getElementById("c-source").textContent = curriculum.sourceLabel || "";
+    document.getElementById("c-summary").textContent = curriculum.sourceSummary || "";
+
+    var rail = document.getElementById("level-rail");
+    var body = document.getElementById("level-body");
+    rail.textContent = "";
+    body.textContent = "";
+
+    curriculum.levels.forEach(function (level, index) {
+      var chip = document.createElement("button");
+      chip.type = "button";
+      chip.className = "level-chip";
+      chip.setAttribute("role", "tab");
+      chip.setAttribute("aria-current", index === 0 ? "true" : "false");
+      chip.textContent = "Level " + level.level;
+      chip.addEventListener("click", function () {
+        Array.prototype.forEach.call(rail.children, function (other) {
+          other.setAttribute("aria-current", String(other === chip));
+        });
+        body.textContent = "";
+        body.appendChild(renderLevel(level));
+      });
+      rail.appendChild(chip);
+    });
+
+    body.appendChild(renderLevel(curriculum.levels[0]));
+    root.hidden = false;
+    root.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function renderLevel(level) {
+    var frag = document.createDocumentFragment();
+    frag.appendChild(renderLecture(level));
+    frag.appendChild(renderDrill(level));
+    frag.appendChild(renderEnforcement(level));
+    return frag;
+  }
+
+  function phaseCard(number, title) {
+    var card = document.createElement("div");
+    card.className = "phase-card";
+    var head = document.createElement("div");
+    head.className = "phase-head";
+    var badge = document.createElement("span");
+    badge.className = "phase-n";
+    badge.textContent = "Phase " + number;
+    var h3 = document.createElement("h3");
+    h3.textContent = title;
+    head.appendChild(badge);
+    head.appendChild(h3);
+    card.appendChild(head);
+    return card;
+  }
+
+  function renderLecture(level) {
+    var card = phaseCard(1, level.topicName);
+    var p = document.createElement("p");
+    p.className = "lecture";
+    p.textContent = level.phase1_lecture;
+    card.appendChild(p);
+    return card;
+  }
+
+  function renderDrill(level) {
+    var drill = level.phase2_drill;
+    var card = phaseCard(2, "Classroom drill");
+
+    var question = document.createElement("p");
+    question.className = "drill-q";
+    question.textContent = drill.questionText;
+    card.appendChild(question);
+
+    var list = document.createElement("div");
+    list.className = "drill-options";
+
+    drill.options.forEach(function (option) {
+      var button = document.createElement("button");
+      button.type = "button";
+      button.className = "drill-option";
+      button.textContent = option.text;
+      button.addEventListener("click", function () {
+        Array.prototype.forEach.call(list.children, function (node, index) {
+          var opt = drill.options[index];
+          node.disabled = true;
+          if (opt.isCorrect) node.classList.add("is-correct");
+          else if (node === button) node.classList.add("is-wrong");
+          if (opt.isCorrect || node === button) {
+            var feedback = document.createElement("span");
+            feedback.className = "fb";
+            feedback.textContent = opt.feedback;
+            node.appendChild(feedback);
+          }
+        });
+      });
+      list.appendChild(button);
+    });
+
+    card.appendChild(list);
+    return card;
+  }
+
+  function renderEnforcement(level) {
+    var rule = level.phase3_enforcement;
+    var card = phaseCard(3, "The regulation behind it");
+    card.classList.add("enforce");
+
+    var dl = document.createElement("dl");
+    addRow(dl, "Regulator", textNode(rule.regulatoryBody));
+
+    var codeCell = document.createElement("span");
+    var code = document.createElement("span");
+    code.className = "reg";
+    code.textContent = rule.citationCode;
+    codeCell.appendChild(code);
+    codeCell.appendChild(document.createTextNode(" "));
+    var flag = document.createElement("span");
+    flag.className = "flag " + (rule.citationFoundInSource ? "verified" : "unverified");
+    flag.textContent = rule.citationFoundInSource ? "found in source" : "unverified";
+    codeCell.appendChild(flag);
+    addRow(dl, "Citation", codeCell);
+
+    var quote = document.createElement("blockquote");
+    quote.textContent = rule.lawSnippet;
+    addRow(dl, rule.citationFoundInSource ? "Quoted standard" : "Standard (paraphrased)", quote);
+
+    var link = document.createElement("a");
+    link.className = "btn ghost";
+    link.href = APP_ORIGIN + rule.appTargetRoute + "?src=ai-instructor";
+    link.rel = "noopener";
+    link.textContent = "Fix this in Title22 →";
+    addRow(dl, "Where to act", link);
+
+    card.appendChild(dl);
+    return card;
+  }
+
+  function addRow(dl, label, valueNode) {
+    var dt = document.createElement("dt");
+    dt.textContent = label;
+    var dd = document.createElement("dd");
+    dd.appendChild(valueNode);
+    dl.appendChild(dt);
+    dl.appendChild(dd);
+  }
+
+  function textNode(value) {
+    return document.createTextNode(value == null ? "" : String(value));
+  }
+})();
+</script>
+
+</body>
+</html>
