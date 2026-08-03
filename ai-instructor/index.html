@@ -406,6 +406,88 @@
   padding: 0; margin: -1px; overflow: hidden;
   clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
+/* ==========================================================================
+   Tool density — this page is an app screen, not an article. Everything below
+   tightens the shared marketing type scale so the whole flow fits a phone
+   without endless scrolling.
+   ========================================================================== */
+
+.tool-head { padding: 2rem 0 1.25rem; }
+.tool-head h1 { font-size: clamp(1.6rem, 4.5vw, 2.1rem); margin-bottom: 0.4rem; }
+.tool-head .eyebrow {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+.tool-head .lede { color: var(--muted); font-size: 1rem; margin: 0; max-width: 34rem; }
+
+.ingest, .chat { padding: 1.25rem; }
+.ingest h2, .chat h2 { font-size: 1.15rem; margin-bottom: 0.25rem; }
+.ingest .ingest-sub, .chat .chat-sub { font-size: 0.88rem; margin-bottom: 1rem; }
+.field { margin-bottom: 0.9rem; }
+
+.notice { font-size: 0.85rem; padding: 0.7rem 0.9rem; margin: 1rem 0; }
+.notice.compact p { line-height: 1.5; }
+
+.curriculum { margin-top: 2rem; }
+.curriculum-head { padding-bottom: 1rem; margin-bottom: 1rem; }
+.curriculum-head h2 { font-size: 1.3rem; }
+.curriculum-head p.summary { font-size: 0.9rem; margin-top: 0.5rem; }
+.level-rail { margin-bottom: 1rem; gap: 0.4rem; }
+.level-chip { font-size: 0.8rem; padding: 0.4rem 0.8rem; min-height: 38px; }
+
+/* Phase tabs — one phase visible at a time */
+.phase-tabs {
+  display: flex;
+  gap: 0.25rem;
+  background: var(--sage);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.25rem;
+  margin-bottom: 1rem;
+}
+.phase-tab {
+  flex: 1;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  padding: 0.5rem 0.5rem;
+  min-height: 40px;
+  cursor: pointer;
+}
+.phase-tab[aria-selected="true"] {
+  background: var(--white);
+  color: var(--ink);
+  box-shadow: 0 1px 3px rgba(20, 60, 49, 0.12);
+}
+.phase-body .phase-card {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.phase-body .phase-head { margin-bottom: 0.75rem; }
+.phase-body .phase-head .phase-n { display: none; }
+.phase-body .phase-head h3 { font-size: 1rem; }
+.phase-card .lecture { font-size: 0.95rem; line-height: 1.6; }
+.drill-q { font-size: 0.95rem; margin-bottom: 0.8rem; }
+.drill-option { padding: 0.7rem 0.85rem; font-size: 0.93rem; }
+.enforce dl { grid-template-columns: 7rem 1fr; gap: 0.5rem 1rem; font-size: 0.9rem; }
+
+.chat-log { max-height: 26rem; }
+.msg .body { font-size: 0.93rem; padding: 0.65rem 0.85rem; }
+
+@media (max-width: 40rem) {
+  .tool-head { padding: 1.5rem 0 1rem; }
+  .enforce dl { grid-template-columns: 1fr; }
+}
+
 </style>
 </head>
 <body>
@@ -426,17 +508,11 @@
 </header>
 
 <main>
-  <section class="hero" style="padding-bottom: 1.5rem;">
+  <section class="tool-head">
     <div class="wrap">
-      <p class="eyebrow">Dynamic subject-matter instructor</p>
-      <h1>Turn any document into a live class — then ask questions.</h1>
-      <p class="lede">Point it at a regulation, a manual, a safety standard, or your own policy book — any subject, not just compliance. It reads the material, breaks it into progressive levels, and builds each one into a three-phase class: lecture, drill, then where the rule comes from. Then the instructor stays on to answer whatever the room asks.</p>
-      <div class="reg-strip">
-        <span class="lbl">Built for</span>
-        <span class="reg">CE &amp; ICTP trainers</span>
-        <span class="reg">Facility administrators</span>
-        <span class="reg">Training vendors</span>
-      </div>
+      <p class="eyebrow">AI Instructor</p>
+      <h1>Build a class from any document.</h1>
+      <p class="lede">Compile source material into a multi-level class, then question the instructor about it. Any subject.</p>
     </div>
   </section>
 
@@ -497,8 +573,8 @@
         </div>
       </div>
 
-      <div class="notice">
-        <p><strong>Verify before you teach it.</strong> This tool reads your source and writes the class from it. Citations it marks <span class="flag unverified">unverified</span> were not found verbatim in the material you supplied — check those against the official Title 22 or CDSS text before putting them in front of a class or an inspector.</p>
+      <div class="notice compact">
+        <p><strong>Verify before teaching.</strong> Citations marked <span class="flag unverified">unverified</span> were not found in your source — check them against the official text.</p>
       </div>
 
       <div class="chat" id="chat">
@@ -764,11 +840,45 @@
     root.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
+  var PHASES = [
+    { key: "lecture", label: "Lecture", build: renderLecture },
+    { key: "drill", label: "Drill", build: renderDrill },
+    { key: "source", label: "Source", build: renderEnforcement }
+  ];
+
+  /* One phase visible at a time. Stacking all three made every level a page
+     of prose to scroll past. */
   function renderLevel(level) {
     var frag = document.createDocumentFragment();
-    frag.appendChild(renderLecture(level));
-    frag.appendChild(renderDrill(level));
-    frag.appendChild(renderEnforcement(level));
+
+    var tabs = document.createElement("div");
+    tabs.className = "phase-tabs";
+    tabs.setAttribute("role", "tablist");
+    tabs.setAttribute("aria-label", "Phase");
+
+    var body = document.createElement("div");
+    body.className = "phase-body";
+
+    PHASES.forEach(function (phase, index) {
+      var tab = document.createElement("button");
+      tab.type = "button";
+      tab.className = "phase-tab";
+      tab.setAttribute("role", "tab");
+      tab.setAttribute("aria-selected", index === 0 ? "true" : "false");
+      tab.textContent = phase.label;
+      tab.addEventListener("click", function () {
+        Array.prototype.forEach.call(tabs.children, function (other) {
+          other.setAttribute("aria-selected", String(other === tab));
+        });
+        body.textContent = "";
+        body.appendChild(phase.build(level));
+      });
+      tabs.appendChild(tab);
+    });
+
+    body.appendChild(PHASES[0].build(level));
+    frag.appendChild(tabs);
+    frag.appendChild(body);
     return frag;
   }
 

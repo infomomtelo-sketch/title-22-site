@@ -167,7 +167,7 @@ function systemPrompt(levelCount) {
 Analyze the source material and compile a progressive, multi-level curriculum of exactly ${levelCount} levels. Level 1 covers the most foundational concept in the source; each later level builds on the ones before it and increases in difficulty.
 
 Each level has three phases:
-- Phase 1 is a conversational lecture script — what an instructor would actually say out loud to teach this concept. Ground it in the real work the learner does. 150-300 words.
+- Phase 1 is a lecture script — what an instructor would say out loud to teach this concept. Formal and professional in register, addressing a practitioner: no slang, no cheerleading, no exclamation marks. Ground it in the real work the learner does. 140-220 words, tight paragraphs.
 - Phase 2 is one high-stakes situational multiple-choice question applying the level's concept to a realistic decision in that field. Exactly four options, exactly one correct. Distractors must be genuinely plausible choices a competent practitioner might make, not obvious throwaways. Every option carries feedback explaining why it is right, or specifically what going wrong costs.
 - Phase 3 grounds the concept in whatever authority the source appeals to — a regulation, a standard, a manufacturer spec, a clinical guideline, an internal policy, or simply the source document itself.
 
@@ -179,7 +179,7 @@ ACCURACY IS NON-NEGOTIABLE. Never invent a regulation number, section code, stan
 
 appTargetRoute applies only when the subject is California RCFE compliance and the learner would act on it inside Title22.app. For every other subject, and whenever no route genuinely fits, use "${NO_ROUTE}".
 
-Write for practitioners: direct, concrete, no filler and no throat-clearing.`;
+Write for practitioners throughout: formal, direct, concrete. No filler, no throat-clearing, no padding.`;
 }
 
 function sourcePrompt(label, text, levelCount) {
