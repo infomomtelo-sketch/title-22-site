@@ -284,6 +284,46 @@
     gap: 1.5rem;
     margin-top: 2rem;
   }
+
+  /* ── Timeline link engine ─────────────────────────────────────────────── */
+  /* Hotspot anchors rendered inside #videoFrame by the timeline engine.     */
+  .tl-link {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: "Public Sans", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--ink);
+    background: rgba(255, 255, 255, 0.93);
+    border: 1.5px solid rgba(30, 87, 72, 0.35);
+    border-radius: 999px;
+    padding: 0.28rem 0.7rem 0.28rem 0.5rem;
+    text-decoration: none;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+    white-space: nowrap;
+    cursor: pointer;
+    /* Enter: fade + slide-up */
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.25s ease, transform 0.25s ease, background 0.15s ease;
+    pointer-events: none;
+    z-index: 10;
+  }
+  .tl-link.tl-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .tl-link:hover { background: var(--sage); border-color: var(--pine); }
+  .tl-link .tl-dot {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    background: var(--pine);
+    flex-shrink: 0;
+  }
 </style>
 <style>
   .transcript { border:1px solid var(--line); border-radius:10px; padding:1.25rem; background:var(--sage); }
@@ -613,6 +653,147 @@
     });
   });
   setCaptionLanguage('en');
+})();
+</script>
+
+<script>
+/* ── Coordinate-mapped timeline engine ──────────────────────────────────────
+   Each entry defines one clickable hotspot that appears on the video frame
+   during a specific playback window.
+
+   Schema:
+     start  – seconds when the link becomes active
+     end    – seconds when the link disappears
+     x      – left edge as % of frame width   (0–100)
+     y      – top edge as % of frame height   (0–100)
+     label  – visible link text
+     href   – destination URL
+     track  – analytics event name (optional)
+
+   The engine mounts <a class="tl-link"> elements inside #videoFrame and
+   toggles .tl-visible on each timeupdate tick.
+   ──────────────────────────────────────────────────────────────────────── */
+(function () {
+  var LINKS = [
+    /* 0:00 – 0:15  "DSS inspection day" → why compliance matters */
+    {
+      start: 1, end: 15,
+      x: 8, y: 76,
+      label: 'Why it matters',
+      href: '/features/',
+      track: 'tl_why_it_matters'
+    },
+    /* 0:16 – 0:30  "Meet Title22" → try the app */
+    {
+      start: 16, end: 30,
+      x: 8, y: 76,
+      label: 'Try Title22 free',
+      href: 'https://title22.app/?src=demo-tl',
+      track: 'tl_try_free'
+    },
+    /* 0:31 – 0:45  Requirements checklist */
+    {
+      start: 31, end: 45,
+      x: 8, y: 76,
+      label: 'Compliance checklist',
+      href: '/features/#checklist',
+      track: 'tl_checklist'
+    },
+    /* 0:46 – 1:00  Readiness score */
+    {
+      start: 46, end: 60,
+      x: 8, y: 76,
+      label: 'Readiness score',
+      href: '/features/#score',
+      track: 'tl_score'
+    },
+    /* 1:01 – 1:15  AI compliance assistant */
+    {
+      start: 61, end: 75,
+      x: 8, y: 76,
+      label: 'AI assistant',
+      href: '/features/#ai',
+      track: 'tl_ai'
+    },
+    /* 1:16 – 1:30  Digital MAR */
+    {
+      start: 76, end: 90,
+      x: 8, y: 76,
+      label: 'Digital MAR',
+      href: '/features/#mar',
+      track: 'tl_mar'
+    },
+    /* 1:31 – 1:45  Audit log */
+    {
+      start: 91, end: 105,
+      x: 8, y: 76,
+      label: 'Audit log',
+      href: '/features/#log',
+      track: 'tl_audit'
+    },
+    /* 1:46 – end   CTA */
+    {
+      start: 106, end: Infinity,
+      x: 8, y: 76,
+      label: 'Start 14-day free trial →',
+      href: 'https://title22.app/?src=demo-tl-cta',
+      track: 'tl_cta'
+    }
+  ];
+
+  var frame = document.getElementById('videoFrame');
+  var video = document.getElementById('demoVideo');
+  if (!frame || !video) return;
+
+  /* Build DOM nodes for every link once; toggle visibility on timeupdate. */
+  var nodes = LINKS.map(function (def) {
+    var a = document.createElement('a');
+    a.className = 'tl-link';
+    a.href = def.href;
+    a.setAttribute('data-tl-start', def.start);
+    a.setAttribute('data-tl-end', def.end);
+
+    /* Position as % of the frame */
+    a.style.left = def.x + '%';
+    a.style.top  = def.y + '%';
+
+    /* Dot + label */
+    var dot = document.createElement('span');
+    dot.className = 'tl-dot';
+    dot.setAttribute('aria-hidden', 'true');
+    a.appendChild(dot);
+    a.appendChild(document.createTextNode(def.label));
+
+    /* Open external links in new tab */
+    if (def.href.startsWith('http')) {
+      a.target  = '_blank';
+      a.rel     = 'noopener noreferrer';
+    }
+
+    /* Analytics: evaluated at click time so async loaders are covered */
+    if (def.track) {
+      a.addEventListener('click', function () {
+        if (typeof window.trackEvent === 'function') window.trackEvent(def.track);
+      });
+    }
+
+    frame.appendChild(a);
+    return { node: a, def: def };
+  });
+
+  /* timeupdate drives visibility */
+  video.addEventListener('timeupdate', function () {
+    var t = video.currentTime;
+    nodes.forEach(function (item) {
+      var active = t >= item.def.start && t < item.def.end;
+      item.node.classList.toggle('tl-visible', active);
+    });
+  });
+
+  /* Also clear all hotspots when the video ends */
+  video.addEventListener('ended', function () {
+    nodes.forEach(function (item) { item.node.classList.remove('tl-visible'); });
+  });
 })();
 </script>
 </body>
