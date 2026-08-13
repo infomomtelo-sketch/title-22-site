@@ -733,7 +733,7 @@
     },
     /* 1:46 – end   CTA */
     {
-      start: 106, end: 9999,
+      start: 106, end: Infinity,
       x: 8, y: 76,
       label: 'Start 14-day free trial →',
       href: 'https://title22.app/?src=demo-tl-cta',
@@ -767,13 +767,13 @@
     /* Open external links in new tab */
     if (def.href.startsWith('http')) {
       a.target  = '_blank';
-      a.rel     = 'noopener';
+      a.rel     = 'noopener noreferrer';
     }
 
-    /* Analytics */
-    if (def.track && typeof window.trackEvent === 'function') {
+    /* Analytics: evaluated at click time so async loaders are covered */
+    if (def.track) {
       a.addEventListener('click', function () {
-        window.trackEvent(def.track);
+        if (typeof window.trackEvent === 'function') window.trackEvent(def.track);
       });
     }
 
