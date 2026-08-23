@@ -1,10 +1,12 @@
 # Cloudflare Pages headers — https://developers.cloudflare.com/pages/configuration/headers/
 # Applies to every response. Allows self-hosted video/captions, Google Fonts,
 # and this site's inline <style>/<script> blocks (no nonce/hash system in
-# place, so 'unsafe-inline' is required for now).
+# place, so 'unsafe-inline' is required for now). Cloudflare Pages injects the
+# Web Analytics beacon from static.cloudflareinsights.com, which reports to
+# cloudflareinsights.com — both are allowlisted below.
 
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self' https://cloudflareinsights.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
