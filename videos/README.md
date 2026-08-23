@@ -27,12 +27,14 @@ Title22 · 0:30 checklist · 0:45 readiness score · 1:00 AI assistant ·
 
 ## Still pending
 
-- `title22-trainer-pitch.mp4` — a ~30s trainer-focused pitch, referenced by
-  the new "For CE & ICTP trainers" section on `/demo/`. The section is built
-  and styled but the `<video>` element points at a file that isn't here yet
-  — it 404s until this is dropped in. Poster currently falls back to the
-  main demo poster; swap it once the real file arrives if a dedicated frame
-  is wanted.
+- `title22-trainer-pitch.mp4` — a ~30s trainer-focused pitch for the
+  "For CE & ICTP trainers" section on `/demo/`. The section is built and
+  styled, but it no longer references this file: rather than 404 on every
+  page load, the frame shows `title22-demo-poster.jpg` behind a "Trainer
+  pitch coming soon" label. When the real video lands, drop it here and swap
+  that block back to a `<video src="/videos/title22-trainer-pitch.mp4">` — an
+  HTML comment right above it in `demo/index.html` marks the spot. Add a
+  dedicated poster frame at the same time if one is wanted.
 
 To change the narration (wording, voice, or timing) or the translations, ask
 Claude — the generator script synthesizes each segment and rebuilds all three

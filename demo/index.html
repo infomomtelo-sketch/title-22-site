@@ -97,13 +97,27 @@
     width: 100%;
     max-width: 405px;
   }
-  .video-frame video {
+  .video-frame video,
+  .video-frame > img {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+  }
+  .frame-pending {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    margin: 0;
+    z-index: 1;
+    padding: 0.6rem 0.9rem;
+    background: rgba(20,36,32,0.72);
+    color: var(--white);
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-align: center;
   }
   .video-overlay {
     position: absolute;
@@ -432,13 +446,13 @@
       </div>
 
       <div class="trainer-grid">
+        <!-- The 30s trainer pitch hasn't been produced yet (see /videos/README.md).
+             Until the MP4 lands, show the poster frame instead of a <video> that
+             404s; swap this block back to a <video src="/videos/title22-trainer-pitch.mp4">
+             once the file is in place. -->
         <div class="video-frame trainer-frame">
-          <video id="trainerVideo"
-                 src="/videos/title22-trainer-pitch.mp4"
-                 poster="/videos/title22-demo-poster.jpg"
-                 muted playsinline controls
-                 preload="metadata"
-                 aria-label="30-second pitch for RCFE certification trainers"></video>
+          <img src="/videos/title22-demo-poster.jpg" alt="Title22 running on a phone" loading="lazy">
+          <p class="frame-pending">Trainer pitch coming soon</p>
         </div>
         <div>
           <ul class="covers">
@@ -534,7 +548,7 @@
     <p style="margin-top:1.25rem;">
       <a class="btn" href="https://title22.app/?src=demo">Start 14-day free trial</a>
       <a class="btn ghost" href="/videos/title22-demo-2min.mp4" download>Download the video</a>
-      <a class="btn ghost" href="/videos/title22-demo-2min.vtt" download>Download captions (.vtt)</a>
+      <a class="btn ghost" href="/videos/captions/en.vtt" download>Download captions (.vtt)</a>
     </p>
   </div>
 </section>
