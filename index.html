@@ -79,6 +79,100 @@
   .faq-list details { border: 1px solid var(--line); border-radius: 10px; padding: 0.9rem 1.1rem; margin-bottom: 0.6rem; background: #fff; }
   .faq-list summary { cursor: pointer; font-weight: 600; }
   .faq-list details p { margin: 0.7rem 0 0; color: var(--muted); font-size: 0.95rem; }
+
+  /* ---- Living hero: shifting gradient + drifting blobs ---- */
+  .hero-warm {
+    position: relative;
+    background: linear-gradient(-45deg, #143c31, #1e5748, #6b6a22, #8a7a2b, #1e5748, #143c31);
+    background-size: 400% 400%;
+    animation: heroGradientShift 20s ease infinite;
+  }
+  .hero-warm::before,
+  .hero-warm::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  .hero-warm::before {
+    width: 26rem; height: 26rem;
+    top: -9rem; left: -7rem;
+    background: radial-gradient(circle, rgba(232,163,61,0.55) 0%, rgba(232,163,61,0) 70%);
+    animation: heroBlobOne 17s ease-in-out infinite;
+  }
+  .hero-warm::after {
+    width: 22rem; height: 22rem;
+    bottom: -10rem; right: -5rem;
+    background: radial-gradient(circle, rgba(107,106,34,0.55) 0%, rgba(107,106,34,0) 70%);
+    animation: heroBlobTwo 21s ease-in-out infinite;
+  }
+  .hero-warm .wrap { position: relative; z-index: 1; }
+
+  .hero-warm .eyebrow { color: #cfdccb; }
+  .hero-warm h1 { color: #fbf7f0; }
+  .hero-warm .lede { color: #dbe6d8; }
+  .hero-warm .price-line { color: #cfdccb; }
+  .hero-warm .price-line a { color: #f0c869; }
+  .hero-warm .reg-strip .lbl { color: #cfdccb; }
+  .hero-warm .reg { background: rgba(251,247,240,0.9); }
+  .hero-warm .btn.ghost { color: #fbf7f0; border-color: rgba(251,247,240,0.55); }
+  .hero-warm .btn.ghost:hover { background: rgba(251,247,240,0.12); box-shadow: none; }
+
+  .hero-warm .eyebrow,
+  .hero-warm h1,
+  .hero-warm .lede,
+  .hero-warm .cta-row,
+  .hero-warm .price-line,
+  .hero-warm .reg-strip,
+  .hero-warm .hero-visual {
+    opacity: 0;
+    animation: heroFadeUp 0.9s ease forwards;
+  }
+  .hero-warm .eyebrow    { animation-delay: 0.1s; }
+  .hero-warm h1          { animation-delay: 0.25s; }
+  .hero-warm .lede       { animation-delay: 0.4s; }
+  .hero-warm .cta-row    { animation-delay: 0.55s; }
+  .hero-warm .price-line { animation-delay: 0.7s; }
+  .hero-warm .reg-strip  { animation-delay: 0.82s; }
+  .hero-warm .hero-visual{ animation-delay: 0.5s; }
+
+  @keyframes heroGradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  @keyframes heroBlobOne {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(2.2rem, 3rem) scale(1.15); }
+    66% { transform: translate(-1.5rem, 1rem) scale(0.92); }
+  }
+  @keyframes heroBlobTwo {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-2.2rem, -2.2rem) scale(1.2); }
+  }
+  @keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-warm,
+    .hero-warm::before,
+    .hero-warm::after { animation: none !important; }
+    .hero-warm .eyebrow,
+    .hero-warm h1,
+    .hero-warm .lede,
+    .hero-warm .cta-row,
+    .hero-warm .price-line,
+    .hero-warm .reg-strip,
+    .hero-warm .hero-visual {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
 </style>
 </head>
 <body>
