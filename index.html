@@ -173,6 +173,68 @@
       transform: none !important;
     }
   }
+
+  /* ---- Animated dropdown menu ---- */
+  .nav-item { position: relative; display: inline-flex; align-items: center; }
+  .nav-trigger { display: inline-flex; align-items: center; gap: 0.3rem; }
+  .nav-trigger .caret { font-size: 0.65em; display: inline-block; transition: transform 0.25s ease; }
+  .nav-item:hover .nav-trigger .caret,
+  .nav-item:focus-within .nav-trigger .caret,
+  .nav-item.open .nav-trigger .caret { transform: rotate(180deg); }
+
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0.7rem;
+    min-width: 13rem;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: 0 14px 34px rgba(20,60,49,0.16);
+    padding: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0s linear 0.22s;
+    z-index: 20;
+  }
+  .nav-item:hover .dropdown,
+  .nav-item:focus-within .dropdown,
+  .nav-item.open .dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0s;
+  }
+  .dropdown a {
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity 0.2s ease, transform 0.2s ease, background 0.15s ease, color 0.15s ease;
+  }
+  .dropdown a:hover { background: var(--sage); color: var(--pine); }
+  .nav-item:hover .dropdown a,
+  .nav-item:focus-within .dropdown a,
+  .nav-item.open .dropdown a {
+    opacity: 1;
+    transform: none;
+  }
+  .nav-item:hover .dropdown a:nth-child(1), .nav-item:focus-within .dropdown a:nth-child(1), .nav-item.open .dropdown a:nth-child(1) { transition-delay: 0.03s; }
+  .nav-item:hover .dropdown a:nth-child(2), .nav-item:focus-within .dropdown a:nth-child(2), .nav-item.open .dropdown a:nth-child(2) { transition-delay: 0.08s; }
+  .nav-item:hover .dropdown a:nth-child(3), .nav-item:focus-within .dropdown a:nth-child(3), .nav-item.open .dropdown a:nth-child(3) { transition-delay: 0.13s; }
+  .nav-item:hover .dropdown a:nth-child(4), .nav-item:focus-within .dropdown a:nth-child(4), .nav-item.open .dropdown a:nth-child(4) { transition-delay: 0.18s; }
+  .nav-item:hover .dropdown a:nth-child(5), .nav-item:focus-within .dropdown a:nth-child(5), .nav-item.open .dropdown a:nth-child(5) { transition-delay: 0.23s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dropdown, .dropdown a, .nav-trigger .caret { transition: none !important; }
+  }
 </style>
 </head>
 <body>
@@ -181,7 +243,16 @@
   <div class="wrap">
     <a class="brand" href="/">title<span class="tld">-22</span>.com</a>
     <nav class="nav" aria-label="Main">
-      <a href="/features/">Features</a>
+      <div class="nav-item has-dropdown">
+        <a href="/features/" class="nav-trigger">Features <span class="caret" aria-hidden="true">&#9662;</span></a>
+        <div class="dropdown" role="menu">
+          <a role="menuitem" href="/features/">All Features</a>
+          <a role="menuitem" href="/features/#mar">Digital MAR</a>
+          <a role="menuitem" href="/features/#staff-roles">Caregiver Roles</a>
+          <a role="menuitem" href="/features/#multi-site">Multi-Facility</a>
+          <a role="menuitem" href="/features/#daily-brief">AI Daily Briefing</a>
+        </div>
+      </div>
       <a href="/demo/">Demo</a>
       <a href="/for-trainers/">For Trainers</a>
       <a href="/pricing/">Pricing</a>
@@ -539,6 +610,29 @@
 </footer>
 
 <script>
+(function () {
+  // Tap-to-open dropdown on touch devices (no hover state, e.g. iOS Safari).
+  var isTouch = window.matchMedia('(hover: none)').matches;
+  if (!isTouch) return;
+  document.querySelectorAll('.nav-item.has-dropdown').forEach(function (item) {
+    var trigger = item.querySelector('.nav-trigger');
+    trigger.addEventListener('click', function (e) {
+      if (!item.classList.contains('open')) {
+        e.preventDefault();
+        document.querySelectorAll('.nav-item.open').forEach(function (other) {
+          if (other !== item) other.classList.remove('open');
+        });
+        item.classList.add('open');
+      }
+    });
+  });
+  document.addEventListener('click', function (e) {
+    document.querySelectorAll('.nav-item.open').forEach(function (item) {
+      if (!item.contains(e.target)) item.classList.remove('open');
+    });
+  });
+})();
+
 (function () {
   var explainer = document.querySelector('.explainer');
   if (!explainer) return;
