@@ -235,6 +235,20 @@
   @media (prefers-reduced-motion: reduce) {
     .dropdown, .dropdown a, .nav-trigger .caret { transition: none !important; }
   }
+
+  /* ---- Scroll reveal for sections ---- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.in-view {
+    opacity: 1;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1 !important; transform: none !important; }
+  }
 </style>
 </head>
 <body>
@@ -288,7 +302,7 @@
     </div>
   </section>
 
-  <section style="padding-top: 0;">
+  <section class="reveal" style="padding-top: 0;">
     <div class="wrap">
       <!-- EDITORIAL NOTE: replace with real numbers once you have beta-user data -->
       <div class="stat-bar">
@@ -302,7 +316,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="reveal">
     <div class="wrap">
       <div class="section-head">
         <h2>Built for CDSS vendor qualification and staff training</h2>
@@ -394,7 +408,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="reveal">
     <div class="wrap">
       <div class="section-head">
         <h2>Everything you need, in three places</h2>
@@ -433,7 +447,7 @@
   </section>
 
 
-  <section>
+  <section class="reveal">
     <div class="wrap">
       <div class="section-head">
         <h2>What administrators say</h2>
@@ -460,7 +474,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="reveal">
     <div class="wrap">
       <div class="section-head">
         <h2>Everything DSS looks at, in one place</h2>
@@ -505,7 +519,7 @@
 
 
 
-  <section>
+  <section class="reveal">
     <div class="wrap">
       <div class="section-head">
         <h2>Questions operators ask first</h2>
@@ -532,7 +546,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="reveal">
     <div class="wrap">
       <div class="section-head">
         <h2>Built with an RCFE administrator, not just for one</h2>
@@ -560,7 +574,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="reveal">
     <div class="wrap">
       <div class="section-head">
         <h2>Who Title22 is built for</h2>
@@ -650,6 +664,25 @@
     });
   }, { threshold: 0.3 });
   io.observe(explainer);
+})();
+
+(function () {
+  var sections = document.querySelectorAll('.reveal');
+  if (!sections.length) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) {
+    sections.forEach(function (el) { el.classList.add('in-view'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  sections.forEach(function (el) { io.observe(el); });
 })();
 </script>
 </body>
