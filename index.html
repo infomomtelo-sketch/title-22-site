@@ -64,34 +64,10 @@
   .faq-list summary { cursor: pointer; font-weight: 600; }
   .faq-list details p { margin: 0.7rem 0 0; color: var(--muted); font-size: 0.95rem; }
 
-  /* ---- Living hero: shifting gradient + drifting blobs ---- */
   .hero-warm {
     position: relative;
     background: linear-gradient(-45deg, #143c31, #1e5748, #6b6a22, #8a7a2b, #1e5748, #143c31);
     background-size: 400% 400%;
-    animation: heroGradientShift 20s ease infinite;
-  }
-  .hero-warm::before,
-  .hero-warm::after {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    border-radius: 50%;
-    filter: blur(60px);
-    opacity: 0.5;
-    pointer-events: none;
-  }
-  .hero-warm::before {
-    width: 26rem; height: 26rem;
-    top: -9rem; left: -7rem;
-    background: radial-gradient(circle, rgba(232,163,61,0.55) 0%, rgba(232,163,61,0) 70%);
-    animation: heroBlobOne 17s ease-in-out infinite;
-  }
-  .hero-warm::after {
-    width: 22rem; height: 22rem;
-    bottom: -10rem; right: -5rem;
-    background: radial-gradient(circle, rgba(107,106,34,0.55) 0%, rgba(107,106,34,0) 70%);
-    animation: heroBlobTwo 21s ease-in-out infinite;
   }
   .hero-warm .wrap { position: relative; z-index: 1; }
 
@@ -105,66 +81,9 @@
   .hero-warm .btn.ghost { color: #fbf7f0; border-color: rgba(251,247,240,0.55); }
   .hero-warm .btn.ghost:hover { background: rgba(251,247,240,0.12); box-shadow: none; }
 
-  .hero-warm .eyebrow,
-  .hero-warm h1,
-  .hero-warm .lede,
-  .hero-warm .cta-row,
-  .hero-warm .price-line,
-  .hero-warm .reg-strip,
-  .hero-warm .hero-visual {
-    opacity: 0;
-    animation: heroFadeUp 0.9s ease forwards;
-  }
-  .hero-warm .eyebrow    { animation-delay: 0.1s; }
-  .hero-warm h1          { animation-delay: 0.25s; }
-  .hero-warm .lede       { animation-delay: 0.4s; }
-  .hero-warm .cta-row    { animation-delay: 0.55s; }
-  .hero-warm .price-line { animation-delay: 0.7s; }
-  .hero-warm .reg-strip  { animation-delay: 0.82s; }
-  .hero-warm .hero-visual{ animation-delay: 0.5s; }
-
-  @keyframes heroGradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-  @keyframes heroBlobOne {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(2.2rem, 3rem) scale(1.15); }
-    66% { transform: translate(-1.5rem, 1rem) scale(0.92); }
-  }
-  @keyframes heroBlobTwo {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(-2.2rem, -2.2rem) scale(1.2); }
-  }
-  @keyframes heroFadeUp {
-    from { opacity: 0; transform: translateY(14px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .hero-warm,
-    .hero-warm::before,
-    .hero-warm::after { animation: none !important; }
-    .hero-warm .eyebrow,
-    .hero-warm h1,
-    .hero-warm .lede,
-    .hero-warm .cta-row,
-    .hero-warm .price-line,
-    .hero-warm .reg-strip,
-    .hero-warm .hero-visual {
-      opacity: 1 !important;
-      transform: none !important;
-    }
-  }
-
-  /* ---- Animated dropdown menu ---- */
   .nav-item { position: relative; display: inline-flex; align-items: center; }
   .nav-trigger { display: inline-flex; align-items: center; gap: 0.3rem; }
-  .nav-trigger .caret { font-size: 0.65em; display: inline-block; transition: transform 0.25s ease; }
-  .nav-item:hover .nav-trigger .caret,
-  .nav-item:focus-within .nav-trigger .caret,
-  .nav-item.open .nav-trigger .caret { transform: rotate(180deg); }
+  .nav-trigger .caret { font-size: 0.65em; display: inline-block; }
 
   .dropdown {
     position: absolute;
@@ -182,8 +101,6 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transform: translateY(-8px);
-    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0s linear 0.22s;
     z-index: 20;
   }
   .nav-item:hover .dropdown,
@@ -192,47 +109,14 @@
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transform: translateY(0);
-    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0s;
   }
   .dropdown a {
     padding: 0.6rem 0.8rem;
     border-radius: 8px;
     font-size: 0.9rem;
-    opacity: 0;
-    transform: translateY(-6px);
-    transition: opacity 0.2s ease, transform 0.2s ease, background 0.15s ease, color 0.15s ease;
   }
   .dropdown a:hover { background: var(--sage); color: var(--pine); }
-  .nav-item:hover .dropdown a,
-  .nav-item:focus-within .dropdown a,
-  .nav-item.open .dropdown a {
-    opacity: 1;
-    transform: none;
-  }
-  .nav-item:hover .dropdown a:nth-child(1), .nav-item:focus-within .dropdown a:nth-child(1), .nav-item.open .dropdown a:nth-child(1) { transition-delay: 0.03s; }
-  .nav-item:hover .dropdown a:nth-child(2), .nav-item:focus-within .dropdown a:nth-child(2), .nav-item.open .dropdown a:nth-child(2) { transition-delay: 0.08s; }
-  .nav-item:hover .dropdown a:nth-child(3), .nav-item:focus-within .dropdown a:nth-child(3), .nav-item.open .dropdown a:nth-child(3) { transition-delay: 0.13s; }
-  .nav-item:hover .dropdown a:nth-child(4), .nav-item:focus-within .dropdown a:nth-child(4), .nav-item.open .dropdown a:nth-child(4) { transition-delay: 0.18s; }
-  .nav-item:hover .dropdown a:nth-child(5), .nav-item:focus-within .dropdown a:nth-child(5), .nav-item.open .dropdown a:nth-child(5) { transition-delay: 0.23s; }
 
-  @media (prefers-reduced-motion: reduce) {
-    .dropdown, .dropdown a, .nav-trigger .caret { transition: none !important; }
-  }
-
-  /* ---- Scroll reveal for sections ---- */
-  .reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal.in-view {
-    opacity: 1;
-    transform: none;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .reveal { opacity: 1 !important; transform: none !important; }
-  }
 </style>
 </head>
 <body>
@@ -286,7 +170,7 @@
     </div>
   </section>
 
-  <section class="reveal" style="padding-top: 0;">
+  <section style="padding-top: 0;">
     <div class="wrap">
       <div class="stat-bar">
         <div class="stat"><div class="n">4</div><div class="lbl">Caregiver access levels</div></div>
@@ -298,7 +182,7 @@
     </div>
   </section>
 
-  <section class="reveal">
+  <section>
     <div class="wrap">
       <div class="section-head">
         <h2>Built for staff training records and inspection readiness</h2>
@@ -390,7 +274,7 @@
     </div>
   </section>
 
-  <section class="reveal">
+  <section>
     <div class="wrap">
       <div class="section-head">
         <h2>Everything you need, in three places</h2>
@@ -432,7 +316,7 @@
     </div>
   </section>
 
-  <section class="reveal">
+  <section>
     <div class="wrap">
       <div class="section-head">
         <h2>Everything DSS looks at, in one place</h2>
@@ -477,7 +361,7 @@
 
 
 
-  <section class="reveal">
+  <section>
     <div class="wrap">
       <div class="section-head">
         <h2>Questions operators ask first</h2>
@@ -504,7 +388,7 @@
     </div>
   </section>
 
-  <section class="reveal">
+  <section>
     <div class="wrap">
       <div class="section-head">
         <h2>Built from real facility operations</h2>
@@ -532,7 +416,7 @@
     </div>
   </section>
 
-  <section class="reveal">
+  <section>
     <div class="wrap">
       <div class="section-head">
         <h2>Who Title22 is built for</h2>
@@ -624,24 +508,6 @@
   io.observe(explainer);
 })();
 
-(function () {
-  var sections = document.querySelectorAll('.reveal');
-  if (!sections.length) return;
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduce || !('IntersectionObserver' in window)) {
-    sections.forEach(function (el) { el.classList.add('in-view'); });
-    return;
-  }
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
-  sections.forEach(function (el) { io.observe(el); });
-})();
 </script>
 </body>
 </html>
