@@ -504,6 +504,13 @@ article.post .checklist li::before {
   color: var(--muted);
 }
 .site-foot a { color: var(--deep); }
+.site-foot .domain-note {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+  opacity: 0.85;
+}
+.site-foot .domain-note strong { font-weight: 600; color: var(--deep); }
 
 /* Mobile tap-target minimums (WCAG 2.5.8). Inline links in prose are exempt. */
 @media (max-width: 52rem) {
