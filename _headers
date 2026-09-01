@@ -1,5 +1,5 @@
 # Cloudflare Pages headers — https://developers.cloudflare.com/pages/configuration/headers/
-# Applies to every response. Allows self-hosted video/captions, Google Fonts,
+# Applies to every response. Allows self-hosted video, Google Fonts,
 # the YouTube (nocookie) classroom-account embed on /for-trainers/, and this
 # site's inline <style>/<script> blocks (no nonce/hash system in place, so
 # 'unsafe-inline' is required for now).
