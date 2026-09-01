@@ -264,17 +264,10 @@
   /* Trainer section */
   .trainer-grid {
     display: grid;
-    grid-template-columns: minmax(0, 220px) 1fr;
+    grid-template-columns: 1fr;
     gap: 2rem;
     align-items: center;
     margin-top: 2rem;
-  }
-  @media (max-width: 45rem) {
-    .trainer-grid { grid-template-columns: 1fr; }
-  }
-  .trainer-frame { max-width: 220px; max-height: 390px; margin: 0; }
-  @media (max-width: 45rem) {
-    .trainer-frame { max-width: 260px; max-height: 460px; margin: 0 auto; }
   }
 
   /* AI feature story grid */
@@ -432,14 +425,6 @@
       </div>
 
       <div class="trainer-grid">
-        <div class="video-frame trainer-frame">
-          <video id="trainerVideo"
-                 src="/videos/title22-trainer-pitch.mp4"
-                 poster="/videos/title22-demo-poster.jpg"
-                 muted playsinline controls
-                 preload="metadata"
-                 aria-label="30-second pitch for RCFE certification trainers"></video>
-        </div>
         <div>
           <ul class="covers">
             <li><span class="check"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8.5L6 12l7.5-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>A free classroom account, seeded for teaching</li>
@@ -541,7 +526,8 @@
 
 <footer class="site-foot">
   <div class="wrap">
-    <div>© 2026 title-22.com. All rights reserved.</div>
+    <div>© 2026 title-22.com. All rights reserved.<br>
+      <span class="domain-note">Website <strong>title-22.com</strong> · Secure app <strong>title22.app</strong> — same Title22, two addresses.</span></div>
     <div><a href="/about/">About</a> · <a href="/security/">Security</a> · <a href="/faq/">FAQ</a> · <a href="/for-trainers/">For Trainers</a> · <a href="/pricing/">Pricing</a> · <a href="/blog/">Blog</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy</a> · <a href="https://title22.app/?src=demo">Sign in</a></div>
   </div>
 </footer>
