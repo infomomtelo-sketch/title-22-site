@@ -27,12 +27,12 @@ Title22 · 0:30 checklist · 0:45 readiness score · 1:00 AI assistant ·
 
 ## Still pending
 
-- `title22-trainer-pitch.mp4` — a ~30s trainer-focused pitch for the
-  "For CE & ICTP trainers" section on `/demo/`. Not recorded yet. The
-  `<video>` element that pointed at it was removed from `/demo/` because it
-  404'd for every visitor; the section now runs text-only. When the real
-  file lands here, add the player back (and a dedicated poster frame with
-  it) — nothing on the site references this filename today.
+- `title22-trainer-pitch.mp4` — the trainer-focused clip for the
+  "For CE & ICTP trainers" section on `/demo/`. 23.6s, 1080x1920, and
+  **silent — there is no audio track**, so it needs no captions and makes
+  no spoken claims. Poster still falls back to the main demo poster;
+  swap it if a dedicated frame is wanted (a frame from this clip would
+  suit it better than a frame of the demo).
 
 To change the narration (wording, voice, or timing) or the translations, ask
 Claude — the generator script synthesizes each segment and rebuilds all three

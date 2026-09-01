@@ -264,10 +264,17 @@
   /* Trainer section */
   .trainer-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 220px) 1fr;
     gap: 2rem;
     align-items: center;
     margin-top: 2rem;
+  }
+  @media (max-width: 45rem) {
+    .trainer-grid { grid-template-columns: 1fr; }
+  }
+  .trainer-frame { max-width: 220px; max-height: 390px; margin: 0; }
+  @media (max-width: 45rem) {
+    .trainer-frame { max-width: 260px; max-height: 460px; margin: 0 auto; }
   }
 
   /* AI feature story grid */
@@ -425,6 +432,14 @@
       </div>
 
       <div class="trainer-grid">
+        <div class="video-frame trainer-frame">
+          <video id="trainerVideo"
+                 src="/videos/title22-trainer-pitch.mp4"
+                 poster="/videos/title22-demo-poster.jpg"
+                 muted playsinline controls
+                 preload="metadata"
+                 aria-label="Short silent clip for RCFE certification trainers"></video>
+        </div>
         <div>
           <ul class="covers">
             <li><span class="check"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8.5L6 12l7.5-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>A free classroom account, seeded for teaching</li>
