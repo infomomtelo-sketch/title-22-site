@@ -447,45 +447,17 @@ article.post .checklist li::before {
   stroke-width: 2.5;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-dasharray: 300;
-  stroke-dashoffset: 300;
-  transition: stroke-dashoffset 0.9s ease;
 }
 .explain-step h3 { font-size: 1rem; margin-bottom: 0.3rem; }
 .explain-step p { font-size: 0.85rem; color: var(--muted); margin: 0; }
-.explain-step .caption {
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
 .explain-line {
   flex: 0 0 2.5rem;
   height: 2px;
   border-top: 2px dashed var(--line);
   align-self: flex-start;
   margin-top: 1.6rem;
-  opacity: 0;
-  transition: opacity 0.6s ease;
 }
 @media (max-width: 45rem) { .explain-line { display: none; } }
-
-.explainer.in-view .step-1 .draw-icon path { stroke-dashoffset: 0; transition-delay: 0s; }
-.explainer.in-view .step-1 .caption { opacity: 1; transform: none; transition-delay: .35s; }
-.explainer.in-view .line-1 { opacity: 1; transition-delay: .7s; }
-.explainer.in-view .step-2 .draw-icon path { stroke-dashoffset: 0; transition-delay: .9s; }
-.explainer.in-view .step-2 .caption { opacity: 1; transform: none; transition-delay: 1.25s; }
-.explainer.in-view .line-2 { opacity: 1; transition-delay: 1.6s; }
-.explainer.in-view .step-3 .draw-icon path { stroke-dashoffset: 0; transition-delay: 1.8s; }
-.explainer.in-view .step-3 .caption { opacity: 1; transform: none; transition-delay: 2.15s; }
-.explainer.in-view .line-3 { opacity: 1; transition-delay: 2.5s; }
-.explainer.in-view .step-4 .draw-icon path { stroke-dashoffset: 0; transition-delay: 2.7s; }
-.explainer.in-view .step-4 .caption { opacity: 1; transform: none; transition-delay: 3.05s; }
-
-@media (prefers-reduced-motion: reduce) {
-  .draw-icon path { stroke-dashoffset: 0 !important; }
-  .explain-step .caption { opacity: 1 !important; transform: none !important; }
-  .explain-line { opacity: 1 !important; }
-}
 
 /* Footer */
 .site-foot {

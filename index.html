@@ -490,24 +490,7 @@
   });
 })();
 
-(function () {
-  var explainer = document.querySelector('.explainer');
-  if (!explainer) return;
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduce || !('IntersectionObserver' in window)) {
-    explainer.classList.add('in-view');
-    return;
-  }
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.3 });
-  io.observe(explainer);
-})();
+
 
 </script>
 </body>
