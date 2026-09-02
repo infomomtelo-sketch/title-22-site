@@ -14,12 +14,6 @@ This directory serves at `https://title-22.com/videos/`. Referenced by `/demo/`.
   progression (C–Am–F–G), sidechain-ducked under the voice so it drops out
   automatically whenever the narrator is speaking and swells slightly in the
   gaps. Mixed at roughly -19dB average, limited to avoid clipping.
-- `captions/en.vtt`, `captions/es.vtt`, `captions/tl.vtt` — caption tracks,
-  cue timings matched to the voiceover. The demo page has an
-  English / Español / Tagalog / Off toggle (English shown by default).
-  **The Spanish and Tagalog captions are machine-translated — have a native
-  speaker review them before this page goes live**, especially since this is
-  a regulatory compliance product.
 
 Narration timing (eight 15-second scenes): 0:00 panic intro · 0:15 meet
 Title22 · 0:30 checklist · 0:45 readiness score · 1:00 AI assistant ·
