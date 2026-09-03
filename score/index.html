@@ -1,1 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>60-Second Readiness Check — Title22 RCFE Compliance</title>
+<meta name="description" content="Ten questions about your RCFE's records. See which Title 22 requirements you can evidence today and which you can't — no signup, nothing stored.">
+<link rel="canonical" href="https://title-22.com/score/">
+<meta property="og:site_name" content="Title22">
+<meta property="og:title" content="60-Second Readiness Check — Title22">
+<meta property="og:description" content="Ten questions about your RCFE's records. See which requirements you can evidence today — no signup, nothing stored.">
+<meta property="og:image" content="https://title-22.com/share-kit/title22-share-card-1200x630.png">
+<meta property="og:image:alt" content="Title22 readiness self-check for California RCFEs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="60-Second Readiness Check — Title22">
+<meta name="twitter:description" content="Ten questions about your RCFE's records. See which requirements you can evidence today — no signup, nothing stored.">
+<meta name="twitter:image" content="https://title-22.com/share-kit/title22-share-card-1200x630.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@600;700&family=Public+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  .q-card { border:1px solid var(--line); border-radius:12px; padding:1.1rem 1.2rem; margin-bottom:.7rem; background:#fff; }
+  .q-card .q-reg { font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:.72rem; color:var(--muted); letter-spacing:.02em; }
+  .q-card .q-text { font-weight:600; margin:.35rem 0 .8rem; }
+  .q-opts { display:flex; gap:.5rem; flex-wrap:wrap; }
+  .q-opt { border:1.5px solid var(--line); background:#fff; border-radius:999px; padding:.45rem 1.1rem; font:inherit; font-size:.93rem; cursor:pointer; color:var(--ink); }
+  .q-opt[aria-pressed="true"] { background:var(--deep); border-color:var(--deep); color:#fff; }
+  .score-wrap { border:1px solid var(--line); border-radius:14px; overflow:hidden; margin-bottom:1.4rem; }
+  .score-top { background:var(--deep); color:#fff; padding:1.6rem 1.4rem; }
+  .score-num { font-family:"Zilla Slab",Georgia,serif; font-size:3.4rem; line-height:1; font-weight:700; }
+  .score-sub { opacity:.85; font-size:.95rem; margin-top:.4rem; }
+  .gap-list { list-style:none; margin:0; padding:0; }
+  .gap-list li { display:grid; grid-template-columns:auto 1fr; gap:.7rem; padding:.75rem 1.2rem; border-top:1px solid var(--line); align-items:start; }
+  .gap-list .mark { font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:.8rem; line-height:1.5; }
+  .gap-list .miss .mark { color:#A32D2D; }
+  .gap-list .met  .mark { color:var(--deep); }
+  .gap-list .lbl { font-size:.95rem; }
+  .gap-list .reg { display:block; font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:.72rem; color:var(--muted); margin-top:.15rem; }
+  .disclaim { font-size:.88rem; color:var(--muted); border-left:2px solid var(--line); padding-left:.9rem; margin:1.1rem 0 0; }
+  .prog { font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:.78rem; color:var(--muted); margin-bottom:.8rem; }
+  @media (max-width:40rem){ .score-num { font-size:2.8rem; } }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">title<span class="tld">-22</span>.com</a>
+    <nav class="nav" aria-label="Main">
+      <a href="/features/">Features</a>
+      <a href="/demo/">Demo</a>
+      <a href="/for-trainers/">For Trainers</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/blog/">Blog</a>
+      <a href="https://title22.app/?src=score" class="btn">Open Title22</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding-bottom:1.2rem">
+    <div class="wrap">
+      <p class="eyebrow">Readiness self-check · California RCFE</p>
+      <h1>Ten questions. Then you'll know what you can't evidence.</h1>
+      <p class="lede">Answer honestly about your own records. Nothing is sent anywhere, nothing is stored, and you don't need an account. At the end you get the list — the specific items you'd struggle to produce if an analyst asked today.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap" style="max-width:44rem">
+
+      <div id="quiz">
+        <p class="prog" id="prog">0 of 10 answered</p>
+        <div id="questions"></div>
+        <div class="cta-row" style="margin-top:1.2rem">
+          <button class="btn" id="see-score" disabled>See my result</button>
+        </div>
+        <p class="disclaim">This is a self-check based on your own answers, not an inspection and not a prediction of one. It covers ten items out of well over a hundred in Title 22. Nothing you enter leaves this page.</p>
+      </div>
+
+      <div id="result" style="display:none">
+        <div class="score-wrap">
+          <div class="score-top">
+            <div style="font-size:.9rem;letter-spacing:.04em;text-transform:uppercase;opacity:.8">Based on your answers</div>
+            <div class="score-num" id="r-pct">—</div>
+            <div class="score-sub" id="r-sub"></div>
+          </div>
+          <ul class="gap-list" id="r-list"></ul>
+        </div>
+
+        <h2 id="r-head" style="margin-bottom:.5rem"></h2>
+        <p id="r-body" style="color:var(--muted)"></p>
+
+        <div class="cta-row" style="margin-top:1.2rem">
+          <a class="btn" href="https://title22.app/?src=score">Start 14-day free trial — no credit card</a>
+          <button class="btn ghost" id="restart">Start over</button>
+        </div>
+
+        <p class="disclaim">Again: this reflects what you told us, not what's in your files. Title22 is a documentation and readiness tool, not a certifying body — staying licensed is your facility's responsibility. Questions? <a href="mailto:hello@title-22.com">hello@title-22.com</a></p>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>© 2026 title-22.com. All rights reserved.<br>
+      <span class="domain-note">Website <strong>title-22.com</strong> · Secure app <strong>title22.app</strong> — same Title22, two addresses.</span></div>
+    <div><a href="/about/">About</a> · <a href="/security/">Security</a> · <a href="/faq/">FAQ</a> · <a href="/for-trainers/">For Trainers</a> · <a href="/pricing/">Pricing</a> · <a href="/blog/">Blog</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy</a> · <a href="https://title22.app/?src=score">Sign in</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var Q = [
+    { reg:'§87506', q:'Every current resident has a LIC 602A (Medical Assessment) on file, dated within the last year.',
+      gap:'LIC 602A missing or over a year old' },
+    { reg:'§87506', q:'Every current resident has a LIC 601 (Identification and Emergency Information) on file.',
+      gap:'LIC 601 not on file for every resident' },
+    { reg:'§87463', q:'Every resident has a current appraisal / needs and services plan you could hand over today.',
+      gap:'Resident appraisal or needs-and-services plan not current' },
+    { reg:'§87411', q:'Every staff member\u2019s TB clearance is on file.',
+      gap:'Staff TB clearance missing from a personnel file' },
+    { reg:'§87411(e)', q:'No staff member is working with an expired CPR or First Aid card.',
+      gap:'Expired CPR or First Aid card in an active file' },
+    { reg:'§87355', q:'Every staff member has a cleared LiveScan on file before their first shift with residents.',
+      gap:'LiveScan clearance missing or dated after a first shift' },
+    { reg:'§87465', q:'Your medication records for the last 30 days are complete, with no unexplained blank entries.',
+      gap:'Gaps or blanks in the last 30 days of medication records' },
+    { reg:'§87465', q:'Every medication entry identifies the individual who administered it \u2014 no shared logins or initials you can\u2019t attribute.',
+      gap:'Medication entries not attributable to a named individual' },
+    { reg:'§87212', q:'Your fire clearance is current and the drill log is up to date.',
+      gap:'Fire clearance or drill log not current' },
+    { reg:'§87212(a)', q:'Your emergency disaster plan is written, current, and staff have been trained on it.',
+      gap:'Emergency disaster plan missing, stale, or untrained' }
+  ];
+
+  var answers = new Array(Q.length).fill(null);
+  var qEl = document.getElementById('questions');
+  var progEl = document.getElementById('prog');
+  var seeBtn = document.getElementById('see-score');
+
+  function esc(s){ var d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
+
+  Q.forEach(function(item, i){
+    var card = document.createElement('div');
+    card.className = 'q-card';
+    card.innerHTML =
+      '<div class="q-reg">' + esc(item.reg) + '</div>' +
+      '<div class="q-text">' + esc(item.q) + '</div>' +
+      '<div class="q-opts">' +
+        '<button type="button" class="q-opt" data-v="1" aria-pressed="false">Yes</button>' +
+        '<button type="button" class="q-opt" data-v="0" aria-pressed="false">No</button>' +
+        '<button type="button" class="q-opt" data-v="0" aria-pressed="false">Not sure</button>' +
+      '</div>';
+    card.querySelectorAll('.q-opt').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        card.querySelectorAll('.q-opt').forEach(function(b){ b.setAttribute('aria-pressed','false'); });
+        btn.setAttribute('aria-pressed','true');
+        answers[i] = btn.getAttribute('data-v') === '1';
+        update();
+      });
+    });
+    qEl.appendChild(card);
+  });
+
+  function update(){
+    var done = answers.filter(function(a){ return a !== null; }).length;
+    progEl.textContent = done + ' of ' + Q.length + ' answered';
+    seeBtn.disabled = done < Q.length;
+  }
+
+  seeBtn.addEventListener('click', function(){
+    var met = answers.filter(Boolean).length;
+    var pct = Math.round((met / Q.length) * 100);
+    var missing = Q.length - met;
+
+    document.getElementById('r-pct').textContent = pct + '%';
+    document.getElementById('r-sub').textContent =
+      met + ' of ' + Q.length + ' items you said you could evidence today';
+
+    var list = document.getElementById('r-list');
+    list.innerHTML = '';
+    Q.forEach(function(item, i){
+      var li = document.createElement('li');
+      li.className = answers[i] ? 'met' : 'miss';
+      li.innerHTML =
+        '<span class="mark">' + (answers[i] ? '\u2713' : '\u2715') + '</span>' +
+        '<span class="lbl">' + esc(answers[i] ? item.q : item.gap) +
+        '<span class="reg">' + esc(item.reg) + '</span></span>';
+      list.appendChild(li);
+    });
+
+    var head = document.getElementById('r-head');
+    var body = document.getElementById('r-body');
+    if (missing === 0) {
+      head.textContent = 'Nothing flagged on these ten.';
+      body.textContent = 'That is a good sign, though these ten are a small slice of Title 22. The harder question is whether it stays true next month, after two hires and a resident change. That is the part Title22 keeps track of for you.';
+    } else if (missing <= 3) {
+      head.textContent = missing + (missing === 1 ? ' item to close.' : ' items to close.');
+      body.textContent = 'Short lists like this are usually a filing problem rather than a care problem \u2014 the work happened, the paper trail did not follow. Title22 keeps the requirement, the date, and the document in one place so the gap surfaces before an analyst does.';
+    } else {
+      head.textContent = missing + ' items you could not produce today.';
+      body.textContent = 'Most facilities that answer this way are not neglecting anything \u2014 the records are spread across binders, a phone, and someone\u2019s memory. Title22 puts every requirement and its supporting document in one place, with the dates tracked, so you can see the gaps while there is still time to close them.';
+    }
+
+    document.getElementById('quiz').style.display = 'none';
+    document.getElementById('result').style.display = '';
+    window.scrollTo(0, 0);
+  });
+
+  document.getElementById('restart').addEventListener('click', function(){
+    answers = new Array(Q.length).fill(null);
+    qEl.querySelectorAll('.q-opt').forEach(function(b){ b.setAttribute('aria-pressed','false'); });
+    document.getElementById('result').style.display = 'none';
+    document.getElementById('quiz').style.display = '';
+    update();
+    window.scrollTo(0, 0);
+  });
+
+  update();
+})();
+</script>
+
+</body>
+</html>
 
