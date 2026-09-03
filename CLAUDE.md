@@ -1,48 +1,125 @@
-# runp8-care — working rules
+# title-22-site — working rules
 
-Single-file vanilla JS/HTML SPA (index.html, ~487KB)
-serving title22.app. Not React. Pages shown via
-showPage()/switchTab(), global onclick handlers.
-Marketing site is a separate repo (title-22-site).
+Static marketing site for title-22.com. Plain HTML per
+directory (classroom/, for-trainers/, pricing/, blog/…),
+one shared /assets/style.css. No build step, no framework.
+The product itself is a separate repo (runp8-care), served
+at title22.app. This repo describes that product; it does
+not contain it.
+
+## Verify every product claim against the app source
+This site is marketing copy, and marketing copy drifts
+ahead of what shipped. Ground truth for every product
+capability is the app's source file — not this site, not
+another page of this site, and not your memory of it.
+Before writing or editing any capability claim, fetch it:
+
+  curl -s https://raw.githubusercontent.com/infomomtelo-sketch/runp8-care/main/index.html
+
+If a capability is not in that file, it does not exist and
+it does not go on a page. Do not infer a feature from the
+marketing copy you are editing — that is how the false
+claims below got here in the first place.
 
 ## Verify before reporting
 Re-read files from the committed branch state after
-committing, not from your working copy, before claiming
-an edit landed.
+committing — re-fetch from raw.githubusercontent.com on
+the pushed branch — before claiming an edit landed. Do not
+report a file as written or a claim as removed based on
+your own summary of what you did. Previous sessions in
+this repo reported completions that did not exist in the
+committed state.
 
-## AI is on every tier (settled Aug 1 2026)
-TIER_LIMITS has ai:true on all tiers including trial.
-Any copy saying AI is a paid-tier feature is stale and
-wrong. Known stale strings still present:
-  ~line 2288  nav tooltip "Multi-Facility & Agency feature"
-  ~line 2314  showTierUpsell "Tello ... available on
-              Multi-Facility and Agency plans"
+## Classroom ground truth (verified Sep 3 2026)
+There is no separate "classroom" product, no shared
+classroom facility, and no student enrolment flow.
+
+- Signup at title22.app starts a **14-day free trial**,
+  no credit card. Default is 14 days (trialDays fallback
+  in the app).
+- Extended access is the **edu plan** ("Classroom"
+  label): always entitled, never expires. It is granted
+  by email, case by case, by the owner from the
+  owner-only Partners tab. Not self-serve.
+- A student's practice facility comes from the
+  **Load sample facility** button, which runs
+  seedDemoData() in their own account. It creates a
+  separate facility, "Sunrise Demo Home (Sample)", that
+  does not count against the tier cap. One per account.
+- **The trainer cannot see a student's work.** The only
+  real path is the student inviting the trainer to their
+  own facility from **Team access** with the **Read Only**
+  role. The readonly role's tabs are dashboard,
+  checklist, residents, incidents, daily, mar, lessons,
+  documents.
+- **There is no student-to-trainer messaging.** Tello is
+  the built-in AI assistant (nav "Tello", included on
+  every plan). Describe it as a study aid — it can be
+  wrong and it gives no medical advice about a resident.
+- `title22_create_trainer` is behind an un-run migration
+  (migrations/2026-08-03_title22_trainers.sql). Trainer
+  codes, where they work at all, only tag a referral and
+  set the trial length — they do **not** place a student
+  in anyone's facility.
+
+### The only seed numbers that are safe to state
+From seedDemoData(), verified against the app source:
+8 residents · 5 staff · 10 medications · 30 days of MAR
+history · 2 open incidents · one CPR expiring in 20 days
+(James Carter) · one TB test 10 days overdue (Daniel
+Reyes). Nothing else is. In particular there is no
+"dashboard opens amber" state in seedDemoData() — the
+dashboard has no facility-level colour at all.
+
+## Settled wording — do not re-derive
+- Audit log is **"append-only"** — never "immutable",
+  never "tamper-evident".
+- **"guided by a certified California RCFE
+  administrator"** — never "built by", never "licensed".
+- **No inspection-outcome language anywhere on this
+  site.** No "inspection-ready", "pass your inspection",
+  "graduate inspection-ready". No absolute compliance
+  claims; we do not guarantee compliance or inspection
+  outcomes.
+- No individual's name, certificate number or expiry in
+  copy or in JSON-LD.
+- classroom/index.html keeps
+  `<meta name="robots" content="noindex">`.
 
 ## Tiers
 Three purchasable: Starter $49 (1 facility), Pro $79 (up
 to 5), Agency $249 (unlimited). Specialist/$149 is
-archived — it survives only as a legacy label for
-existing subscribers. Do not surface it as an offer.
-Marketing sells the $79 tier as "Pro"; the app's
-T22_LABEL renders it "Facility" — these disagree and need
-one name.
+archived — a legacy label for existing subscribers only.
+Do not surface it as an offer. Marketing sells the $79
+tier as "Pro"; the app's T22_LABEL renders it "Facility"
+— these disagree and need one name.
 
 ## PHI line — do not cross
 Resident documents (LIC 601, LIC 602A, ISP) are PHI and
-are UPLOAD ONLY. No photo-scan of resident or medication
+are upload only. No photo-scan of resident or medication
 documents to the Anthropic API — no HIPAA BAA is
 confirmed. Staff records (TB, Live Scan, certs) are
-employment records, not PHI, and may use scan.
-The AI never suggests, corrects, or comments on clinical
-dosage information, on any plan.
+employment records, not PHI, and may use scan. Do not
+write copy that implies otherwise.
 
-## Claims wording
-Audit log is "append-only" — never "immutable" or
-"tamper-evident". No absolute compliance claims; we don't
-guarantee compliance or inspection outcomes.
-
-## Known open bugs
-- Mobile Safari: add/edit modals won't scroll. No
-  -webkit-overflow-scrolling in the file.
-- No password show/hide toggle on auth fields.
-- trial tier grants facilities:5, same as the $79 tier.
+## Open items
+- **for-trainers/index.html carries the same false claims
+  the classroom page just had** and has NOT been fixed:
+  the amber dashboard (line ~127), "incidents to
+  document" undercounting the seed, the FAQ's "an
+  expiring certification, medications, an incident"
+  (singular; the seed has 2 incidents and 10
+  medications), trainer codes described as a working
+  enrolment path (~153, ~238), and inspection-outcome
+  language in the H1 (~87), the referral copy (~153) and
+  the trust block (~175). The trainer's own free
+  Classroom account IS real (edu plan) — that part is not
+  a false claim.
+- `for-trainers-index.html` sits in the repo root as a
+  stray duplicate of `for-trainers/index.html`. It is not
+  linked from anywhere. Decide whether to delete it;
+  until then, an edit to one will silently miss the other.
+- The classroom page's "Almost. You see all the same
+  screens" FAQ is unverified against role tabs — a trial
+  user is an administrator and does see all of them, but
+  re-check if the copy ever gets more specific.
