@@ -102,23 +102,61 @@ confirmed. Staff records (TB, Live Scan, certs) are
 employment records, not PHI, and may use scan. Do not
 write copy that implies otherwise.
 
+## Staff training tab — what it actually does
+Verified Sep 5 2026. The Training tab **logs completed
+training**; it does not assign anything. You pick a staff
+member, a topic, hours, a date, and which annual minimum
+it counts toward (dementia 8 / special care 4 / general 8
+/ hands-on at the facility), and you may attach a
+certificate. It then renders per-staff progress bars
+against the 20-hour annual in-service and the 16-hour
+initial hands-on. There is **no class creation, no
+assignment by role, and no completion requirements** —
+copy claiming any of those is false. Title22 supplies no
+course content. The separate Lessons tab is
+trainer-authored reading and knowledge checks, explicitly
+not a training record (no pass mark, no hours, no
+certificate, writes nothing to staff_trainings).
+
+## Forms the app actually names
+LIC 601, LIC 602A, LIC 603A, LIC 604, and LIC 622 (the
+centrally stored medication record, §87465 — this is what
+the MAR is). LIC 622 is real; do not "correct" it.
+
+## Wording tension to resolve
+The app's own dashboard element is literally titled
+**"Inspection readiness score"**, while this site bans
+inspection-outcome language. Describing that screen in
+site copy currently uses "readiness score" without the
+word "inspection". If the site ever needs to name the
+element exactly, that is a decision for the owner, not a
+thing to re-derive per page.
+
 ## Open items
-- **for-trainers/index.html carries the same false claims
-  the classroom page just had** and has NOT been fixed:
-  the amber dashboard (line ~127), "incidents to
-  document" undercounting the seed, the FAQ's "an
-  expiring certification, medications, an incident"
-  (singular; the seed has 2 incidents and 10
-  medications), trainer codes described as a working
-  enrolment path (~153, ~238), and inspection-outcome
-  language in the H1 (~87), the referral copy (~153) and
-  the trust block (~175). The trainer's own free
-  Classroom account IS real (edu plan) — that part is not
-  a false claim.
-- `for-trainers-index.html` sits in the repo root as a
-  stray duplicate of `for-trainers/index.html`. It is not
-  linked from anywhere. Decide whether to delete it;
-  until then, an edit to one will silently miss the other.
+- **Homepage `index.html` carries two of the claims just
+  removed elsewhere.** Line ~154: "Train caregivers from
+  CDSS-approved material, track completion" — the same
+  false training-assignment claim fixed on for-trainers
+  (the app logs training, it does not assign it); the same
+  line and line ~416 use "inspection-ready". Not fixed.
+- **`affiliates/index.html` uses "inspection-ready" three
+  times** (~191 H1, ~373 inside a quoted testimonial, ~435
+  footer). The testimonial at ~373 also asserts Title22
+  "keeps your documentation inspection-ready". Not fixed —
+  and a quoted testimonial needs the owner's sign-off
+  before anyone rewrites words attributed to a customer.
+- **The name "Eli" appears in for-trainers copy (~269) and
+  in every pre-written mailto body on that page.** The
+  settled rule says no individual's name in copy. That
+  rule was written about credentials (name / cert number /
+  expiry); a first name in a contact email may be
+  deliberate. Left alone pending a decision — do not strip
+  it unilaterally.
+- `for-trainers-index.html` is a stray, unlinked duplicate
+  of `for-trainers/index.html` in the repo root. As of
+  Sep 5 2026 both files are byte-identical and both carry
+  the corrected copy. Decide whether to delete the root
+  one; until then, every edit must be applied to both.
 - The classroom page's "Almost. You see all the same
   screens" FAQ is unverified against role tabs — a trial
   user is an administrator and does see all of them, but
