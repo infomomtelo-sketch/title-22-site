@@ -69,12 +69,15 @@
 </head>
 <body>
 
-<!-- Prices synced with title22.app billing (Starter $49 / Pro $79 / Agency $249).
-     Pro covers up to 5 facilities. Specialist ($149) was RETIRED from the page Aug 2026 —
-     archive its Stripe price but keep it MAPPED in the webhook + title22-ai worker as a
-     legacy tier so no existing/renewing sub breaks. If you change Stripe prices, update
-     BOTH this page and the app's billing tab.
-     AI actions/month synced with the title22-ai worker LIMITS map (trial 50 / starter 50 / pro 200 / agency 500). -->
+<!-- Title22 Lite, $29/month, one tier. Sept 2026: the product no longer holds
+     resident health information — no MAR, no medication records, no resident
+     records — which is what took the BAA and the $599 infrastructure bill off
+     the table. Starter $49 / Pro $79 / Specialist $149 / Agency $249 are
+     RETIRED from this page. Keep them MAPPED in the webhook and the
+     title22-ai worker as legacy tiers so no existing sub breaks.
+     If you change the Stripe price, update BOTH this page and the app's
+     billing tab.
+     AI actions/month synced with the title22-ai worker LIMITS map. -->
 
 <header class="site-head">
   <div class="wrap">
@@ -94,57 +97,37 @@
   <section class="hero" style="padding-bottom: 1rem;">
     <div class="wrap">
       <p class="eyebrow">Pricing</p>
-      <h1>Simple plans for one facility or twenty.</h1>
-      <p class="lede">Every plan includes the digital MAR, resident and staff records, incident reports, the compliance checklist with readiness score, and the AI compliance assistant with daily briefing — on every tier, including the free trial. Plans differ by how many facilities you run and how many AI actions you get each month. No credit card required to start.</p>
+      <h1>One plan. $29 a month.</h1>
+      <p class="lede">Title22 Lite covers the facility and staff side of Title 22 — staff records, the 40-hour training requirement, certification and clearance expiry, the DSS readiness checklist, a document vault that holds no resident health information, and LIC 624 incident reports without PHI. Tello, the AI compliance assistant, is included, with her daily briefing. No credit card required to start.</p>
     </div>
   </section>
 
   <section>
     <div class="wrap">
-      <div class="price-grid">
-        <div class="price-card">
-          <div class="plan-name">Starter</div>
-          <div class="plan-amt">$49<small> / month</small></div>
-          <ul>
-            <li>1 facility</li>
-            <li>MAR, residents, staff, incidents</li>
-            <li>Compliance checklist &amp; readiness score</li>
-            <li>AI compliance assistant &amp; daily briefing</li>
-            <li>50 AI actions / month</li>
-            <li>14-day free trial included</li>
-          </ul>
-          <a class="btn ghost" href="https://title22.app/?src=pricing">Start 14-day free trial</a>
-        </div>
+      <div class="price-grid" style="grid-template-columns:minmax(0,420px);justify-content:center">
         <div class="price-card featured">
-          <span class="badge">Most common</span>
-          <div class="plan-name">Pro</div>
-          <div class="plan-amt">$79<small> / month</small></div>
+          <span class="badge">Now No-PHI by Design</span>
+          <div class="plan-name">Lite</div>
+          <div class="plan-amt">$29<small> / month</small></div>
           <ul>
-            <li>Up to 5 facilities</li>
-            <li>Everything in Starter</li>
-            <li>Facility switching from one account</li>
-            <li>Team roles &amp; caregiver access</li>
-            <li>200 AI actions / month</li>
+            <li>Staff management — one record per person, roles and access</li>
+            <li>40-hour training tracking</li>
+            <li>Certification &amp; clearance expiration alerts</li>
+            <li>DSS readiness checklist with readiness score</li>
+            <li>Non-PHI document vault</li>
+            <li>LIC 624 incident reports, without PHI</li>
+            <li>Tello, the AI compliance assistant, and her daily briefing</li>
+            <li>14-day free trial included</li>
           </ul>
           <a class="btn" href="https://title22.app/?src=pricing">Start 14-day free trial</a>
         </div>
-        <div class="price-card">
-          <div class="plan-name">Agency</div>
-          <div class="plan-amt">$249<small> / month</small></div>
-          <ul>
-            <li>Unlimited facilities</li>
-            <li>Everything in Pro</li>
-            <li>500 AI actions / month</li>
-            <li>Built for multi-home operators</li>
-          </ul>
-          <a class="btn ghost" href="https://title22.app/?src=pricing">Start 14-day free trial</a>
-        </div>
       </div>
 
-      <p style="text-align:center;color:var(--muted);font-size:0.9rem;">Every plan starts with a 14-day free trial — no credit card required. The AI assistant works during the trial too (50 actions). Plans are started and managed inside the Title22 app at <strong>title22.app</strong> — same product, the secure app just lives on its own domain.</p>
+      <p style="text-align:center;color:var(--muted);font-size:0.9rem;">Starts with a 14-day free trial — no credit card required. Tello works during the trial too. Plans are started and managed inside the Title22 app at <strong>title22.app</strong> — same product, the secure app just lives on its own domain.</p>
 
       <div class="trust">
-        <p><strong>A hard line we don't cross on any plan:</strong> Title22's AI never suggests, corrects, or comments on clinical dosage information. That's true whether you're on the free trial or the largest plan.</p>
+        <p><strong>What Lite does not hold:</strong> no resident records, no medications, no MAR, no LIC 601 or LIC 602A. That is a design decision, not a gap — keeping resident health information out is what lets Title22 run without a business associate agreement, and it is why the price is $29. Facilities keep using whatever they use today for medication administration.</p>
+        <p><strong>A hard line we don't cross:</strong> Title22's AI never suggests, corrects, or comments on clinical dosage information.</p>
       </div>
     </div>
   </section>

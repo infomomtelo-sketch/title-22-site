@@ -65,7 +65,7 @@ footer{border-top:1px solid var(--border);margin-top:50px;padding-top:20px;font-
 <ul>
 <li><strong>Account information</strong> — your name, email, password, and the facility details you enter when you sign up.</li>
 <li><strong>Billing information</strong> — handled by our payment processor (Stripe). We do not store full card numbers on our systems.</li>
-<li><strong>Facility records</strong> — the information your facility enters into the Service: resident records, staff and certification records, medication administration records, incident reports, daily care logs, compliance checklists, and training records. Some of this is health-related information about residents.</li>
+<li><strong>Facility records</strong> — the information your facility enters into the Service: staff and certification records, facility documents, incident reports, compliance checklists, and training records. The Service does not accept or store resident records, medication records or medication administration records.</li>
 </ul>
 
 <h2>2. Information collected automatically</h2>
@@ -80,10 +80,11 @@ footer{border-top:1px solid var(--border);margin-top:50px;padding-top:20px;font-
 </ul>
 
 <h2>4. Resident and health-related information</h2>
-<p>Title22 stores resident records, which can include health-related information such as medications and care notes. We handle this information as confidential, restrict access to it through your facility's role settings, and process it only to provide the Service. Your facility's licensee and administrator remain responsible for obtaining any consents required to enter information about residents and staff. Title22 is a documentation tool and is not a HIPAA-covered entity; this policy does not create any HIPAA relationship.</p>
+<p>Title22 does not store resident health information. The Service holds no resident records, no medication records and no medication administration records; those features were removed in September 2026 and the existing data was deleted. Do not enter resident health information into free-text fields — it is not a supported use of the Service, and we ask you not to.</p>
+<p>Staff records such as TB clearance, LiveScan results and certifications are employment records rather than medical records. We handle them as confidential, restrict access through your facility's role settings, and process them only to provide the Service. Your facility's licensee and administrator remain responsible for obtaining any consents required to enter information about staff. Title22 is a documentation tool and is not a HIPAA-covered entity; this policy does not create any HIPAA relationship, and no business associate agreement is required for it.</p>
 
 <h2>5. AI features and your records</h2>
-<p>When you use the AI assistant or daily briefing, the relevant records from your account are sent to our AI provider (Anthropic) through their API solely to generate the response you asked for. That content is not used to train AI models. The AI never provides medication-dosage guidance and its output is informational only, as described in our <a href="/terms/">Terms of Service</a>.</p>
+<p>When you use the AI assistant or daily briefing, the relevant records from your account — staff, certifications, checklist items and incidents — are sent to our AI provider (Anthropic) through their API solely to generate the response you asked for. No resident health information is sent, because the Service holds none. That content is not used to train AI models. The AI never provides medication-dosage guidance and its output is informational only, as described in our <a href="/terms/">Terms of Service</a>.</p>
 
 <h2>6. Service providers we share with</h2>
 <p>We share information only with the providers that make the Service work, and only as needed for them to perform their function:</p>
@@ -111,7 +112,7 @@ footer{border-top:1px solid var(--border);margin-top:50px;padding-top:20px;font-
 <h2>11. Contact</h2>
 <p>Questions or requests: <a href="mailto:hello@title-22.com">hello@title-22.com</a></p>
 
-<footer>© 2026 title-22.com. All rights reserved. · <a href="/terms/">Terms of Service</a> · <a href="/security/">Security</a></footer>
+<footer>© 2026 title-22.com. All rights reserved. · <a href="/terms/">Terms of Service</a> · <a href="/security/">Security</a> · <a href="https://title22.app/?src=footer">Open Title22</a></footer>
 </div>
 </body>
 </html>

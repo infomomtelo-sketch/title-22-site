@@ -60,7 +60,7 @@
     <div class="wrap">
       <p class="eyebrow">Features</p>
       <h1>Every module maps to something an analyst checks.</h1>
-      <p class="lede">No generic feature list — each part of Title22 exists because it answers a specific question a DSS licensing analyst asks during a visit.</p>
+      <p class="lede">No generic feature list — each part of Title22 exists because it answers a specific question a DSS licensing analyst asks during a visit. Title22 Lite covers the facility and staff side of Title 22, and holds no resident health information.</p>
     </div>
   </section>
 
@@ -68,11 +68,51 @@
     <div class="wrap">
 
       <div class="ledger">
-        <div class="row" id="mar">
-          <div class="tag-col"><span class="reg">MAR</span></div>
+        <div class="row" id="staff">
+          <div class="tag-col"><span class="reg">LIC 622</span></div>
           <div>
-            <h3>Medication Administration Records</h3>
-            <p>Digital MAR with medication auto-fill pulled from each resident's centrally stored record. Every scheduled dose gets a timestamped entry attributed to the caregiver who administered it. Missed or refused doses require a reason — the system won't let a box stay blank. PRN entries capture the reason for the dose and a follow-up note on the resident's response.</p>
+            <h3>Staff management</h3>
+            <p>One record per person — hire date, role, TB clearance, LiveScan, mandated reporter training — kept the way LIC 622 asks for it. These are employment records, not medical ones, so nothing here is PHI.</p>
+          </div>
+        </div>
+
+        <div class="row" id="training">
+          <div class="tag-col"><span class="reg">40 hours</span></div>
+          <div>
+            <h3>40-hour training tracking</h3>
+            <p>The initial 40-hour requirement tracked per caregiver, with completion dates against each part of it, plus continuing hours after that. Assign by role, see who is short, and print what you have on file.</p>
+          </div>
+        </div>
+
+        <div class="row" id="expirations">
+          <div class="tag-col"><span class="reg">Expiry</span></div>
+          <div>
+            <h3>Certification &amp; clearance expiration alerts</h3>
+            <p>CPR, First Aid, TB, LiveScan and administrator certification, each with its own date and a warning before it lapses. An expired clearance is not a red number on a chart — it is a named person, and the alert says who.</p>
+          </div>
+        </div>
+
+        <div class="row" id="readiness">
+          <div class="tag-col"><span class="reg">Readiness</span></div>
+          <div>
+            <h3>DSS readiness checklist</h3>
+            <p>Title 22, Division 6, Chapter 8 requirements loaded with dates against them, and a readiness score that moves as you work them. Overdue rises to the top, because that is the order the questions come in.</p>
+          </div>
+        </div>
+
+        <div class="row" id="vault">
+          <div class="tag-col"><span class="reg">Documents</span></div>
+          <div>
+            <h3>Non-PHI document vault</h3>
+            <p>Facility and staff documents in one place — licences, policies, TB clearances, certificates — each attached to the person or the facility it belongs to. Resident documents are not accepted, by design.</p>
+          </div>
+        </div>
+
+        <div class="row" id="incidents">
+          <div class="tag-col"><span class="reg">LIC 624</span></div>
+          <div>
+            <h3>LIC 624 incident reports, without PHI</h3>
+            <p>Falls, elopements, behavioural incidents — logged with timestamps and attributed to the caregiver who reported them, with no resident health information attached. What happened, when, and what was done about it.</p>
           </div>
         </div>
 
@@ -80,7 +120,7 @@
           <div class="tag-col"><span class="reg">Staff roles</span></div>
           <div>
             <h3>Role-based caregiver access (RBAC)</h3>
-            <p>Four access levels — administrator, supervisor, caregiver, and read-only — so documentation stays accountable. Caregivers see their shift's residents and tasks; supervisors see facility-wide activity; administrators see everything including audit trails. Every action is attributed to the person who took it, never to a shared login.</p>
+            <p>Four access levels — administrator, supervisor, caregiver, and read-only — so documentation stays accountable. Caregivers see their own tasks and the incidents they log; supervisors see facility-wide activity; administrators see everything including audit trails. Every action is attributed to the person who took it, never to a shared login.</p>
           </div>
         </div>
 
@@ -88,7 +128,7 @@
           <div class="tag-col"><span class="reg">Multi-site</span></div>
           <div>
             <h3>Multi-facility oversight</h3>
-            <p>Operators running more than one licensed facility switch between them from a single account. Records, staff assignments, and residents stay cleanly separated per license number — nothing bleeds between facilities, which matters the moment DSS asks to see records for one specific home.</p>
+            <p>Operators running more than one licensed facility switch between them from a single account. Records and staff assignments stay cleanly separated per license number — nothing bleeds between facilities, which matters the moment DSS asks to see records for one specific home.</p>
           </div>
         </div>
 
@@ -96,20 +136,14 @@
           <div class="tag-col"><span class="reg">Daily brief</span></div>
           <div>
             <h3>AI daily briefing</h3>
-            <p>Each morning, a plain-language summary flags what needs attention: MAR entries with gaps, PRN doses missing a follow-up note, physician orders that haven't been reconciled with the medication record yet. It's the same trace an analyst runs during a visit — run daily instead of once a year.</p>
+            <p>Each morning, a plain-language summary flags what needs attention: overdue compliance tasks, certifications about to expire, staff documents missing, incidents logged recently. It's the same trace an analyst runs during a visit — run daily instead of once a year.</p>
           </div>
         </div>
 
-        <div class="row">
-          <div class="tag-col"><span class="reg">Records</span></div>
-          <div>
-            <h3>Centrally stored medication records</h3>
-            <p>Each medication your facility stores gets a running record: physician, pharmacy, prescription number, quantity received, and instructions for use — reconciled against what's administered and what remains on hand.</p>
-          </div>
-        </div>
       </div>
 
       <div class="trust">
+        <p><strong>What Lite does not hold:</strong> no resident records, no medications, no MAR, no LIC 601 or LIC 602A. Keeping resident health information out is what lets Title22 run without a business associate agreement. Facilities keep using whatever they use today for medication administration.</p>
         <p><strong>A hard line we don't cross:</strong> Title22's AI never suggests, corrects, or comments on clinical dosage information. Medication decisions belong to physicians and pharmacists. Our AI is limited to documentation completeness and compliance — nothing clinical, ever.</p>
       </div>
 
