@@ -114,56 +114,6 @@
   .dropdown a:hover { background: var(--sage); color: var(--pine); }
 
 
-  /* ---- Show, don't tell ---- */
-  .show { background: var(--cream); }
-  .show-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-  @media (max-width: 52rem) { .show-grid { grid-template-columns: 1fr; } }
-  .show-card { margin: 0; background: var(--white); border: 1px solid var(--line);
-    border-radius: 14px; padding: 1.1rem; }
-  .show-card figcaption { font-size: 0.9rem; color: var(--muted); line-height: 1.5; margin-top: 0.9rem; }
-  .show-card figcaption strong { color: var(--ink); display: block; }
-  .viz { height: 150px; display: flex; flex-direction: column; justify-content: center; gap: 0.5rem; }
-
-  .cert-row { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
-    font-size: 0.85rem; padding: 0.5rem 0.65rem; border: 1px solid var(--line); border-radius: 9px; }
-  .cert-name { color: var(--ink); }
-  .chip { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; padding: 0.15rem 0.5rem;
-    border-radius: 20px; white-space: nowrap; }
-  .chip-amber { background: #fdf3e0; color: #8a6a1f; }
-  .chip-red   { background: #fdeaea; color: #8a2b2b; }
-  .chip-green { background: var(--sage); color: var(--deep); }
-  [data-anim].go .cert-row { animation: rowIn .5s ease both; }
-  [data-anim].go .cert-row:nth-child(2) { animation-delay: .5s; }
-  [data-anim].go .cert-row:nth-child(3) { animation-delay: 1s; }
-  @keyframes rowIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-
-  .viz-dial { position: relative; align-items: center; }
-  .viz-dial svg { width: 132px; height: 132px; }
-  .dial-arc { stroke-dasharray: 314; stroke-dashoffset: 314; }
-  [data-anim].go .dial-arc { animation: dial 2s cubic-bezier(.2,.7,.3,1) forwards; }
-  @keyframes dial { to { stroke-dashoffset: 19; } }   /* 94% of 314 */
-  .dial-num { position: absolute; font-family: "IBM Plex Mono", monospace; font-size: 1.5rem;
-    font-weight: 500; color: var(--pine); }
-
-  .step { font-size: 0.9rem; color: var(--ink); display: flex; align-items: center; gap: 0.6rem;
-    padding: 0.45rem 0; opacity: 0; }
-  [data-anim].go .step { animation: stepIn .5s ease both; }
-  [data-anim].go .step:nth-child(2) { animation-delay: .45s; }
-  [data-anim].go .step:nth-child(3) { animation-delay: .9s; }
-  @keyframes stepIn { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: none; } }
-  .step-n { flex: none; width: 22px; height: 22px; border-radius: 50%; background: var(--pine);
-    color: #fff; font-size: 0.75rem; display: grid; place-items: center; }
-
-  .nophi-strip { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem;
-    margin: 1.75rem 0 0; padding: 0; }
-  .nophi-strip span { font-family: "IBM Plex Mono", monospace; font-size: 0.75rem;
-    background: var(--sage); color: var(--deep); border-radius: 20px; padding: 0.3rem 0.8rem; }
-
-  @media (prefers-reduced-motion: reduce) {
-    [data-anim].go .cert-row, [data-anim].go .step { animation: none; opacity: 1; }
-    .dial-arc { stroke-dashoffset: 19; }
-    [data-anim].go .dial-arc { animation: none; }
-  }
 </style>
 </head>
 <body>
