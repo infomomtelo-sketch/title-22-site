@@ -529,8 +529,10 @@ article.post .checklist li::before {
 
 /* ===== Show, don't tell — the animated explainer, used on / and /demo/ ===== */
   .show { background: var(--cream); }
-  .show-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-  @media (max-width: 52rem) { .show-grid { grid-template-columns: 1fr; } }
+  .show-grid { display: grid; gap: 1.25rem;
+    /* auto-fit rather than a fixed 3, because this block is also dropped into
+       the narrow column on /demo/ — it stacks itself instead of overflowing. */
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
   .show-card { margin: 0; background: var(--white); border: 1px solid var(--line);
     border-radius: 14px; padding: 1.1rem; }
   .show-card figcaption { font-size: 0.9rem; color: var(--muted); line-height: 1.5; margin-top: 0.9rem; }
@@ -539,7 +541,9 @@ article.post .checklist li::before {
 
   .cert-row { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
     font-size: 0.85rem; padding: 0.5rem 0.65rem; border: 1px solid var(--line); border-radius: 9px; }
-  .cert-name { color: var(--ink); }
+  .cert-name { color: var(--ink); min-width: 0; overflow: hidden;
+    text-overflow: ellipsis; white-space: nowrap; }
+  .chip { flex: none; }
   .chip { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; padding: 0.15rem 0.5rem;
     border-radius: 20px; white-space: nowrap; }
   .chip-amber { background: #fdf3e0; color: #8a6a1f; }
