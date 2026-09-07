@@ -354,13 +354,19 @@
     var d0 = document.querySelector('[data-count]'); if (d0) count(d0);
     return;
   }
+  // Reveal what came into view AND everything above it: an observer only fires
+  // for what is on screen, so a jump to the bottom of the page leaves every
+  // stage it flew past stuck at opacity 0.
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (!e.isIntersecting) return;
-      e.target.classList.add('go');
-      var d = e.target.querySelector('[data-count]');
-      if (d) count(d);
-      io.unobserve(e.target);
+      var upto = all.indexOf(e.target);
+      all.slice(0, upto + 1).forEach(function (c) {
+        c.classList.add('go');
+        var d = c.querySelector('[data-count]');
+        if (d) count(d);
+        io.unobserve(c);
+      });
     });
   }, { threshold: 0.25 });
   all.forEach(function (c) { io.observe(c); });
