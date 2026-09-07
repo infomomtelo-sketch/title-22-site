@@ -29,35 +29,18 @@
 </script>
 <script type="application/ld+json">
 {
-"@context": "https://schema.org",
-"@type": "SoftwareApplication",
-"name": "Title22 Lite",
-"applicationCategory": "BusinessApplication",
-"operatingSystem": "Web",
-"url": "https://title-22.com/",
-"description": "Title22 Lite — No PHI by design. Staff training, cert tracking, and DSS readiness for California RCFE. No resident records, no MAR.",
-"offers": {
-"@type": "Offer",
-"price": "29.00",
-"priceCurrency": "USD",
-"url": "https://title-22.com/pricing/"
-}
-}
-</script>
-<script type="application/ld+json">
-{
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Title22",
+  "name": "Title22 Lite",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
   "url": "https://title-22.com/",
-  "description": "Medication records, role-based caregiver access, and multi-facility oversight built around California Title 22 requirements.",
+  "description": "Title22 Lite \u2014 No PHI by design. Staff training, cert tracking, and DSS readiness for California RCFE. No resident records, no MAR.",
   "offers": {
     "@type": "Offer",
-    "price": "49.00",
+    "price": "29.00",
     "priceCurrency": "USD",
-    "url": "https://title-22.com/pricing/"
+    "url": "https://title-22.com/pricing"
   }
 }
 </script>
@@ -142,7 +125,7 @@
         <a href="/features/" class="nav-trigger">Features <span class="caret" aria-hidden="true">&#9662;</span></a>
         <div class="dropdown" role="menu">
           <a role="menuitem" href="/features/">All Features</a>
-          <a role="menuitem" href="/features/#mar">Digital MAR</a>
+          <a role="menuitem" href="/features/#staff">Staff &amp; Training</a>
           <a role="menuitem" href="/features/#staff-roles">Caregiver Roles</a>
           <a role="menuitem" href="/features/#multi-site">Multi-Facility</a>
           <a role="menuitem" href="/features/#daily-brief">AI Daily Briefing</a>
@@ -169,13 +152,14 @@
           <a class="btn ghost" href="/demo/">See Title22 in action →</a>
           <a class="btn ghost" href="/score/">Check your readiness — 10 questions</a>
         </div>
-        <p class="price-line">From <strong>$49/month</strong> for one facility · <a href="/pricing/">See all plans</a></p>
+        <p class="price-line"><strong>$29/month</strong> for one facility · <a href="/pricing/">See what's included</a></p>
+        <p class="price-line" style="margin-top:.35rem"><strong>Now No-PHI by Design</strong> — no resident records, no MAR, no medication data. <a href="/pricing/">Why that matters</a></p>
         <div class="reg-strip" aria-label="Regulations and forms covered">
           <span class="lbl">Built around:</span>
           <span class="reg">Title 22, Div. 6, Ch. 8</span>
           <span class="reg">LIC 622</span>
-          <span class="reg">LIC 602A</span>
-          <span class="reg">MAR</span>
+          <span class="reg">LIC 624</span>
+          <span class="reg">40-hour training</span>
         </div>
       </div>
     </div>
@@ -201,8 +185,8 @@
           <div class="kicker">Document Compliance</div>
           <h3>Audit-ready records</h3>
           <ul>
-            <li>Timestamped MAR and staff logs</li>
-            <li>Records mapped to LIC 622 / 602A</li>
+            <li>Timestamped staff and training logs</li>
+            <li>Records mapped to LIC 622</li>
             <li>Find gaps before a DSS visit</li>
           </ul>
         </div>
@@ -284,16 +268,16 @@
           <div class="kicker">Stay Audit-Ready</div>
           <h3>Compliance, every day</h3>
           <ul>
-            <li>Digital MAR with gap flagging</li>
-            <li>PRN reason + follow-up capture</li>
-            <li>Records mapped to LIC 622 / 602A</li>
+            <li>Certification and clearance expiry, flagged early</li>
+            <li>DSS readiness checklist and score</li>
+            <li>Records mapped to LIC 622</li>
           </ul>
         </div>
         <div class="pillar">
           <div class="kicker">Save Staff Time</div>
           <h3>Less paperwork, more care</h3>
           <ul>
-            <li>Medication auto-fill</li>
+            <li>40-hour training tracked per person</li>
             <li>One login instead of paper binders</li>
             <li>Morning briefing in plain language</li>
           </ul>
@@ -302,7 +286,7 @@
           <div class="kicker">Scale With Confidence</div>
           <h3>One system, every facility</h3>
           <ul>
-            <li>Multi-facility switching</li>
+            <li>A document vault that holds no PHI</li>
             <li>Role-based caregiver access</li>
             <li>Consistent records across licenses</li>
           </ul>
@@ -323,10 +307,10 @@
       </div>
       <div class="ledger">
         <div class="row">
-          <div class="tag-col"><span class="reg">MAR</span></div>
+          <div class="tag-col"><span class="reg">LIC 622</span></div>
           <div>
-            <h3>Medication Administration Records</h3>
-            <p>Digital MAR with medication auto-fill, PRN documentation, and complete administration history per resident. Every entry is timestamped and attributed to the caregiver who made it.</p>
+            <h3>Staff files, certifications and the 40-hour training</h3>
+            <p>One record per person: hire date, role, TB clearance, LiveScan, CPR and First Aid expiry, mandated reporter training, and the 40-hour requirement tracked to completion. Expiring items surface before an analyst finds them. These are employment records, not medical ones.</p>
           </div>
         </div>
         <div class="row">
@@ -373,7 +357,11 @@
         </details>
         <details>
           <summary>Which CDSS licensing forms are mapped inside the software?</summary>
-          <p>The core modules map to the documents an analyst checks during a visit: LIC 622 (personnel records / staff files), LIC 602A (physician's report / resident appraisal), and a digital MAR with gap flagging and PRN reason and follow-up tracking.</p>
+          <p>The modules map to the facility and staff documents an analyst checks during a visit: LIC 622 (personnel records / staff files), the 40-hour training requirement, certification and clearance expiry, and LIC 624 incident reports. Resident-side forms — LIC 601, LIC 602A, the MAR — are not in Title22 Lite, because it holds no resident health information.</p>
+        </details>
+        <details>
+          <summary>Is there a MAR?</summary>
+          <p>No. Title22 Lite stores no medication administration record, no medication records and no resident records. Keeping resident health information out is what lets it run without a business associate agreement, and it is why the price is $29. Facilities keep using whatever they use today for medication administration.</p>
         </details>
         <details>
           <summary>Does the AI make clinical decisions or adjust medication doses?</summary>
@@ -381,7 +369,7 @@
         </details>
         <details>
           <summary>We operate multiple facilities. Can we track them all together?</summary>
-          <p>Yes. Administrators switch between facility locations from a single dashboard account, while every resident record, staff log, and license stays separated per facility license number.</p>
+          <p>Yes. Administrators switch between facility locations from a single dashboard account, while every staff log, document and license stays separated per facility license number.</p>
         </details>
       </div>
     </div>
@@ -400,7 +388,7 @@
         </div>
         <div class="proof">
           <div class="proof-k">Grounded in the regulation text</div>
-          <p>Requirements are drawn from Title&nbsp;22, Division 6, Chapter 8 and mapped to LIC&nbsp;622, LIC&nbsp;602A and the MAR. Where a rule isn't grounded in the regulations or a practicing administrator's knowledge, it doesn't ship.</p>
+          <p>Requirements are drawn from Title&nbsp;22, Division 6, Chapter 8 and mapped to LIC&nbsp;622, LIC&nbsp;624 and the staff training rules. Where a rule isn't grounded in the regulations or a practicing administrator's knowledge, it doesn't ship.</p>
         </div>
         <div class="proof">
           <div class="proof-k">A line we don't cross</div>
