@@ -4,46 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Title22 — Guided walkthrough</title>
-<meta name="description" content="A full narrated tour of Title22 — how RCFE facilities stay DSS-ready with a live readiness score, an AI compliance assistant grounded in your records, staff and training tracking, and an append-only audit log.">
+<meta name="description" content="A step-by-step tour of Title22 — how RCFE facilities stay DSS-ready with a live readiness score, an AI compliance assistant grounded in your records, staff and training tracking, and an append-only audit log. No resident health information anywhere in it.">
 <link rel="canonical" href="https://title-22.com/walkthrough/">
 
 <!-- Open Graph -->
-<meta property="og:type" content="video.other">
+<meta property="og:type" content="website">
 <meta property="og:url" content="https://title-22.com/walkthrough/">
 <meta property="og:title" content="Title22 — Guided walkthrough">
-<meta property="og:description" content="A full narrated tour of Title22 — how RCFE facilities stay DSS-ready with a live readiness score, an AI compliance assistant grounded in your records, staff and training tracking, and an append-only audit log.">
+<meta property="og:description" content="A step-by-step tour of Title22 — how RCFE facilities stay DSS-ready with a live readiness score, an AI compliance assistant grounded in your records, staff and training tracking, and an append-only audit log.">
 <meta property="og:image" content="https://title-22.com/share-kit/title22-share-card-1200x630.png">
-<meta property="og:video" content="https://title-22.com/videos/title22-walkthrough.mp4">
-<meta property="og:video:secure_url" content="https://title-22.com/videos/title22-walkthrough.mp4">
-<meta property="og:video:type" content="video/mp4">
-<meta property="og:video:width" content="1920">
-<meta property="og:video:height" content="1080">
 
 <!-- Twitter card -->
-<meta name="twitter:card" content="player">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Title22 — Guided walkthrough">
-<meta name="twitter:description" content="A full narrated tour of Title22 — how RCFE facilities stay DSS-ready: readiness score, AI compliance assistant, staff and training tracking, and an append-only audit log.">
+<meta name="twitter:description" content="A step-by-step tour of Title22 — how RCFE facilities stay DSS-ready: readiness score, AI compliance assistant, staff and training tracking, and an append-only audit log.">
 <meta name="twitter:image" content="https://title-22.com/share-kit/title22-share-card-1200x630.png">
-<meta name="twitter:player" content="https://title-22.com/walkthrough/">
-<meta name="twitter:player:width" content="1280">
-<meta name="twitter:player:height" content="720">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "VideoObject",
-  "name": "Title22 — Guided walkthrough",
-  "description": "A full narrated tour of Title22 — how RCFE facilities stay DSS-ready with a live readiness score, an AI compliance assistant grounded in the facility's actual records, staff and training tracking, and an append-only audit log.",
-  "thumbnailUrl": "https://title-22.com/videos/title22-walkthrough-poster.jpg",
-  "contentUrl": "https://title-22.com/videos/title22-walkthrough.mp4",
-  "uploadDate": "2026-07-31",
-  "duration": "PT3M27S"
-}
-</script>
 
 <meta property="og:site_name" content="Title22">
-<meta property="og:image:alt" content="Title22 full product walkthrough video">
-<meta name="twitter:image:alt" content="Title22 full product walkthrough video">
+<meta property="og:image:alt" content="Title22 — RCFE compliance software">
+<meta name="twitter:image:alt" content="Title22 — RCFE compliance software">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -77,41 +56,6 @@
   .wt-hero h1 em { font-style: italic; color: var(--pine); }
   .wt-lede { font-size: 1.15rem; color: var(--muted); max-width: 40rem; }
 
-  /* Landscape 16:9 player */
-  .wt-frame {
-    position: relative;
-    width: 100%;
-    max-width: 52rem;
-    margin: 2.25rem auto 0;
-    aspect-ratio: 16 / 9;
-    background: #000;
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid var(--line);
-    box-shadow: 0 18px 50px -22px rgba(20, 60, 49, 0.5);
-  }
-  .wt-frame video { width: 100%; height: 100%; display: block; background: #000; }
-  .wt-overlay {
-    position: absolute; inset: 0;
-    display: flex; align-items: center; justify-content: center;
-    background: linear-gradient(180deg, rgba(20,60,49,.10), rgba(20,60,49,.40));
-    border: 0; cursor: pointer; transition: opacity .25s ease;
-  }
-  .wt-overlay.hidden { opacity: 0; pointer-events: none; }
-  .play-pill {
-    display: flex; align-items: center; gap: .55rem;
-    background: var(--white); color: var(--deep);
-    font-family: "Public Sans", sans-serif; font-weight: 600; font-size: 1rem;
-    padding: .7rem 1.25rem; border-radius: 999px;
-    box-shadow: 0 10px 26px -8px rgba(0,0,0,.45);
-  }
-  .play-pill .tri {
-    width: 0; height: 0; margin-left: 2px;
-    border-left: 15px solid var(--pine);
-    border-top: 9px solid transparent;
-    border-bottom: 9px solid transparent;
-  }
-
   .cta-row { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1.75rem; }
   .meta-line { color: var(--muted); font-size: .92rem; margin-top: 1rem; }
 
@@ -123,6 +67,47 @@
     text-decoration: none; cursor: pointer;
   }
   .share-btn:hover { background: var(--sage); }
+
+  /* The tour itself: numbered stages, each animating in as you reach it. */
+  .tour { margin: 2.5rem auto 0; max-width: 46rem; }
+  .tour-step {
+    display: grid; grid-template-columns: 2.25rem 1fr; gap: 1rem;
+    padding: 1.5rem 0; border-top: 1px solid var(--line);
+    opacity: 0; transform: translateY(10px);
+    transition: opacity .5s ease, transform .5s ease;
+  }
+  .tour-step.go { opacity: 1; transform: none; }
+  .tour-step .n {
+    width: 2.25rem; height: 2.25rem; border-radius: 50%;
+    background: var(--pine); color: #fff; display: grid; place-items: center;
+    font-family: "IBM Plex Mono", monospace; font-size: .85rem;
+  }
+  .tour-step h3 { margin: .35rem 0 .4rem; }
+  .tour-step p { color: var(--muted); margin: 0 0 .85rem; }
+  @media (max-width: 34rem) {
+    .tour-step { grid-template-columns: 1fr; gap: .5rem; }
+  }
+
+  /* Small in-place visuals, built from the shared .viz vocabulary. */
+  .tour-viz { background: var(--white); border: 1px solid var(--line); border-radius: 12px; padding: .9rem; }
+  .tick-row {
+    display: flex; align-items: center; gap: .6rem; font-size: .88rem;
+    padding: .45rem 0; opacity: 0;
+  }
+  .tour-step.go .tick-row { animation: stepIn .45s ease both; }
+  .tour-step.go .tick-row:nth-child(2) { animation-delay: .35s; }
+  .tour-step.go .tick-row:nth-child(3) { animation-delay: .7s; }
+  .tick {
+    flex: none; width: 1.1rem; height: 1.1rem; border-radius: 4px;
+    border: 1.5px solid var(--pine); display: grid; place-items: center;
+    color: var(--pine); font-size: .7rem; line-height: 1;
+  }
+  .tick.no { border-color: #b45454; color: #b45454; }
+  .ask-bubble {
+    background: var(--sage); color: var(--deep); border-radius: 12px;
+    padding: .7rem .9rem; font-size: .9rem; max-width: 22rem; margin-left: auto;
+  }
+  .ask-answer { font-size: .88rem; color: var(--ink); margin-top: .6rem; line-height: 1.55; }
 
   .wt-points {
     display: grid; grid-template-columns: repeat(3, 1fr);
@@ -139,6 +124,11 @@
     text-align: center;
     padding: 2.75rem 0;
     margin-top: 2.5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tour-step { opacity: 1; transform: none; transition: none; }
+    .tour-step.go .tick-row, .tick-row { animation: none; opacity: 1; }
   }
 </style>
 </head>
@@ -161,23 +151,101 @@
 <main class="wt-hero">
   <div class="wrap">
     <h1>A <em>guided</em> walkthrough of Title22</h1>
-    <p class="wt-lede">The full narrated tour — start to finish in about two and a half minutes. See exactly how a facility goes from scattered records to DSS-ready.</p>
+    <p class="wt-lede">Six stages, start to finish — from an empty account to a report you can hand an analyst. Scroll it in about a minute.</p>
 
-    <div class="wt-frame" id="wtFrame">
-      <video id="wtVideo"
-             src="/videos/title22-walkthrough.mp4"
-             poster="/videos/title22-walkthrough-poster.jpg"
-             preload="metadata"
-             playsinline controls>
-        Your browser doesn't support embedded video.
-        <a href="/videos/title22-walkthrough.mp4">Download the walkthrough (MP4)</a>.
-      </video>
-      <button class="wt-overlay" id="wtOverlay" aria-label="Play the guided walkthrough with sound">
-        <span class="play-pill"><span class="tri" aria-hidden="true"></span> Play walkthrough</span>
-      </button>
+    <div class="tour">
+
+      <div class="tour-step" data-step>
+        <span class="n">1</span>
+        <div>
+          <span class="reg">Setup</span>
+          <h3>Tell it about your home</h3>
+          <p>Facility name, licence number, type and licensed capacity. That loads the Title 22 requirements that apply to <em>your</em> home — an RCFE with six beds is not asked for what a 50-bed home is asked for.</p>
+        </div>
+      </div>
+
+      <div class="tour-step" data-step>
+        <span class="n">2</span>
+        <div>
+          <span class="reg">Compliance checklist</span>
+          <h3>Every requirement as a yes or no</h3>
+          <p>The whole list in one place, answered the way an analyst asks it. Nothing here needs a resident record — you are attesting on a date, and the date is kept.</p>
+          <div class="tour-viz">
+            <div class="tick-row"><span class="tick">✓</span> Fire clearance current, drill log up to date</div>
+            <div class="tick-row"><span class="tick">✓</span> Every staff member's TB clearance on file</div>
+            <div class="tick-row"><span class="tick no">✕</span> Emergency disaster plan written and trained</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-step" data-step>
+        <span class="n">3</span>
+        <div>
+          <span class="reg">Staff &amp; training</span>
+          <h3>It tells you whose card expires</h3>
+          <p>Add each employee once. CPR, First Aid, TB, LiveScan, mandated reporter, the 40-hour initial and the hours logged since — each with its own date, each warning you before it lapses. Employment records, not health records.</p>
+          <div class="tour-viz">
+            <div class="tick-row"><span class="cert-name">CPR — J. Carter</span><span class="chip chip-amber" style="margin-left:auto">20 days</span></div>
+            <div class="tick-row"><span class="cert-name">TB — D. Reyes</span><span class="chip chip-red" style="margin-left:auto">Overdue</span></div>
+            <div class="tick-row"><span class="cert-name">40-hour — M. Patel</span><span class="chip chip-amber" style="margin-left:auto">16 of 40</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-step" data-step>
+        <span class="n">4</span>
+        <div>
+          <span class="reg">Readiness score</span>
+          <h3>One number, and what moves it</h3>
+          <p>A live score across administrator, staff and facility requirements, with the shortfalls listed in the order worth fixing. Tick something off and watch it climb.</p>
+          <div class="tour-viz" style="display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap">
+            <div class="viz viz-dial" data-anim style="height:auto">
+              <svg viewBox="0 0 120 120" role="img" aria-label="Readiness score rising to 94 percent">
+                <circle cx="60" cy="60" r="50" fill="none" stroke="var(--line)" stroke-width="10"/>
+                <circle class="dial-arc" cx="60" cy="60" r="50" fill="none" stroke="var(--pine)"
+                        stroke-width="10" stroke-linecap="round" transform="rotate(-90 60 60)"/>
+              </svg>
+              <div class="dial-num"><span data-count>71</span>%</div>
+            </div>
+            <div style="font-size:.88rem;color:var(--muted);min-width:12rem;flex:1">
+              Fix these next:<br>
+              1 · Emergency disaster plan missing<br>
+              2 · J. Carter's CPR expires in 20 days<br>
+              3 · D. Reyes' TB clearance overdue
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-step" data-step>
+        <span class="n">5</span>
+        <div>
+          <span class="reg">Ask Tello</span>
+          <h3>A plain-English answer, built on your own records</h3>
+          <p>Ask what is outstanding and get an answer assembled from what is actually in your account — not a generic FAQ. She will not quote a regulation back at you as settled fact; anything regulatory goes to your licensing analyst.</p>
+          <div class="tour-viz">
+            <div class="ask-bubble">Am I ready for an inspection?</div>
+            <p class="ask-answer">You're at 94%. Three things stand between you and a clean visit: the emergency disaster plan isn't on file, J. Carter's CPR expires in 20 days, and D. Reyes' TB clearance is overdue.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-step" data-step>
+        <span class="n">6</span>
+        <div>
+          <span class="reg">Audit log &amp; export</span>
+          <h3>Something to hand over</h3>
+          <p>Every change recorded, timestamped and attributed — who did it, and when. Export the packet as a PDF when the analyst is at the door.</p>
+        </div>
+      </div>
+
     </div>
 
-    <p class="meta-line">Narrated · 3 min 27 sec · sound on</p>
+    <p class="nophi-strip">
+      <span>No PHI stored</span><span>No BAA to sign</span><span>Nothing to breach</span>
+    </p>
+
+    <p class="meta-line">No residents, no medications, no MAR — Title22 holds none of it, by design.</p>
 
     <div class="cta-row">
       <a class="btn" href="https://title22.app/?src=walkthrough" data-track="wt-start-free-trial">Start 14-day free trial</a>
@@ -187,7 +255,7 @@
     <div class="share">
       <span class="lbl">Share:</span>
       <button class="share-btn" id="copyLinkBtn" data-track="wt-share-copy">🔗 <span id="copyLabel">Copy link</span></button>
-      <a class="share-btn" data-track="wt-share-email" href="mailto:?subject=Title22%20%E2%80%94%20guided%20walkthrough&body=A%20narrated%20tour%20of%20how%20Title22%20keeps%20RCFE%20facilities%20DSS-ready%3A%20https%3A%2F%2Ftitle-22.com%2Fwalkthrough%2F">✉️ Email</a>
+      <a class="share-btn" data-track="wt-share-email" href="mailto:?subject=Title22%20%E2%80%94%20guided%20walkthrough&body=A%20tour%20of%20how%20Title22%20keeps%20RCFE%20facilities%20DSS-ready%3A%20https%3A%2F%2Ftitle-22.com%2Fwalkthrough%2F">✉️ Email</a>
       <a class="share-btn" data-track="wt-share-linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftitle-22.com%2Fwalkthrough%2F" target="_blank" rel="noopener">in LinkedIn</a>
       <a class="share-btn" data-track="wt-share-x" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Ftitle-22.com%2Fwalkthrough%2F&text=A%20guided%20tour%20of%20how%20Title22%20keeps%20RCFE%20facilities%20DSS-ready." target="_blank" rel="noopener">𝕏 Post</a>
       <a class="share-btn" data-track="wt-share-whatsapp" href="https://wa.me/?text=A%20guided%20tour%20of%20how%20Title22%20keeps%20RCFE%20facilities%20DSS-ready%3A%20https%3A%2F%2Ftitle-22.com%2Fwalkthrough%2F" target="_blank" rel="noopener">💬 WhatsApp</a>
@@ -260,21 +328,42 @@
       document.body.removeChild(ta); done();
     }
   });
+})();
+</script>
 
-  /* Narrated video: click-to-play WITH SOUND (no muted autoplay).
-     The overlay plays with sound; native controls stay available. */
-  var video = document.getElementById('wtVideo');
-  var overlay = document.getElementById('wtOverlay');
-  function hideOverlay() { overlay.classList.add('hidden'); }
-
-  overlay.addEventListener('click', function () {
-    video.muted = false;
-    var p = video.play();
-    if (p && p.catch) p.catch(function () {});
-    hideOverlay();
-    track('wt-play');
-  });
-  video.addEventListener('play', hideOverlay);
+<script>
+// Reveal each stage as it comes into view, once. Everything degrades to its
+// finished state if this never runs, and reduced-motion skips it outright.
+(function () {
+  var steps = document.querySelectorAll('[data-step]');
+  var cards = document.querySelectorAll('[data-anim]');
+  var all = [].slice.call(steps).concat([].slice.call(cards));
+  if (!all.length) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var counted = false;
+  function count(el) {
+    if (counted || reduce) { el.textContent = '94'; return; }
+    counted = true;
+    var n = 71, t = setInterval(function () {
+      n++; el.textContent = n;
+      if (n >= 94) clearInterval(t);
+    }, 2000 / 23);
+  }
+  if (reduce || !('IntersectionObserver' in window)) {
+    all.forEach(function (c) { c.classList.add('go'); });
+    var d0 = document.querySelector('[data-count]'); if (d0) count(d0);
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('go');
+      var d = e.target.querySelector('[data-count]');
+      if (d) count(d);
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.25 });
+  all.forEach(function (c) { io.observe(c); });
 })();
 </script>
 </body>
