@@ -113,6 +113,57 @@
   }
   .dropdown a:hover { background: var(--sage); color: var(--pine); }
 
+
+  /* ---- Show, don't tell ---- */
+  .show { background: var(--cream); }
+  .show-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  @media (max-width: 52rem) { .show-grid { grid-template-columns: 1fr; } }
+  .show-card { margin: 0; background: var(--white); border: 1px solid var(--line);
+    border-radius: 14px; padding: 1.1rem; }
+  .show-card figcaption { font-size: 0.9rem; color: var(--muted); line-height: 1.5; margin-top: 0.9rem; }
+  .show-card figcaption strong { color: var(--ink); display: block; }
+  .viz { height: 150px; display: flex; flex-direction: column; justify-content: center; gap: 0.5rem; }
+
+  .cert-row { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+    font-size: 0.85rem; padding: 0.5rem 0.65rem; border: 1px solid var(--line); border-radius: 9px; }
+  .cert-name { color: var(--ink); }
+  .chip { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; padding: 0.15rem 0.5rem;
+    border-radius: 20px; white-space: nowrap; }
+  .chip-amber { background: #fdf3e0; color: #8a6a1f; }
+  .chip-red   { background: #fdeaea; color: #8a2b2b; }
+  .chip-green { background: var(--sage); color: var(--deep); }
+  [data-anim].go .cert-row { animation: rowIn .5s ease both; }
+  [data-anim].go .cert-row:nth-child(2) { animation-delay: .5s; }
+  [data-anim].go .cert-row:nth-child(3) { animation-delay: 1s; }
+  @keyframes rowIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+  .viz-dial { position: relative; align-items: center; }
+  .viz-dial svg { width: 132px; height: 132px; }
+  .dial-arc { stroke-dasharray: 314; stroke-dashoffset: 314; }
+  [data-anim].go .dial-arc { animation: dial 2s cubic-bezier(.2,.7,.3,1) forwards; }
+  @keyframes dial { to { stroke-dashoffset: 19; } }   /* 94% of 314 */
+  .dial-num { position: absolute; font-family: "IBM Plex Mono", monospace; font-size: 1.5rem;
+    font-weight: 500; color: var(--pine); }
+
+  .step { font-size: 0.9rem; color: var(--ink); display: flex; align-items: center; gap: 0.6rem;
+    padding: 0.45rem 0; opacity: 0; }
+  [data-anim].go .step { animation: stepIn .5s ease both; }
+  [data-anim].go .step:nth-child(2) { animation-delay: .45s; }
+  [data-anim].go .step:nth-child(3) { animation-delay: .9s; }
+  @keyframes stepIn { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: none; } }
+  .step-n { flex: none; width: 22px; height: 22px; border-radius: 50%; background: var(--pine);
+    color: #fff; font-size: 0.75rem; display: grid; place-items: center; }
+
+  .nophi-strip { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem;
+    margin: 1.75rem 0 0; padding: 0; }
+  .nophi-strip span { font-family: "IBM Plex Mono", monospace; font-size: 0.75rem;
+    background: var(--sage); color: var(--deep); border-radius: 20px; padding: 0.3rem 0.8rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-anim].go .cert-row, [data-anim].go .step { animation: none; opacity: 1; }
+    .dial-arc { stroke-dashoffset: 19; }
+    [data-anim].go .dial-arc { animation: none; }
+  }
 </style>
 </head>
 <body>
@@ -165,11 +216,62 @@
     </div>
   </section>
 
+  <!-- Show, don't tell. Three loops that explain the product without a
+       paragraph. Pure CSS/SVG — no video files, no build step, and they
+       animate on scroll rather than on load so a phone doesn't burn battery
+       on something off-screen. prefers-reduced-motion holds them still. -->
+  <section class="show" aria-label="How Title22 works">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Ten seconds, not ten paragraphs.</h2>
+        <p>This is the whole product.</p>
+      </div>
+
+      <div class="show-grid">
+
+        <figure class="show-card" data-anim>
+          <div class="viz viz-cert">
+            <div class="cert-row"><span class="cert-name">CPR — J. Carter</span><span class="chip chip-amber">20 days</span></div>
+            <div class="cert-row"><span class="cert-name">TB — D. Reyes</span><span class="chip chip-red">Overdue</span></div>
+            <div class="cert-row"><span class="cert-name">First Aid — S. Ivanova</span><span class="chip chip-green">Current</span></div>
+          </div>
+          <figcaption><strong>It tells you whose.</strong> Not a number on a chart — a named person and a date.</figcaption>
+        </figure>
+
+        <figure class="show-card" data-anim>
+          <div class="viz viz-dial">
+            <svg viewBox="0 0 120 120" role="img" aria-label="Readiness score rising from 71 to 94 percent">
+              <circle cx="60" cy="60" r="50" fill="none" stroke="var(--line)" stroke-width="10"/>
+              <circle class="dial-arc" cx="60" cy="60" r="50" fill="none" stroke="var(--pine)"
+                      stroke-width="10" stroke-linecap="round" transform="rotate(-90 60 60)"/>
+            </svg>
+            <div class="dial-num"><span data-count>71</span>%</div>
+          </div>
+          <figcaption><strong>Readiness moves as you work.</strong> Tick an item, watch it climb.</figcaption>
+        </figure>
+
+        <figure class="show-card" data-anim>
+          <div class="viz viz-steps">
+            <div class="step"><span class="step-n">1</span> Add your staff</div>
+            <div class="step"><span class="step-n">2</span> Dates go in once</div>
+            <div class="step"><span class="step-n">3</span> It warns you before DSS does</div>
+          </div>
+          <figcaption><strong>Setup is an evening.</strong> Then it runs in the background.</figcaption>
+        </figure>
+
+      </div>
+
+      <p class="nophi-strip">
+        <span>No PHI stored</span><span>No BAA to sign</span><span>Nothing to breach</span>
+      </p>
+    </div>
+  </section>
+
   <section>
     <div class="wrap">
       <div class="section-head">
         <h2>Built for staff training records and inspection readiness</h2>
-        <p>Facilities need more than a checklist — they need to document that training happened, keep the proof on file, and stay audit-ready.</p>
+        <p>Document that training happened. Keep the proof on file.</p>
       </div>
       <div class="pillars">
         <div class="pillar">
@@ -261,7 +363,7 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Everything you need, in three places</h2>
-        <p>Compliance, staff time, and growth — the three things that actually keep an administrator up at night.</p>
+        <p>The three things that keep an administrator up at night.</p>
       </div>
       <div class="pillars">
         <div class="pillar">
@@ -379,7 +481,7 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Built from real facility operations</h2>
-        <p>Built from real facility operations, with requirements guided by a certified California RCFE administrator. The workflows come from real facility operations and real DSS visits — not guesses about what compliance looks like.</p>
+        <p>Guided by a certified California RCFE administrator. From real DSS visits, not guesses.</p>
       </div>
       <div class="proof-band">
         <div class="proof">
@@ -496,6 +598,40 @@
   io.observe(explainer);
 })();
 
+</script>
+
+<script>
+// Animate on scroll, once. Everything degrades to its finished state if this
+// never runs — the CSS end-states are the defaults under reduced-motion.
+(function () {
+  var cards = document.querySelectorAll('[data-anim]');
+  if (!cards.length) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var counted = false;
+  function count(el) {
+    if (counted || reduce) { el.textContent = '94'; return; }
+    counted = true;
+    var n = 71, t = setInterval(function () {
+      n++; el.textContent = n;
+      if (n >= 94) clearInterval(t);
+    }, 2000 / 23);
+  }
+  if (!('IntersectionObserver' in window)) {
+    cards.forEach(function (c) { c.classList.add('go'); });
+    var d0 = document.querySelector('[data-count]'); if (d0) count(d0);
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('go');
+      var d = e.target.querySelector('[data-count]');
+      if (d) count(d);
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.35 });
+  cards.forEach(function (c) { io.observe(c); });
+})();
 </script>
 </body>
 </html>
