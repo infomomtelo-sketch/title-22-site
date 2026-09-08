@@ -582,3 +582,17 @@ article.post .checklist li::before {
     [data-anim].go .dial-arc { animation: none; }
   }
 
+
+
+/* Pricing: two tiers plus an Agency line. Added when the page went from one
+   plan to two — the app's billing tab had been offering both all along. */
+.plan-sub { color: var(--muted); font-size: 0.9rem; margin: -0.35rem 0 0.9rem; }
+.agency-row {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap;
+  max-width: 56rem; margin: 1.5rem auto 0;
+  border: 1px solid var(--line); border-radius: 12px;
+  padding: 1rem 1.25rem; background: var(--white);
+}
+.agency-row strong { display: block; }
+.agency-row span { color: var(--muted); font-size: 0.9rem; }

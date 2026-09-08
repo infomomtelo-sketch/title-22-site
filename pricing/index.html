@@ -69,15 +69,24 @@
 </head>
 <body>
 
-<!-- Title22 Lite, $29/month, one tier. Sept 2026: the product no longer holds
-     resident health information — no MAR, no medication records, no resident
-     records — which is what took the BAA and the $599 infrastructure bill off
-     the table. Starter $49 / Pro $79 / Specialist $149 / Agency $249 are
-     RETIRED from this page. Keep them MAPPED in the webhook and the
-     title22-ai worker as legacy tiers so no existing sub breaks.
-     If you change the Stripe price, update BOTH this page and the app's
-     billing tab.
-     AI actions/month synced with the title22-ai worker LIMITS map. -->
+<!-- TWO tiers are sold: Lite $29 (one facility) and Multi-Home $79 (up to
+     five). Agency is Contact Sales with NO price. That is the rule in the
+     app's CLAUDE.md and this page must not disagree with it — it said "One
+     plan. $29 a month." for two days while the app's billing tab offered
+     both, so anyone who read the site and then opened the app found a tier
+     that did not exist here.
+
+     Sept 2026: the product no longer holds resident health information — no
+     MAR, no medication records, no resident records — which is what took the
+     BAA and the $599 infrastructure bill off the table. Both tiers hold the
+     same nothing; Multi-Home buys facilities, not features.
+
+     Starter $49 / Pro $79 / Specialist $149 are RETIRED from this page and
+     must not be offered. Keep them MAPPED in the webhook and the title22-ai
+     worker as legacy tiers so no existing subscriber breaks.
+
+     If you change a Stripe price, update BOTH this page and the app's billing
+     tab. AI actions/month synced with the title22-ai worker LIMITS map. -->
 
 <header class="site-head">
   <div class="wrap">
@@ -97,18 +106,19 @@
   <section class="hero" style="padding-bottom: 1rem;">
     <div class="wrap">
       <p class="eyebrow">Pricing</p>
-      <h1>One plan. $29 a month.</h1>
+      <h1>$29 for one home. $79 for up to five.</h1>
       <p class="lede">Title22 Lite covers the facility and staff side of Title 22 — staff records, the 40-hour training requirement, certification and clearance expiry, the DSS readiness checklist, a document vault that holds no resident health information, and LIC 624 incident reports without PHI. Tello, the AI compliance assistant, is included, with her daily briefing. No credit card required to start.</p>
     </div>
   </section>
 
   <section>
     <div class="wrap">
-      <div class="price-grid" style="grid-template-columns:minmax(0,420px);justify-content:center">
+      <div class="price-grid" style="grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));max-width:56rem;margin-inline:auto">
         <div class="price-card featured">
           <span class="badge">Now No-PHI by Design</span>
           <div class="plan-name">Lite</div>
           <div class="plan-amt">$29<small> / month</small></div>
+          <p class="plan-sub">One facility.</p>
           <ul>
             <li>Staff management — one record per person, roles and access</li>
             <li>40-hour training tracking</li>
@@ -121,12 +131,35 @@
           </ul>
           <a class="btn" href="https://title22.app/?src=pricing">Start 14-day free trial</a>
         </div>
+
+        <div class="price-card">
+          <div class="plan-name">Multi-Home</div>
+          <div class="plan-amt">$79<small> / month</small></div>
+          <p class="plan-sub">Up to five facilities.</p>
+          <ul>
+            <li>Everything in Lite, on every home you run</li>
+            <li>Switch between facilities without signing out</li>
+            <li>One readiness score per facility</li>
+            <li>Staff, training and certifications kept per facility</li>
+            <li>Tello answers from whichever facility you are in</li>
+            <li>14-day free trial included</li>
+          </ul>
+          <a class="btn ghost" href="https://title22.app/?src=pricing-multi">Start 14-day free trial</a>
+        </div>
       </div>
 
-      <p style="text-align:center;color:var(--muted);font-size:0.9rem;">Starts with a 14-day free trial — no credit card required. Tello works during the trial too. Plans are started and managed inside the Title22 app at <strong>title22.app</strong> — same product, the secure app just lives on its own domain.</p>
+      <div class="agency-row">
+        <div>
+          <strong>Agency</strong>
+          <span>More than five homes, or a management company running them for other licensees.</span>
+        </div>
+        <a class="btn ghost" href="mailto:hello@title-22.com?subject=Agency%20plan%20%E2%80%94%20Title22">Contact sales</a>
+      </div>
+
+      <p style="text-align:center;color:var(--muted);font-size:0.9rem;">Both plans start with a 14-day free trial — no credit card required. Tello works during the trial too. Plans are started and managed inside the Title22 app at <strong>title22.app</strong> — same product, the secure app just lives on its own domain.</p>
 
       <div class="trust">
-        <p><strong>What Lite does not hold:</strong> no resident records, no medications, no MAR, no LIC 601 or LIC 602A. That is a design decision, not a gap — keeping resident health information out is what lets Title22 run without a business associate agreement, and it is why the price is $29. Facilities keep using whatever they use today for medication administration.</p>
+        <p><strong>What neither plan holds:</strong> no resident records, no medications, no MAR, no LIC 601 or LIC 602A. That is a design decision, not a gap — keeping resident health information out is what lets Title22 run without a business associate agreement, and it is why the price is $29. Facilities keep using whatever they use today for medication administration.</p>
         <p><strong>A hard line we don't cross:</strong> Title22's AI never suggests, corrects, or comments on clinical dosage information.</p>
       </div>
     </div>
