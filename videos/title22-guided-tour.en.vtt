@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: en
+
+NOTE
+Generated with the recording, from the app's own TOUR_STEPS copy in
+index.html -- verbatim, not paraphrased. Cue times are exact: the script
+that drove the tour also wrote this file, so they cannot drift from the
+picture unless the video is re-cut.
+
+NOTE
+Every screen is the real app at /?demo=1&tour=1 with invented staff and a
+stubbed database. No resident data appears, because Lite does not have any
+to show.
+
+1
+00:00:04.369 --> 00:00:15.369
+This is the number that matters — Requirements
+that are current, out of requirements that
+exist. Not a grade for effort — an inspector
+could ask about any of them today.
+
+2
+00:00:17.004 --> 00:00:25.604
+And it tells you whose — An expired TB test is
+not a red number on a chart. It is a named
+person, and tapping it opens their record.
+
+3
+00:00:27.200 --> 00:00:37.600
+One button for inspection day — Every filed
+document in one place, and a 90-day DSS packet
+you can print from the dashboard while the
+analyst is sitting there.
+
+4
+00:00:39.189 --> 00:00:49.589
+The checklist an analyst works from — Title 22
+requirements with dates against them. Overdue
+rises to the top, because that is the order
+the questions come in.
+
+5
+00:00:51.184 --> 00:01:02.184
+Five roles, and you choose them — A caregiver
+logs incidents and files documents. An
+in-house caregiver also works the checklist; a
+supervisor sees staff files too. Read-only is
+what you hand an inspector. Nobody picks their
+own — the administrator sets it when the
+invitation goes out.
+
+6
+00:01:03.785 --> 00:01:12.718
+Now ask me something — Try "am I ready for
+DSS?" or "who has expired certs?". I read this
+facility’s actual records and answer from
+them.
