@@ -1,0 +1,158 @@
+WEBVTT
+Kind: subtitles
+Language: en
+
+NOTE
+Title22 overview, 2:47. This file is the source of record for the ES and FIL
+files: cue numbers and timings are identical in all three, so a player can
+swap tracks mid-play without a jump.
+
+NOTE
+Transcribed from the published transcript of the narration, which is also
+where the cue boundaries come from. They have not been tightened against the
+waveform; some cues hold for 10-15s. Tighten them before this ships anywhere
+that matters.
+
+NOTE
+THREE CUES ARE NOT SAFE TO PUBLISH AS THEY STAND:
+
+NOTE
+  Cue 4 (0:31-0:38) says the checklist ships with "the related regulation
+  references". It does not. Checklist citations are deliberately null in the
+  app, for the same reason Tello may not state a requirement as settled fact.
+
+NOTE
+  Cue 7 (0:53-1:08) says alerts surface at 90, 30 and 7 days. The banner uses
+  30 and 7 only. The one 90-day figure in the app is a MINUS -- the lookback
+  window on the DSS export -- not an alert.
+
+NOTE
+  Neither of those is fixable in a caption, because a caption has to match the
+  audio. Those two lines need re-recording.
+
+NOTE
+  Cue 17 (2:08-2:13) is RECONSTRUCTED, not heard. The supplied transcript has
+  a gap there. The opening clause (cue 16) and the closing clause (the last
+  line of cue 17) are verbatim; the words joining them were inferred from the
+  grammar and from what the product actually claims. Check it against the
+  audio before publishing.
+
+1
+00:00:02.000 --> 00:00:12.000
+Welcome to Title22, a focused compliance
+workspace for California residential care
+facilities for the elderly and community-based
+residential care facilities.
+
+2
+00:00:12.000 --> 00:00:24.000
+Title22 is designed to help a facility stay
+inspection ready every day, not only when DSS
+is expected. The public experience starts with
+a clear promise.
+
+3
+00:00:24.000 --> 00:00:31.000
+Keep staff credentials current, document
+required training, and know exactly what needs
+attention.
+
+4
+00:00:31.000 --> 00:00:38.000
+The compliance checklist comes preloaded with
+Title 22 requirements and the related
+regulation references.
+
+5
+00:00:38.000 --> 00:00:46.000
+As work is completed, the readiness score
+changes in real time, giving administrators a
+quick view of where the facility stands.
+
+6
+00:00:46.000 --> 00:00:53.000
+Instead of showing only a warning count,
+Title22 identifies the item, the responsible
+staff member, and the relevant date.
+
+7
+00:00:53.000 --> 00:01:08.000
+Expiration alerts can surface 90, 30, and 7
+days before CPR, first aid, tuberculosis
+clearances, live scan, or administrator
+certifications expire.
+
+8
+00:01:08.000 --> 00:01:14.000
+Training records are organized around the
+initial 40-hour requirement and continuing
+education.
+
+9
+00:01:14.000 --> 00:01:21.000
+Staff certification tracking keeps essential
+clearances together, while role-based access
+lets each team member see only what they need.
+
+10
+00:01:21.000 --> 00:01:29.000
+A read-only view can also support an inspection
+without opening the entire workspace.
+
+11
+00:01:29.000 --> 00:01:36.000
+The AI compliance assistant is grounded in the
+facility's own non-clinical compliance records.
+
+12
+00:01:36.000 --> 00:01:43.000
+Administrators can ask practical questions,
+receive a daily briefing, or use scan-to-fill
+to read dates from a CPR card or tuberculosis
+clearance.
+
+13
+00:01:43.000 --> 00:01:52.000
+Confidence indicators make it clear which
+extracted fields deserve review.
+
+14
+00:01:52.000 --> 00:02:00.000
+Title22 also supports structured incident
+documentation and an append-only audit log
+recording who did what and when.
+
+15
+00:02:00.000 --> 00:02:05.000
+Entries cannot be quietly edited or deleted,
+and the record can be exported for a surveyor.
+
+16
+00:02:05.000 --> 00:02:08.000
+Privacy is a deliberate boundary.
+
+17
+00:02:08.000 --> 00:02:13.000
+Title22 is designed to stay clear of resident
+health records, medication administration
+records, or clinical decision-making.
+
+18
+00:02:13.000 --> 00:02:20.000
+It rejects sensitive identifiers in incident
+entries and never suggests, adjusts, or
+comments on medication dosage.
+
+19
+00:02:20.000 --> 00:02:27.000
+No protected health information is required,
+and no business associate agreement is needed
+for this intended use.
+
+20
+00:02:27.000 --> 00:02:47.700
+In short, Title22 brings checklists, readiness,
+training, certifications, alerts, and
+accountable records into one practical
+workflow, so compliance work is visible before
+inspection day.
