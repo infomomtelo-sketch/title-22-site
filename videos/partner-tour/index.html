@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner tour — Title22</title>
+<meta name="description" content="A 65-second phone recording of the Title22 partner view: trainer codes and what each one is worth, the readiness score, the Title 22 checklist, and the assistant. Captions in English, Spanish and Filipino.">
+<link rel="canonical" href="https://title-22.com/videos/partner-tour/">
+<meta property="og:site_name" content="Title22">
+<meta property="og:title" content="Title22 — the partner view">
+<meta property="og:description" content="65 seconds through the trainer and affiliate side of the real app. Captions in English, Spanish and Filipino.">
+<meta property="og:url" content="https://title-22.com/videos/partner-tour/">
+<meta property="og:type" content="video.other">
+<meta property="og:image" content="https://title-22.com/videos/title22-partner-tour-poster.png">
+<meta property="og:image:alt" content="The Title22 partner screen, showing a trainer code with its commission rate and trial length">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Title22 — the partner view">
+<meta name="twitter:description" content="65 seconds through the trainer and affiliate side of the real app.">
+<meta name="twitter:image" content="https://title-22.com/videos/title22-partner-tour-poster.png">
+<meta name="twitter:image:alt" content="The Title22 partner screen, showing a trainer code with its commission rate and trial length">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@600;700&family=Public+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  /* Forked from /videos/tour/ rather than shared, so changing one page cannot
+     break the other. The differences are all below: a portrait video, and a
+     single source instead of two. */
+
+  .lang-row { display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; margin:0 0 1rem; }
+  .lang-row .lang-label { font-size:0.85rem; color:var(--muted); margin-right:0.3rem; }
+  .lang-btn {
+    font:inherit; font-size:0.92rem; font-weight:600; cursor:pointer;
+    padding:0.5rem 0.9rem; min-height:44px;
+    border:1px solid var(--line); border-radius:8px;
+    background:#fff; color:var(--ink);
+  }
+  .lang-btn[aria-pressed="true"] { background:var(--pine); border-color:var(--pine); color:#fff; }
+  .lang-btn:focus-visible { outline:3px solid var(--marigold); outline-offset:2px; }
+
+  /* This recording is PORTRAIT — 540x1096 off a phone. The tour page's
+     width:100% would make it about a metre tall on a desktop monitor, so it is
+     capped and centred instead. The cap is under 540 so it is never upscaled
+     past its own pixels, and on a narrow phone the min() hands it the full
+     column back. */
+  .player-wrap { margin:0 0 1.2rem; }
+  .player-wrap video {
+    display:block; margin:0 auto;
+    width:min(100%, 22rem); height:auto;
+    background:#000; border:1px solid var(--line); border-radius:10px;
+  }
+  .player-wrap[hidden] { display:none; }
+
+  .notice { border:1px solid var(--line); border-left:4px solid var(--marigold);
+    border-radius:8px; background:var(--cream); padding:0.9rem 1.1rem; margin:0 0 1.2rem; }
+  .notice p { margin:0.35rem 0; font-size:0.92rem; }
+  .notice p:first-child { margin-top:0; font-weight:600; }
+  .notice p:last-child { margin-bottom:0; }
+  .notice[hidden] { display:none; }
+
+  /* The silence is the single thing most likely to read as a broken player,
+     so it is stated before anyone presses play rather than in grey below. */
+  .silent-notice p:first-child { display:flex; align-items:center; gap:0.5rem; }
+  .silent-notice svg { flex-shrink:0; color:var(--pine); }
+
+  .transcript { list-style:none; margin:0; padding:0;
+    border:1px solid var(--line); border-radius:10px; background:#fff; overflow:hidden; }
+  .transcript li + li { border-top:1px solid var(--line); }
+  .cue {
+    display:grid; grid-template-columns:5.5rem 1fr; gap:0.9rem; width:100%;
+    font:inherit; text-align:left; cursor:pointer; color:var(--ink);
+    background:none; border:0; padding:0.75rem 1rem; min-height:44px;
+  }
+  .cue:hover { background:var(--sage); }
+  .cue:focus-visible { outline:3px solid var(--marigold); outline-offset:-3px; }
+  .cue .t { font-family:"IBM Plex Mono",monospace; font-size:0.82rem; color:var(--muted); padding-top:0.15rem; }
+  .cue .x { font-size:0.95rem; line-height:1.55; }
+  .cue[aria-current="true"] { background:var(--sage); }
+  .cue[aria-current="true"] .x { font-weight:600; }
+  .cue[aria-current="true"] .t { color:var(--pine); }
+  .no-seek .cue { cursor:default; }
+  @media (max-width:32rem) {
+    .cue { grid-template-columns:4.2rem 1fr; gap:0.6rem; padding:0.7rem 0.8rem; }
+  }
+
+  .file-row { font-size:0.9rem; color:var(--muted); margin:1rem 0 0; }
+  .file-row code { font-family:"IBM Plex Mono",monospace; font-size:0.85rem; }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">title<span class="tld">-22</span>.com</a>
+    <nav class="nav" aria-label="Main">
+      <a href="/features/">Features</a>
+      <a href="/demo/">Demo</a>
+      <a href="/for-trainers/">For Trainers</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/blog/">Blog</a>
+      <a href="https://title22.app/?src=video-partner-tour" class="btn">Open Title22</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding-bottom:1rem;">
+    <div class="wrap">
+      <p class="eyebrow">Partner tour · 1 min 5 s</p>
+      <h1>What a trainer's code is actually worth.</h1>
+      <p class="lede">A phone recording of the real app — the partner screen first, then the
+        rest of what a facility sees. Captions in English, Spanish and Filipino. The
+        transcript below is clickable: pick a line to jump the video to it.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+
+      <div class="lang-row" role="group" aria-label="Caption language">
+        <span class="lang-label" id="lang-label">Captions:</span>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="true" lang="en">English</button>
+        <button type="button" class="lang-btn" data-lang="es" aria-pressed="false" lang="es">Español</button>
+        <button type="button" class="lang-btn" data-lang="fil" aria-pressed="false" lang="fil">Filipino</button>
+      </div>
+
+      <div class="notice silent-notice">
+        <p>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>
+          </svg>
+          This video has no sound.
+        </p>
+        <p>There is no voiceover — the captions <em>are</em> the narration, and they are
+          switched on already. Nothing is wrong with your speakers or with the player.</p>
+      </div>
+
+      <div class="notice" id="unreviewed" hidden>
+        <p>Machine translation, not yet checked by a native speaker.</p>
+        <p>The English captions are the app's own on-screen wording. The Spanish and
+          Filipino were translated from them and have not been read by a fluent speaker.
+          If you spot something wrong, <a href="mailto:hello@title-22.com">tell us</a> — a
+          correction from someone who speaks the language is worth more than another pass
+          by a machine.</p>
+      </div>
+
+      <div class="player-wrap" id="player-wrap">
+        <video id="v" controls playsinline preload="metadata"
+               poster="/videos/title22-partner-tour-poster.png"
+               aria-describedby="lang-label">
+          <!-- One source only. H.264 Constrained Baseline, which every iPhone and
+               every current desktop browser decodes. The original is 10-bit HDR
+               HEVC off a phone, which Chrome and Firefox will not play, so it is
+               not offered here. -->
+          <source src="/videos/title22-partner-tour.mp4" type="video/mp4">
+          <track kind="captions" srclang="en"  label="English"  src="/videos/title22-partner-tour.en.vtt" default>
+          <track kind="captions" srclang="es"  label="Español"  src="/videos/title22-partner-tour.es.vtt">
+          <track kind="captions" srclang="fil" label="Filipino" src="/videos/title22-partner-tour.fil.vtt">
+        </video>
+      </div>
+
+      <div class="notice" id="no-video" hidden>
+        <p>Your browser could not play this file.</p>
+        <p>The transcript below is the whole recording in words, so nothing here depends on
+          the player — or open the app itself at
+          <a href="https://title22.app/?src=video-partner-tour">title22.app</a>.</p>
+      </div>
+
+      <h2 id="transcript-head">Transcript</h2>
+      <ul class="transcript" id="transcript" aria-labelledby="transcript-head" lang="en">
+        <li><button type="button" class="cue" disabled><span class="t">—</span><span class="x">Loading the transcript…</span></button></li>
+      </ul>
+      <noscript>
+        <p class="file-row">The clickable transcript needs JavaScript. The full text is in
+          the caption files: <a href="/videos/title22-partner-tour.en.vtt">English</a> ·
+          <a href="/videos/title22-partner-tour.es.vtt">Español</a> ·
+          <a href="/videos/title22-partner-tour.fil.vtt">Filipino</a>.</p>
+      </noscript>
+
+      <p class="file-row">Caption files, if you need them for another player:
+        <a href="/videos/title22-partner-tour.en.vtt" download>English <code>.vtt</code></a> ·
+        <a href="/videos/title22-partner-tour.es.vtt" download>Español <code>.vtt</code></a> ·
+        <a href="/videos/title22-partner-tour.fil.vtt" download>Filipino <code>.vtt</code></a></p>
+
+      <h2>What you are looking at</h2>
+      <p>Every frame is the live Title22 interface on a phone, and it is the app's own
+        guided tour — the same one built into the product — driven end to end. The partner
+        screen comes first because that is the part a trainer or an affiliate is asking
+        about: one row per code, how many people signed up through it, how many of those
+        are paying, and the rate on record.</p>
+      <p>The second step is the one worth pausing on. A code does not only attribute a
+        signup, it sets that person's trial length — the number on the row is the one they
+        get, instead of the default fourteen days.</p>
+      <p>You will not see a resident anywhere in it, and that is not an omission for the
+        camera. Title22 Lite holds no resident records, no medications and no medication
+        administration record, so there is nothing of the kind to film — the menu in the
+        recording has no Residents, MAR, Medications or Daily-log entry for the same
+        reason. The facility here is a new, empty one, which is why the readiness score
+        reads 7 of 119. More on that on <a href="/features/">Features</a> and
+        <a href="/security/">Security</a>.</p>
+      <p>The commission figure on screen is the field's default, not a quoted rate. Rates
+        are agreed per partner — see <a href="/affiliates/">Affiliates</a> for how that
+        works, and <a href="/for-trainers/">For Trainers</a> for the classroom side.</p>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>© 2026 title-22.com. All rights reserved. Powered by EC RENTAL PROPERTY MANAGEMENT LLC.<br>
+      <span class="domain-note">Website <strong>title-22.com</strong> · Secure app <strong>title22.app</strong> — same Title22, two addresses.</span></div>
+    <div><a href="/about/">About</a> · <a href="/security/">Security</a> · <a href="/faq/">FAQ</a> · <a href="/for-trainers/">For Trainers</a> · <a href="/pricing/">Pricing</a> · <a href="/blog/">Blog</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy</a> · <a href="https://title22.app/?src=video-partner-tour">Sign in</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  var LANGS = {
+    en:  { label:'English',  reviewed:true  },
+    es:  { label:'Espanol',  reviewed:false },
+    fil: { label:'Filipino', reviewed:false }
+  };
+  var STORE = 'title22_caption_lang';
+  var VTT = '/videos/title22-partner-tour.';
+
+  var video      = document.getElementById('v');
+  var playerWrap = document.getElementById('player-wrap');
+  var noVideoBox = document.getElementById('no-video');
+  var unreviewed = document.getElementById('unreviewed');
+  var list       = document.getElementById('transcript');
+  var buttons    = [].slice.call(document.querySelectorAll('.lang-btn'));
+
+  var cues = [], rows = [], active = -1, canSeek = true, cache = {};
+
+  function stored(){
+    try { var v = localStorage.getItem(STORE); return LANGS[v] ? v : null; }
+    catch(e){ return null; }
+  }
+  function remember(code){
+    try { localStorage.setItem(STORE, code); } catch(e){ /* private mode */ }
+  }
+  function fromBrowser(){
+    var l = (navigator.language || 'en').toLowerCase();
+    if (l.indexOf('es') === 0) return 'es';
+    // tl is Tagalog, fil is Filipino -- both land on the same track.
+    if (l.indexOf('fil') === 0 || l.indexOf('tl') === 0) return 'fil';
+    return 'en';
+  }
+
+  function toSeconds(stamp){
+    var p = stamp.split(':');
+    var s = parseFloat(p.pop());
+    var m = parseInt(p.pop() || '0', 10);
+    var h = parseInt(p.pop() || '0', 10);
+    return h * 3600 + m * 60 + s;
+  }
+  function clock(sec){
+    var m = Math.floor(sec / 60), s = Math.floor(sec % 60);
+    return m + ':' + (s < 10 ? '0' : '') + s;
+  }
+
+  // Blocks without a timing line are the header and the NOTE comments.
+  function parseVtt(text){
+    var out = [];
+    var blocks = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split(/\n{2,}/);
+    for (var i = 0; i < blocks.length; i++){
+      var lines = blocks[i].split('\n');
+      if (/^NOTE(\s|$)/.test(lines[0] || '')) continue;
+      var ti = -1;
+      for (var j = 0; j < lines.length; j++){ if (lines[j].indexOf('-->') > -1){ ti = j; break; } }
+      if (ti < 0) continue;
+      var stamps = lines[ti].match(/(?:\d+:)?\d{1,2}:\d{2}\.\d{1,3}/g);
+      if (!stamps || stamps.length < 2) continue;
+      var body = lines.slice(ti + 1).join(' ').replace(/\s+/g, ' ').trim();
+      if (!body) continue;
+      out.push({ start: toSeconds(stamps[0]), end: toSeconds(stamps[1]), text: body });
+    }
+    return out;
+  }
+
+  function render(code){
+    list.setAttribute('lang', code);
+    list.innerHTML = '';
+    rows = []; active = -1;
+    if (!cues.length){
+      var li = document.createElement('li');
+      li.innerHTML = '<button type="button" class="cue" disabled>' +
+        '<span class="t">—</span><span class="x">The transcript could not be loaded. ' +
+        'The text is in <a href="' + VTT + code + '.vtt">the caption file</a>.</span></button>';
+      list.appendChild(li);
+      return;
+    }
+    for (var i = 0; i < cues.length; i++){
+      var item = document.createElement('li');
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'cue';
+      b.setAttribute('data-start', cues[i].start);
+      var t = document.createElement('span'); t.className = 't'; t.textContent = clock(cues[i].start);
+      var x = document.createElement('span'); x.className = 'x'; x.textContent = cues[i].text;
+      b.appendChild(t); b.appendChild(x);
+      item.appendChild(b);
+      list.appendChild(item);
+      rows.push(b);
+    }
+  }
+
+  function loadTranscript(code){
+    if (cache[code]){ cues = cache[code]; render(code); syncHighlight(); return; }
+    fetch(VTT + code + '.vtt', { credentials:'omit' })
+      .then(function(r){ if (!r.ok) throw new Error(r.status); return r.text(); })
+      .then(function(text){ cache[code] = parseVtt(text); cues = cache[code]; })
+      .catch(function(){ cues = []; })
+      .then(function(){ render(code); syncHighlight(); });
+  }
+
+  function showTrack(code){
+    var tracks = video.textTracks || [];
+    for (var i = 0; i < tracks.length; i++){
+      tracks[i].mode = (tracks[i].language === code) ? 'showing' : 'disabled';
+    }
+  }
+
+  function setLang(code, persist){
+    if (!LANGS[code]) code = 'en';
+    buttons.forEach(function(b){
+      b.setAttribute('aria-pressed', b.getAttribute('data-lang') === code ? 'true' : 'false');
+    });
+    unreviewed.hidden = LANGS[code].reviewed;
+    showTrack(code);
+    loadTranscript(code);
+    if (persist) remember(code);
+  }
+
+  function syncHighlight(){
+    if (!rows.length) return;
+    var now = video.currentTime || 0;
+    var found = -1;
+    for (var i = 0; i < cues.length; i++){
+      if (now >= cues[i].start && now < cues[i].end){ found = i; break; }
+    }
+    if (found === active) return;
+    if (active > -1 && rows[active]) rows[active].removeAttribute('aria-current');
+    active = found;
+    if (active > -1 && rows[active]){
+      rows[active].setAttribute('aria-current', 'true');
+      if (!video.paused) rows[active].scrollIntoView({ block:'nearest' });
+    }
+  }
+
+  function noVideo(){
+    if (!canSeek) return;
+    canSeek = false;
+    playerWrap.hidden = true;
+    noVideoBox.hidden = false;
+    list.classList.add('no-seek');
+  }
+
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang'), true); });
+  });
+
+  list.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('.cue') : null;
+    if (!b || b.disabled || !canSeek) return;
+    var at = parseFloat(b.getAttribute('data-start'));
+    if (isNaN(at)) return;
+    try {
+      video.currentTime = at;
+      var p = video.play();
+      if (p && p.catch) p.catch(function(){ /* autoplay refused; the seek still took */ });
+    } catch (err){ /* not playable here */ }
+    syncHighlight();
+  });
+
+  video.addEventListener('timeupdate', syncHighlight);
+  video.addEventListener('seeked', syncHighlight);
+
+  // A file that is missing fails at the <source>: the media element fires no
+  // error of its own, it just ends resource selection with NETWORK_NO_SOURCE,
+  // and that can happen before this script runs. A file that is present but
+  // undecodable does fire on the element.
+  var NETWORK_NO_SOURCE = 3;
+  function checkVideo(){
+    if (video.error || video.networkState === NETWORK_NO_SOURCE) noVideo();
+  }
+  video.addEventListener('error', noVideo);
+  var src = video.querySelector('source');
+  if (src) src.addEventListener('error', function(){ setTimeout(checkVideo, 0); });
+  checkVideo();
+
+  setLang(stored() || fromBrowser(), false);
+})();
+</script>
+
+</body>
+</html>

@@ -81,11 +81,22 @@ the Documents tab reads "No documents yet".
 The checklist rows that mention medication are checklist **titles** — "Medications
 stored locked, and only where they should be" — not anybody's record.
 
-## Not wired to a page yet
+## The page
 
-These are the assets only. Nothing on the site links to them. If they should go
-on a page, `/videos/tour/` is the pattern to copy: `<source>` first, captions as
-`<track>` with English `default`.
+`/videos/partner-tour/` — forked from `/videos/tour/` rather than sharing with
+it, so a change to one cannot break the other. Two things differ, and both are
+in the fork's own CSS and markup:
+
+- **The video is portrait**, 540×1096 off a phone. The tour page's
+  `width:100%` would make it about a metre tall on a desktop monitor, so this
+  one uses `width:min(100%, 22rem)` and centres it. Measured: 352px on a
+  1280px screen, 335px on a 375px phone.
+- **One `<source>`, not two.** There is no WebM, so the "could not play"
+  notice does not promise a second format the way the tour page's does.
+
+Nothing else links to it yet. Adding a link from `/for-trainers/` or
+`/affiliates/` is a one-line change to an existing page and is deliberately
+left as its own decision.
 
 ## The translations are machine-produced
 
