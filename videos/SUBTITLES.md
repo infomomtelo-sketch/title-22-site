@@ -47,12 +47,15 @@ exists only because those two lines are still in the audio.
 
 ## Publishing them
 
-### On YouTube — works today, no re-encode
+### On whatever platform hosts the video — works today, no re-encode
 
-The video is at `https://youtu.be/7iGo9vMZ69E`. YouTube Studio → the video →
-Subtitles → Add language → Upload file → **With timing**. It accepts `.vtt`
-directly and ignores the `NOTE` blocks. Do the English first and set it as the
-default track.
+No hosting URL is recorded here on purpose. Ask whoever holds the video where it
+lives before uploading anything to it.
+
+On YouTube the path is Studio → the video → Subtitles → Add language → Upload
+file → **With timing**; it accepts `.vtt` directly and ignores the `NOTE`
+blocks. Vimeo and Wistia take the same file. Do the English first and set it as
+the default track.
 
 ### Self-hosted on this site — needs a re-encode first
 
@@ -65,12 +68,13 @@ the way:
    The clip that already ships here, `title22-trainer-pitch.mp4`, is `avc1` —
    match that.
 2. **Cloudflare Pages caps a file at 25 MiB.** The 2:48 master needs to come in
-   under that, or it stays on YouTube and this page keeps linking out.
+   under that, or it stays wherever it is hosted now and this page keeps
+   pointing elsewhere.
 
 Until the file is there the page **does not show a broken player.** It hides the
-player, says the file is not on the site yet, links to YouTube, and leaves the
-transcript fully usable. That path is tested; so is the one where the file
-loads.
+player, points at the guided tour at `/videos/tour/` — which does play — and at
+the app, and leaves the transcript fully usable. That path is tested; so is the
+one where the file loads.
 
 ## The translations are not verified
 
