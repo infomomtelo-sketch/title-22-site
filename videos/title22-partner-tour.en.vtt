@@ -1,0 +1,68 @@
+WEBVTT
+
+NOTE
+Captions for the partner / affiliate guided tour, recorded on a phone on
+2026-09-21 (65.2s).
+
+NOTE
+The recording has NO audio. That is measured, not assumed: the file carries an
+AAC track, but it is digital silence — mean and max volume both -91 dB across
+all 5,746,560 samples. So there is nothing to transcribe and these captions
+carry the whole thing.
+
+NOTE
+The seven step titles and their wording are taken from tourSteps() in
+index.html, not transcribed from the screen, so they match the product exactly.
+If the tour copy changes, re-derive this file from the source rather than
+editing it by hand.
+
+NOTE
+Timings come from scene-cut detection on the recording. Every step boundary
+except one lands on a measured cut, because each step switches tab. The
+exception is step 1 to step 2, which stays on the Partners tab and only swaps
+the dialog text — too small a change to register — so that boundary was pinned
+by reading the step counter at 0.8s intervals: "1 of 7" at 13.6s, "2 of 7" at
+14.4s. The tail timings after 35s are accurate to about a second where no cut
+exists.
+
+00:00:00.000 --> 00:00:04.000
+This recording has no sound. The captions carry it.
+
+00:00:04.000 --> 00:00:06.100
+A new Lite account — facility and staff compliance only. No MAR, no 602A, no PHI.
+
+00:00:06.100 --> 00:00:10.600
+Walkthrough offers both: take the tour on screen, or read the same seven screens.
+
+00:00:10.600 --> 00:00:14.000
+Step 1 of 7 — Your trainers and their codes. One row per trainer: their link, how many signed up through it, how many of those are paying, and the commission rate on record.
+
+00:00:14.000 --> 00:00:17.000
+Step 2 — A code is a longer trial. Somebody arriving on a trainer's link gets the trial length set on that code instead of the default.
+
+00:00:17.000 --> 00:00:20.150
+Step 3 — This is the number that matters. Requirements that are current, out of requirements that exist. Here, 7 of 119.
+
+00:00:20.150 --> 00:00:23.120
+Step 4 — And it tells you whose. Six overdue, 55 due this month. An expired TB test is a named person, not a red number on a chart.
+
+00:00:23.120 --> 00:00:26.650
+Step 5 — The checklist an analyst works from. Title 22 requirements with dates against them, overdue at the top.
+
+00:00:26.650 --> 00:00:30.050
+Step 6 — Now ask me something. Tello answers from this facility's own records.
+
+00:00:30.050 --> 00:00:35.050
+Step 7 — Everything else is in here. Documents, the audit log, billing. Walkthrough replays this tour any time.
+
+00:00:35.050 --> 00:00:41.950
+Back on the dashboard: overdue items with their dates, then the quick actions.
+
+00:00:41.950 --> 00:00:50.190
+The menu — staff, in-service, training, lessons, team access, checklist, documents, Tello, audit log, billing, partners.
+
+00:00:50.190 --> 00:00:57.000
+Documents. Upload a file, tag what it is, and it is stored privately.
+
+00:00:57.000 --> 00:01:05.200
+Billing — the current plan, then Lite at $29, Multi-Home at $79, and Agency as Contact Sales.
