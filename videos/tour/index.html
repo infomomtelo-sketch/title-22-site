@@ -139,6 +139,10 @@
         <video id="v" controls playsinline preload="metadata"
                poster="/videos/title22-guided-tour-poster.png"
                aria-describedby="lang-label">
+          <!-- MP4 first on purpose. A browser takes the first source it can
+               decode, so Safari and every iPhone get the H.264 file, and
+               everything else falls through to the smaller WebM. -->
+          <source src="/videos/title22-guided-tour.mp4" type="video/mp4">
           <source src="/videos/title22-guided-tour.webm" type="video/webm">
           <track kind="captions" srclang="en"  label="English"  src="/videos/title22-guided-tour.en.vtt" default>
           <track kind="captions" srclang="es"  label="Español"  src="/videos/title22-guided-tour.es.vtt">
@@ -148,9 +152,9 @@
 
       <div class="notice" id="no-video" hidden>
         <p>Your browser could not play this file.</p>
-        <p>It is a WebM video, which Chrome, Firefox and Edge play everywhere and older
-          versions of Safari do not. The transcript below is the whole tour in words, so
-          nothing here depends on the player — or open the app itself at
+        <p>The video ships as both H.264 MP4 and WebM, so this should be rare. The
+          transcript below is the whole tour in words, so nothing here depends on the
+          player — or open the app itself at
           <a href="https://title22.app/?src=video-tour">title22.app</a>.</p>
       </div>
 
