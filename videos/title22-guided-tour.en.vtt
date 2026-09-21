@@ -9,9 +9,20 @@ that drove the tour also wrote this file, so they cannot drift from the
 picture unless the video is re-cut.
 
 NOTE
+Cue 0 is the only line here that is not the app's own tour copy: it
+says the video has no voiceover. The recording has no audio track at all,
+so a viewer who cannot see that stated somewhere reasonably assumes the
+player is broken.
+
+NOTE
 Every screen is the real app at /?demo=1&tour=1 with invented staff and a
 stubbed database. No resident data appears, because Lite does not have any
 to show.
+
+0
+00:00:00.300 --> 00:00:04.100
+This tour has no voiceover.
+The captions are the narration.
 
 1
 00:00:04.369 --> 00:00:15.369
