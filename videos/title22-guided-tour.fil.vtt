@@ -10,11 +10,20 @@ speaker read it before it is used in marketing.
 NOTE
 Translated from title22-guided-tour.en.vtt, which is the source of record.
 Cue numbers and timings are copied from it verbatim by translate.js, so the
-three tracks cannot drift. Re-cut the video and all three are regenerated.
+three tracks cannot drift.
+
+NOTE
+Cue 0 is a production note, not tour copy: it says the video has no
+voiceover. Re-cut the video and all three are regenerated.
 
 NOTE
 The English is the app's own on-screen tour copy. Terms the app shows in
 English stay in English: DSS, Title 22, TB, read-only, checklist, dashboard.
+
+0
+00:00:00.300 --> 00:00:04.100
+Walang voiceover ang tour na ito.
+Ang mga caption ang nagsasalaysay.
 
 1
 00:00:04.369 --> 00:00:15.369
