@@ -325,12 +325,12 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Create your referral link</h2>
-        <p>Pick a short code — your name works well. Every signup through your link is credited to you automatically.</p>
+        <p>Pick a short code — your name works well. You get a short link you can say out loud or put on a slide: <strong>title-22.com/r/yourcode</strong>. It works the moment you share it.</p>
       </div>
       <div class="gen-box">
         <label for="code">Your referral code</label>
         <input type="text" id="code" placeholder="e.g. maria, oakhill, jsmith" autocomplete="off" spellcheck="false">
-        <div class="err-msg" id="err">Use letters and numbers only — no spaces or symbols.</div>
+        <div class="err-msg" id="err">Use letters, numbers and hyphens only — no spaces.</div>
         <div class="field-row">
           <div>
             <label for="name">Your name</label>
@@ -348,8 +348,9 @@
             <code id="link"></code>
             <button class="copy-btn" id="copy">Copy</button>
           </div>
-          <p class="hint">Send this to administrators or operators you know. When they subscribe, it is credited to you.</p>
-          <p class="hint">To register your code for payout tracking, email your code + name to <a href="mailto:hello@title-22.com">hello@title-22.com</a> — Eli will confirm you are set up within one business day.</p>
+          <p class="hint">Send this to administrators or operators you know. Every signup through it is recorded against your code from the first click.</p>
+          <a class="btn ghost" id="register" href="mailto:hello@title-22.com" style="width:100%;margin-top:.5rem;text-align:center">Register this code for payout — one tap</a>
+          <p class="hint">Opens an email with your code, name and email already filled in; just press send. Eli confirms within one business day, and signups made before you register still count.</p>
         </div>
       </div>
     </div>
@@ -452,9 +453,12 @@
   var errEl = document.getElementById('err');
   var outEl = document.getElementById('out');
   var linkEl = document.getElementById('link');
-  var BASE = 'https://title-22.com/?ref=';
+  var BASE = 'https://title-22.com/r/';
 
-  function clean(v) { return (v || '').toLowerCase().replace(/[^a-z0-9]/g, ''); }
+  // Same rule as the app's ?ref= capture and title22_create_trainer: lowercase,
+  // letters, digits and hyphens. Stripping hyphens here used to turn oak-hill
+  // into oakhill, which never matched a code registered as oak-hill.
+  function clean(v) { return (v || '').toLowerCase().trim().replace(/[^a-z0-9-]/g, '').replace(/^-+|-+$/g, ''); }
 
   function makeLink() {
     var c = clean(codeEl.value);
@@ -466,6 +470,11 @@
     }
     errEl.style.display = 'none';
     linkEl.textContent = BASE + c;
+    var nm = (nameEl.value || '').trim(), em = ((document.getElementById('email') || {}).value || '').trim();
+    document.getElementById('register').href = 'mailto:hello@title-22.com?subject=' +
+      encodeURIComponent('Register my Title22 referral code: ' + c) + '&body=' +
+      encodeURIComponent('Hi Eli,\n\nPlease register my referral code for payout tracking.\n\nCode: ' + c +
+        '\nLink: ' + BASE + c + '\nName: ' + (nm || '') + '\nEmail: ' + (em || '') + '\n\nThanks!');
     outEl.style.display = 'block';
   }
 

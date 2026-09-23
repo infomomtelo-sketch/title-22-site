@@ -593,5 +593,22 @@
   cards.forEach(function (c) { io.observe(c); });
 })();
 </script>
+<script>
+/* ?ref= forwarder. /affiliates/ handed out title-22.com/?ref=<code> links for
+   weeks, and nothing on this site read the parameter: the visitor landed here,
+   clicked a trial button, and reached the app with no code, so the partner was
+   never credited. New links are title-22.com/r/<code> (see _redirects), which
+   go straight to the app; this keeps every link already shared working. */
+(function () {
+  try {
+    var r = new URLSearchParams(location.search).get('ref');
+    r = (r || '').toLowerCase().trim().replace(/[^a-z0-9-]/g, '');
+    if (!r) return;
+    document.querySelectorAll('a[href^="https://title22.app"]').forEach(function (a) {
+      var u = new URL(a.href); u.searchParams.set('ref', r); a.href = u.toString();
+    });
+  } catch (e) {}
+})();
+</script>
 </body>
 </html>
