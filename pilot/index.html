@@ -56,6 +56,11 @@
   .tag.warn { background: #fbe3dd; color: #8a2f1f; }
   .fine { color: var(--muted); font-size: 0.85rem; }
   .cta-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem; }
+  .pilot-video { margin: 0; }
+  .pilot-video video { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); background: var(--cream); }
+  .pilot-video figcaption { color: var(--muted); font-size: 0.85rem; margin-top: 0.6rem; }
+  .pilot-video details { margin-top: 0.4rem; font-size: 0.9rem; }
+  .pilot-video summary { cursor: pointer; color: var(--pine); font-weight: 600; }
 </style>
 </head>
 <body>
@@ -100,6 +105,25 @@
         <a class="btn" href="mailto:hello@title-22.com?subject=Set%20up%20a%2030-Day%20Proof%20%E2%80%94%20Title22">Set up a 30-Day Proof</a>
         <a class="btn ghost" href="https://title22.app/?demo=1&amp;tour=0">See the sandbox first</a>
       </div>
+    </div>
+  </section>
+
+  <section style="padding-top: 0.5rem;">
+    <div class="wrap">
+      <!-- 45 s, silent, captions burned into the picture. Recorded from the
+           real app's sandbox by videos/pilot/record/record.js: invented staff,
+           no resident data, the sandbox's own computed summary. -->
+      <figure class="pilot-video">
+        <video controls playsinline preload="none" poster="/videos/title22-30-day-proof-poster.png"
+               width="1280" height="720" aria-describedby="pilot-video-transcript">
+          <source src="/videos/title22-30-day-proof.mp4" type="video/mp4">
+        </video>
+        <figcaption>45 seconds, no sound needed — the captions are in the picture. Recorded in Title22's sandbox with invented staff.</figcaption>
+        <details id="pilot-video-transcript">
+          <summary>Read it instead</summary>
+          <p>Which of your homes do you look at first? Title22 runs beside what you already use, and it holds no resident health information. In the Tello tab, the portfolio briefing puts every home on one screen: one row per home, lowest first — checklist, overdue items, expired certifications, open clearances. Every number is counted by the app, not guessed by the AI. In the sandbox, the second row is an illustration: the same home with every open item closed. Then a short summary, for someone who has a minute. Two of your homes, thirty days: press the briefing on day 1 and again on day 30, and compare. No card, nothing to cancel.</p>
+        </details>
+      </figure>
     </div>
   </section>
 
