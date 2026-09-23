@@ -182,7 +182,7 @@
     const name = nameInput.value.trim();
     if (!name) { nameInput.focus(); return; }
     const code = `${slugify(name)}-${randomSuffix()}`;
-    const link = `https://title22.app/signup?ref=${code}`;
+    const link = `https://title-22.com/r/${code}`;
 
     document.getElementById('resultLink').textContent = link;
     document.getElementById('resultWrap').style.display = 'block';

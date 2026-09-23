@@ -1,0 +1,9 @@
+# Partner short links: title-22.com/r/<code> -> the app with the code attached.
+# Easy to say out loud in a class ("title dash 22 dot com slash r slash maria")
+# and to print on a slide, where title22.app/?ref=maria is neither.
+#
+# The app lowercases the code and drops anything but letters, digits and
+# hyphens before it records it (runp8-care index.html, the ?ref= capture), so
+# /r/Maria and /r/maria credit the same partner.
+/r/:code/   https://title22.app/?ref=:code&src=partner-link   302
+/r/:code    https://title22.app/?ref=:code&src=partner-link   302
