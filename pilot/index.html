@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ghost Audit Pilot — Title22 for Multi-Facility Operators</title>
+<meta name="description" content="A 30-day Title22 pilot on one or two of your lowest-performing RCFEs. It runs beside what you use today, holds no resident health information, and ends with a portfolio briefing your executives can read in a minute.">
+<link rel="canonical" href="https://title-22.com/pilot/">
+<meta property="og:site_name" content="Title22">
+<meta property="og:image" content="https://title-22.com/share-kit/title22-share-card-1200x630.png">
+<meta property="og:image:alt" content="Title22 Ghost Audit pilot for multi-facility RCFE operators">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ghost Audit Pilot — Title22 for Multi-Facility Operators">
+<meta name="twitter:description" content="30 days, one or two of your homes, no resident health information, nothing connected to your systems.">
+<meta name="twitter:image" content="https://title-22.com/share-kit/title22-share-card-1200x630.png">
+<meta name="twitter:image:alt" content="Title22 Ghost Audit pilot for multi-facility RCFE operators">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://title-22.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://title-22.com/pricing/" },
+    { "@type": "ListItem", "position": 3, "name": "Ghost Audit Pilot", "item": "https://title-22.com/pilot/" }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@600;700&family=Public+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  .steps { counter-reset: step; list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; }
+  .steps li {
+    counter-increment: step; position: relative;
+    border: 1px solid var(--line); border-radius: 12px; background: var(--white);
+    padding: 1.25rem 1.25rem 1.25rem 3.75rem;
+  }
+  .steps li::before {
+    content: counter(step); position: absolute; left: 1.1rem; top: 1.15rem;
+    width: 1.8rem; height: 1.8rem; border-radius: 50%;
+    background: var(--pine); color: var(--white);
+    font-family: "IBM Plex Mono", monospace; font-size: 0.85rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .steps strong { display: block; margin-bottom: 0.25rem; }
+  .steps p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+  .brief {
+    border: 1px solid var(--line); border-radius: 12px; background: var(--white);
+    overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.5rem 0 0.5rem;
+  }
+  .brief table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 34rem; }
+  .brief th { text-align: left; font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); padding: 0.75rem 0.9rem; font-weight: 500; }
+  .brief td { padding: 0.75rem 0.9rem; border-top: 1px solid var(--line); white-space: nowrap; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 999px; background: var(--sage); color: var(--deep); }
+  .tag.warn { background: #fbe3dd; color: #8a2f1f; }
+  .fine { color: var(--muted); font-size: 0.85rem; }
+  .cta-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem; }
+</style>
+</head>
+<body>
+
+<!-- The Ghost Audit pilot. Runbook: runp8-care/docs/ghost-audit-pilot.md.
+     The app side is the Tello tab's "Portfolio briefing" card.
+
+     Rules this page must keep, same as every page on this site:
+     - No PHI. The pilot holds no resident records, medications or MAR — it is
+       not a special edition, it is the same product.
+     - No new price. A pilot is a longer free trial; after it, the offers are
+       the ones on /pricing/ (Multi-Home $79, Agency Contact Sales, no figure).
+     - No outcome claims. Nothing here promises compliance, an inspection
+       result, or a score. The illustration in the sandbox is labelled as one.
+     - "Checklist" in the example table is NOT the readiness score; the app
+       labels it the same way. -->
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">title<span class="tld">-22</span>.com</a>
+    <nav class="nav" aria-label="Main">
+      <a href="/features/">Features</a>
+      <a href="/demo/">Demo</a>
+      <a href="/for-trainers/">For Trainers</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/blog/">Blog</a>
+      <a href="https://title22.app/?src=pilot" class="btn">Open Title22</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding-bottom: 1rem;">
+    <div class="wrap">
+      <p class="eyebrow">For operators with more than one home</p>
+      <h1>The Ghost Audit: 30 days, on the homes that worry you most.</h1>
+      <p class="lede">Pick one or two of your lowest-performing facilities. Title22 runs beside whatever they use today for 30 days — nothing imported, nothing connected, nothing in your systems changed. At the end, your executives read a one-screen briefing of where each home stands, written in plain language by Tello.</p>
+      <div class="cta-row">
+        <a class="btn" href="mailto:hello@title-22.com?subject=Ghost%20Audit%20pilot%20%E2%80%94%20Title22">Request a pilot</a>
+        <a class="btn ghost" href="https://title22.app/?demo=1&amp;tour=0">See the sandbox first</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How the pilot runs</h2>
+        <p>Three steps. The first one never touches your data at all.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <strong>The executive presentation — on sample data</strong>
+          <p>We walk your leadership through Title22's public sandbox: a sample home as it is recorded, with overdue items and expired staff certifications, shown beside the same home with every open item closed. That second view is labelled as an illustration. Nobody logs into anything of yours.</p>
+        </li>
+        <li>
+          <strong>One or two homes, 30 days</strong>
+          <p>Your team signs up at title22.app and adds the one or two facilities you choose. We extend the trial to 30 days. Administrators record staff certifications and clearances, work the DSS readiness checklist, and log incidents without naming anyone — alongside what they do today, not instead of it.</p>
+        </li>
+        <li>
+          <strong>Day 1 and day 30 briefings</strong>
+          <p>On the first day and the last, Tello's portfolio briefing puts every home on one screen and summarises it for someone who has a minute. The two briefings, side by side, are the result of the pilot — in your own records.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Tello, for the executive</h2>
+        <p>Caregivers ask Tello what to do today. A regional director asks something else: which home do I look at first, and why? The portfolio briefing answers that — one row per home, lowest first, and a short summary written only from those numbers.</p>
+      </div>
+
+      <div class="brief" role="region" aria-label="Example portfolio briefing" tabindex="0">
+        <table>
+          <thead><tr><th>Home</th><th>Checklist</th><th>Overdue</th><th>Staff certs expired</th><th>Clearances open</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Home A</td><td><strong>40%</strong></td><td>2</td><td>1</td><td>1</td><td><span class="tag warn">Needs attention</span></td></tr>
+            <tr><td>Home B</td><td><strong>100%</strong></td><td>0</td><td>0</td><td>0</td><td><span class="tag">On track</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fine">An example of the layout, not a customer's figures. "Checklist" is the share of each home's Title22 checklist marked complete; each home's own dashboard score also counts staff records and filed documents.</p>
+
+      <div class="pillars" style="margin-top: 2rem;">
+        <div class="pillar">
+          <div class="kicker">Counts, not people</div>
+          <h3>Nothing identifying leaves the building</h3>
+          <p>The briefing reads checklist status, staff certification dates and incident dates. Tello is sent home names and numbers — no resident, and no staff member by name.</p>
+        </div>
+        <div class="pillar">
+          <div class="kicker">Numbers first</div>
+          <h3>The table does not depend on the AI</h3>
+          <p>Every figure is counted by the app before Tello writes a word, and she is told to add none of her own. If she is unavailable, the summary is computed from the table and says so.</p>
+        </div>
+        <div class="pillar">
+          <div class="kicker">Honest gaps</div>
+          <h3>Unread is never "clear"</h3>
+          <p>If a home's records cannot be read, the briefing says so and leaves it out of the totals. A home nobody checked is never shown as on track.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="wrap">
+      <div class="trust">
+        <p><strong>No resident health information, in the pilot or after it.</strong> Title22 holds no resident records, no medications, no MAR, no LIC 601 or LIC 602A. That is a design decision, not a pilot restriction — it is what lets Title22 run without a business associate agreement. Staff certifications and clearances are employment records. Incidents are written without naming anyone.</p>
+      </div>
+
+      <div class="section-head">
+        <h2>What it costs, and what it does not promise</h2>
+        <p>The pilot is a longer free trial — no credit card, and nothing to cancel. If you continue, the plans are the ones on the <a href="/pricing/">pricing page</a>: Multi-Home at $79 a month for up to five homes, or Agency for more, through sales. A pilot account that ends without a plan becomes read-only; nothing recorded is deleted.</p>
+        <p>Title22 helps a facility see and close its open items. It does not guarantee compliance or the outcome of an inspection, and Tello never comments on clinical or dosage matters, on any plan. Anything regulatory goes to your licensing program analyst.</p>
+      </div>
+
+      <div class="agency-row">
+        <div>
+          <strong>Start a Ghost Audit</strong>
+          <span>Tell us how many homes you run and which one or two you want in the pilot.</span>
+        </div>
+        <a class="btn" href="mailto:hello@title-22.com?subject=Ghost%20Audit%20pilot%20%E2%80%94%20Title22">Request a pilot</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>© 2026 title-22.com. All rights reserved. Powered by EC RENTAL PROPERTY MANAGEMENT LLC.<br>
+      <span class="domain-note">Website <strong>title-22.com</strong> · Secure app <strong>title22.app</strong> — same Title22, two addresses.</span></div>
+    <div><a href="/about/">About</a> · <a href="/security/">Security</a> · <a href="/faq/">FAQ</a> · <a href="/for-trainers/">For Trainers</a> · <a href="/pricing/">Pricing</a> · <a href="/blog/">Blog</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy</a> · <a href="https://title22.app/?src=pilot">Sign in</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
