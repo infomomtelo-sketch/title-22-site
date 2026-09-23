@@ -165,6 +165,15 @@
   .pitch-line .tag { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.35rem; }
   .pitch-line p { font-size: 0.97rem; color: var(--ink); margin: 0; }
   .hint { font-size: 0.88rem; color: var(--muted); margin-top: 0.75rem; }
+  .invite { margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+  .invite-card { background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--pine); border-radius: 0 8px 8px 0; padding: 0.9rem 1rem; margin-top: 0.75rem; }
+  .invite-card .tag { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.35rem; }
+  .invite-card p { margin: 0 0 0.75rem; font-size: 0.95rem; color: var(--ink); white-space: pre-line; overflow-wrap: anywhere; }
+  .invite-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .confidence { display: grid; gap: 0.8rem; margin-top: 1.25rem; }
+  .confidence div { border: 1px solid var(--line); border-radius: 10px; padding: 1rem 1.1rem; background: #fff; }
+  .confidence strong { display: block; margin-bottom: 0.3rem; }
+  .confidence p { margin: 0; color: var(--muted); font-size: 0.95rem; }
   .hint a { color: var(--pine); }
 </style>
 </head>
@@ -351,7 +360,46 @@
           <p class="hint">Send this to administrators or operators you know. Every signup through it is recorded against your code from the first click.</p>
           <a class="btn ghost" id="register" href="mailto:hello@title-22.com" style="width:100%;margin-top:.5rem;text-align:center">Register this code for payout — one tap</a>
           <p class="hint">Opens an email with your code, name and email already filled in; just press send. Eli confirms within one business day, and signups made before you register still count.</p>
+
+          <!-- Ready-to-send invitations, filled with the partner's own link. Every
+               sentence is a promise the product keeps today: signup asks only for
+               an email (no card, no facility details), the trial is 30 days, an
+               expired trial is read-only with its records kept, and nothing about
+               a resident is held. Change these if any of that changes. -->
+          <div class="invite">
+            <label>Invite someone — ready to send</label>
+            <div class="invite-card">
+              <span class="tag">Text message</span>
+              <p id="inv-text"></p>
+              <div class="invite-actions"><button class="copy-btn" type="button" data-copy="inv-text">Copy text</button></div>
+            </div>
+            <div class="invite-card">
+              <span class="tag">Email</span>
+              <p id="inv-email"></p>
+              <div class="invite-actions">
+                <button class="copy-btn" type="button" data-copy="inv-email">Copy email</button>
+                <a class="btn ghost" id="inv-mail" href="mailto:" style="padding:0.55rem 1rem;font-size:0.88rem">Open in my email app</a>
+              </div>
+            </div>
+            <p class="hint">Change the words however you like — the link is what credits you.</p>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="confidence" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What people ask — and the straight answers</h2>
+        <p>Most people who hesitate are asking one of these. Each answer is how the product works today.</p>
+      </div>
+      <div class="confidence">
+        <div><strong>"Will I get charged?"</strong><p>No. Title22 never asks for a card to start, so nothing can be charged and there is nothing to cancel. The trial is 30 days.</p></div>
+        <div><strong>"Do I have to put in my facility's details?"</strong><p>No. An email is all signup asks for. They start in a practice home with made-up staff. Even when they add their own home, the license number is optional.</p></div>
+        <div><strong>"Does it hold my residents' information?"</strong><p>No. Title22 holds no resident records, no medications and no MAR. Staff certifications and training are employment records, and incidents are written without naming anyone.</p></div>
+        <div><strong>"What if I get busy for a week?"</strong><p>Nothing is lost. When the 30 days end the account turns read-only — everything they entered stays, and they can pick a plan whenever they are ready.</p></div>
+        <div><strong>"Will this get me through an inspection?"</strong><p>Say it straight: it shows what is open and helps close it, but no software guarantees an inspection result.</p></div>
       </div>
     </div>
   </section>
@@ -381,7 +429,7 @@
         </div>
         <div class="pitch-line">
           <span class="tag">The close</span>
-          <p>"Free to try, takes two minutes to set up. Here is my link: [your link]"</p>
+          <p>"Free for 30 days — no card, nothing to cancel, and you only need an email to look around. Here is my link: [your link]"</p>
         </div>
       </div>
       <p class="hint" style="margin-top:1rem;">Include a disclosure that you earn a referral commission when they subscribe — it's required and the right thing to do.</p>
@@ -475,6 +523,21 @@
       encodeURIComponent('Register my Title22 referral code: ' + c) + '&body=' +
       encodeURIComponent('Hi Eli,\n\nPlease register my referral code for payout tracking.\n\nCode: ' + c +
         '\nLink: ' + BASE + c + '\nName: ' + (nm || '') + '\nEmail: ' + (em || '') + '\n\nThanks!');
+    var link = BASE + c, first = (nm.split(/\s+/)[0] || '');
+    var textMsg = 'I wanted to share Title22 — it keeps the Title 22 staff paperwork in one place: certifications, the 40-hour training, clearances and the DSS checklist. ' +
+      'Free for 30 days, no card and nothing to cancel, and you only need an email to look around: ' + link;
+    var subject = 'Title22 — free for 30 days, no card needed';
+    var emailMsg = 'Hi,\n\nI wanted to share Title22. It keeps the facility and staff side of Title 22 in one place: staff certifications and clearances, the 40-hour training, the DSS readiness checklist and incident reports.\n\n' +
+      'Here is my link: ' + link + '\n\n' +
+      'Worth knowing before you click:\n' +
+      '- Free for 30 days. There is no card to enter, so nothing can be charged and there is nothing to cancel.\n' +
+      '- Signing up only needs an email. You do not enter your license number or address — you start in a practice home with made-up staff.\n' +
+      '- It holds no resident health information: no resident records, no medications, no MAR.\n' +
+      '- If you get busy and stop, nothing is deleted. The account turns read-only.\n\n' +
+      (first || '');
+    document.getElementById('inv-text').textContent = textMsg;
+    document.getElementById('inv-email').textContent = 'Subject: ' + subject + '\n\n' + emailMsg;
+    document.getElementById('inv-mail').href = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(emailMsg);
     outEl.style.display = 'block';
   }
 
@@ -484,6 +547,14 @@
   });
   codeEl.addEventListener('input', function () {
     if (errEl.style.display === 'block' && clean(codeEl.value)) errEl.style.display = 'none';
+  });
+
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var t = document.getElementById(btn.getAttribute('data-copy')).textContent, label = btn.textContent;
+      function done() { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = label; }, 1600); }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(done, function () {});
+    });
   });
 
   document.getElementById('copy').addEventListener('click', function () {
