@@ -14,6 +14,15 @@ This directory serves at `https://title-22.com/videos/`.
   video and is now the poster for the trainer clip. Nothing in it is a
   product screen, so it stays.
 
+- `title22-30-day-proof.mp4` + `-poster.png` — the 30-Day Proof on
+  `/pilot/`. 45 s, 1280×720, H.264 Baseline, **silent, captions burned into
+  the picture** (the page carries the transcript). Recorded 2026-09-23 by
+  `pilot/record/record.js` from the real app's sandbox on the tour's fixture
+  set: invented staff, no resident data, the sandbox's own computed summary —
+  no AI reply is invented. Re-record: `cd videos/pilot/record &&
+  MODULES=<dir with h264-mp4-encoder, pngjs> node record.js video`, then
+  `node ../../tour/record/faststart.js out/title22-30-day-proof.mp4`.
+
 ## What was removed, and why
 
 Every narrated recording toured a product that no longer exists. Title22 Lite
