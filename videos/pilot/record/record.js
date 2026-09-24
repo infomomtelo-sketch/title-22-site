@@ -26,6 +26,12 @@ const { rowsFor } = require('../../tour/record/fixtures');
 const ROOT = process.env.APP_REPO || '/home/user/runp8-care';
 const HERE = __dirname;
 const WANT_VIDEO = process.argv[2] === 'video';
+// With FFMPEG set (a full build with libx264, e.g. the ffmpeg-static npm
+// package), the take is Chromium's own screen recording, re-encoded to a
+// smooth 30fps H.264 — instead of ~12 screenshots a second laid onto 10fps,
+// which reads as a slideshow. Without it, the screenshot path below is kept.
+const FFMPEG = WANT_VIDEO ? process.env.FFMPEG : null;
+const { execFileSync } = require('child_process');
 // The full 1280 layout, because the portfolio table needs every column: at
 // 960 its last three columns fall off the right edge, and at a 360 phone
 // layout the table scrolls sideways and loses every number. Captions are
@@ -85,7 +91,9 @@ const OVERLAY = `
   fs.mkdirSync(outDir, { recursive: true });
 
   const browser = await chromium.launch({ ...(process.env.CHROME ? { executablePath: process.env.CHROME } : {}) });
-  const ctx = await browser.newContext({ viewport: { width: VW, height: VH }, deviceScaleFactor: DSF, locale: 'en-US' });
+  const ctx = await browser.newContext({ viewport: { width: VW, height: VH }, deviceScaleFactor: DSF, locale: 'en-US',
+    ...(FFMPEG ? { recordVideo: { dir: outDir, size: { width: W, height: H } } } : {}) });
+  const tPage = Date.now();
   await ctx.route('**/nwlhsshvqmbhemhxcran.supabase.co/**', route => {
     const u = new URL(route.request().url());
     if (route.request().method() !== 'GET') return route.fulfill({ status: 403, contentType: 'application/json', body: '{"message":"read-only sandbox"}' });
@@ -119,6 +127,11 @@ const OVERLAY = `
   async function hold(ms, label) {
     const until = Date.now() + ms;
     let first = true;
+    if (FFMPEG) {
+      if (label === 'illustration') await page.waitForTimeout(800).then(async () => frames.push({ t: Date.now() - t0, buf: await page.screenshot({ type: 'png' }) }));
+      const left = until - Date.now(); if (left > 0) await page.waitForTimeout(left);
+      return;
+    }
     while (Date.now() < until) {
       const buf = await page.screenshot({ type: 'png' });
       frames.push({ t: Date.now() - t0, buf });
@@ -188,6 +201,21 @@ const OVERLAY = `
   console.log(frames.length + ' screenshots over ' + (totalMs / 1000).toFixed(1) + 's (' + (frames.length / (totalMs / 1000)).toFixed(1) + '/s)');
   if (errs.length) { console.log('page errors:'); errs.forEach(e => console.log('  ' + e)); }
   if (!WANT_VIDEO) { console.log('previews: ' + outDir); return; }
+
+  if (FFMPEG) {
+    const webm = fs.readdirSync(outDir).find(f => f.endsWith('.webm'));
+    const out = path.join(outDir, NAME + '.mp4');
+    // Trim the page load off the front: the recording started when the page
+    // was created, the take at t0.
+    const skip = ((t0 - tPage) / 1000).toFixed(2);
+    execFileSync(FFMPEG, ['-y', '-loglevel', 'error', '-ss', skip, '-i', path.join(outDir, webm), '-t', (totalMs / 1000).toFixed(2),
+      '-vf', 'fps=30,format=yuv420p', '-c:v', 'libx264', '-profile:v', 'main', '-level', '4.0', '-crf', '21', '-preset', 'slow',
+      '-movflags', '+faststart', '-an', out]);
+    fs.unlinkSync(path.join(outDir, webm));
+    if (frames[0]) fs.writeFileSync(path.join(outDir, NAME + '-poster.png'), frames[0].buf);
+    console.log('wrote ' + out + '  ' + Math.round(fs.statSync(out).size / 1024) + ' KB  ' + (totalMs / 1000).toFixed(1) + 's @30fps');
+    return;
+  }
 
   // ── encode: nearest earlier screenshot for every 1/FPS tick ─────────────
   const { PNG } = MOD('pngjs');
