@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Overview, with sound — Title22</title>
+<meta name="description" content="A two-and-a-half-minute narrated overview of Title22 for new California RCFE and ARF owners: staff records, clearance alerts, the DSS checklist, no resident health data, Tello, pricing and the 30-day free trial.">
+<link rel="canonical" href="https://title-22.com/videos/overview/">
+<meta property="og:site_name" content="Title22">
+<meta property="og:title" content="Title22 — overview, with sound">
+<meta property="og:description" content="Two and a half minutes, narrated, with captions.">
+<meta property="og:url" content="https://title-22.com/videos/overview/">
+<meta property="og:type" content="video.other">
+<meta property="og:image" content="https://title-22.com/videos/title22-overview-poster.jpg">
+<meta property="og:image:alt" content="Title slide: Your first inspection, without guessing">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Title22 — overview, with sound">
+<meta name="twitter:description" content="Two and a half minutes, narrated, with captions.">
+<meta name="twitter:image" content="https://title-22.com/videos/title22-overview-poster.jpg">
+<meta name="twitter:image:alt" content="Title slide: Your first inspection, without guessing">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@600;700&family=Public+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  .lang-row { display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; margin:0 0 1rem; }
+  .lang-row .lang-label { font-size:0.85rem; color:var(--muted); margin-right:0.3rem; }
+  .lang-btn {
+    font:inherit; font-size:0.92rem; font-weight:600; cursor:pointer;
+    padding:0.5rem 0.9rem; min-height:44px;
+    border:1px solid var(--line); border-radius:8px;
+    background:#fff; color:var(--ink);
+  }
+  .lang-btn[aria-pressed="true"] { background:var(--pine); border-color:var(--pine); color:#fff; }
+  .lang-btn:focus-visible { outline:3px solid var(--marigold); outline-offset:2px; }
+
+  .player-wrap { margin:0 0 1.2rem; }
+  .player-wrap video { width:100%; max-width:100%; height:auto; display:block;
+    background:#000; border:1px solid var(--line); border-radius:10px; }
+  .player-wrap[hidden] { display:none; }
+
+  .notice { border:1px solid var(--line); border-left:4px solid var(--marigold);
+    border-radius:8px; background:var(--cream); padding:0.9rem 1.1rem; margin:0 0 1.2rem; }
+  .notice p { margin:0.35rem 0; font-size:0.92rem; }
+  .notice p:first-child { margin-top:0; font-weight:600; }
+  .notice p:last-child { margin-bottom:0; }
+  .notice[hidden] { display:none; }
+
+  .silent { font-size:0.9rem; color:var(--muted); margin:0 0 1rem; }
+  /* The silence is the single thing most likely to read as a broken player,
+     so it is stated before anyone presses play rather than in grey below. */
+  .silent-notice p:first-child { display:flex; align-items:center; gap:0.5rem; }
+  .silent-notice svg { flex-shrink:0; color:var(--pine); }
+
+  .transcript { list-style:none; margin:0; padding:0;
+    border:1px solid var(--line); border-radius:10px; background:#fff; overflow:hidden; }
+  .transcript li + li { border-top:1px solid var(--line); }
+  .cue {
+    display:grid; grid-template-columns:5.5rem 1fr; gap:0.9rem; width:100%;
+    font:inherit; text-align:left; cursor:pointer; color:var(--ink);
+    background:none; border:0; padding:0.75rem 1rem; min-height:44px;
+  }
+  .cue:hover { background:var(--sage); }
+  .cue:focus-visible { outline:3px solid var(--marigold); outline-offset:-3px; }
+  .cue .t { font-family:"IBM Plex Mono",monospace; font-size:0.82rem; color:var(--muted); padding-top:0.15rem; }
+  .cue .x { font-size:0.95rem; line-height:1.55; }
+  .cue[aria-current="true"] { background:var(--sage); }
+  .cue[aria-current="true"] .x { font-weight:600; }
+  .cue[aria-current="true"] .t { color:var(--pine); }
+  .no-seek .cue { cursor:default; }
+  @media (max-width:32rem) {
+    .cue { grid-template-columns:4.2rem 1fr; gap:0.6rem; padding:0.7rem 0.8rem; }
+  }
+
+  .file-row { font-size:0.9rem; color:var(--muted); margin:1rem 0 0; }
+  .file-row code { font-family:"IBM Plex Mono",monospace; font-size:0.85rem; }
+</style>
+</head>
+<body>
+<script src="/assets/motion.js"></script>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">title<span class="tld">-22</span>.com</a>
+    <nav class="nav" aria-label="Main">
+      <a href="/features/">Features</a>
+      <a href="/demo/">Demo</a>
+      <a href="/for-trainers/">For Trainers</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/blog/">Blog</a>
+      <a href="https://title22.app/?src=video-overview" class="btn">Open Title22</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding-bottom:1rem;">
+    <div class="wrap">
+      <p class="eyebrow">Overview · 2 min 36 s · sound on</p>
+      <h1>Your first inspection, without guessing.</h1>
+      <p class="lede">Title22 in two and a half minutes, narrated, with captions. The staff shown are
+        invented — they come from the practice home every trial opens with. The transcript below is
+        clickable — pick a line to jump the video to it.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="player-wrap">
+        <video id="v" controls playsinline preload="metadata"
+               poster="/videos/title22-overview-poster.jpg">
+          <source src="/videos/title22-overview.mp4" type="video/mp4">
+          <source src="/videos/title22-overview.webm" type="video/webm">
+        </video>
+      </div>
+      <p class="silent">Captions are part of the picture, so they show with the sound off too.
+        Prefer to see the real app? <a href="/videos/tour/">Watch the 77-second screen recording</a>
+        — silent, with captions in English, Spanish and Filipino.</p>
+
+      <h2 style="margin-top:2rem">Transcript</h2>
+      <ol class="transcript" id="transcript">
+        <li><button type="button" class="cue" data-t="0.60"><span class="t">0:00</span><span class="x">Your first inspection, without guessing.</span></button></li>
+        <li><button type="button" class="cue" data-t="3.08"><span class="t">0:03</span><span class="x">Title22 Lite keeps staff records, training and clearances current.</span></button></li>
+        <li><button type="button" class="cue" data-t="7.79"><span class="t">0:07</span><span class="x">And it shows what DSS will ask for, before they do.</span></button></li>
+        <li><button type="button" class="cue" data-t="12.44"><span class="t">0:12</span><span class="x">Nobody hands a new administrator the list.</span></button></li>
+        <li><button type="button" class="cue" data-t="15.14"><span class="t">0:15</span><span class="x">The records DSS checks live in binders and printouts.</span></button></li>
+        <li><button type="button" class="cue" data-t="18.84"><span class="t">0:18</span><span class="x">Until a page goes missing, or a clearance lapses and nobody noticed.</span></button></li>
+        <li><button type="button" class="cue" data-t="23.41"><span class="t">0:23</span><span class="x">Staff files, the 40-hour training, TB and LiveScan dates, incident reports.</span></button></li>
+        <li><button type="button" class="cue" data-t="30.20"><span class="t">0:30</span><span class="x">Title22 tells you in ten seconds, not ten paragraphs.</span></button></li>
+        <li><button type="button" class="cue" data-t="34.20"><span class="t">0:34</span><span class="x">Every alert names a person and a date.</span></button></li>
+        <li><button type="button" class="cue" data-t="36.79"><span class="t">0:36</span><span class="x">Tick an item, and your readiness score climbs.</span></button></li>
+        <li><button type="button" class="cue" data-t="39.64"><span class="t">0:39</span><span class="x">These are invented staff, from the practice home.</span></button></li>
+        <li><button type="button" class="cue" data-t="43.85"><span class="t">0:43</span><span class="x">Setup is an evening.</span></button></li>
+        <li><button type="button" class="cue" data-t="45.43"><span class="t">0:45</span><span class="x">Add your staff. Enter each date once.</span></button></li>
+        <li><button type="button" class="cue" data-t="48.00"><span class="t">0:48</span><span class="x">Then it warns you before DSS does — with the person&#x27;s name on it.</span></button></li>
+        <li><button type="button" class="cue" data-t="53.19"><span class="t">0:53</span><span class="x">Every module maps to something an analyst checks.</span></button></li>
+        <li><button type="button" class="cue" data-t="56.23"><span class="t">0:56</span><span class="x">Staff files, training hours, clearance alerts, and the DSS checklist.</span></button></li>
+        <li><button type="button" class="cue" data-t="61.25"><span class="t">1:01</span><span class="x">A non-PHI document vault, and LIC 624 incident reports.</span></button></li>
+        <li><button type="button" class="cue" data-t="68.28"><span class="t">1:08</span><span class="x">The safest resident record is the one we never hold.</span></button></li>
+        <li><button type="button" class="cue" data-t="71.72"><span class="t">1:11</span><span class="x">No resident records. No medications. No MAR.</span></button></li>
+        <li><button type="button" class="cue" data-t="75.70"><span class="t">1:15</span><span class="x">No PHI stored, no BAA to sign, nothing to breach.</span></button></li>
+        <li><button type="button" class="cue" data-t="82.06"><span class="t">1:22</span><span class="x">Tello, the AI assistant, gives you a plain-language briefing.</span></button></li>
+        <li><button type="button" class="cue" data-t="85.95"><span class="t">1:25</span><span class="x">Overdue tasks, expiring certifications, missing staff documents.</span></button></li>
+        <li><button type="button" class="cue" data-t="90.81"><span class="t">1:30</span><span class="x">Tello never comments on clinical dosage — on any plan.</span></button></li>
+        <li><button type="button" class="cue" data-t="95.85"><span class="t">1:35</span><span class="x">Each facility is walled off at the database.</span></button></li>
+        <li><button type="button" class="cue" data-t="98.56"><span class="t">1:38</span><span class="x">Role-based access, no shared logins, and an append-only audit trail.</span></button></li>
+        <li><button type="button" class="cue" data-t="103.50"><span class="t">1:43</span><span class="x">Export or delete your records anytime. We never sell your data.</span></button></li>
+        <li><button type="button" class="cue" data-t="108.80"><span class="t">1:48</span><span class="x">Built from real facility operations.</span></button></li>
+        <li><button type="button" class="cue" data-t="111.24"><span class="t">1:51</span><span class="x">Grounded in Title 22, Division 6, Chapter 8.</span></button></li>
+        <li><button type="button" class="cue" data-t="115.05"><span class="t">1:55</span><span class="x">A tool, not a certifying body. Staying licensed is still your job.</span></button></li>
+        <li><button type="button" class="cue" data-t="121.94"><span class="t">2:01</span><span class="x">$29 a month for one home. $79 for up to five.</span></button></li>
+        <li><button type="button" class="cue" data-t="126.62"><span class="t">2:06</span><span class="x">Every plan includes Tello.</span></button></li>
+        <li><button type="button" class="cue" data-t="128.51"><span class="t">2:08</span><span class="x">30-day free trial. No card, nothing to cancel.</span></button></li>
+        <li><button type="button" class="cue" data-t="132.36"><span class="t">2:12</span><span class="x">When it ends, your account turns read-only and keeps everything.</span></button></li>
+        <li><button type="button" class="cue" data-t="137.91"><span class="t">2:17</span><span class="x">For new RCFE and ARF owners.</span></button></li>
+        <li><button type="button" class="cue" data-t="141.10"><span class="t">2:21</span><span class="x">For CE and ICTP trainers, and compliance consultants.</span></button></li>
+        <li><button type="button" class="cue" data-t="147.10"><span class="t">2:27</span><span class="x">Start your 30-day free trial at title22.app.</span></button></li>
+        <li><button type="button" class="cue" data-t="150.97"><span class="t">2:30</span><span class="x">Just an email. A practice home is ready the moment you&#x27;re in.</span></button></li>
+      </ol>
+      <p class="file-row">Start your 30-day free trial at <a href="https://title22.app/?src=video-overview">title22.app</a> — no card, nothing to cancel.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>© 2026 title-22.com. All rights reserved. Powered by EC RENTAL PROPERTY MANAGEMENT LLC.<br>
+      <span class="domain-note">Website <strong>title-22.com</strong> · Secure app <strong>title22.app</strong> — same Title22, two addresses.</span></div>
+    <div><a href="/about/">About</a> · <a href="/security/">Security</a> · <a href="/faq/">FAQ</a> · <a href="/for-trainers/">For Trainers</a> · <a href="/pricing/">Pricing</a> · <a href="/pilot/">30-Day Proof</a> · <a href="/blog/">Blog</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy</a> · <a href="https://title22.app/?src=video-overview">Sign in</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var v=document.getElementById('v');
+  var rows=[].slice.call(document.querySelectorAll('.cue'));
+  var ts=rows.map(function(r){return parseFloat(r.getAttribute('data-t'));});
+  rows.forEach(function(r,i){r.addEventListener('click',function(){
+    try{v.currentTime=ts[i];var p=v.play();if(p&&p.catch)p.catch(function(){});}catch(e){}
+  });});
+  v.addEventListener('timeupdate',function(){
+    var k=-1;for(var i=0;i<ts.length;i++){if(v.currentTime>=ts[i])k=i;}
+    rows.forEach(function(r,i){if(i===k)r.setAttribute('aria-current','true');else r.removeAttribute('aria-current');});
+  });
+})();
+</script>
+</body>
+</html>
