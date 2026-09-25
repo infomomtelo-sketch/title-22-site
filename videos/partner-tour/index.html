@@ -383,17 +383,24 @@
   video.addEventListener('seeked', syncHighlight);
 
   // A file that is missing fails at the <source>: the media element fires no
-  // error of its own, it just ends resource selection with NETWORK_NO_SOURCE,
-  // and that can happen before this script runs. A file that is present but
-  // undecodable does fire on the element.
+  // error of its own, it just ends resource selection with NETWORK_NO_SOURCE.
+  // But NETWORK_NO_SOURCE is ALSO what the element reports for a moment while
+  // it is still choosing a source -- resource selection sets it before it has
+  // looked at a single <source>. Checking it once, straight away, hid a video
+  // that played perfectly (seen in Chrome on a Mac, 2026-09-26). So it counts
+  // as a failure only if it is still true, with nothing loaded, once the
+  // choice has had time to settle. A file that is present but undecodable --
+  // WebM on an older Safari -- fires a real error on the element.
   var NETWORK_NO_SOURCE = 3;
   function checkVideo(){
-    if (video.error || video.networkState === NETWORK_NO_SOURCE) noVideo();
+    if (video.error || (video.networkState === NETWORK_NO_SOURCE && video.readyState === 0)) noVideo();
   }
+  function checkSoon(){ setTimeout(checkVideo, 2500); }
   video.addEventListener('error', noVideo);
-  var src = video.querySelector('source');
-  if (src) src.addEventListener('error', function(){ setTimeout(checkVideo, 0); });
-  checkVideo();
+  [].slice.call(video.querySelectorAll('source')).forEach(function(s){
+    s.addEventListener('error', checkSoon);
+  });
+  checkSoon();
 
   setLang(stored() || fromBrowser(), false);
 })();
