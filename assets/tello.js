@@ -28,9 +28,9 @@
   fab.innerHTML = '<span class="tlo-av" aria-hidden="true"></span><span>Hear Tello</span>';
   var card = document.createElement('div');
   card.className = 'tlo-card'; card.setAttribute('role', 'dialog'); card.setAttribute('aria-label', 'Tello');
-  card.innerHTML = '<button type="button" class="tlo-x" aria-label="Close">✕</button>' +
+  card.innerHTML = '<button type="button" class="tlo-x" aria-label="Close">×</button>' +
     '<div class="tlo-h"><span class="tlo-av" aria-hidden="true"></span><div><b>Tello</b><small>Title22 \u00b7 AI assistant</small></div></div>' +
-    '<p></p><div class="tlo-row"><button type="button" class="tlo-play">🔊 Play again</button><a class="tlo-open" href="' + APP + '">Open Title22</a></div>' +
+    '<p></p><div class="tlo-row"><button type="button" class="tlo-play">Play again</button></div>' +
     '<div class="tlo-note">AI voice. Tello never gives medical or dosage advice.</div>';
   card.querySelector('p').textContent = LINES[key];
   document.body.appendChild(card); document.body.appendChild(fab);
