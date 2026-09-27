@@ -115,29 +115,62 @@
 
 
 </style>
+<link rel="stylesheet" href="/assets/nav.css">
+<link rel="stylesheet" href="/assets/tello.css">
 </head>
 <body>
 <script src="/assets/motion.js"></script>
 
+<div class="t22strip">Run two or more homes? Test Title22 on two of them for 30 days, free.<a href="/pilot/">See the 30-Day Proof →</a></div>
 <header class="site-head">
   <div class="wrap">
     <a class="brand" href="/">title<span class="tld">-22</span>.com</a>
-    <nav class="nav" aria-label="Main">
-      <div class="nav-item has-dropdown">
-        <a href="/features/" class="nav-trigger">Features <span class="caret" aria-hidden="true">&#9662;</span></a>
-        <div class="dropdown" role="menu">
-          <a role="menuitem" href="/features/">All Features</a>
-          <a role="menuitem" href="/features/#staff">Staff &amp; Training</a>
-          <a role="menuitem" href="/features/#staff-roles">Caregiver Roles</a>
-          <a role="menuitem" href="/features/#multi-site">Multi-Facility</a>
-          <a role="menuitem" href="/features/#daily-brief">AI Daily Briefing</a>
+    <button class="t22burger" type="button" aria-label="Menu" aria-controls="t22nav" aria-expanded="false">☰</button>
+    <nav class="nav t22nav" id="t22nav" aria-label="Main">
+      <div class="grp">
+        <button class="top" type="button" aria-expanded="false">Product <span class="caret" aria-hidden="true">▼</span></button>
+        <div class="menu">
+          <a href="/features/"><span class="ic" aria-hidden="true">✅</span><b>Features</b><small>Staff files, training, clearances, checklist</small></a>
+          <a href="/#tello"><span class="ic tlo-navmark" aria-hidden="true"></span><b>Meet Tello</b><small>Your AI morning briefing</small></a>
+          <a href="/walkthrough/"><span class="ic" aria-hidden="true">🧭</span><b>How it works</b><small>A guided walkthrough</small></a>
+          <a href="/score/"><span class="ic" aria-hidden="true">⏱️</span><b>Readiness check</b><small>10 quick questions</small></a>
+          <a href="/pilot/"><span class="ic" aria-hidden="true">🏘️</span><b>More than one home?</b><small>The 30-Day Proof</small></a>
+          <a href="/security/"><span class="ic" aria-hidden="true">🔒</span><b>Security</b><small>No PHI by design</small></a>
         </div>
       </div>
-      <a href="/demo/">Demo</a>
-      <a href="/for-trainers/">For Trainers</a>
-      <a href="/pricing/">Pricing</a>
-      <a href="/blog/">Blog</a>
-      <a href="https://title22.app/?src=home" class="btn">Open Title22</a>
+      <div class="grp">
+        <button class="top" type="button" aria-expanded="false">Watch <span class="caret" aria-hidden="true">▼</span></button>
+        <div class="menu">
+          <a href="/videos/#overview"><span class="ic" aria-hidden="true">▶️</span><b>3-minute overview</b><small>Title22, plus a tour of the app</small></a>
+          <a href="/videos/#proof"><span class="ic" aria-hidden="true">🏘️</span><b>30-Day Proof</b><small>Every home on one screen</small></a>
+          <a href="/videos/#tello"><span class="ic tlo-navmark" aria-hidden="true"></span><b>Meet Tello</b><small>37 seconds</small></a>
+          <a href="/videos/#howto"><span class="ic" aria-hidden="true">🎓</span><b>How-to clips</b><small>Checklist, team, Tello</small></a>
+          <a href="/videos/#partners"><span class="ic" aria-hidden="true">🤝</span><b>For trainers and partners</b><small>How the partner program works</small></a>
+          <a class="all" href="/videos/">See all videos →</a>
+        </div>
+      </div>
+      <div class="grp">
+        <button class="top" type="button" aria-expanded="false">Partners <span class="caret" aria-hidden="true">▼</span></button>
+        <div class="menu">
+          <a href="/for-trainers/"><span class="ic" aria-hidden="true">🍎</span><b>For trainers</b><small>RCFE / ARF course instructors</small></a>
+          <a href="/affiliates/"><span class="ic" aria-hidden="true">🔗</span><b>Affiliates</b><small>Refer homes you know</small></a>
+          <a href="/partners/"><span class="ic" aria-hidden="true">🤝</span><b>Partner program</b><small>Codes, trials and commission</small></a>
+          <a href="/partner-kit/"><span class="ic" aria-hidden="true">🖼️</span><b>Partner media kit</b><small>Images, QR codes, posts</small></a>
+        </div>
+      </div>
+      <div class="grp">
+        <button class="top" type="button" aria-expanded="false">Resources <span class="caret" aria-hidden="true">▼</span></button>
+        <div class="menu">
+          <a href="/blog/"><span class="ic" aria-hidden="true">📰</span><b>Blog</b><small>DSS and Title 22 guides</small></a>
+          <a href="/faq/"><span class="ic" aria-hidden="true">❓</span><b>FAQ</b><small>Questions operators ask first</small></a>
+          <a href="/about/"><span class="ic" aria-hidden="true">🏠</span><b>About</b><small>Built from real facility operations</small></a>
+          <a href="/follow/"><span class="ic" aria-hidden="true">📣</span><b>Follow Title22</b><small>Facebook, Instagram, YouTube, TikTok</small></a>
+          <a href="/contact/"><span class="ic" aria-hidden="true">✉️</span><b>Contact</b><small>hello@title-22.com</small></a>
+        </div>
+      </div>
+      <a class="top" href="/pilot/">30-Day Proof</a>
+      <a class="top" href="/pricing/">Pricing</a>
+      <a class="btn cta" href="https://title22.app/?src=nav">Start free trial</a>
     </nav>
   </div>
 </header>
@@ -145,46 +178,70 @@
 <main>
   <section class="hero-warm">
     <div class="wrap">
-      <div>
-        <p class="eyebrow">New RCFE &amp; ARF owners · California Title 22 · Fresno, CA</p>
-        <h1>Your first inspection, without guessing.</h1>
-        <p class="lede">Nobody hands a new administrator the list. Title22 does: every Title 22 requirement your facility has to meet, already loaded, with your own dates against it — staff certifications, the 40-hour training, clearances, incident reports. You stop wondering what DSS will ask for and start seeing what is missing.</p>
-        <div class="cta-row">
-          <a class="btn" href="https://title22.app/?src=home&amp;mode=sandbox">Start 30-day free trial — no credit card</a>
-          <a class="btn ghost" href="/demo/">See Title22 in action →</a>
-          <a class="btn ghost" href="/videos/overview/">Watch the 2-minute overview (sound on)</a>
-          <a class="btn ghost" href="/score/">Check your readiness — 10 questions</a>
+      <div class="hero-grid" style="display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:2.5rem;align-items:center">
+        <div>
+          <p class="eyebrow">New RCFE &amp; ARF owners · California Title 22 · Fresno, CA</p>
+          <h1>Your first inspection, without guessing.</h1>
+          <p class="lede">Title22 keeps your staff files, training and clearances current, and shows you what DSS will ask for before they do.</p>
+          <div class="cta-row">
+            <a class="btn" href="https://title22.app/?src=home&amp;mode=sandbox">Start 30-day free trial</a>
+            <a class="btn ghost" href="/videos/">▶ Watch the videos</a>
+          </div>
+          <div class="hpath" aria-label="Pick your path">
+            <span class="lbl">Or pick your path</span>
+            <a href="/pilot/">🏘️ I run 2 or more homes</a>
+            <a href="/for-trainers/">🍎 I train administrators</a>
+            <a href="/affiliates/">🔗 I refer care homes</a>
+          </div>
+          <!-- True only while signup takes just an email, no card, and an expired
+               trial turns read-only with records kept (runp8-care). -->
+          <p class="price-line"><strong>No card. Just an email.</strong> $29/month for one home · $79 for up to five · <a href="/pricing/">Pricing</a></p>
+          <p class="price-line" style="margin-top:.35rem"><strong>No PHI by design:</strong> no resident records, no medications, no MAR.</p>
         </div>
-        <!-- True because app signup asks only for an email (or Google) and the
-             practice home needs nothing more — runp8-care index.html,
-             .signup-nodetails. If signup ever asks for a facility detail, this
-             line is false. -->
-        <p class="price-line" style="margin-bottom:.35rem"><strong>Just an email to start.</strong> No facility name, license number or address — a practice home with invented staff is ready the moment you're in.</p>
-        <!-- Zero obligation, true only while signup takes no card AND an expired
-             trial is read-only with its records kept (runp8-care t22ReadOnly).
-             If either changes, this line is false. -->
-        <p class="price-line" style="margin-bottom:.35rem"><strong>30 days, no card, nothing to cancel.</strong> Busy week? Take your time. When the trial ends nothing is charged — your account turns read-only and keeps everything you entered.</p>
-        <p class="price-line"><strong>$29/month</strong> for one facility · <strong>$79</strong> for up to five · <a href="/pricing/">See what's included</a></p>
-        <p class="price-line" style="margin-top:.35rem"><strong>Now No-PHI by Design</strong> — no resident records, no MAR, no medication data. <a href="/pricing/">Why that matters</a></p>
-        <div class="reg-strip" aria-label="Regulations and forms covered">
-          <span class="lbl">Built around:</span>
-          <span class="reg">Title 22, Div. 6, Ch. 8</span>
-          <span class="reg">LIC 622</span>
-          <span class="reg">LIC 624</span>
-          <span class="reg">40-hour training</span>
+        <div>
+          <video controls playsinline preload="none" poster="/videos/title22-presentation-poster.jpg"
+                 style="width:100%;aspect-ratio:16/9;border-radius:14px;display:block;background:#0f2a22;box-shadow:0 18px 40px rgba(0,0,0,.35)"
+                 aria-label="Title22 overview with a tour of the app, 2 minutes 50 seconds, narrated">
+            <source src="/videos/title22-presentation.mp4" type="video/mp4">
+          </video>
+          <p style="margin:.6rem 0 0;font-size:.85rem;color:#cfdccb;text-align:center">2:50 · narrated · <a href="/videos/" style="color:#fbf7f0">more videos →</a></p>
         </div>
       </div>
     </div>
   </section>
+  <style>@media (max-width:60rem){.hero-warm .hero-grid{grid-template-columns:1fr !important;gap:1.5rem !important}}</style>
+  <style>@media (max-width:720px){#tello .tello-row{grid-template-columns:1fr !important}}</style>
 
-  <!-- Show, don't tell. Three loops that explain the product without a
-       paragraph. Pure CSS/SVG — no video files, no build step, and they
-       animate on scroll rather than on load so a phone doesn't burn battery
-       on something off-screen. prefers-reduced-motion holds them still. -->
+  <section class="hsec" id="watch">
+    <div class="wrap">
+      <div class="hhead"><h2>Watch instead of reading</h2><a href="/videos/">All videos →</a></div>
+      <div class="hv-row">
+        <a class="hv" href="/videos/#overview"><span class="hv-t"><img src="/videos/title22-presentation-poster.jpg" alt="" loading="lazy"><span class="hv-p" aria-hidden="true"></span><span class="hv-d">2:50</span></span><b>Title22 + app tour</b><span>What it is, then the real app</span></a>
+        <a class="hv" href="/videos/#tello"><span class="hv-t"><img src="/videos/title22-tello-intro-poster.jpg" alt="" loading="lazy"><span class="hv-p" aria-hidden="true"></span><span class="hv-d">0:37</span></span><b>Meet Tello</b><span>Your AI morning briefing</span></a>
+        <a class="hv" href="/videos/#howto-checklist"><span class="hv-t"><img src="/videos/howto/checklist-poster.jpg" alt="" loading="lazy"><span class="hv-p" aria-hidden="true"></span><span class="hv-d">0:19</span></span><b>Read your checklist</b><span>What DSS will ask for</span></a>
+        <a class="hv" href="/videos/#howto-team"><span class="hv-t"><img src="/videos/howto/invite-team-poster.jpg" alt="" loading="lazy"><span class="hv-p" aria-hidden="true"></span><span class="hv-d">0:21</span></span><b>Invite your team</b><span>Own login, own role</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="hsec">
+    <div class="wrap">
+      <div class="hhead"><h2>What Title22 does</h2><a href="/features/">All features →</a></div>
+      <div class="hf-grid">
+        <div class="hf"><span class="hf-i" aria-hidden="true">👥</span><b>Staff files in one place</b><span>LIC 622 records, training hours and documents for every caregiver.</span><button type="button" class="tlo-say" data-tello="tile-staff"><span class="tlo-mini" aria-hidden="true"></span>Tello explains</button><span class="hf-links"><a href="/features/#staff">See staff files →</a><a class="hf-open" href="https://title22.app/?src=home-tile">Open Title22</a></span></div>
+        <div class="hf"><span class="hf-i" aria-hidden="true">⏰</span><b>Warnings before anything lapses</b><span>CPR, First Aid, TB, LiveScan and administrator dates, with the person named.</span><button type="button" class="tlo-say" data-tello="tile-alerts"><span class="tlo-mini" aria-hidden="true"></span>Tello explains</button><span class="hf-links"><a href="/videos/#tour-video">Watch the tour →</a><a class="hf-open" href="https://title22.app/?src=home-tile">Open Title22</a></span></div>
+        <div class="hf"><span class="hf-i" aria-hidden="true">✅</span><b>DSS readiness checklist</b><span>The facility and staff requirements, with your own dates and a readiness score.</span><button type="button" class="tlo-say" data-tello="tile-checklist"><span class="tlo-mini" aria-hidden="true"></span>Tello explains</button><span class="hf-links"><a href="/videos/#howto-checklist">Watch 19 s →</a><a class="hf-open" href="https://title22.app/?src=home-tile">Open Title22</a></span></div>
+        <div class="hf"><span class="hf-i tlo-tile" aria-hidden="true"></span><b>Tello, your morning briefing</b><span>A plain-language summary of what needs attention today.</span><button type="button" class="tlo-say" data-tello="tile-tello"><span class="tlo-mini" aria-hidden="true"></span>Tello explains</button><span class="hf-links"><a href="/videos/#tello">Watch 37 s →</a><a class="hf-open" href="https://title22.app/?src=home-tile">Open Title22</a></span></div>
+        <div class="hf"><span class="hf-i" aria-hidden="true">🔑</span><b>Everyone gets their own login</b><span>Five roles, from administrator to read-only for an inspector.</span><button type="button" class="tlo-say" data-tello="tile-roles"><span class="tlo-mini" aria-hidden="true"></span>Tello explains</button><span class="hf-links"><a href="/videos/#howto-team">Watch 21 s →</a><a class="hf-open" href="https://title22.app/?src=home-tile">Open Title22</a></span></div>
+        <div class="hf"><span class="hf-i" aria-hidden="true">🏘️</span><b>More than one home</b><span>Switch between homes, with each home’s records kept separate.</span><button type="button" class="tlo-say" data-tello="tile-homes"><span class="tlo-mini" aria-hidden="true"></span>Tello explains</button><span class="hf-links"><a href="/pilot/">The 30-Day Proof →</a><a class="hf-open" href="https://title22.app/?src=home-tile">Open Title22</a></span></div>
+      </div>
+    </div>
+  </section>
+
   <section class="show" aria-label="How Title22 works">
     <div class="wrap">
       <div class="section-head">
-        <h2>Ten seconds, not ten paragraphs.</h2>
+        <h2>See it in ten seconds.</h2>
         <p>This is the whole product.</p>
       </div>
 
@@ -228,284 +285,92 @@
     </div>
   </section>
 
-  <section>
+  <section id="tello">
     <div class="wrap">
-      <div class="section-head">
-        <h2>Built for staff training records and inspection readiness</h2>
-        <p>Document that training happened. Keep the proof on file.</p>
-      </div>
-      <div class="pillars">
-        <div class="pillar">
-          <div class="kicker">Train Staff</div>
-          <h3>Policy-based training</h3>
-          <ul>
-            <li>Deliver your own CDSS-approved training material</li>
-            <li>Assign training by caregiver role</li>
-            <li>Track who completed what, and when</li>
-          </ul>
-        </div>
-        <div class="pillar">
-          <div class="kicker">Document Compliance</div>
-          <h3>Records an analyst can follow</h3>
-          <ul>
-            <li>Timestamped staff and training logs</li>
-            <li>Records mapped to LIC 622</li>
-            <li>Find gaps before a DSS visit</li>
-          </ul>
-        </div>
-        <div class="pillar">
-          <div class="kicker">Prove Readiness</div>
-          <h3>Evidence for approval</h3>
-          <ul>
-            <li>Completion records reviewable on demand</li>
-            <li>Staff certification tracking</li>
-            <li>Consistent documentation across facilities</li>
-          </ul>
-        </div>
-      </div>
-      <div class="cta-row" style="margin-top:2rem;">
-        <a class="btn" href="https://title22.app/?src=cdss-positioning">Start your free trial — train your first class today</a>
-        <a class="btn ghost" href="/for-trainers/">For CE &amp; ICTP Trainers →</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="explainer">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>The story, in four steps</h2>
-        <p>Watch it sketch out as you scroll — this is the shift your facility makes.</p>
-      </div>
-      <div class="explain-track">
-        <div class="explain-step step-1">
-          <svg class="draw-icon" viewBox="0 0 64 64" aria-hidden="true">
-            <path d="M16 12 h32 v8 h-32 Z M16 26 h32 v8 h-32 Z M16 40 h32 v8 h-32 Z"/>
-          </svg>
-          <div class="caption">
-            <h3>Binders and printouts</h3>
-            <p>Where compliance used to live — until a page went missing.</p>
+      <div class="tello-row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:2.5rem;align-items:center">
+        <div>
+          <p class="eyebrow">Meet Tello</p>
+          <h2>Your morning briefing, in plain words.</h2>
+          <p>Tello is the AI assistant inside Title22. Every morning it tells you what needs attention: whose certification is about to lapse, and what's overdue. Ask it anything about your home's records and get a plain answer.</p>
+          <p>Tello is included on every plan. It never gives medical or dosage advice, and Title22 holds no resident health information.</p>
+          <div class="cta-row" style="margin-top:1.5rem">
+            <a class="btn" href="https://title22.app/?src=home-tello">Try Title22 free for 30 days</a>
           </div>
         </div>
-        <div class="explain-line line-1"></div>
-        <div class="explain-step step-2">
-          <svg class="draw-icon" viewBox="0 0 64 64" aria-hidden="true">
-            <path d="M14 8 h36 v48 h-36 Z M20 20 l4 4 l8 -8 M20 34 l4 4 l8 -8 M20 48 l4 4 l8 -8"/>
-          </svg>
-          <div class="caption">
-            <h3>One digital record</h3>
-            <p>Every entry timestamped, attributed, and complete.</p>
-          </div>
-        </div>
-        <div class="explain-line line-2"></div>
-        <div class="explain-step step-3">
-          <svg class="draw-icon" viewBox="0 0 64 64" aria-hidden="true">
-            <path d="M32 6 L54 15 V32 C54 46 44 55 32 59 C20 55 10 46 10 32 V15 Z M21 32 l7 7 l15 -16"/>
-          </svg>
-          <div class="caption">
-            <h3>Current every day</h3>
-            <p>Nothing to dig out the night before a DSS visit.</p>
-          </div>
-        </div>
-        <div class="explain-line line-3"></div>
-        <div class="explain-step step-4">
-          <svg class="draw-icon" viewBox="0 0 64 64" aria-hidden="true">
-            <path d="M8 42 h12 v-11 l-6 -6 l-6 6 Z M26 48 h12 v-11 l-6 -6 l-6 6 Z M44 42 h12 v-11 l-6 -6 l-6 6 Z M20 40 L26 40 M38 40 L44 40"/>
-          </svg>
-          <div class="caption">
-            <h3>Every facility, one view</h3>
-            <p>Scale without losing consistency across licenses.</p>
-          </div>
+        <div>
+          <video controls playsinline preload="none" poster="/videos/title22-tello-intro-poster.jpg"
+                 style="width:100%;max-width:300px;aspect-ratio:9/16;border-radius:16px;display:block;margin:0 auto;background:#143c31"
+                 aria-label="Meet Tello, a 37-second narrated video">
+            <source src="/videos/title22-tello-intro.mp4" type="video/mp4">
+            <track kind="captions" srclang="en" label="English" src="/videos/title22-tello-intro.en.vtt">
+          </video>
         </div>
       </div>
     </div>
   </section>
 
-  <section>
+  <section class="hsec">
     <div class="wrap">
-      <div class="section-head">
-        <h2>Everything you need, in three places</h2>
-        <p>The three things that keep an administrator up at night.</p>
-      </div>
-      <div class="pillars">
-        <div class="pillar">
-          <div class="kicker">Keep Records Current</div>
-          <h3>Compliance, every day</h3>
-          <ul>
-            <li>Certification and clearance expiry, flagged early</li>
-            <li>DSS readiness checklist and score</li>
-            <li>Records mapped to LIC 622</li>
-          </ul>
-        </div>
-        <div class="pillar">
-          <div class="kicker">Save Staff Time</div>
-          <h3>Less paperwork, more care</h3>
-          <ul>
-            <li>40-hour training tracked per person</li>
-            <li>One login instead of paper binders</li>
-            <li>Morning briefing in plain language</li>
-          </ul>
-        </div>
-        <div class="pillar">
-          <div class="kicker">Scale With Confidence</div>
-          <h3>One system, every facility</h3>
-          <ul>
-            <li>A document vault that holds no PHI</li>
-            <li>Role-based caregiver access</li>
-            <li>Consistent records across licenses</li>
-          </ul>
-        </div>
-      </div>
-      <div class="cta-row" style="margin-top:2rem">
-        <a class="btn" href="https://title22.app/?src=home&amp;mode=sandbox">Start your 30-day free trial</a>
-        <a class="btn ghost" href="/for-trainers/">For trainers →</a>
+      <div class="hhead"><h2>Who it’s for</h2></div>
+      <div class="hw-grid">
+        <div class="hw"><span class="hw-k">Owners &amp; administrators</span><h3>Run a care home</h3><p>See what’s missing before an inspection, not during one.</p><button type="button" class="tlo-say" data-tello="who-owners"><span class="tlo-mini" aria-hidden="true"></span>Tello explains</button>
+        <a class="btn" href="https://title22.app/?src=home-who">Start free trial</a></div>
+        <div class="hw"><span class="hw-k">CE &amp; ICTP trainers</span><h3>Teach administrators</h3><p>Your students get a 90-day trial. You earn 20% of every paid month.</p><button type="button" class="tlo-say" data-tello="who-trainers"><span class="tlo-mini" aria-hidden="true"></span>Tello explains</button>
+        <a class="btn" href="/for-trainers/">Trainer program</a></div>
+        <div class="hw"><span class="hw-k">Consultants &amp; affiliates</span><h3>Advise care homes</h3><p>Refer homes you know and earn on every subscription.</p><button type="button" class="tlo-say" data-tello="who-affiliates"><span class="tlo-mini" aria-hidden="true"></span>Tello explains</button>
+        <a class="btn" href="/affiliates/">Affiliate program</a></div>
       </div>
     </div>
   </section>
 
-  <section>
+  <section class="hsec">
     <div class="wrap">
-      <div class="section-head">
-        <h2>Everything DSS looks at, in one place</h2>
-        <p>Each module maps to something a licensing analyst actually checks — not a generic feature list.</p>
-      </div>
-      <div class="ledger">
-        <div class="row">
-          <div class="tag-col"><span class="reg">LIC 622</span></div>
-          <div>
-            <h3>Staff files, certifications and the 40-hour training</h3>
-            <p>One record per person: hire date, role, TB clearance, LiveScan, CPR and First Aid expiry, mandated reporter training, and the 40-hour requirement tracked to completion. Expiring items surface before an analyst finds them. These are employment records, not medical ones.</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="tag-col"><span class="reg">Staff roles</span></div>
-          <div>
-            <h3>Role-based caregiver access</h3>
-            <p>Administrator, supervisor, caregiver, and read-only roles keep documentation accountable. Caregivers see what they need for their shift — nothing they shouldn't touch.</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="tag-col"><span class="reg">Multi-site</span></div>
-          <div>
-            <h3>Multi-facility oversight</h3>
-            <p>Operating more than one home? Switch between facilities from one account, with records and staff kept cleanly separated per license.</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="tag-col"><span class="reg">Daily brief</span></div>
-          <div>
-            <h3>AI daily briefing</h3>
-            <p>Start each morning with a plain-language summary of what needs attention today: documentation gaps, follow-ups, and items an auditor would flag.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="trust">
-        <p><strong>A hard line we don't cross:</strong> Title22's AI never suggests, corrects, or comments on clinical dosage information. Medication decisions belong to physicians and pharmacists. Our AI is limited to documentation completeness and compliance — nothing clinical, ever.</p>
-      </div>
+      <div class="hhead"><h2>Quick answers</h2><a href="/faq/">Full FAQ →</a></div>
+      <details class="hq"><summary>How much does it cost?</summary><p>$29/month for one home, $79/month for up to five. Every trial is 30 days, with no card and nothing to cancel.</p></details>
+      <details class="hq"><summary>Is there a MAR or resident records?</summary><p>No. Title22 holds no resident health information: no resident records, no medications, no MAR. That’s why there’s no business associate agreement to sign. Keep using what you use today for medication administration.</p></details>
+      <details class="hq"><summary>Who built it?</summary><p>Built from real facility operations, with requirements guided by a certified California RCFE administrator.</p></details>
+      <details class="hq"><summary>Does the AI give medical advice?</summary><p>Never. Tello never suggests, corrects or comments on medications or dosage, on any plan.</p></details>
     </div>
   </section>
-
-
-
-  <section>
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Questions operators ask first</h2>
-        <p>The four we hear most. <a href="/faq/">Read the full FAQ →</a></p>
-      </div>
-      <div class="faq-list">
-        <details>
-          <summary>Does Title22 replace our paper binders completely?</summary>
-          <p>Day to day, yes — Title22 moves the records you work from every shift into one digital record, every entry timestamped and permanently attributed to the caregiver who logged it, with no shared logins. It does not take over your licensing obligations: Title22 supplements, and does not replace, your facility's record-keeping duties, so keep your own copies of the records your license requires you to retain.</p>
-        </details>
-        <details>
-          <summary>Which CDSS licensing forms are mapped inside the software?</summary>
-          <p>The modules map to the facility and staff documents an analyst checks during a visit: LIC 622 (personnel records / staff files), the 40-hour training requirement, certification and clearance expiry, and LIC 624 incident reports. Resident-side forms — LIC 601, LIC 602A, the MAR — are not in Title22 Lite, because it holds no resident health information.</p>
-        </details>
-        <details>
-          <summary>Is there a MAR?</summary>
-          <p>No. Title22 Lite stores no medication administration record, no medication records and no resident records. Keeping resident health information out is what lets it run without a business associate agreement, and it is why the price is $29. Facilities keep using whatever they use today for medication administration.</p>
-        </details>
-        <details>
-          <summary>Does the AI make clinical decisions or adjust medication doses?</summary>
-          <p>No — this is a hard line. Title22's AI never suggests, corrects, or comments on clinical dosage information. Medication decisions belong to physicians and pharmacists. The AI is limited to documentation completeness and compliance guidelines.</p>
-        </details>
-        <details>
-          <summary>We operate multiple facilities. Can we track them all together?</summary>
-          <p>Yes. Administrators switch between facility locations from a single dashboard account, while every staff log, document and license stays separated per facility license number.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Built from real facility operations</h2>
-        <p>Guided by a certified California RCFE administrator. From real DSS visits, not guesses.</p>
-      </div>
-      <div class="proof-band">
-        <div class="proof">
-          <div class="proof-k">Requirements guided by a certified administrator</div>
-          <p>Built from real facility operations, with requirements guided by a certified California RCFE administrator and drawn from day-to-day work in licensed six-bed care homes — not adapted from generic healthcare software.</p>
-        </div>
-        <div class="proof">
-          <div class="proof-k">Grounded in the regulation text</div>
-          <p>Requirements are drawn from Title&nbsp;22, Division 6, Chapter 8 and mapped to LIC&nbsp;622, LIC&nbsp;624 and the staff training rules. Where a rule isn't grounded in the regulations or a practicing administrator's knowledge, it doesn't ship.</p>
-        </div>
-        <div class="proof">
-          <div class="proof-k">A line we don't cross</div>
-          <p>The AI never suggests, corrects, or comments on clinical dosage information — on any plan, including the free trial. Documentation completeness only.</p>
-        </div>
-      </div>
-      <div class="cta-row">
-        <a class="btn" href="https://title22.app/?src=home&amp;mode=sandbox">Start 30-day free trial — no credit card needed</a>
-        <a class="btn ghost" href="/features/">See all features</a>
-        <a class="btn ghost" href="/walkthrough/">Take the walkthrough</a>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Who Title22 is built for</h2>
-        <p>Whether you run a facility, train administrators, or advise care homes on compliance — Title22 fits where you work.</p>
-      </div>
-      <div class="pillars">
-        <div class="pillar">
-          <div class="kicker">Facility Operators</div>
-          <h3>Administrators &amp; owners</h3>
-          <ul>
-            <li>See what is missing before an inspection, not during one</li>
-            <li>Track every caregiver's training completion</li>
-            <li>Manage multiple facilities from one dashboard</li>
-          </ul>
-          <p style="margin-top:1rem;"><a href="https://title22.app/?src=operators&amp;mode=sandbox">Start free trial →</a></p>
-        </div>
-        <div class="pillar">
-          <div class="kicker">CE &amp; ICTP Trainers</div>
-          <h3>DSS-approved trainers</h3>
-          <ul>
-            <li>Free classroom account, seeded for teaching</li>
-            <li>Your graduates sign up under your trainer code</li>
-            <li>20% recurring referral commission</li>
-          </ul>
-          <p style="margin-top:1rem;"><a href="/for-trainers/">Learn about the trainer program →</a></p>
-        </div>
-        <div class="pillar">
-          <div class="kicker">Compliance Consultants</div>
-          <h3>Advisors &amp; affiliates</h3>
-          <ul>
-            <li>Refer clients who need compliance help</li>
-            <li>Earn on every subscription you bring in</li>
-            <li>Use it to support your consulting work</li>
-          </ul>
-          <p style="margin-top:1rem;"><a href="/affiliates/">Join the affiliate program →</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
+<style>
+  .hsec{padding:2.5rem 0 1rem}
+  .hhead{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
+  .hhead h2{margin:0}
+  .hhead a{font-weight:600;color:var(--pine)}
+  .hv-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+  @media (max-width:60rem){.hv-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .hv{display:grid;gap:.2rem;text-decoration:none;color:var(--ink)}
+  .hv-t{position:relative;display:block;aspect-ratio:16/10;border-radius:12px;overflow:hidden;background:#143c31;margin-bottom:.4rem}
+  .hv-t img{width:100%;height:100%;object-fit:cover;display:block}
+  .hv-p{position:absolute;inset:0;margin:auto;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center}
+  .hv-p::after{content:"";margin-left:4px;border-left:14px solid var(--pine);border-top:9px solid transparent;border-bottom:9px solid transparent}
+  .hv-d{position:absolute;right:6px;bottom:6px;background:rgba(0,0,0,.72);color:#fff;font:600 .75rem "IBM Plex Mono",monospace;padding:1px 6px;border-radius:5px}
+  .hv b{font-size:.98rem;color:var(--deep)}
+  .hv>span:last-child{font-size:.85rem;color:var(--muted)}
+  .hv:hover b{color:var(--pine)}
+  .hf-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+  @media (max-width:60rem){.hf-grid{grid-template-columns:1fr}}
+  .hf{display:grid;gap:.3rem;padding:1.1rem 1.2rem;border:1px solid var(--line);border-radius:14px;background:var(--white);text-decoration:none;color:var(--ink)}
+  
+  .hf-i{font-size:1.6rem}
+  .hf b{font-size:1.05rem;color:var(--deep)}
+  .hf span:not(.hf-i){font-size:.92rem;color:var(--muted);line-height:1.45}
+  .hf-links{display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;margin-top:.4rem}
+  .hf-links a{font-weight:600;font-size:.9rem;color:var(--pine)}
+  .hf-links .hf-open{background:var(--pine);color:#fff;padding:.4rem .85rem;border-radius:999px;text-decoration:none}
+  .hf-links .hf-open:hover{background:var(--deep)}
+  .hw-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+  @media (max-width:60rem){.hw-grid{grid-template-columns:1fr}}
+  .hw{padding:1.3rem;border-radius:14px;background:var(--sage);display:grid;gap:.4rem;align-content:start}
+  .hw-k{font:500 .75rem "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--pine)}
+  .hw h3{margin:0}
+  .hw p{margin:0 0 .5rem;color:var(--ink)}
+  .hw .btn{justify-self:start}
+  .hw .tlo-say,.hf .tlo-say{justify-self:start}
+  .hq{border-bottom:1px solid var(--line);padding:.9rem 0}
+  .hq summary{cursor:pointer;font-weight:600;font-size:1.02rem;color:var(--deep)}
+  .hq p{margin:.6rem 0 0;color:var(--muted);max-width:46rem}
+</style>
 </main>
 
 <footer class="site-foot">
@@ -611,5 +476,8 @@
   } catch (e) {}
 })();
 </script>
+<script src="/assets/follow.js" defer></script>
+<script src="/assets/nav.js" defer></script>
+<script src="/assets/tello.js" defer></script>
 </body>
 </html>

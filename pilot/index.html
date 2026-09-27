@@ -62,6 +62,8 @@
   .pilot-video details { margin-top: 0.4rem; font-size: 0.9rem; }
   .pilot-video summary { cursor: pointer; color: var(--pine); font-weight: 600; }
 </style>
+<link rel="stylesheet" href="/assets/nav.css">
+<link rel="stylesheet" href="/assets/tello.css">
 </head>
 <body>
 <script src="/assets/motion.js"></script>
@@ -83,80 +85,89 @@
 <header class="site-head">
   <div class="wrap">
     <a class="brand" href="/">title<span class="tld">-22</span>.com</a>
-    <nav class="nav" aria-label="Main">
-      <a href="/features/">Features</a>
-      <a href="/demo/">Demo</a>
-      <a href="/for-trainers/">For Trainers</a>
-      <a href="/pricing/">Pricing</a>
-      <a href="/blog/">Blog</a>
-      <a href="https://title22.app/?src=pilot" class="btn">Open Title22</a>
+    <button class="t22burger" type="button" aria-label="Menu" aria-controls="t22nav" aria-expanded="false">☰</button>
+    <nav class="nav t22nav" id="t22nav" aria-label="Main">
+      <div class="grp">
+        <button class="top" type="button" aria-expanded="false">Product <span class="caret" aria-hidden="true">▼</span></button>
+        <div class="menu">
+          <a href="/features/"><span class="ic" aria-hidden="true">✅</span><b>Features</b><small>Staff files, training, clearances, checklist</small></a>
+          <a href="/#tello"><span class="ic tlo-navmark" aria-hidden="true"></span><b>Meet Tello</b><small>Your AI morning briefing</small></a>
+          <a href="/walkthrough/"><span class="ic" aria-hidden="true">🧭</span><b>How it works</b><small>A guided walkthrough</small></a>
+          <a href="/score/"><span class="ic" aria-hidden="true">⏱️</span><b>Readiness check</b><small>10 quick questions</small></a>
+          <a href="/pilot/"><span class="ic" aria-hidden="true">🏘️</span><b>More than one home?</b><small>The 30-Day Proof</small></a>
+          <a href="/security/"><span class="ic" aria-hidden="true">🔒</span><b>Security</b><small>No PHI by design</small></a>
+        </div>
+      </div>
+      <div class="grp">
+        <button class="top" type="button" aria-expanded="false">Watch <span class="caret" aria-hidden="true">▼</span></button>
+        <div class="menu">
+          <a href="/videos/#overview"><span class="ic" aria-hidden="true">▶️</span><b>3-minute overview</b><small>Title22, plus a tour of the app</small></a>
+          <a href="/videos/#proof"><span class="ic" aria-hidden="true">🏘️</span><b>30-Day Proof</b><small>Every home on one screen</small></a>
+          <a href="/videos/#tello"><span class="ic tlo-navmark" aria-hidden="true"></span><b>Meet Tello</b><small>37 seconds</small></a>
+          <a href="/videos/#howto"><span class="ic" aria-hidden="true">🎓</span><b>How-to clips</b><small>Checklist, team, Tello</small></a>
+          <a href="/videos/#partners"><span class="ic" aria-hidden="true">🤝</span><b>For trainers and partners</b><small>How the partner program works</small></a>
+          <a class="all" href="/videos/">See all videos →</a>
+        </div>
+      </div>
+      <div class="grp">
+        <button class="top" type="button" aria-expanded="false">Partners <span class="caret" aria-hidden="true">▼</span></button>
+        <div class="menu">
+          <a href="/for-trainers/"><span class="ic" aria-hidden="true">🍎</span><b>For trainers</b><small>RCFE / ARF course instructors</small></a>
+          <a href="/affiliates/"><span class="ic" aria-hidden="true">🔗</span><b>Affiliates</b><small>Refer homes you know</small></a>
+          <a href="/partners/"><span class="ic" aria-hidden="true">🤝</span><b>Partner program</b><small>Codes, trials and commission</small></a>
+          <a href="/partner-kit/"><span class="ic" aria-hidden="true">🖼️</span><b>Partner media kit</b><small>Images, QR codes, posts</small></a>
+        </div>
+      </div>
+      <div class="grp">
+        <button class="top" type="button" aria-expanded="false">Resources <span class="caret" aria-hidden="true">▼</span></button>
+        <div class="menu">
+          <a href="/blog/"><span class="ic" aria-hidden="true">📰</span><b>Blog</b><small>DSS and Title 22 guides</small></a>
+          <a href="/faq/"><span class="ic" aria-hidden="true">❓</span><b>FAQ</b><small>Questions operators ask first</small></a>
+          <a href="/about/"><span class="ic" aria-hidden="true">🏠</span><b>About</b><small>Built from real facility operations</small></a>
+          <a href="/follow/"><span class="ic" aria-hidden="true">📣</span><b>Follow Title22</b><small>Facebook, Instagram, YouTube, TikTok</small></a>
+          <a href="/contact/"><span class="ic" aria-hidden="true">✉️</span><b>Contact</b><small>hello@title-22.com</small></a>
+        </div>
+      </div>
+      <a class="top" href="/pilot/">30-Day Proof</a>
+      <a class="top" href="/pricing/">Pricing</a>
+      <a class="btn cta" href="https://title22.app/?src=nav">Start free trial</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <section class="hero" style="padding-bottom: 1rem;">
+  <section class="pvband" aria-label="Video">
     <div class="wrap">
-      <p class="eyebrow">For operators with more than one home</p>
-      <h1>The 30-Day Proof.</h1>
-      <p class="lede"><strong>Two of your homes. Thirty days. Judge it on day 30.</strong></p>
-      <p class="lede">Title22 runs beside what you use today — nothing imported, nothing connected. On day 1 and day 30, Tello's briefing puts each home on one screen. Compare the two and decide.</p>
-      <div class="cta-row">
-        <a class="btn" href="mailto:hello@title-22.com?subject=Set%20up%20a%2030-Day%20Proof%20%E2%80%94%20Title22">Set up a 30-Day Proof</a>
-        <a class="btn ghost" href="https://title22.app/?demo=1&amp;tour=0">See the sandbox first</a>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding-top: 0.5rem;">
-    <div class="wrap">
-      <!-- 45 s, silent, captions burned into the picture. Recorded from the
-           real app's sandbox by videos/pilot/record/record.js: invented staff,
-           no resident data, the sandbox's own computed summary. -->
-      <figure class="pilot-video">
-        <video controls playsinline preload="none" poster="/videos/title22-30-day-proof-poster.png"
-               width="1280" height="720" aria-describedby="pilot-video-transcript">
-          <source src="/videos/title22-30-day-proof.mp4" type="video/mp4">
-        </video>
-        <figcaption>45 seconds, no sound needed — the captions are in the picture. Recorded in Title22's sandbox with invented staff.</figcaption>
-        <details id="pilot-video-transcript">
+      <div class="pv-grid">
+        <div>
+          <div class="pv-k">▶ Watch first · 0:53</div>
+          <h1 class="pv-h1">The 30-Day Proof</h1>
+          <p>Two of your homes. Thirty days. Judge it on day 30.</p>
+          <p class="pv-open"><a class="btn" href="https://title22.app/?src=watch-first" style="background:#e8a33d;color:#143c31 !important">Open Title22, free for 30 days</a></p>
+          <details style="color:#cfdccb;font-size:.9rem" id="pilot-video-transcript">
           <summary>Read it instead</summary>
           <p>Which of your homes do you look at first? Title22 runs beside what you already use, and it holds no resident health information. In the Tello tab, the portfolio briefing puts every home on one screen: one row per home, lowest first — checklist, overdue items, expired certifications, open clearances. Every number is counted by the app, not guessed by the AI. In the sandbox, the second row is an illustration: the same home with every open item closed. Then a short summary, for someone who has a minute. Two of your homes, thirty days: press the briefing on day 1 and again on day 30, and compare. No card, nothing to cancel.</p>
         </details>
-      </figure>
+          <p style="margin-top:.8rem"><a href="/videos/">More videos →</a></p>
+        </div>
+        <video controls playsinline preload="none" poster="/videos/title22-30-day-proof-poster.png" aria-describedby="pilot-video-transcript" aria-label="The 30-Day Proof, narrated video">
+          <source src="/videos/title22-30-day-proof.mp4" type="video/mp4">
+          <track kind="captions" srclang="en" label="English" src="/videos/title22-30-day-proof.en.vtt">
+        </video>
+      </div>
     </div>
   </section>
 
-  <section>
+  <section class="ft">
     <div class="wrap">
-      <div class="section-head">
-        <h2>How it runs</h2>
-        <p>Three steps. The first one never touches your data at all.</p>
-      </div>
-      <ol class="steps">
-        <li>
-          <strong>The executive presentation — on sample data</strong>
-          <p>We walk your leadership through Title22's public sandbox: a sample home as it is recorded, with overdue items and expired staff certifications, shown beside the same home with every open item closed. That second view is labelled as an illustration. Nobody logs into anything of yours.</p>
-        </li>
-        <li>
-          <strong>One or two homes, 30 days</strong>
-          <p>Your team signs up at title22.app and adds the one or two facilities you choose — every Title22 trial is 30 days, with no card and nothing to cancel, so there is nothing to arrange. Administrators record staff certifications and clearances, work the DSS readiness checklist, and log incidents without naming anyone — alongside what they do today, not instead of it.</p>
-        </li>
-        <li>
-          <strong>Day 1 and day 30 briefings</strong>
-          <p>On the first day and the last, Tello's portfolio briefing puts every home on one screen and summarises it for someone who has a minute. The two briefings, side by side, are the result — in your own records.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section style="padding-top: 0;">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Tello, for the executive</h2>
-        <p>Caregivers ask Tello what to do today. A regional director asks something else: which home do I look at first, and why? The portfolio briefing answers that — one row per home, lowest first, and a short summary written only from those numbers.</p>
+      <h2 class="ft-h">How it runs</h2>
+      <div class="ft-grid ft-3">
+        <div class="ft-c"><span class="ft-i" aria-hidden="true">🖥️</span><b>First: sample data</b><span>Nobody logs into anything of yours.</span><button type="button" class="tlo-say" data-tello="pp-sample"><span class="tlo-mini" aria-hidden="true"></span>Tello explains</button><span class="ft-links"><a href="https://title22.app/?demo=1&amp;tour=0">See the sandbox →</a><a class="ft-open" href="https://title22.app/?src=pilot-card">Open Title22</a></span></div>
+        <div class="ft-c"><span class="ft-i" aria-hidden="true">🏘️</span><b>Two homes, 30 days</b><span>Beside what you use today. No card.</span><button type="button" class="tlo-say" data-tello="pp-homes"><span class="tlo-mini" aria-hidden="true"></span>Tello explains</button><span class="ft-links"><a class="ft-open" href="https://title22.app/?src=pilot-card">Open Title22</a></span></div>
+        <div class="ft-c"><span class="ft-i" aria-hidden="true">📊</span><b>Day 1 vs day 30</b><span>Every home on one screen. Compare.</span><button type="button" class="tlo-say" data-tello="pp-compare"><span class="tlo-mini" aria-hidden="true"></span>Tello explains</button><span class="ft-links"><a class="ft-open" href="https://title22.app/?src=pilot-card">Open Title22</a></span></div>
       </div>
 
+      <h2 class="ft-h" style="margin-top:2rem">What the briefing looks like</h2>
       <div class="brief" role="region" aria-label="Example portfolio briefing" tabindex="0">
         <table>
           <thead><tr><th>Home</th><th>Checklist</th><th>Overdue</th><th>Staff certs expired</th><th>Clearances open</th><th>Status</th></tr></thead>
@@ -166,47 +177,31 @@
           </tbody>
         </table>
       </div>
-      <p class="fine">An example of the layout, not a customer's figures. "Checklist" is the share of each home's Title22 checklist marked complete; each home's own dashboard score also counts staff records and filed documents.</p>
+      <p class="fine">Example layout, not a customer's figures.</p>
 
-      <div class="pillars" style="margin-top: 2rem;">
-        <div class="pillar">
-          <div class="kicker">Counts, not people</div>
-          <h3>Nothing identifying leaves the building</h3>
-          <p>The briefing reads checklist status, staff certification dates and incident dates. Tello is sent home names and numbers — no resident, and no staff member by name.</p>
-        </div>
-        <div class="pillar">
-          <div class="kicker">Numbers first</div>
-          <h3>The table does not depend on the AI</h3>
-          <p>Every figure is counted by the app before Tello writes a word, and she is told to add none of her own. If she is unavailable, the summary is computed from the table and says so.</p>
-        </div>
-        <div class="pillar">
-          <div class="kicker">Honest gaps</div>
-          <h3>Unread is never "clear"</h3>
-          <p>If a home's records cannot be read, the briefing says so and leaves it out of the totals. A home nobody checked is never shown as on track.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding-top: 0;">
-    <div class="wrap">
-      <div class="trust">
-        <p><strong>No resident health information, during the 30 days or after.</strong> Title22 holds no resident records, no medications, no MAR, no LIC 601 or LIC 602A. That is a design decision, not a trial restriction — it is what lets Title22 run without a business associate agreement. Staff certifications and clearances are employment records. Incidents are written without naming anyone.</p>
+      <h2 class="ft-h" style="margin-top:2rem">Start in 3 taps</h2>
+      <div class="ft-steps">
+        <a class="ft-s" href="mailto:hello@title-22.com?subject=Set%20up%20a%2030-Day%20Proof%20%E2%80%94%20Title22&body=Hi%20Eli%2C%0A%0AHow%20many%20homes%20I%20run%3A%20%0AThe%20two%20I%27d%20start%20with%3A%20%0A%0AThanks%2C%0A"><span class="ft-n">1</span><b>Set up my Proof</b><small>Email is pre-written</small></a>
+        <a class="ft-s" href="https://title22.app/?demo=1&amp;tour=0"><span class="ft-n">2</span><b>See the sandbox</b><small>Sample home, no login</small></a>
+        <a class="ft-s" href="https://title22.app/?src=pilot-steps"><span class="ft-n">3</span><b>Open Title22</b><small>Free for 30 days</small></a>
       </div>
 
-      <div class="section-head">
-        <h2>What it costs, and what it does not promise</h2>
-        <p>It is the standard 30-day free trial, with someone from Title22 alongside — no credit card, and nothing to cancel. If you continue, the plans are the ones on the <a href="/pricing/">pricing page</a>: Multi-Home at $79 a month for up to five homes, or Agency for more, through sales. An account that ends without a plan becomes read-only; nothing recorded is deleted.</p>
-        <p>Title22 helps a facility see and close its open items. It does not guarantee compliance or the outcome of an inspection, and Tello never comments on clinical or dosage matters, on any plan. Anything regulatory goes to your licensing program analyst.</p>
-      </div>
-
-      <div class="agency-row">
-        <div>
-          <strong>Set up a 30-Day Proof</strong>
-          <span>Tell us how many homes you run and which two you want to start with.</span>
-        </div>
-        <a class="btn" href="mailto:hello@title-22.com?subject=Set%20up%20a%2030-Day%20Proof%20%E2%80%94%20Title22">Set up a 30-Day Proof</a>
-      </div>
+      <details class="hq" style="margin-top:2rem">
+        <summary>Is any resident information involved?</summary>
+        <p>No. No resident records, no medications, no MAR. Incidents are written without naming anyone.</p>
+      </details>
+      <details class="hq">
+        <summary>Can the AI make up numbers?</summary>
+        <p>No. The app counts every figure first. Tello only summarises them. A home that can't be read is flagged, never shown as on track.</p>
+      </details>
+      <details class="hq">
+        <summary>What does it cost?</summary>
+        <p>Nothing for 30 days. After that, Multi-Home is $79 a month for up to five homes. No plan? The account turns read-only and nothing is deleted. <a href="/pricing/">Pricing →</a></p>
+      </details>
+      <details class="hq">
+        <summary>Does it guarantee an inspection result?</summary>
+        <p>No. It shows open items and helps close them. Regulatory questions go to your licensing analyst.</p>
+      </details>
     </div>
   </section>
 </main>
@@ -219,5 +214,8 @@
   </div>
 </footer>
 
+<script src="/assets/follow.js" defer></script>
+<script src="/assets/nav.js" defer></script>
+<script src="/assets/tello.js" defer></script>
 </body>
 </html>

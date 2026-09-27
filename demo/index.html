@@ -280,25 +280,84 @@
   .transcript p { margin:0 0 0.6rem; font-size:0.95rem; line-height:1.6; }
   .transcript .ts { font-family:"IBM Plex Mono",monospace; font-size:0.8rem; color:var(--muted); margin-right:0.5rem; }
 </style>
+<link rel="stylesheet" href="/assets/nav.css">
+<link rel="stylesheet" href="/assets/tello.css">
 </head>
 <body>
 <script src="/assets/motion.js"></script>
 
+<div class="t22strip">Run two or more homes? Test Title22 on two of them for 30 days, free.<a href="/pilot/">See the 30-Day Proof →</a></div>
 <header class="site-head">
   <div class="wrap">
     <a class="brand" href="/">title<span class="tld">-22</span>.com</a>
-    <nav class="nav" aria-label="Main">
-      <a href="/features/">Features</a>
-      <a href="/demo/" aria-current="page">Demo</a>
-      <a href="/for-trainers/">For Trainers</a>
-      <a href="/pricing/">Pricing</a>
-      <a href="/blog/">Blog</a>
-      <a href="https://title22.app/?src=demo" class="btn">Open Title22</a>
+    <button class="t22burger" type="button" aria-label="Menu" aria-controls="t22nav" aria-expanded="false">☰</button>
+    <nav class="nav t22nav" id="t22nav" aria-label="Main">
+      <div class="grp">
+        <button class="top" type="button" aria-expanded="false">Product <span class="caret" aria-hidden="true">▼</span></button>
+        <div class="menu">
+          <a href="/features/"><span class="ic" aria-hidden="true">✅</span><b>Features</b><small>Staff files, training, clearances, checklist</small></a>
+          <a href="/#tello"><span class="ic tlo-navmark" aria-hidden="true"></span><b>Meet Tello</b><small>Your AI morning briefing</small></a>
+          <a href="/walkthrough/"><span class="ic" aria-hidden="true">🧭</span><b>How it works</b><small>A guided walkthrough</small></a>
+          <a href="/score/"><span class="ic" aria-hidden="true">⏱️</span><b>Readiness check</b><small>10 quick questions</small></a>
+          <a href="/pilot/"><span class="ic" aria-hidden="true">🏘️</span><b>More than one home?</b><small>The 30-Day Proof</small></a>
+          <a href="/security/"><span class="ic" aria-hidden="true">🔒</span><b>Security</b><small>No PHI by design</small></a>
+        </div>
+      </div>
+      <div class="grp">
+        <button class="top" type="button" aria-expanded="false">Watch <span class="caret" aria-hidden="true">▼</span></button>
+        <div class="menu">
+          <a href="/videos/#overview"><span class="ic" aria-hidden="true">▶️</span><b>3-minute overview</b><small>Title22, plus a tour of the app</small></a>
+          <a href="/videos/#proof"><span class="ic" aria-hidden="true">🏘️</span><b>30-Day Proof</b><small>Every home on one screen</small></a>
+          <a href="/videos/#tello"><span class="ic tlo-navmark" aria-hidden="true"></span><b>Meet Tello</b><small>37 seconds</small></a>
+          <a href="/videos/#howto"><span class="ic" aria-hidden="true">🎓</span><b>How-to clips</b><small>Checklist, team, Tello</small></a>
+          <a href="/videos/#partners"><span class="ic" aria-hidden="true">🤝</span><b>For trainers and partners</b><small>How the partner program works</small></a>
+          <a class="all" href="/videos/">See all videos →</a>
+        </div>
+      </div>
+      <div class="grp">
+        <button class="top" type="button" aria-expanded="false">Partners <span class="caret" aria-hidden="true">▼</span></button>
+        <div class="menu">
+          <a href="/for-trainers/"><span class="ic" aria-hidden="true">🍎</span><b>For trainers</b><small>RCFE / ARF course instructors</small></a>
+          <a href="/affiliates/"><span class="ic" aria-hidden="true">🔗</span><b>Affiliates</b><small>Refer homes you know</small></a>
+          <a href="/partners/"><span class="ic" aria-hidden="true">🤝</span><b>Partner program</b><small>Codes, trials and commission</small></a>
+          <a href="/partner-kit/"><span class="ic" aria-hidden="true">🖼️</span><b>Partner media kit</b><small>Images, QR codes, posts</small></a>
+        </div>
+      </div>
+      <div class="grp">
+        <button class="top" type="button" aria-expanded="false">Resources <span class="caret" aria-hidden="true">▼</span></button>
+        <div class="menu">
+          <a href="/blog/"><span class="ic" aria-hidden="true">📰</span><b>Blog</b><small>DSS and Title 22 guides</small></a>
+          <a href="/faq/"><span class="ic" aria-hidden="true">❓</span><b>FAQ</b><small>Questions operators ask first</small></a>
+          <a href="/about/"><span class="ic" aria-hidden="true">🏠</span><b>About</b><small>Built from real facility operations</small></a>
+          <a href="/follow/"><span class="ic" aria-hidden="true">📣</span><b>Follow Title22</b><small>Facebook, Instagram, YouTube, TikTok</small></a>
+          <a href="/contact/"><span class="ic" aria-hidden="true">✉️</span><b>Contact</b><small>hello@title-22.com</small></a>
+        </div>
+      </div>
+      <a class="top" href="/pilot/">30-Day Proof</a>
+      <a class="top" href="/pricing/">Pricing</a>
+      <a class="btn cta" href="https://title22.app/?src=nav">Start free trial</a>
     </nav>
   </div>
 </header>
 
 <main>
+  <section class="pvband" aria-label="Video">
+    <div class="wrap">
+      <div class="pv-grid">
+        <div>
+          <div class="pv-k">▶ Watch first · 0:40</div>
+          <h2>See Title22 in action</h2>
+          <p>The real app, step by step, narrated.</p>
+          <p class="pv-open"><a class="btn" href="https://title22.app/?src=watch-first" style="background:#e8a33d;color:#143c31 !important">Open Title22, free for 30 days</a></p>
+          <p><a href="/videos/">More videos →</a></p>
+        </div>
+        <video controls playsinline preload="none" poster="/videos/title22-presentation-poster.jpg" aria-label="See Title22 in action, narrated video">
+          <source src="/videos/title22-presentation.mp4#t=21" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
   <section class="demo-hero">
     <div class="wrap">
       <p class="eyebrow" style="text-align:left">See it in action</p>
@@ -314,7 +373,7 @@
      through the app's own guided tour, in which no resident can appear
      because Lite holds none. Linked below; the cards stay, they carry this
      column on their own. -->
-      <p style="margin:0 0 1.25rem"><a class="btn ghost" href="/videos/tour/">Watch the 77-second tour →</a></p>
+      <p style="margin:0 0 1.25rem"><a class="btn ghost" href="/videos/">Watch all the videos →</a></p>
       <div class="show-grid">
 
         <figure class="show-card" data-anim>
@@ -389,7 +448,6 @@
   <div class="trust-strip">
     <div class="wrap">
       <span class="item">Requirements guided by a certified RCFE administrator</span>
-      <span class="item">Trusted by CE trainers</span>
       <span class="item">California DSS-aligned</span>
     </div>
   </div>
@@ -399,7 +457,7 @@
       <div class="section-head">
         <p class="eyebrow" style="text-align:left">For CE &amp; ICTP trainers</p>
         <h2>Teach it. Your graduates will run it.</h2>
-        <p>If you train RCFE administrators, Title22 gives your graduates a real tool to point to on day one — not just a certificate. Refer them in and earn 20% of every paid subscription, every month they stay subscribed.</p>
+        <p>Students get a 90-day trial through your link. You earn 20% of every paid month.</p>
       </div>
 
       <div class="trainer-grid">
@@ -407,9 +465,11 @@
           <video id="trainerVideo"
                  src="/videos/title22-trainer-pitch.mp4"
                  poster="/videos/title22-demo-poster.jpg"
-                 muted playsinline controls
+                 playsinline controls
                  preload="metadata"
-                 aria-label="Short silent clip for RCFE certification trainers"></video>
+                 aria-label="Short narrated clip for RCFE certification trainers">
+            <track kind="captions" srclang="en" label="English" src="/videos/title22-trainer-pitch.en.vtt" default>
+          </video>
         </div>
         <div>
           <ul class="covers">
@@ -434,32 +494,32 @@
       <div class="ai-grid">
         <div class="pillar">
           <h3>AI Compliance Assistant</h3>
-          <p style="color:var(--muted);margin:0">Ask: "Whose CPR certification expires before the end of the quarter?" Get an answer grounded in your own staff records.</p>
+          <p style="color:var(--muted);margin:0">Ask "whose CPR expires this quarter?" Get names.</p>
         </div>
         <div class="pillar">
           <h3>Readiness Score</h3>
-          <p style="color:var(--muted);margin:0">Upload a new CPR certification. The facility's readiness score moves from 91 to 94, live.</p>
+          <p style="color:var(--muted);margin:0">Upload a CPR card. Watch the score climb.</p>
         </div>
         <div class="pillar">
           <h3>Daily Briefing</h3>
-          <p style="color:var(--muted);margin:0">Every morning: 2 certifications expire this week, 1 incident follow-up is overdue, 3 checklist items are due.</p>
+          <p style="color:var(--muted);margin:0">Every morning: what expires, what's overdue.</p>
         </div>
         <div class="pillar">
           <h3>Scan to Fill</h3>
-          <p style="color:var(--muted);margin:0">Photograph a CPR card or a TB clearance. Title22 reads the dates off it and fills the fields, marking each one high, medium or low confidence so you check the ones worth checking.</p>
+          <p style="color:var(--muted);margin:0">Photograph a card. The dates fill in.</p>
         </div>
         <div class="pillar">
           <h3>Incident Reporting</h3>
-          <p style="color:var(--muted);margin:0">Type, time, injury, who was notified, corrective action — the fields an LIC 624 asks for, in one form, exportable for DSS. It refuses a save containing an SSN, phone number or email.</p>
+          <p style="color:var(--muted);margin:0">LIC 624 fields in one form. No resident health info.</p>
         </div>
         <div class="pillar">
           <h3>Append-Only Audit Log</h3>
-          <p style="color:var(--muted);margin:0">Every entry: who, what, when. Nothing edited, nothing deleted — exportable as a single file for a surveyor.</p>
+          <p style="color:var(--muted);margin:0">Who, what, when. Nothing deleted.</p>
         </div>
       </div>
 
       <div class="trust">
-        <p><strong>A hard line we don't cross:</strong> nowhere in Title22 does the AI suggest, adjust, or comment on a dosage. It flags missing documentation — the clinical call always stays with the physician and pharmacist.</p>
+        <p>The AI never gives dosage or clinical advice.</p>
       </div>
     </div>
   </section>
@@ -642,14 +702,6 @@
       href: '/features/#ai',
       track: 'tl_ai'
     },
-    /* 1:16 – 1:30  Digital MAR */
-    {
-      start: 76, end: 90,
-      x: 8, y: 76,
-      label: 'Digital MAR',
-      href: '/features/#mar',
-      track: 'tl_mar'
-    },
     /* 1:31 – 1:45  Audit log */
     {
       start: 91, end: 105,
@@ -757,5 +809,8 @@
   cards.forEach(function (c) { io.observe(c); });
 })();
 </script>
+<script src="/assets/follow.js" defer></script>
+<script src="/assets/nav.js" defer></script>
+<script src="/assets/tello.js" defer></script>
 </body>
 </html>

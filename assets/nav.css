@@ -1,0 +1,77 @@
+/* Main menu with dropdowns. Shared by every page (assets/nav.js drives it). */
+.t22nav{display:flex;align-items:center;gap:.25rem}
+.t22nav .grp{position:relative}
+.t22nav .top{display:inline-flex;align-items:center;gap:.3rem;background:none;border:0;font:inherit;font-size:.95rem;color:var(--ink);padding:.55rem .7rem;border-radius:8px;cursor:pointer;text-decoration:none;min-height:44px}
+.t22nav .top:hover,.t22nav .grp.open>.top{background:var(--sage);color:var(--pine)}
+.t22nav .top .caret{font-size:.6em;transition:transform .15s}
+.t22nav .grp.open>.top .caret{transform:rotate(180deg)}
+.t22nav .menu{position:absolute;top:100%;left:0;margin-top:.35rem;min-width:17rem;background:var(--white);border:1px solid var(--line);border-radius:12px;box-shadow:0 14px 34px rgba(20,60,49,.16);padding:.45rem;display:none;z-index:50}
+.t22nav .grp.open>.menu{display:grid;gap:.1rem}
+.t22nav .menu a{display:grid;grid-template-columns:1.6rem 1fr;gap:.1rem .5rem;align-items:start;padding:.55rem .7rem;border-radius:8px;text-decoration:none;color:var(--ink)}
+.t22nav .menu a:hover,.t22nav .menu a:focus-visible{background:var(--sage)}
+.t22nav .menu .ic{grid-row:span 2;font-size:1.05rem;line-height:1.3}
+.t22nav .menu b{font-weight:600;font-size:.92rem;color:var(--deep)}
+.t22nav .menu small{font-size:.8rem;color:var(--muted);line-height:1.35}
+.t22nav .menu .all{border-top:1px solid var(--line);margin-top:.3rem;padding-top:.6rem;display:block;font-weight:600;font-size:.88rem;color:var(--pine)}
+.t22nav .cta{margin-left:.5rem}
+.t22burger{display:none;background:none;border:1px solid var(--line);border-radius:10px;min-width:44px;min-height:44px;font-size:1.3rem;color:var(--ink);cursor:pointer}
+@media (max-width:60rem){
+  .t22burger{display:inline-flex;align-items:center;justify-content:center}
+  .site-head .wrap{flex-wrap:wrap}
+  .t22nav{display:none;flex-basis:100%;flex-direction:column;align-items:stretch;gap:.15rem;padding:.5rem 0 1rem}
+  .t22nav.show{display:flex}
+  .t22nav .top{width:100%;justify-content:space-between;font-size:1.02rem}
+  .t22nav .menu{position:static;box-shadow:none;border:0;margin:0;padding:0 0 .4rem .5rem;min-width:0}
+  .t22nav .cta{margin:.6rem 0 0;text-align:center}
+}
+
+/* "Watch first" video band at the top of each page */
+.pvband{background:linear-gradient(135deg,#143c31,#1e5748);color:#fbf7f0;padding:1.6rem 0}
+.pvband .pv-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:2rem;align-items:center}
+.pvband.tall .pv-grid{grid-template-columns:minmax(0,1.4fr) minmax(0,300px)}
+.pvband .pv-k{font:500 .78rem "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:#e8a33d}
+.pvband h2{color:#fbf7f0;margin:.35rem 0 .5rem;font-size:clamp(1.4rem,3.4vw,2rem)}
+.pvband p{color:#cfdccb;margin:0 0 .8rem}
+.pvband a{color:#fbf7f0}
+.pvband video{width:100%;display:block;border-radius:14px;background:#0f2a22;box-shadow:0 16px 36px rgba(0,0,0,.35)}
+.pvband:not(.tall) video{aspect-ratio:16/9}
+.pvband.tall video{aspect-ratio:9/16;max-height:72vh;width:auto;max-width:100%;margin:0 auto}
+@media (max-width:60rem){.pvband .pv-grid,.pvband.tall .pv-grid{grid-template-columns:1fr;gap:1rem}.pvband.tall video{max-height:58vh}}
+.site-head .brand{gap:0}
+
+/* Top strip on every page */
+.t22strip{background:#e8a33d;color:#143c31;text-align:center;font-size:.92rem;font-weight:600;padding:.5rem 1rem}
+.t22strip a{color:#143c31;text-decoration:underline;margin-left:.3rem;white-space:nowrap}
+/* "Pick your path" row in the homepage hero */
+.hpath{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0 1.2rem}
+.hpath a{display:inline-flex;align-items:center;gap:.45rem;background:rgba(251,247,240,.12);border:1px solid rgba(251,247,240,.55);color:#fbf7f0 !important;text-decoration:none;font-weight:600;font-size:.95rem;padding:.6rem 1rem;border-radius:999px;min-height:44px}
+.hpath a:hover{background:rgba(251,247,240,.22)}
+.hpath .lbl{flex-basis:100%;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#e8a33d;font-weight:600}
+
+/* Short card pages: 4-card grid, tap-to-start steps, folded questions */
+.pvband h1.pv-h1{color:#fbf7f0;font-size:clamp(1.5rem,4vw,2.2rem);margin:.2rem 0 .5rem}
+.ft{padding:2rem 0 3rem}
+.ft-h{font-size:1.4rem;margin:0 0 1rem;color:var(--deep)}
+.ft-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+@media (max-width:64rem){.ft-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:36rem){.ft-grid{grid-template-columns:1fr}}
+.ft-c{display:grid;gap:.35rem;align-content:start;padding:1.1rem;border:1px solid var(--line);border-radius:14px;background:var(--white)}
+.ft-i{font-size:1.7rem}
+.ft-c b{font-size:1.05rem;color:var(--deep)}
+.ft-c > span:not(.ft-i):not(.ft-links){font-size:.92rem;color:var(--muted)}
+.ft-c .tlo-say{justify-self:start}
+.ft-links{display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;margin-top:.3rem}
+.ft-links a{font-weight:600;font-size:.9rem;color:var(--pine)}
+.ft-links .ft-open{background:var(--pine);color:#fff;padding:.4rem .85rem;border-radius:999px;text-decoration:none}
+.ft-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+@media (max-width:36rem){.ft-steps{grid-template-columns:1fr}}
+.ft-s{display:grid;grid-template-columns:auto 1fr;column-gap:.7rem;align-items:center;padding:1rem;border-radius:14px;background:var(--deep,#143c31);color:#fbf7f0;text-decoration:none}
+.ft-s:hover{background:var(--pine)}
+.ft-n{grid-row:span 2;width:2.2rem;height:2.2rem;border-radius:50%;background:#e8a33d;color:#143c31;display:grid;place-items:center;font-weight:700}
+.ft-s small{opacity:.8}
+.ft-ol{margin:.6rem 0 0;padding-left:1.3rem;color:var(--muted)}
+.hq{border-bottom:1px solid var(--line);padding:.9rem 0}
+.hq summary{cursor:pointer;font-weight:600;font-size:1.02rem;color:var(--deep)}
+.hq p{margin:.6rem 0 0;color:var(--muted)}
+.ft-grid.ft-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:48rem){.ft-grid.ft-3{grid-template-columns:1fr}}
