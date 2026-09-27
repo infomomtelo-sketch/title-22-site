@@ -599,3 +599,71 @@ article.post .checklist li::before {
 }
 .agency-row strong { display: block; }
 .agency-row span { color: var(--muted); font-size: 0.9rem; }
+
+/* ===== Motion row — tags, Tello typing, orbit (homepage) =====
+   Every panel is drawn finished by default and only animates once it has
+   scrolled into view (.mo-go), so a full-page screenshot or a phone that
+   never fires the observer still shows the whole thing. */
+  .motion { background: var(--white); }
+  .mo-viz { height: 210px; position: relative; display: grid; place-items: center; overflow: hidden;
+    border-radius: 10px; background: linear-gradient(160deg, var(--sage), var(--cream)); }
+
+  /* 1. A staff file with tags sliding onto it */
+  .mo-staff { width: 52%; background: var(--white); border: 1px solid var(--line); border-radius: 12px;
+    padding: 0.6rem; text-align: center; box-shadow: 0 6px 18px rgba(20,60,49,.08); }
+  .mo-staff .av { width: 36px; height: 36px; border-radius: 50%; margin: 0 auto 0.3rem; background: var(--pine);
+    color: #fff; display: grid; place-items: center; font-weight: 600; font-size: 0.85rem; }
+  .mo-staff .nm { font-size: 0.85rem; color: var(--ink); font-weight: 600; }
+  .mo-staff .rl { font-size: 0.72rem; color: var(--muted); }
+  .mo-tag { position: absolute; font-family: "IBM Plex Mono", monospace; font-size: 0.66rem; letter-spacing: .02em;
+    padding: 0.28rem 0.6rem 0.28rem 0.85rem; color: #fff; background: var(--pine); white-space: nowrap;
+    clip-path: polygon(8px 0, 100% 0, 100% 100%, 8px 100%, 0 50%); }
+  .mo-tag.warn { background: #b07a1e; }
+  .mo-tag.bad  { background: #a13d2d; }
+  /* Two above the card, two below: none of them covers the name. */
+  .mo-tag:nth-of-type(1) { top: 8%; left: 4%; }
+  .mo-tag:nth-of-type(2) { top: 8%; right: 4%; }
+  .mo-tag:nth-of-type(3) { bottom: 8%; left: 4%; }
+  .mo-tag:nth-of-type(4) { bottom: 8%; right: 4%; }
+  .mo-go .mo-tag { animation: tagIn .6s cubic-bezier(.2,.8,.3,1) both, tagBob 4s ease-in-out 1.2s infinite; }
+  .mo-go .mo-tag:nth-of-type(2) { animation-delay: .35s, 1.6s; }
+  .mo-go .mo-tag:nth-of-type(3) { animation-delay: .7s, 2s; }
+  .mo-go .mo-tag:nth-of-type(4) { animation-delay: 1.05s, 2.4s; }
+  @keyframes tagIn { from { opacity: 0; transform: translateX(-18px); } to { opacity: 1; transform: none; } }
+  @keyframes tagBob { 50% { transform: translateY(-3px); } }
+
+  /* 2. Tello typing her briefing */
+  .mo-chat { display: flex; align-items: center; gap: 0.6rem; width: 88%; }
+  .mo-t { flex: none; width: 46px; height: 46px; border-radius: 50%; background: var(--deep); color: #fff;
+    display: grid; place-items: center; font-family: "Zilla Slab", Georgia, serif; font-weight: 700; font-size: 1.3rem;
+    box-shadow: 0 0 0 4px rgba(232,163,61,.35); }
+  .mo-go .mo-t { animation: tPulse 2.4s ease-in-out infinite; }
+  @keyframes tPulse { 50% { box-shadow: 0 0 0 9px rgba(232,163,61,0); } }
+  .mo-bubble { flex: 1; min-height: 3.4rem; background: var(--white); border: 1px solid var(--line);
+    border-radius: 14px 14px 14px 4px; padding: 0.6rem 0.75rem; font-size: 0.85rem; line-height: 1.4; color: var(--ink);
+    box-shadow: 0 6px 18px rgba(20,60,49,.08); }
+  .mo-bubble b { color: var(--pine); }
+  .mo-bubble .w { display: inline-block; animation: wIn .25s ease both; }
+  @keyframes wIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+  /* 3. Tello at the centre, the three things she watches going round */
+  .mo-orbit { position: relative; width: 170px; height: 170px; }
+  .mo-ring { position: absolute; inset: 0; border: 1px dashed #9fb8ad; border-radius: 50%; }
+  .mo-orbit .mo-t { position: absolute; left: 50%; top: 50%; margin: -23px 0 0 -23px; }
+  .mo-spin { position: absolute; inset: 0; }
+  .mo-node { position: absolute; width: 56px; margin: -21px 0 0 -28px; text-align: center; }
+  .mo-node i { display: grid; place-items: center; width: 38px; height: 38px; margin: 0 auto; border-radius: 50%;
+    background: var(--white); border: 1px solid var(--line); box-shadow: 0 4px 12px rgba(20,60,49,.1); }
+  .mo-node svg { width: 20px; height: 20px; stroke: var(--pine); fill: none; stroke-width: 1.8;
+    stroke-linecap: round; stroke-linejoin: round; }
+  .mo-node span { display: block; font-size: 0.62rem; color: var(--muted); margin-top: 2px; }
+  .mo-node:nth-child(1) { left: 50%; top: 0; }
+  .mo-node:nth-child(2) { left: 93.3%; top: 75%; }
+  .mo-node:nth-child(3) { left: 6.7%; top: 75%; }
+  .mo-go .mo-spin { animation: spin 24s linear infinite; }
+  .mo-go .mo-node > * { animation: spin 24s linear infinite reverse; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mo-go .mo-tag, .mo-go .mo-t, .mo-go .mo-spin, .mo-go .mo-node > *, .mo-bubble .w { animation: none; }
+  }
