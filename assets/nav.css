@@ -7,7 +7,7 @@
 .t22nav .grp.open>.top .caret{transform:rotate(180deg)}
 .t22nav .menu{position:absolute;top:100%;left:0;margin-top:.35rem;min-width:17rem;background:var(--white);border:1px solid var(--line);border-radius:12px;box-shadow:0 14px 34px rgba(20,60,49,.16);padding:.45rem;display:none;z-index:50}
 .t22nav .grp.open>.menu{display:grid;gap:.1rem}
-.t22nav .menu a{display:grid;grid-template-columns:1.6rem 1fr;gap:.1rem .5rem;align-items:start;padding:.55rem .7rem;border-radius:8px;text-decoration:none;color:var(--ink)}
+.t22nav .menu a{display:grid;grid-template-columns:1fr;gap:.1rem .5rem;align-items:start;padding:.55rem .7rem;border-radius:8px;text-decoration:none;color:var(--ink)}
 .t22nav .menu a:hover,.t22nav .menu a:focus-visible{background:var(--sage)}
 .t22nav .menu .ic{grid-row:span 2;font-size:1.05rem;line-height:1.3}
 .t22nav .menu b{font-weight:600;font-size:.92rem;color:var(--deep)}

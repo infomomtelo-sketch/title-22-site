@@ -3,6 +3,9 @@
   'use strict';
   var nav = document.querySelector('.t22nav'); if (!nav) return;
   var burger = document.querySelector('.t22burger');
+  // Drawn icons, not the old ☰ / ✕ characters, which some phones show as emoji.
+  var OPEN = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
+  var CLOSE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
   var groups = [].slice.call(nav.querySelectorAll('.grp'));
   var hover = window.matchMedia('(hover: hover) and (min-width: 60.01rem)');
   function close(except) { groups.forEach(function (g) { if (g !== except) { g.classList.remove('open'); g.querySelector('.top').setAttribute('aria-expanded', 'false'); } }); }
@@ -19,6 +22,6 @@
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
   if (burger) burger.addEventListener('click', function () {
     var show = !nav.classList.contains('show'); nav.classList.toggle('show', show);
-    burger.setAttribute('aria-expanded', show ? 'true' : 'false'); burger.textContent = show ? '✕' : '☰';
+    burger.setAttribute('aria-expanded', show ? 'true' : 'false'); burger.innerHTML = show ? CLOSE : OPEN;
   });
 })();

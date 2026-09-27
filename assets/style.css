@@ -400,11 +400,14 @@ article.post .checklist li {
   border-bottom: 1px dashed var(--line);
 }
 article.post .checklist li::before {
-  content: "☐";
+  content: "";
   position: absolute;
   left: 0.25rem;
-  color: var(--pine);
-  font-size: 1.1rem;
+  top: 0.95rem;
+  width: 0.85rem;
+  height: 0.85rem;
+  border: 1.5px solid var(--pine);
+  border-radius: 2px;
 }
 .post-cta {
   background: var(--sage);
