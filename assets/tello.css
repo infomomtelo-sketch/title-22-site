@@ -31,3 +31,8 @@
 .t22nav .menu .ic.tlo-navmark{width:22px;height:22px;border-radius:50%;background:url(/assets/tello-mark-sm.svg) center/contain no-repeat;font-size:0}
 /* Feature tiles about Tello carry her mark instead of an emoji. */
 .tlo-tile{display:inline-block;width:32px;height:32px;border-radius:50%;background:url(/assets/tello-mark-sm.svg) center/contain no-repeat;font-size:0}
+/* The "Hear Tello" button floats bottom-right, so the page must be able to scroll its
+   last line above it: without this, on a phone the footer's Instagram and TikTok
+   icons sat underneath the button at the end of every page and could not be tapped
+   (found 2026-09-27). 64px of button + 16px gap + room for the iPhone home bar. */
+footer.site-foot{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
