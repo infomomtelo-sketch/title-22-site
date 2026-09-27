@@ -4,9 +4,11 @@ This directory serves at `https://title-22.com/videos/`.
 
 ## What is here
 
-- `title22-trainer-pitch.mp4` — the trainer-focused clip in the "For CE &
-  ICTP trainers" section on `/demo/`. 23.6s, 1080×1920, **silent — no audio
-  track**, so it needs no captions and makes no spoken claims. It is
+- `title22-trainer-pitch.mp4` + `.en.vtt` — the trainer-focused clip in the
+  "For CE & ICTP trainers" section on `/demo/`. 34 s, 1080×1920, **narrated
+  (AI voice)** with English captions. The first list card was changed from
+  "Keeping resident records up to date" to "Keeping staff records up to date",
+  because Title22 Lite holds no resident records. It is
   classroom footage with title cards; it shows no product screens, no
   resident names and no medication, which is why it survived the cull below.
 - `title22-demo-poster.jpg` — a plain title card ("Title22 — guided by a
@@ -15,8 +17,10 @@ This directory serves at `https://title-22.com/videos/`.
   product screen, so it stays.
 
 - `title22-30-day-proof.mp4` + `-poster.png` — the 30-Day Proof on
-  `/pilot/`. 45 s, 1280×720, H.264 Baseline, **silent, captions burned into
-  the picture** (the page carries the transcript). Recorded 2026-09-23 by
+  `/pilot/`. 53 s, 1280×720, H.264 Baseline, **narrated (AI voice)**, captions
+  burned into the picture plus `title22-30-day-proof.en.vtt` (the page carries
+  the transcript). Voiced after recording: re-recording with record.js gives a
+  silent file that needs voicing again. Recorded 2026-09-23 by
   `pilot/record/record.js` from the real app's sandbox on the tour's fixture
   set: invented staff, no resident data, the sandbox's own computed summary —
   no AI reply is invented. Re-record: `cd videos/pilot/record &&

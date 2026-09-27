@@ -1,0 +1,33 @@
+/* Tello on the website: a floating helper that speaks when tapped. Never autoplays sound. */
+.tlo-fab{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:.5rem;background:#123a30;color:#f9f5ed;border:0;border-radius:999px;padding:.45rem .9rem .45rem .45rem;font:600 .95rem "Public Sans",sans-serif;box-shadow:0 10px 26px rgba(0,0,0,.28);cursor:pointer;min-height:48px}
+/* Tello's mark: the same vector "T" as the app, measured off the intro video. The
+   letter in the markup is kept for screen readers and hidden visually. */
+.tlo-av{width:40px;height:40px;border-radius:50%;background:url(/assets/tello-mark.svg) center/contain no-repeat;box-shadow:0 0 0 3px rgba(232,162,61,.18),0 0 0 4px rgba(232,162,61,.5);flex:0 0 auto;font-size:0;color:transparent;overflow:hidden}
+.tlo-fab.speaking .tlo-av{animation:tloPulse 1s ease-in-out infinite}
+@keyframes tloPulse{0%,100%{box-shadow:0 0 0 0 rgba(232,162,61,.7)}50%{box-shadow:0 0 0 8px rgba(232,162,61,0)}}
+.tlo-card{position:fixed;right:16px;bottom:76px;z-index:60;width:min(340px,calc(100vw - 32px));background:#f9f5ed;color:#1a2420;border:1px solid #d8e2dc;border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.22);padding:1rem 1rem .9rem;display:none}
+.tlo-card.show{display:block}
+.tlo-card .tlo-h{display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem}
+.tlo-card .tlo-h b{font-family:"Zilla Slab",Georgia,serif;font-size:1.25rem;color:#123a30}
+.tlo-card .tlo-h small{display:block;margin-top:2px;font:500 .64rem/1.3 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:rgba(18,58,48,.62)}
+.tlo-card p{margin:0 0 .8rem;font-size:.95rem;line-height:1.5}
+.tlo-row{display:flex;flex-wrap:wrap;gap:.5rem}
+.tlo-row button,.tlo-row a{font:600 .88rem "Public Sans",sans-serif;border-radius:999px;padding:.5rem .9rem;min-height:40px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center}
+.tlo-play{background:#1e5748;color:#fff;border:0}
+.tlo-open{background:#e8a23d;color:#123a30 !important;border:0}
+.tlo-x{position:absolute;top:8px;right:8px;width:36px;height:36px;border:0;background:none;font-size:1.1rem;cursor:pointer;color:#5b6a63}
+.tlo-note{font-size:.72rem;color:#5b6a63;margin-top:.6rem}
+/* "Tello explains" buttons on cards */
+.tlo-say{display:inline-flex;align-items:center;gap:.35rem;background:#fdf3e2;color:#123a30;border:1px solid #e8a23d;border-radius:999px;padding:.35rem .75rem;font:600 .82rem "Public Sans",sans-serif;cursor:pointer;min-height:36px}
+.tlo-say:hover{background:#fbe6c4}
+.tlo-say.speaking{background:#e8a23d}
+.tlo-say .tlo-mini{width:22px;height:22px;border-radius:50%;background:url(/assets/tello-mark-sm.svg) center/contain no-repeat;font-size:0;color:transparent;overflow:hidden;flex:0 0 auto}
+.tlo-capt{font-size:.85rem;color:#1a2420;background:#fdf3e2;border-left:3px solid #e8a23d;border-radius:6px;padding:.5rem .7rem;margin-top:.5rem;display:none}
+.tlo-capt.show{display:block}
+@media (prefers-reduced-motion:reduce){.tlo-fab.speaking .tlo-av{animation:none}}
+@media print{.tlo-fab,.tlo-card{display:none!important}}
+
+/* Menu: "Meet Tello" carries her mark instead of a chat emoji. */
+.t22nav .menu .ic.tlo-navmark{width:22px;height:22px;border-radius:50%;background:url(/assets/tello-mark-sm.svg) center/contain no-repeat;font-size:0}
+/* Feature tiles about Tello carry her mark instead of an emoji. */
+.tlo-tile{display:inline-block;width:32px;height:32px;border-radius:50%;background:url(/assets/tello-mark-sm.svg) center/contain no-repeat;font-size:0}

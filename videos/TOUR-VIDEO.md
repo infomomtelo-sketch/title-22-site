@@ -1,5 +1,7 @@
 # The guided tour video
 
+> **Update (Sep 2026):** this video is now narrated (AI voice, Kokoro `af_heart`). Scenes were held longer where the voice needed room, and the .vtt files were retimed to match. Notes below about it being silent describe the original recording.
+
 `/videos/tour/` — 1 min 17 s, 3.9 MB, WebM (VP8), 1280×720, **silent**.
 
 The marketing site had no working video at all: every narrated recording was

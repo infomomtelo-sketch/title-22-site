@@ -1,5 +1,7 @@
 # Partner / affiliate tour recording
 
+> **Update (Sep 2026):** this video is now narrated (AI voice, Kokoro `af_heart`). Scenes were held longer where the voice needed room, and the .vtt files were retimed to match. Notes below about it being silent describe the original recording.
+
 A phone screen recording of the affiliate guided tour, made 2026-09-21, with
 captions in English, Spanish and Filipino.
 

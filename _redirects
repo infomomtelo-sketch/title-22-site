@@ -7,3 +7,9 @@
 # /r/Maria and /r/maria credit the same partner.
 /r/:code/   https://title22.app/?ref=:code&src=partner-link   302
 /r/:code    https://title22.app/?ref=:code&src=partner-link   302
+
+# Temporary until the app tours are re-recorded from the current app (old recordings show outdated app text).
+/videos/tour/          /videos/#overview      302
+/videos/tour           /videos/#overview      302
+/videos/partner-tour/  /videos/partner/       302
+/videos/partner-tour   /videos/partner/       302
