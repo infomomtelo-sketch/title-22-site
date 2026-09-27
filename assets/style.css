@@ -559,14 +559,14 @@ article.post .checklist li::before {
 
   .viz-dial { position: relative; align-items: center; }
   .viz-dial svg { width: 132px; height: 132px; }
-  .dial-arc { stroke-dasharray: 314; stroke-dashoffset: 314; }
+  .dial-arc { stroke-dasharray: 314; stroke-dashoffset: 19; }
   [data-anim].go .dial-arc { animation: dial 2s cubic-bezier(.2,.7,.3,1) forwards; }
-  @keyframes dial { to { stroke-dashoffset: 19; } }   /* 94% of 314 */
+  @keyframes dial { from { stroke-dashoffset: 314; } to { stroke-dashoffset: 19; } }   /* 94% of 314 */
   .dial-num { position: absolute; font-family: "IBM Plex Mono", monospace; font-size: 1.5rem;
     font-weight: 500; color: var(--pine); }
 
   .step { font-size: 0.9rem; color: var(--ink); display: flex; align-items: center; gap: 0.6rem;
-    padding: 0.45rem 0; opacity: 0; }
+    padding: 0.45rem 0; }
   [data-anim].go .step { animation: stepIn .5s ease both; }
   [data-anim].go .step:nth-child(2) { animation-delay: .45s; }
   [data-anim].go .step:nth-child(3) { animation-delay: .9s; }

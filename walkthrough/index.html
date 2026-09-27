@@ -264,7 +264,7 @@
                 <circle class="dial-arc" cx="60" cy="60" r="50" fill="none" stroke="var(--pine)"
                         stroke-width="10" stroke-linecap="round" transform="rotate(-90 60 60)"/>
               </svg>
-              <div class="dial-num"><span data-count>71</span>%</div>
+              <div class="dial-num"><span data-count>94</span>%</div>
             </div>
             <div style="font-size:.88rem;color:var(--muted);min-width:12rem;flex:1">
               Fix these next:<br>
@@ -403,6 +403,7 @@
   function count(el) {
     if (counted || reduce) { el.textContent = '94'; return; }
     counted = true;
+    el.textContent = '71';
     var n = 71, t = setInterval(function () {
       n++; el.textContent = n;
       if (n >= 94) clearInterval(t);

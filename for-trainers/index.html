@@ -206,6 +206,7 @@
   function count(el) {
     if (counted || reduce) { el.textContent = '94'; return; }
     counted = true;
+    el.textContent = '71';
     var n = 71, t = setInterval(function () {
       n++; el.textContent = n;
       if (n >= 94) clearInterval(t);
@@ -224,7 +225,7 @@
       if (d) count(d);
       io.unobserve(e.target);
     });
-  }, { threshold: 0.35 });
+  }, { threshold: 0 });
   cards.forEach(function (c) { io.observe(c); });
 })();
 </script>
