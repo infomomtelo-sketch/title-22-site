@@ -97,6 +97,12 @@ const OVERLAY = `(() => {
     #v-cam.on{display:flex} #v-cam img{width:86%;transform:rotate(-2deg);box-shadow:0 12px 40px rgba(0,0,0,.5);border-radius:6px}
     #v-cam .frame{position:absolute;inset:18% 5%;border:3px solid rgba(255,255,255,.7);border-radius:14px}
     #v-cam .shut{position:absolute;bottom:90px;width:64px;height:64px;border-radius:50%;border:5px solid #fff;background:rgba(255,255,255,.25)}
+    #v-spot{position:fixed;z-index:2147482998;pointer-events:none;border:4px solid #e8a23d;border-radius:14px;
+      box-shadow:0 0 0 3000px rgba(10,30,24,.55),0 0 24px rgba(232,162,61,.9);opacity:0;transition:opacity .3s,left .35s,top .35s,width .35s,height .35s}
+    #v-spot.on{opacity:1}
+    #v-spot b{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;background:#e8a23d;color:#123a30;
+      font:800 17px/1 "Public Sans",-apple-system,sans-serif;padding:9px 16px;border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+    #v-spot.above b{bottom:calc(100% + 12px)} #v-spot.below b{top:calc(100% + 12px)}
     #v-flash{position:fixed;inset:0;background:#fff;z-index:2147483002;opacity:0;pointer-events:none;transition:opacity .35s}
     #v-card{position:fixed;inset:0;z-index:2147483003;background:#123a30;color:#f9f5ed;display:flex;flex-direction:column;
       align-items:center;justify-content:center;text-align:center;padding:32px;transition:opacity .5s;font-family:"Public Sans",-apple-system,sans-serif}
@@ -108,7 +114,17 @@ const OVERLAY = `(() => {
   \`;
   document.head.appendChild(css);
   const add = (id, html) => { const d = document.createElement('div'); d.id = id; if (html) d.innerHTML = html; document.body.appendChild(d); return d; };
-  add('v-cap'); add('v-tap'); add('v-flash');
+  add('v-cap'); add('v-tap'); add('v-flash'); add('v-spot', '<b></b>');
+  window.__spot = (sels, label) => {
+    const sp = document.getElementById('v-spot');
+    if (!sels) { sp.classList.remove('on'); return; }
+    const rs = sels.map(q => document.querySelector(q)).filter(Boolean).map(e => e.getBoundingClientRect());
+    const l = Math.min(...rs.map(r => r.left)) - 8, t = Math.min(...rs.map(r => r.top)) - 8;
+    const r = Math.max(...rs.map(r => r.right)) + 8, b = Math.max(...rs.map(r => r.bottom)) + 8;
+    Object.assign(sp.style, { left: l + 'px', top: t + 'px', width: (r - l) + 'px', height: (b - t) + 'px' });
+    sp.querySelector('b').textContent = label;
+    sp.className = 'on ' + (t > 90 ? 'above' : 'below');
+  };
   add('v-cam', '<img id="v-cam-img" alt=""><div class="frame"></div><div class="shut"></div>');
   add('v-card');
   window.__cap = t => { const c = document.getElementById('v-cap'); if (!t) { c.classList.remove('on'); return; } c.textContent = t; c.classList.add('on'); };
@@ -149,7 +165,7 @@ const OVERLAY = `(() => {
   page.on('pageerror', e => errs.push(String(e).slice(0, 200)));
   await page.goto('http://127.0.0.1:8734/index.html', { waitUntil: 'load' });
   await page.evaluate(OVERLAY);
-  await page.evaluate(() => window.__card('<img src="/tello-icon.svg" alt=""><h1>Add a staff member’s documents</h1><p>CPR, TB, Live Scan and the rest, in about a minute.</p>'));
+  await page.evaluate(() => window.__card('<img src="/tello-icon.svg" alt=""><h1>Scan to fill</h1><p>Add a staff member’s documents in about a minute. Photo in, dates filled.</p>'));
   await page.waitForSelector('#page-app', { state: 'visible', timeout: 20000 });
   await page.waitForTimeout(2500);   // the menu opens itself with "Start here" on Staff
 
@@ -181,6 +197,9 @@ const OVERLAY = `(() => {
   const typeInto = async (sel, text) => { await tap(sel); await page.locator(sel).pressSequentially(text, { delay: 70 }); };
   const setDate = async (sel, iso) => { await tap(sel); await page.locator(sel).fill(iso); await page.locator(sel).dispatchEvent('change'); await page.waitForTimeout(300); };
 
+  const spot = async (sels, label, ms) => { await page.evaluate(([a, b]) => window.__spot(a, b), [sels, label]); if (ms) await page.waitForTimeout(ms); };
+  const spotOff = () => page.evaluate(() => window.__spot(null));
+
   async function step(id, fn) {
     const line = SCRIPT.find(s => s.id === id);
     const start = Date.now();
@@ -198,8 +217,16 @@ const OVERLAY = `(() => {
     await typeInto('#staff-name', CARD.name);
     await setDate('#staff-hire-date', '2026-09-22');
   });
+  await step('stf', async () => {
+    await page.evaluate(() => window.__card('<img src="/tello-icon.svg" alt=""><h1>Scan to fill</h1><p>Take a photo of a certificate. Title22 reads the dates and fills them in. You check, then save.</p>'));
+    await page.waitForTimeout(VOICE.stf * 1000 + 300);
+    await scrollTo('#docslot-cpr_card');
+    await page.evaluate(() => window.__card(null));
+  });
   await step('scan', async () => {
     await scrollTo('#docslot-cpr_card');
+    await spot(['#docslot-cpr_card [data-slot-actions] button'], 'Scan to fill', 1500);
+    await spotOff();
     const chooser = page.waitForEvent('filechooser');
     await tap('#docslot-cpr_card [data-slot-actions] button:has-text("Scan")');
     const fc = await chooser;
@@ -212,10 +239,19 @@ const OVERLAY = `(() => {
   });
   await step('review', async () => {
     await page.waitForSelector('#scan-rows .scan-row', { timeout: 15000 });
-    await page.waitForTimeout(VOICE.review * 1000 - 1400);
+    await page.waitForTimeout(400);
+    await page.locator('#scan-rows').evaluate(e => e.scrollIntoView({ block: 'center', behavior: 'smooth' }));
+    await page.waitForTimeout(700);
+    await spot(['#scan-rows'], 'Read from the photo', VOICE.review * 1000 - 3300);
+    await spot(['#scan-apply-btn'], 'Fill form', 1000);
+    await spotOff();
     await tap('#scan-apply-btn');
   });
-  await step('filled', async () => { await page.waitForTimeout(600); await scrollTo('#staff-cpr-date'); });
+  await step('filled', async () => {
+    await page.waitForTimeout(700); await scrollTo('#staff-cpr-date');
+    await spot(['#staff-cpr-date', '#staff-cpr-expiry'], 'Filled in for you', VOICE.filled * 1000 - 600);
+    await spotOff();
+  });
   await step('tb', async () => {
     await scrollTo('#docslot-tb_test');
     await setDate('#staff-tb-date', '2026-09-18');

@@ -4,8 +4,8 @@ This directory serves at `https://title-22.com/videos/`.
 
 ## What is here
 
-- `howto/docs.mp4` + `docs-poster.jpg` + `docs.en.vtt`: "Add a staff member's
-  documents", on `/videos/#howto`. 56 s, 1080×1920, H.264 High + AAC,
+- `howto/docs.mp4` + `docs-poster.jpg` + `docs.en.vtt`: "Scan to fill: a staff member's
+  documents", on `/videos/#howto`. 73 s, 1080×1920, H.264 High + AAC,
   **narrated (AI voice, Kokoro `af_heart`, run locally)**, with captions in
   their own band under the app and in the .vtt.
   - **What it shows:** the real app, signed in to an invented home on an
