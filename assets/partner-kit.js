@@ -135,13 +135,13 @@
         ctx.fillStyle = C.white; ctx.fillRect(0, 0, W, H);
         ctx.fillStyle = C.deep; ctx.fillRect(0, 0, W, 560);
         brand(ctx, 200, 250, 110, true);
-        ctx.fillStyle = '#cfdccb'; font(ctx, 400, 60, SANS); ctx.fillText('For California RCFEs and ARFs', 200, 400);
+        ctx.fillStyle = '#cfdccb'; font(ctx, 400, 60, SANS); ctx.fillText('Built for California RCFEs', 200, 400);
         ctx.fillStyle = C.deep; font(ctx, 700, 170, SERIF);
         var y = wrap(ctx, 'Your first DSS inspection, without guessing.', 200, 820, 2150, 185);
         var items = [
           ['Know what DSS will ask for.', 'The facility and staff requirements, with your own dates against them.'],
           ['Nothing expires unnoticed.', 'CPR, First Aid, TB, LiveScan and administrator dates, with a warning before each one lapses.'],
-          ['Staff files in one place.', 'LIC 622 staff records, training hours and documents. Every entry timestamped and tied to a person.'],
+          ['Staff files in one place.', 'Staff records, training hours and documents. Every entry timestamped and tied to a person.'],
           ['Tello, the built-in assistant.', 'A plain-language briefing on what needs attention today.']
         ];
         y += 90;
