@@ -59,7 +59,7 @@
           <a href="/features/"><b>Features</b><small>Staff files, training, clearances, checklist</small></a>
           <a href="/#tello"><b>Meet Tello</b><small>Your AI morning briefing</small></a>
           <a href="/walkthrough/"><b>How it works</b><small>A guided walkthrough</small></a>
-          <a href="/score/"><b>Readiness check</b><small>10 quick questions</small></a>
+          <a href="/score/"><b>Readiness check</b><small>9 quick questions</small></a>
           <a href="/pilot/"><b>More than one home?</b><small>The 30-Day Proof</small></a>
           <a href="/security/"><b>Security</b><small>No PHI by design</small></a>
         </div>
@@ -131,12 +131,12 @@
     <div class="wrap" style="max-width:44rem">
 
       <div id="quiz">
-        <p class="prog" id="prog">0 of 10 answered</p>
+        <p class="prog" id="prog">0 of 9 answered</p>
         <div id="questions"></div>
         <div class="cta-row" style="margin-top:1.2rem">
           <button class="btn" id="see-score" disabled>See my result</button>
         </div>
-        <p class="disclaim">This is a self-check based on your own answers, not an inspection and not a prediction of one. It covers ten items out of well over a hundred in Title 22. Nothing you enter leaves this page.</p>
+        <p class="disclaim">This is a self-check based on your own answers, not an inspection and not a prediction of one. It covers nine items out of well over a hundred in Title 22. Nothing you enter leaves this page.</p>
       </div>
 
       <div id="result" style="display:none">
@@ -175,26 +175,24 @@
 <script>
 (function(){
   var Q = [
-    { reg:'§87506', q:'Every current resident has a LIC 602A (Medical Assessment) on file, dated within the last year.',
-      gap:'LIC 602A missing or over a year old' },
+    { reg:'§87458', q:'Every resident\u2019s record holds a LIC 602A (Medical Assessment) made within the year before they were accepted.',
+      gap:'LIC 602A missing, or made more than a year before admission' },
     { reg:'§87506', q:'Every current resident has a LIC 601 (Identification and Emergency Information) on file.',
       gap:'LIC 601 not on file for every resident' },
-    { reg:'§87463', q:'Every resident has a current appraisal / needs and services plan you could hand over today.',
-      gap:'Resident appraisal or needs-and-services plan not current' },
-    { reg:'§87411', q:'Every staff member\u2019s TB clearance is on file.',
-      gap:'Staff TB clearance missing from a personnel file' },
-    { reg:'§87411(e)', q:'No staff member is working with an expired CPR or First Aid card.',
-      gap:'Expired CPR or First Aid card in an active file' },
+    { reg:'§87463', q:'Every resident\u2019s appraisal has been updated in writing within the last 12 months, or sooner after a significant change.',
+      gap:'Resident reappraisal older than 12 months or missing a change' },
+    { reg:'§87411(f)', q:'Every staff member has a health screening with a TB test on file, done no more than 6 months before or 7 days after they started.',
+      gap:'Staff health screening or TB test missing from a personnel file' },
+    { reg:'HSC §1569.618(c)(3)', q:'At all times, at least one staff member with CPR and first aid training is on duty and on the premises.',
+      gap:'A shift without someone trained in CPR and first aid on duty' },
     { reg:'§87355', q:'Every staff member has a cleared LiveScan on file before their first shift with residents.',
       gap:'LiveScan clearance missing or dated after a first shift' },
-    { reg:'§87465', q:'Your medication records for the last 30 days are complete, with no unexplained blank entries.',
-      gap:'Gaps or blanks in the last 30 days of medication records' },
-    { reg:'§87465', q:'Every medication entry identifies the individual who administered it \u2014 no shared logins or initials you can\u2019t attribute.',
-      gap:'Medication entries not attributable to a named individual' },
-    { reg:'§87212', q:'Your fire clearance is current and the drill log is up to date.',
-      gap:'Fire clearance or drill log not current' },
-    { reg:'§87212(a)', q:'Your emergency disaster plan is written, current, and staff have been trained on it.',
-      gap:'Emergency disaster plan missing, stale, or untrained' }
+    { reg:'§87465(h)(6)', q:'You keep a record of each resident\u2019s centrally stored prescription medications, kept for at least a year.',
+      gap:'Centrally stored medication record missing or not kept a year' },
+    { reg:'§87202', q:'Your fire clearance is current.',
+      gap:'Fire clearance not current' },
+    { reg:'§87212(a); HSC §1569.695(b)', q:'Your emergency disaster plan is in writing, and every staff member is trained on it at hire and every year.',
+      gap:'Emergency disaster plan not written, or staff not trained on it' }
   ];
 
   var answers = new Array(Q.length).fill(null);
@@ -257,7 +255,7 @@
     var body = document.getElementById('r-body');
     if (missing === 0) {
       head.textContent = 'Nothing flagged on these ten.';
-      body.textContent = 'That is a good sign, though these ten are a small slice of Title 22. The harder question is whether it stays true next month, after two hires and three expiring certifications. The staff and facility half of that is what Title22 keeps track of for you.';
+      body.textContent = 'That is a good sign, though these nine are a small slice of Title 22. The harder question is whether it stays true next month, after two hires and three expiring certifications. The staff and facility half of that is what Title22 keeps track of for you.';
     } else if (missing <= 3) {
       head.textContent = missing + (missing === 1 ? ' item to close.' : ' items to close.');
       body.textContent = 'Short lists like this are usually a filing problem rather than a care problem \u2014 the work happened, the paper trail did not follow. For the staff and facility items, Title22 keeps the requirement, the date, and the document in one place so the gap surfaces before an analyst does.';
