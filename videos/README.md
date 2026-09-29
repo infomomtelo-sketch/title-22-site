@@ -4,6 +4,26 @@ This directory serves at `https://title-22.com/videos/`.
 
 ## What is here
 
+- `howto/docs.mp4` + `docs-poster.jpg` + `docs.en.vtt`: "Add a staff member's
+  documents", on `/videos/#howto`. 56 s, 1080×1920, H.264 High + AAC,
+  **narrated (AI voice, Kokoro `af_heart`, run locally)**, with captions in
+  their own band under the app and in the .vtt.
+  - **What it shows:** the real app, signed in to an invented home on an
+    in-memory database, as someone adds Maria Lopez (invented). It walks
+    through scanning a CPR card (the card is drawn by the recorder and
+    stamped SAMPLE), typing the TB dates and uploading the paper, uploading
+    Live Scan, then Save.
+  - **No resident data.** TB is never scanned, in the clip or the app.
+  - **The scan appears only once runp8-care #155 (scan on for staff
+    certificates) is live.** Re-record if the staff modal changes.
+  - Rebuild: `videos/howto/record/`, in three steps:
+    1. `voice.py` (Kokoro model files from the kokoro-onnx GitHub release),
+    2. `record.js` (Playwright),
+    3. `build.js` (an ffmpeg with libx264 and aac, e.g. `pip install imageio-ffmpeg`).
+    
+    The words live in `record/script.js`, and nothing in them may state a
+    requirement.
+
 - `title22-trainer-pitch.mp4` + `.en.vtt` — the trainer-focused clip in the
   "For CE & ICTP trainers" section on `/demo/`. 34 s, 1080×1920, **narrated
   (AI voice)** with English captions. The first list card was changed from
