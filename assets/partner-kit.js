@@ -135,7 +135,7 @@
         ctx.fillStyle = C.white; ctx.fillRect(0, 0, W, H);
         ctx.fillStyle = C.deep; ctx.fillRect(0, 0, W, 560);
         brand(ctx, 200, 250, 110, true);
-        ctx.fillStyle = '#cfdccb'; font(ctx, 400, 60, SANS); ctx.fillText('Built for California RCFEs', 200, 400);
+        ctx.fillStyle = '#cfdccb'; font(ctx, 400, 60, SANS); ctx.fillText('Checklists for California RCFEs and ARFs', 200, 400);
         ctx.fillStyle = C.deep; font(ctx, 700, 170, SERIF);
         var y = wrap(ctx, 'Your first DSS inspection, without guessing.', 200, 820, 2150, 185);
         var items = [
