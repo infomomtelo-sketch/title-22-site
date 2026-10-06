@@ -203,6 +203,8 @@
   function posts(s) {
     var L = s.url.replace('https://', '');
     var out = [
+      { t: 'Caption for the 30-second video', when: 'Post with "Title22 in 30 seconds". On Instagram or TikTok, put the link in your bio or the first comment.',
+        x: 'Licensing visits can come without warning. Title22 warns you before a CPR card, TB test or LiveScan lapses, shows a DSS readiness checklist with your own dates, and Tello tells you each morning, in plain words, what needs you today. It holds no resident health information.\n\n' + s.days + ' days free through my link, no card: ' + L + '\n\nFollow Title22 for short how-to videos: title-22.com/follow\n\n#ad I earn a commission if you subscribe. #RCFE #assistedliving #California' },
       { t: 'Facebook or LinkedIn post', when: 'Post with the square image or the Tello video.',
         x: 'If you run a care home in California, or you\'re about to, this is worth a look.\n\nTitle22 keeps staff files, training hours and clearances in one place, and warns you before a CPR card, TB test or LiveScan lapses. It holds no resident health information.\n\nThrough my link you get ' + s.days + ' days free, no card: ' + L + '\n\nFor short how-to videos, follow Title22: title-22.com/follow\n\nPartner link: I earn a commission if you subscribe.' },
       { t: 'Instagram or TikTok caption', when: 'Put the link in your bio or the first comment.',
