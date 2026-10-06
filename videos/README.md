@@ -4,6 +4,20 @@ This directory serves at `https://title-22.com/videos/`.
 
 ## What is here
 
+- `title22-story-30s.mp4` (1920×1080) + `title22-story-30s-vertical.mp4` (1080×1920)
+  + `-poster.jpg` + `.en.vtt` — "Title22 in 30 seconds", the homepage hero and the
+  first card on `/videos/`; both files are offered on `/partner-kit/` with a ready
+  caption. 30 s, H.264 High + AAC, **narrated (AI voice, Kokoro `af_heart`, run
+  locally)**, captions burned into the picture (the .vtt is for platforms that ask
+  for one, so it is not attached as a track — that would show them twice).
+  - **What it shows:** an animated story, not app footage. Drawn people, a door,
+    then three phone screens styled after the app: staff files with invented
+    names, the DSS readiness checklist on sample dates, and Tello's briefing.
+  - **No resident data, no medications.** The checklist's sixth item is the
+    incident log (LIC 624), not resident records.
+  - Built outside this repo (Playwright frames + ffmpeg + libass); the words are
+    the captions in the .vtt.
+
 - `howto/docs.mp4` + `docs-poster.jpg` + `docs.en.vtt`: "Scan to fill: a staff member's
   documents", on `/videos/#howto`. 73 s, 1080×1920, H.264 High + AAC,
   **narrated (AI voice, Kokoro `af_heart`, run locally)**, with captions in
