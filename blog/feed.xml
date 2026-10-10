@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Title22 Blog</title>
+  <link>https://title-22.com/blog/</link>
+  <atom:link href="https://title-22.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Plain-language guides for California care homes and families: CDSS Community Care Licensing, Title 22, RCFEs, ARFs, administrator certification, inspections and the people who help.</description>
+  <language>en-us</language>
+  <item>
+    <title>What Is CDSS Community Care Licensing? A Plain Guide for California Care Homes</title>
+    <link>https://title-22.com/blog/what-is-cdss-community-care-licensing/</link>
+    <guid isPermaLink="true">https://title-22.com/blog/what-is-cdss-community-care-licensing/</guid>
+    <pubDate>Sat, 10 Oct 2026 12:00:00 +0000</pubDate>
+    <description>Who CDSS and its Community Care Licensing Division are, what they license, how inspections and complaints work, and the official pages to bookmark.</description>
+  </item>
+  <item>
+    <title>What Is Title 22? How California&#x27;s Care-Home Rules Are Organized</title>
+    <link>https://title-22.com/blog/what-is-title-22-california/</link>
+    <guid isPermaLink="true">https://title-22.com/blog/what-is-title-22-california/</guid>
+    <pubDate>Sat, 10 Oct 2026 12:00:00 +0000</pubDate>
+    <description>Title 22 explained in plain words: Division 6, the RCFE and ARF chapters, how it fits with the Health and Safety Code, and where to read it free.</description>
+  </item>
+  <item>
+    <title>RCFE vs ARF in California: What&#x27;s the Difference?</title>
+    <link>https://title-22.com/blog/rcfe-vs-arf-california/</link>
+    <guid isPermaLink="true">https://title-22.com/blog/rcfe-vs-arf-california/</guid>
+    <pubDate>Sat, 10 Oct 2026 12:00:00 +0000</pubDate>
+    <description>Who each home serves, which Title 22 chapter applies, and how administrator training, the exam and renewal differ, side by side.</description>
+  </item>
+  <item>
+    <title>How to Check a California Care Home Before You Choose</title>
+    <link>https://title-22.com/blog/check-california-care-home-license/</link>
+    <guid isPermaLink="true">https://title-22.com/blog/check-california-care-home-license/</guid>
+    <pubDate>Sat, 10 Oct 2026 12:00:00 +0000</pubDate>
+    <description>For families: look up the license, read inspection and complaint reports, ask the right questions, and know who to call for help.</description>
+  </item>
+  <item>
+    <title>Who&#x27;s Who in California&#x27;s Care-Home Community</title>
+    <link>https://title-22.com/blog/california-care-home-community-guide/</link>
+    <guid isPermaLink="true">https://title-22.com/blog/california-care-home-community-guide/</guid>
+    <pubDate>Sat, 10 Oct 2026 12:00:00 +0000</pubDate>
+    <description>A map of the agencies and groups around California RCFEs and ARFs: Licensing, the Ombudsman, APS, regional centers, trainers, associations and advocates.</description>
+  </item>
+  <item>
+    <title>DSS Is at Your Door: What Analysts Check First in an RCFE Visit</title>
+    <link>https://title-22.com/blog/dss-inspection-rcfe-what-analysts-check/</link>
+    <guid isPermaLink="true">https://title-22.com/blog/dss-inspection-rcfe-what-analysts-check/</guid>
+    <pubDate>Sun, 02 Aug 2026 12:00:00 +0000</pubDate>
+    <description>Medication records, staff files, resident charts, postings, and incident follow-through: the five things a licensing analyst goes to first, and how to be visit-ready every day.</description>
+  </item>
+  <item>
+    <title>RCFE Admission Paperwork: Every LIC Form You Need, Explained</title>
+    <link>https://title-22.com/blog/rcfe-admission-paperwork-forms-guide/</link>
+    <guid isPermaLink="true">https://title-22.com/blog/rcfe-admission-paperwork-forms-guide/</guid>
+    <pubDate>Sun, 02 Aug 2026 12:00:00 +0000</pubDate>
+    <description>LIC 601, 602A, 603, 625, and the rest of the complete resident file: what each form does, who signs it, and which ones must be updated after admission.</description>
+  </item>
+  <item>
+    <title>ICTP Requirements for New RCFE Administrators in California</title>
+    <link>https://title-22.com/blog/rcfe-ictp-requirements-california/</link>
+    <guid isPermaLink="true">https://title-22.com/blog/rcfe-ictp-requirements-california/</guid>
+    <pubDate>Sun, 02 Aug 2026 12:00:00 +0000</pubDate>
+    <description>The 80-hour training program, the 60-day exam window and three-attempt rule, the LIC 9214 application, and the timeline from enrolled to certified.</description>
+  </item>
+  <item>
+    <title>RCFE Administrator Recertification: The 40-Hour CE Checklist</title>
+    <link>https://title-22.com/blog/rcfe-administrator-recertification-checklist/</link>
+    <guid isPermaLink="true">https://title-22.com/blog/rcfe-administrator-recertification-checklist/</guid>
+    <pubDate>Sun, 02 Aug 2026 12:00:00 +0000</pubDate>
+    <description>The 40 hours and how they must split, live vs self-paced, dementia and law/regulation minimums, plus what a lapsed certificate actually costs you.</description>
+  </item>
+  <item>
+    <title>How to Choose a DSS-Approved RCFE CE Course (Without Wasting Hours)</title>
+    <link>https://title-22.com/blog/choose-dss-approved-rcfe-ce-course/</link>
+    <guid isPermaLink="true">https://title-22.com/blog/choose-dss-approved-rcfe-ce-course/</guid>
+    <pubDate>Sun, 02 Aug 2026 12:00:00 +0000</pubDate>
+    <description>Vendor approval numbers, the live/self-paced split, required topics, and the questions to ask any CE vendor before you pay.</description>
+  </item>
+  <item>
+    <title>Title 22 Medication Documentation Requirements for RCFEs: The Complete Checklist</title>
+    <link>https://title-22.com/blog/title-22-medication-documentation-rcfe/</link>
+    <guid isPermaLink="true">https://title-22.com/blog/title-22-medication-documentation-rcfe/</guid>
+    <pubDate>Sun, 02 Aug 2026 12:00:00 +0000</pubDate>
+    <description>Every record your facility needs to keep for medications: centrally stored med logs, MAR entries, PRN documentation, and destruction records, and what a DSS analyst checks first.</description>
+  </item>
+</channel>
+</rss>
