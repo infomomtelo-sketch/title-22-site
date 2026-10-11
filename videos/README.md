@@ -38,6 +38,27 @@ This directory serves at `https://title-22.com/videos/`.
     The words live in `record/script.js`, and nothing in them may state a
     requirement.
 
+- `title22-classroom-guide.mp4` + `-poster.jpg` + `.en.vtt`: "Your Classroom account",
+  the trainer's setup guide, on `/videos/#classroom-guide` and linked from
+  `/for-trainers/`. 101 s, 1080×1920, H.264 High + AAC, **narrated (AI voice,
+  Kokoro `af_heart`, run locally)**, captions in their own band under the app
+  (so the .vtt is not attached as a track).
+  - **What it shows:** the real app on an in-memory database, in four sittings:
+    the sign-up screen; a Classroom (`edu`) account loading the practice home,
+    loading the starter lessons, editing one and making an invite link; the
+    invited student answering a lesson; and the trainer's Results. Dana
+    Whitfield, Jordan Ellis and the other students are invented.
+  - **The practice home's menu is on screen.** A Classroom account in the
+    sample facility has MAR, Medications and Residents on its menu, and the
+    "Bring your class in" card mentions MAR entries. Those labels are visible
+    for a few seconds; the clip never opens those screens and no resident is
+    named. The owner confirmed on 2026-10-10 that this is fine for the practice
+    account. The student's menu, also shown, has none of them.
+  - **It says nothing about money.** The partner clip covers that.
+  - Rebuild: `videos/classroom-guide/record/`, same three steps as the how-to
+    clip (`voice.py`, `record.js`, `build.js`). Re-record if the onboarding
+    chooser, the Lessons tab or the invite sheet changes.
+
 - `title22-trainer-pitch.mp4` + `.en.vtt` — the trainer-focused clip in the
   "For CE & ICTP trainers" section on `/demo/`. 34 s, 1080×1920, **narrated
   (AI voice)** with English captions. The first list card was changed from
