@@ -419,6 +419,41 @@ article.post .checklist li::before {
 .post-cta p { margin-bottom: 1rem; }
 .post-cta .btn { margin: 0; }
 
+/* Blog search, topic filter, tables */
+.blog-search { margin: 0 0 1rem; max-width: 32rem; }
+.blog-search label { display: block; font-weight: 600; margin-bottom: 0.35rem; }
+.blog-search input {
+  width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+}
+.blog-search input:focus { outline: 2px solid var(--pine); outline-offset: 1px; }
+.topic-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 0.5rem; }
+.topic-chips button {
+  font: inherit;
+  font-size: 0.88rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--pine);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--pine);
+  cursor: pointer;
+}
+.topic-chips button[aria-pressed="true"] { background: var(--pine); color: #fff; }
+.blog-count { color: var(--muted); font-size: 0.9rem; min-height: 1.2em; margin: 0.25rem 0 0; }
+.blog-empty { color: var(--muted); padding: 1.5rem 0; }
+article.post .crumbs { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+article.post .table-wrap { overflow-x: auto; margin: 1rem 0; }
+article.post table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+article.post th, article.post td { text-align: left; vertical-align: top; padding: 0.6rem 0.7rem; border-bottom: 1px solid var(--line); }
+article.post thead th { border-bottom: 2px solid var(--pine); }
+article.post tbody th { font-weight: 600; }
+
 /* Whiteboard-style scroll explainer */
 .explainer { padding-top: 1rem; }
 .explain-track {
