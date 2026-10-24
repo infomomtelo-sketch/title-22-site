@@ -60,6 +60,14 @@
   .tag.warn { background: #fbe3dd; color: #8a2f1f; }
   .fine { color: var(--muted); font-size: 0.85rem; }
   .cta-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem; }
+  /* Start-the-Proof CTA: the shared .btn, lifted to marigold on the dark video band. */
+  .proof-cta { margin: 0 0 1rem; }
+  .proof-cta .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; text-align: center; line-height: 1.3; }
+  .pvband .proof-cta .btn { background: var(--marigold); color: var(--deep) !important; border-color: var(--marigold); }
+  .pvband .proof-cta .btn:hover { background: var(--cream); border-color: var(--cream); }
+  .proof-cta .fine { margin: 0.6rem 0 0; }
+  .proof-cta-end { margin-top: 2rem; }
+  @media (max-width: 40rem) { .proof-cta .btn { display: flex; width: 100%; } }
   .pilot-video { margin: 0; }
   .pilot-video video { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); background: var(--cream); }
   .pilot-video figcaption { color: var(--muted); font-size: 0.85rem; margin-top: 0.6rem; }
@@ -151,6 +159,10 @@
           <div class="pv-k">Watch first · 0:53</div>
           <h1 class="pv-h1">The 30-Day Proof</h1>
           <p>Two of your homes. Thirty days. Judge it on day 30.</p>
+          <div class="proof-cta">
+            <a class="btn" href="https://title22.app/?src=pilot">Start the 30-Day Proof — two of your homes, no card</a>
+            <p class="fine">Questions first? Email <a href="mailto:hello@title-22.com">hello@title-22.com</a></p>
+          </div>
           <details style="color:#cfdccb;font-size:.9rem" id="pilot-video-transcript">
           <summary>Read it instead</summary>
           <p>Which of your homes do you look at first? Title22 runs beside what you already use, and it holds no resident health information. In the Tello tab, the portfolio briefing puts every home on one screen: one row per home, lowest first — checklist, overdue items, expired certifications, open clearances. Every number is counted by the app, not guessed by the AI. In the sandbox, the second row is an illustration: the same home with every open item closed. Then a short summary, for someone who has a minute. Two of your homes, thirty days: press the briefing on day 1 and again on day 30, and compare. No card, nothing to cancel.</p>
@@ -209,6 +221,10 @@
         <summary>Does it guarantee an inspection result?</summary>
         <p>No. It shows open items and helps close them. Regulatory questions go to your licensing analyst.</p>
       </details>
+
+      <div class="proof-cta proof-cta-end">
+        <a class="btn" href="https://title22.app/?src=pilot">Start the 30-Day Proof — two of your homes, no card</a>
+      </div>
     </div>
   </section>
 </main>
