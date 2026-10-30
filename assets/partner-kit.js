@@ -265,6 +265,8 @@
   function render() {
     var s = state();
     $('linkText').textContent = s.short;
+    var chat = $('chatLink');
+    if (chat) chat.href = s.code ? 'https://title22.app/meet/' + encodeURIComponent(s.code) : 'https://title-22.com/partners/';
     items.forEach(function (it) {
       var ctx = it.cv.getContext('2d'); ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
       ctx.clearRect(0, 0, it.f.W, it.f.H); it.f.draw(ctx, s, it.f.W, it.f.H);
@@ -275,6 +277,16 @@
   }
 
   $('copyLink').addEventListener('click', function () { copy(state().url, this); });
+  $('shareLink').addEventListener('click', function () {
+    var s = state(); if (!s.code) { codeEl.focus(); codeEl.setAttribute('aria-invalid', 'true'); return; }
+    var text = 'I recommend Title22 — compliance for California care homes, all on one screen. Start your 30-day free account on my partner link: ';
+    if (navigator.share) navigator.share({ title: 'Title22', text: text, url: s.url }).catch(function () {});
+    else copy(text + s.url, this);
+  });
+  $('startBtn').addEventListener('click', function () {
+    var s = state(); if (!s.code) { codeEl.focus(); codeEl.setAttribute('aria-invalid', 'true'); return; }
+    location.href = s.url;
+  });
   try {
     var q = new URLSearchParams(location.search), saved = JSON.parse(localStorage.getItem('t22kit') || '{}');
     codeEl.value = q.get('code') || saved.c || '';
