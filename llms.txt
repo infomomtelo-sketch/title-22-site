@@ -1,0 +1,43 @@
+# Title22
+
+> Title22 is compliance software for California Residential Care Facilities for the Elderly (RCFEs) and Adult Residential Facilities (ARFs). It keeps staff files, training hours, and clearances current, tracks expiration dates (CPR, First Aid, TB, LiveScan, administrator certification), provides a DSS readiness checklist with a readiness score, and includes Tello, an AI assistant that gives the owner a plain-language morning briefing of what needs attention. Title22 holds no resident health information by design: no resident records, no medications, no MAR, and no business associate agreement is required.
+
+## What it does
+
+- Staff files in one place: every caregiver's hire date, role, training hours, and documents in a single record.
+- Expiration tracking: CPR, First Aid, TB, LiveScan, and administrator dates, with warnings before anything lapses, naming the person and the date.
+- DSS readiness checklist: facility and staff requirements with the home's own dates against them, overdue items first, and a readiness score.
+- Tello morning briefing: a plain-language daily summary of what is overdue, what is expiring, and what to do first. Tello never gives medical or dosage advice.
+- Certificate scanning: upload or photograph a training certificate and it is read and filed into the staff record, with the dates checked by the user before filing.
+- Team access: five roles, from administrator to a read-only view for an inspector.
+- Try it without an account: a read-only sample home with a guided tour, and a guest chat with Tello, are available from the app landing page.
+
+## Pricing and trials
+
+- Lite: $29/month for one home. Multi-Home: $79/month for up to five homes.
+- Every trial is 30 days free, no credit card, nothing to cancel. When a trial ends, the account turns read-only and everything entered stays.
+- 30-Day Proof for multi-facility operators: run two homes for 30 days free and compare the portfolio briefing on day 1 and day 30.
+- Students of a partner trainer get a 90-day free trial through their trainer's link.
+
+## Add-ons
+
+- Staff training courses (in partnership with Community Training Connection, a CDSS-approved training organization): 44 courses, 117.5 hours, priced by licensed beds — $20/month (1–6 beds), $35/month (7–15), $60/month (16–49), $100/month (50+).
+- Tello Staff: a schedule board and Today's Board (coverage, reminders) for each home. Free during the 30-day proof, then $10/month per home.
+
+## Trainer and partner program
+
+- CDSS-approved trainers and training centers get a free Classroom Sandbox Account.
+- A trainer's students receive a 90-day free trial (no card) through the trainer's own link; the trainer earns 20% of every paid month for as long as the home stays subscribed.
+
+## Key pages
+
+- [Home](https://title-22.com/): what Title22 is, pricing summary, and the free trial.
+- [The 30-Day Proof](https://title-22.com/pilot/): the multi-facility operator offer — two homes, 30 days, judge it on day 30.
+- [Pricing](https://title-22.com/pricing/): plans, the training add-on tiers, and the T22SAVES10 discount (10% off CTC compliance products).
+- [Videos](https://title-22.com/videos): short explainers, including Meet Tello and the 30-second overview.
+- [Affiliates and trainers](https://title-22.com/affiliates): the partner program — 90-day student trials and 20% recurring commission.
+- [The app](https://title22.app/): sign in, start the free trial, open the no-signup sample home, or ask Tello a question as a guest.
+
+## Who runs it
+
+Title22 is built from real facility operations, with requirements guided by a certified California RCFE administrator. Business address: 5287 N Tisha Ave, Fresno, CA 93723. Contact: hello@title-22.com.
