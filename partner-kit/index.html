@@ -27,6 +27,13 @@
   .kit-link{grid-column:1/-1;background:var(--sage);border-radius:8px;padding:.7rem 1rem;font-family:"IBM Plex Mono",monospace;font-size:.95rem;display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;word-break:break-all}
   .kit-link b{flex:1}
   .kit-note{background:#fdf3e7;border:1px solid var(--marigold);border-radius:10px;padding:.9rem 1.1rem;font-size:.9rem;margin:1.25rem 0 0}
+  .kit-class{background:var(--deep);border-radius:14px;padding:1.25rem 1.5rem;margin-top:1.25rem;display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap}
+  .kit-class h2{margin:0 0 .35rem;color:#fff;font-size:1.3rem}
+  .kit-class p{margin:0;color:#dbe6d8;font-size:.95rem;max-width:34rem}
+  .kit-class-btns{display:grid;gap:.6rem;margin-left:auto}
+  .kit-class a.kit-btn{background:#fff;color:var(--pine);text-decoration:none;text-align:center;padding:.7rem 1.2rem;font-size:.95rem}
+  .kit-class a.kit-btn:hover{background:var(--sage)}
+  .kit-class button.kit-btn.ghost{color:#fff;border-color:#fff}
   .kit-note ul{margin:.4rem 0 0;padding-left:1.1rem}
   .kit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem;margin-top:1.5rem}
   .kit-item{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:1rem;display:grid;gap:.6rem;align-content:start}
@@ -147,9 +154,13 @@
           <small>Don't have one yet? <a href="/partners/">Get a code</a>.</small>
         </div>
         <div>
-          <label>Trial on your code</label>
-          <div><b id="daysText">30 days — the standard trial</b></div>
-          <small id="daysNote">Set by Title22 when your code was created, so what your posts promise is what signup gives.</small>
+          <label for="days">Trial on your code</label>
+          <select id="days">
+            <option value="90" selected>90 days</option>
+            <option value="60">60 days</option>
+            <option value="30">30 days</option>
+          </select>
+          <small>Pick the length Eli confirmed.</small>
         </div>
         <div>
           <label for="role">I am a</label>
@@ -162,14 +173,15 @@
         <div class="kit-link" aria-live="polite"><b id="linkText">title-22.com/r/yourcode</b><button type="button" class="kit-btn" id="copyLink">Copy link</button></div>
       </div>
 
-      <div class="kit-note" id="hub-panel">
-        <strong>Your sharable code</strong>
-        <p>Tap share to send your link to a contact — text, email, anything. Their free account starts on your code.</p>
-        <p>
-          <button type="button" class="kit-btn" id="shareLink">Share your link</button>
-          <button type="button" class="kit-btn" id="startBtn">Create your 30-day free account</button>
-        </p>
-        <p>Any questions? <a id="chatLink" href="https://title-22.com/partners/">Chat with Tello</a> or email us at <a href="mailto:hello@title-22.com">hello@title-22.com</a>.</p>
+      <div class="kit-class">
+        <div>
+          <h2>Your classroom</h2>
+          <p>The practice room your students will use — Tello guides it button by button. No signup, nothing saved. Your code is already in the link: open it now and walk it yourself first, then send it to your class.</p>
+        </div>
+        <div class="kit-class-btns">
+          <a class="kit-btn" id="classOpen" href="https://title22.app/?classroom=1" target="_blank" rel="noopener">Open my classroom — no signup</a>
+          <button type="button" class="kit-btn ghost" id="classCopy">Copy classroom link</button>
+        </div>
       </div>
 
       <div class="kit-note">
@@ -229,7 +241,7 @@
 
 <script src="/assets/follow.js"></script>
 <script src="/assets/qrcode.js"></script>
-<script src="/assets/partner-kit.js?v=3"></script>
+<script src="/assets/partner-kit.js?v=2"></script>
 <script src="/assets/nav.js" defer></script>
 <script src="/assets/tello.js" defer></script>
 </body>
