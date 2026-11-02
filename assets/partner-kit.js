@@ -13,18 +13,17 @@
   var MONO = '"IBM Plex Mono", monospace';
 
   var $ = function (id) { return document.getElementById(id); };
-  var codeEl = $('code'), roleEl = $('role');
-  var kitDays = '30';
-  var ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im53bGhzc2h2cW1iaGVtaHhjcmFuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk5OTEzOTIsImV4cCI6MjA5NTU2NzM5Mn0.2yASMx57IUNjEW8bMs8FwXnIz4cLsE1ftqD35QAOqE8';
+  var codeEl = $('code'), daysEl = $('days'), roleEl = $('role');
 
   function clean(v) {
     return String(v || '').trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
   }
   function state() {
     var code = clean(codeEl.value);
-    return { code: code, days: kitDays, role: roleEl.value,
+    return { code: code, days: daysEl.value, role: roleEl.value,
              short: 'title-22.com/r/' + (code || 'yourcode'),
-             url: 'https://title-22.com/r/' + (code || 'yourcode') };
+             url: 'https://title-22.com/r/' + (code || 'yourcode'),
+             classUrl: 'https://title22.app/?classroom=1' + (code ? '&trainer=' + code : '') };
   }
 
   var COPY = {
@@ -218,7 +217,7 @@
     ];
     if (s.role === 'trainer') out.unshift(
       { t: 'Message to your class', when: 'Email or LMS announcement, and say it in class with the slide up.',
-        x: 'Hi everyone,\n\nWe\'ll be practicing staff records and readiness in Title22. Sign up here before our next session:\n' + s.url + '\n\nOpen the link and sign up right away, in the same browser. Use an email that doesn\'t already have a Title22 account. You get ' + s.days + ' days free, no card, and a practice home with sample staff is ready inside.\n\nAlso follow Title22 for short how-to videos you can rewatch after class: title-22.com/follow\n\nI\'m a Title22 partner, so I earn a commission if you later subscribe. You never have to.\n\n[your name]' });
+        x: 'Hi everyone,\n\nBefore our next session, open your practice classroom — no signup, and Tello, the built-in guide, walks you through it button by button:\n' + s.classUrl + '\n\nThen sign up here for your own account:\n' + s.url + '\n\nOpen the link and sign up right away, in the same browser. Use an email that doesn\'t already have a Title22 account. You get ' + s.days + ' days free, no card, and a practice home with sample staff is ready inside.\n\nAlso follow Title22 for short how-to videos you can rewatch after class: title-22.com/follow\n\nI\'m a Title22 partner, so I earn a commission if you later subscribe. You never have to.\n\n[your name]' });
     return out;
   }
 
@@ -267,78 +266,36 @@
   function render() {
     var s = state();
     $('linkText').textContent = s.short;
-    var chat = $('chatLink');
-    if (chat) chat.href = s.code ? 'https://title22.app/meet/' + encodeURIComponent(s.code) : 'https://title-22.com/partners/';
-    var startB = $('startBtn');
-    if (startB) startB.textContent = 'Create your ' + s.days + '-day free account';
+    var co = $('classOpen'); if (co) co.href = s.classUrl;
     items.forEach(function (it) {
       var ctx = it.cv.getContext('2d'); ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
       ctx.clearRect(0, 0, it.f.W, it.f.H); it.f.draw(ctx, s, it.f.W, it.f.H);
       it.btn.disabled = !s.code; it.btn.title = s.code ? '' : 'Type your code first';
     });
     renderPosts(s);
-    try { localStorage.setItem('t22kit', JSON.stringify({ c: codeEl.value, r: roleEl.value })); } catch (e) {}
+    try { localStorage.setItem('t22kit', JSON.stringify({ c: codeEl.value, d: daysEl.value, r: roleEl.value })); } catch (e) {}
   }
 
   $('copyLink').addEventListener('click', function () { copy(state().url, this); });
-  $('shareLink').addEventListener('click', function () {
-    var s = state(); if (!s.code) { codeEl.focus(); codeEl.setAttribute('aria-invalid', 'true'); return; }
-    var text = 'I recommend Title22 — compliance for California care homes, all on one screen. Start your ' + s.days + '-day free account on my partner link: ';
-    if (navigator.share) navigator.share({ title: 'Title22', text: text, url: s.url }).catch(function () {});
-    else copy(text + s.url, this);
-  });
-  $('startBtn').addEventListener('click', function () {
-    var s = state(); if (!s.code) { codeEl.focus(); codeEl.setAttribute('aria-invalid', 'true'); return; }
-    location.href = s.url;
+  var classCopyBtn = $('classCopy');
+  if (classCopyBtn) classCopyBtn.addEventListener('click', function () {
+    var s = state();
+    if (!s.code) { codeEl.focus(); codeEl.setAttribute('aria-invalid', 'true'); return; }
+    copy(s.classUrl, this);
   });
   try {
     var q = new URLSearchParams(location.search), saved = JSON.parse(localStorage.getItem('t22kit') || '{}');
     codeEl.value = q.get('code') || saved.c || '';
+    if (saved.d) daysEl.value = saved.d;
     if (q.get('role') || saved.r) roleEl.value = q.get('role') || saved.r;
   } catch (e) {}
-  var timer, daysTimer, daysSeq = 0;
-  [codeEl, roleEl].forEach(function (el) {
-    el.addEventListener('input', function () {
-      codeEl.removeAttribute('aria-invalid'); clearTimeout(timer); timer = setTimeout(render, 150);
-      if (el === codeEl) { clearTimeout(daysTimer); daysTimer = setTimeout(checkDays, 600); }
-    });
+  var timer;
+  [codeEl, daysEl, roleEl].forEach(function (el) {
+    el.addEventListener('input', function () { codeEl.removeAttribute('aria-invalid'); clearTimeout(timer); timer = setTimeout(render, 150); });
     el.addEventListener('change', render);
   });
 
-  /* The trial length belongs to the code, not to this page: read the same
-     registry signup checks, and stamp the materials with what the code
-     actually gives. Unregistered codes give the standard 30 days. */
-  function checkDays() {
-    var code = clean(codeEl.value);
-    var text = $('daysText'), note = $('daysNote');
-    if (!code) { kitDays = '30'; if (text) text.textContent = '30 days — the standard trial'; render(); return; }
-    var seq = ++daysSeq;
-    fetch('https://nwlhsshvqmbhemhxcran.supabase.co/rest/v1/rpc/title22_check_trainer_code', {
-      method: 'POST',
-      headers: { 'apikey': ANON, 'Authorization': 'Bearer ' + ANON, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ p_code: code })
-    }).then(function (r) { return r.json(); }).then(function (rows) {
-      if (seq !== daysSeq) return;
-      if (rows && rows.length && rows[0].trial_days) {
-        kitDays = String(rows[0].trial_days);
-        if (text) text.textContent = kitDays + ' days — set when your code was created';
-        if (note) note.textContent = 'Set by Title22 when your code was created, so what your posts promise is what signup gives.';
-      } else {
-        kitDays = '30';
-        if (text) text.textContent = '30 days — the standard trial';
-        if (note) note.textContent = 'Your code is not registered for a longer trial, so signup gives the standard 30 days and your materials say 30. Ask Title22 if it should be longer.';
-      }
-      render();
-    }).catch(function () {
-      if (seq !== daysSeq) return;
-      kitDays = '30';
-      if (text) text.textContent = '30 days — the standard trial';
-      render();
-    });
-  }
-
   var fonts = ['700 40px "Zilla Slab"', '400 20px "Public Sans"', '700 20px "Public Sans"', '500 20px "IBM Plex Mono"'];
   render();
-  checkDays();
   if (document.fonts && document.fonts.load) Promise.all(fonts.map(function (f) { return document.fonts.load(f); })).then(render, render);
 })();
