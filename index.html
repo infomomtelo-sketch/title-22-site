@@ -233,6 +233,19 @@
   .t22belt-play { flex: 0 0 auto; width: 2rem; height: 2rem; border-radius: 50%; background: #e8a33d; color: #143c31; display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; }
   @keyframes t22belt-scroll { to { transform: translateX(-50%); } }
   @media (max-width: 720px) { .t22belt-card { height: 215px; } .t22belt-head h2 { font-size: 1.6rem; } }
+  @media (min-width: 721px) {
+    /* Desktop even-band fix (Nov 8, 2026): one uniform card height, widths set by
+       poster orientation - landscape stops blowing up to 516px wide. */
+    .t22belt-card { height: 250px; }
+    .t22belt-card[style*="1920/1080"], .t22belt-card[style*="1280/720"] { width: 356px; }
+    .t22belt-card[style*="1080/1920"] { width: 188px; }
+    .t22belt-card[style*="540/1096"] { width: 170px; }
+    .t22belt-group .t22belt-card:nth-child(5n+1) { --t22belt-y: 10px; --t22belt-r: -1.2deg; }
+    .t22belt-group .t22belt-card:nth-child(5n+2) { --t22belt-y: 4px;  --t22belt-r: -0.6deg; }
+    .t22belt-group .t22belt-card:nth-child(5n+4) { --t22belt-y: 4px;  --t22belt-r: 0.6deg; }
+    .t22belt-group .t22belt-card:nth-child(5n+5) { --t22belt-y: 10px; --t22belt-r: 1.2deg; }
+    .t22belt-viewport { -webkit-mask-image: linear-gradient(90deg, transparent, #000 64px, #000 calc(100% - 64px), transparent); mask-image: linear-gradient(90deg, transparent, #000 64px, #000 calc(100% - 64px), transparent); }
+  }
   @media (prefers-reduced-motion: reduce) { .t22belt-track { animation: none; } .t22belt-viewport { overflow-x: auto; } }
   </style>
   <section class="t22belt" aria-label="Title22 videos">
