@@ -210,6 +210,82 @@
       </div>
     </div>
   </section>
+  <!-- t22belt: curved video belt (PREVIEW build Nov 8, 2026 — self-contained; remove this whole block to remove the belt) -->
+  <style>
+  .t22belt { background: #143c31; padding: 2.4rem 0 2.8rem; overflow: hidden; }
+  .t22belt-head { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.5rem 1.5rem; }
+  .t22belt-head h2 { font-family: "Zilla Slab", serif; font-weight: 700; font-size: 2rem; color: #fbf7f0; margin: 0; }
+  .t22belt-head p { color: #cfdccb; margin: 0.35rem 0 0; font-size: 1rem; }
+  .t22belt-head a { color: #f0c869; font-weight: 600; white-space: nowrap; }
+  .t22belt-viewport { margin-top: 1.2rem; overflow: hidden; padding: 1.6rem 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
+  .t22belt-track { display: flex; width: max-content; animation: t22belt-scroll 70s linear infinite; }
+  .t22belt:hover .t22belt-track, .t22belt:focus-within .t22belt-track, .t22belt:active .t22belt-track { animation-play-state: paused; }
+  .t22belt-group { display: flex; gap: 1.4rem; padding-right: 1.4rem; align-items: flex-start; }
+  .t22belt-card { --t22belt-y: 0px; --t22belt-r: 0deg; position: relative; flex: 0 0 auto; height: 290px; border-radius: 16px; overflow: hidden; background: #0f2a22; box-shadow: 0 16px 34px rgba(0,0,0,.38); transform: translateY(var(--t22belt-y)) rotate(var(--t22belt-r)); transition: transform .25s ease; }
+  .t22belt-card:hover { transform: translateY(0) rotate(0deg) scale(1.03); z-index: 2; }
+  .t22belt-group .t22belt-card:nth-child(5n+1) { --t22belt-y: 18px; --t22belt-r: -3deg; }
+  .t22belt-group .t22belt-card:nth-child(5n+2) { --t22belt-y: 6px;  --t22belt-r: -1.5deg; }
+  .t22belt-group .t22belt-card:nth-child(5n+3) { --t22belt-y: 0px;  --t22belt-r: 0deg; }
+  .t22belt-group .t22belt-card:nth-child(5n+4) { --t22belt-y: 6px;  --t22belt-r: 1.5deg; }
+  .t22belt-group .t22belt-card:nth-child(5n+5) { --t22belt-y: 18px; --t22belt-r: 3deg; }
+  .t22belt-card img { display: block; height: 100%; width: 100%; object-fit: cover; }
+  .t22belt-cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.6rem 0.9rem 0.7rem; color: #fbf7f0; font-weight: 600; font-size: 0.98rem; background: linear-gradient(transparent, rgba(10,26,20,.88)); display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
+  .t22belt-play { flex: 0 0 auto; width: 2rem; height: 2rem; border-radius: 50%; background: #e8a33d; color: #143c31; display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; }
+  @keyframes t22belt-scroll { to { transform: translateX(-50%); } }
+  @media (max-width: 720px) { .t22belt-card { height: 215px; } .t22belt-head h2 { font-size: 1.6rem; } }
+  @media (prefers-reduced-motion: reduce) { .t22belt-track { animation: none; } .t22belt-viewport { overflow-x: auto; } }
+  </style>
+  <section class="t22belt" aria-label="Title22 videos">
+    <div class="t22belt-head">
+      <div>
+        <h2>Watch it at work</h2>
+        <p>Every Title22 video, flowing by — tap any one to watch.</p>
+      </div>
+      <a href="/videos/">All videos &rarr;</a>
+    </div>
+    <div class="t22belt-viewport">
+      <div class="t22belt-track">
+        <div class="t22belt-group">
+        <a class="t22belt-card" href="/videos/" aria-label="Watch: Title22 overview" style="aspect-ratio:1920/1080"><img src="/videos/title22-overview-poster.jpg" alt="Title22 overview — video poster" loading="lazy"><span class="t22belt-cap">Title22 overview<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-label="Watch: The two add-ons" style="aspect-ratio:1920/1080"><img src="/videos/title22-addons-poster.jpg" alt="The two add-ons — video poster" loading="lazy"><span class="t22belt-cap">The two add-ons<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-label="Watch: Meet Tello" style="aspect-ratio:1080/1920"><img src="/videos/title22-tello-intro-poster.jpg" alt="Meet Tello — video poster" loading="lazy"><span class="t22belt-cap">Meet Tello<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-label="Watch: Title22 + app tour" style="aspect-ratio:1920/1080"><img src="/videos/title22-presentation-poster.jpg" alt="Title22 + app tour — video poster" loading="lazy"><span class="t22belt-cap">Title22 + app tour<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-label="Watch: Read your checklist" style="aspect-ratio:1080/1920"><img src="/videos/howto/checklist-poster.jpg" alt="Read your checklist — video poster" loading="lazy"><span class="t22belt-cap">Read your checklist<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-label="Watch: Title22 in 30 seconds" style="aspect-ratio:1920/1080"><img src="/videos/title22-story-30s-poster.jpg" alt="Title22 in 30 seconds — video poster" loading="lazy"><span class="t22belt-cap">Title22 in 30 seconds<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-label="Watch: Classroom guide" style="aspect-ratio:1080/1920"><img src="/videos/title22-classroom-guide-poster.jpg" alt="Classroom guide — video poster" loading="lazy"><span class="t22belt-cap">Classroom guide<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-label="Watch: The 30-day proof" style="aspect-ratio:1280/720"><img src="/videos/title22-30-day-proof-poster.png" alt="The 30-day proof — video poster" loading="lazy"><span class="t22belt-cap">The 30-day proof<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-label="Watch: Meet Tello — how-to" style="aspect-ratio:1080/1920"><img src="/videos/howto/meet-tello-poster.jpg" alt="Meet Tello — how-to — video poster" loading="lazy"><span class="t22belt-cap">Meet Tello — how-to<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-label="Watch: Guided tour" style="aspect-ratio:1280/720"><img src="/videos/title22-guided-tour-poster.png" alt="Guided tour — video poster" loading="lazy"><span class="t22belt-cap">Guided tour<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-label="Watch: Title22 demo" style="aspect-ratio:1080/1920"><img src="/videos/title22-demo-poster.jpg" alt="Title22 demo — video poster" loading="lazy"><span class="t22belt-cap">Title22 demo<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-label="Watch: Partner explainer" style="aspect-ratio:1920/1080"><img src="/videos/title22-partner-explainer-poster.png" alt="Partner explainer — video poster" loading="lazy"><span class="t22belt-cap">Partner explainer<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-label="Watch: Your documents, in order" style="aspect-ratio:1080/1920"><img src="/videos/howto/docs-poster.jpg" alt="Your documents, in order — video poster" loading="lazy"><span class="t22belt-cap">Your documents, in order<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-label="Watch: For trainers and students" style="aspect-ratio:1080/1920"><img src="/videos/title22-trainers-students-poster.jpg" alt="For trainers and students — video poster" loading="lazy"><span class="t22belt-cap">For trainers and students<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-label="Watch: Partner tour" style="aspect-ratio:540/1096"><img src="/videos/title22-partner-tour-poster.png" alt="Partner tour — video poster" loading="lazy"><span class="t22belt-cap">Partner tour<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-label="Watch: Invite your team" style="aspect-ratio:1080/1920"><img src="/videos/howto/invite-team-poster.jpg" alt="Invite your team — video poster" loading="lazy"><span class="t22belt-cap">Invite your team<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        </div>
+        <div class="t22belt-group" aria-hidden="true">
+        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Title22 overview" style="aspect-ratio:1920/1080"><img src="/videos/title22-overview-poster.jpg" alt="Title22 overview — video poster" loading="lazy"><span class="t22belt-cap">Title22 overview<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: The two add-ons" style="aspect-ratio:1920/1080"><img src="/videos/title22-addons-poster.jpg" alt="The two add-ons — video poster" loading="lazy"><span class="t22belt-cap">The two add-ons<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Meet Tello" style="aspect-ratio:1080/1920"><img src="/videos/title22-tello-intro-poster.jpg" alt="Meet Tello — video poster" loading="lazy"><span class="t22belt-cap">Meet Tello<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Title22 + app tour" style="aspect-ratio:1920/1080"><img src="/videos/title22-presentation-poster.jpg" alt="Title22 + app tour — video poster" loading="lazy"><span class="t22belt-cap">Title22 + app tour<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Read your checklist" style="aspect-ratio:1080/1920"><img src="/videos/howto/checklist-poster.jpg" alt="Read your checklist — video poster" loading="lazy"><span class="t22belt-cap">Read your checklist<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Title22 in 30 seconds" style="aspect-ratio:1920/1080"><img src="/videos/title22-story-30s-poster.jpg" alt="Title22 in 30 seconds — video poster" loading="lazy"><span class="t22belt-cap">Title22 in 30 seconds<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Classroom guide" style="aspect-ratio:1080/1920"><img src="/videos/title22-classroom-guide-poster.jpg" alt="Classroom guide — video poster" loading="lazy"><span class="t22belt-cap">Classroom guide<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: The 30-day proof" style="aspect-ratio:1280/720"><img src="/videos/title22-30-day-proof-poster.png" alt="The 30-day proof — video poster" loading="lazy"><span class="t22belt-cap">The 30-day proof<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Meet Tello — how-to" style="aspect-ratio:1080/1920"><img src="/videos/howto/meet-tello-poster.jpg" alt="Meet Tello — how-to — video poster" loading="lazy"><span class="t22belt-cap">Meet Tello — how-to<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Guided tour" style="aspect-ratio:1280/720"><img src="/videos/title22-guided-tour-poster.png" alt="Guided tour — video poster" loading="lazy"><span class="t22belt-cap">Guided tour<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Title22 demo" style="aspect-ratio:1080/1920"><img src="/videos/title22-demo-poster.jpg" alt="Title22 demo — video poster" loading="lazy"><span class="t22belt-cap">Title22 demo<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Partner explainer" style="aspect-ratio:1920/1080"><img src="/videos/title22-partner-explainer-poster.png" alt="Partner explainer — video poster" loading="lazy"><span class="t22belt-cap">Partner explainer<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Your documents, in order" style="aspect-ratio:1080/1920"><img src="/videos/howto/docs-poster.jpg" alt="Your documents, in order — video poster" loading="lazy"><span class="t22belt-cap">Your documents, in order<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: For trainers and students" style="aspect-ratio:1080/1920"><img src="/videos/title22-trainers-students-poster.jpg" alt="For trainers and students — video poster" loading="lazy"><span class="t22belt-cap">For trainers and students<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Partner tour" style="aspect-ratio:540/1096"><img src="/videos/title22-partner-tour-poster.png" alt="Partner tour — video poster" loading="lazy"><span class="t22belt-cap">Partner tour<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Invite your team" style="aspect-ratio:1080/1920"><img src="/videos/howto/invite-team-poster.jpg" alt="Invite your team — video poster" loading="lazy"><span class="t22belt-cap">Invite your team<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /t22belt -->
+
   <style>@media (max-width:60rem){.hero-warm .hero-grid{grid-template-columns:1fr !important;gap:1.5rem !important}}</style>
   <style>@media (max-width:720px){#tello .tello-row{grid-template-columns:1fr !important}}</style>
 
