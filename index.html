@@ -219,7 +219,7 @@
   .t22belt-head a { color: #f0c869; font-weight: 600; white-space: nowrap; }
   .t22belt-viewport { margin-top: 1.2rem; overflow: hidden; padding: 1.6rem 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
   .t22belt-track { display: flex; width: max-content; animation: t22belt-scroll 70s linear infinite; }
-  .t22belt:hover .t22belt-track, .t22belt:focus-within .t22belt-track, .t22belt:active .t22belt-track { animation-play-state: paused; }
+  /* Always flow (Eli, Nov 8, 2026): no hover/focus pause — the river never stops. */
   .t22belt-group { display: flex; gap: 1.4rem; padding-right: 1.4rem; align-items: flex-start; }
   .t22belt-card { --t22belt-y: 0px; --t22belt-r: 0deg; position: relative; flex: 0 0 auto; height: 290px; border-radius: 16px; overflow: hidden; background: #0f2a22; box-shadow: 0 16px 34px rgba(0,0,0,.38); transform: translateY(var(--t22belt-y)) rotate(var(--t22belt-r)); transition: transform .25s ease; }
   .t22belt-card:hover { transform: translateY(0) rotate(0deg) scale(1.03); z-index: 2; }
