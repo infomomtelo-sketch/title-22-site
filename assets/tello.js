@@ -27,6 +27,19 @@
   var fab = document.createElement('button');
   fab.type = 'button'; fab.className = 'tlo-fab'; fab.setAttribute('aria-label', 'Tello, the Title22 assistant: tap to hear');
   fab.innerHTML = '<span class="tlo-av" aria-hidden="true"></span><span>Hear Tello</span>';
+  // Arrival (Part 4): she waves once on load, then settles into the idle
+  // motion (CSS). Visual only — no sound, no chat opened, no background work.
+  fab.classList.add('tlo-arrive');
+  setTimeout(function () { fab.classList.remove('tlo-arrive'); }, 1800);
+  // One-line greeting beside the fab on arrival. Tapping it opens the card,
+  // same as tapping Tello. It hides when the card opens, and a few seconds
+  // after arrival, so it never sits over the page's main action.
+  var hi = document.createElement('button');
+  hi.type = 'button'; hi.className = 'tlo-hi';
+  hi.textContent = "Hi, I'm Tello. I help care homes stay ready.";
+  hi.setAttribute('aria-label', 'Tello: Hi, I help care homes stay ready. Tap to open the chat.');
+  var hiTimer = setTimeout(function () { hi.classList.add('tlo-hi-off'); }, 9000);
+  function hideHi() { clearTimeout(hiTimer); hi.classList.add('tlo-hi-off'); }
   var card = document.createElement('div');
   card.className = 'tlo-card'; card.setAttribute('role', 'dialog'); card.setAttribute('aria-label', 'Tello');
   card.innerHTML = '<button type="button" class="tlo-x" aria-label="Close">×</button>' +
@@ -37,8 +50,10 @@
     '<div class="tlo-note" style="margin-top:.5rem">No account needed to ask.</div>' +
     '<div class="tlo-note">AI voice. Tello never gives medical or dosage advice.</div>';
   card.querySelector('p').textContent = LINES[key];
-  document.body.appendChild(card); document.body.appendChild(fab);
-  fab.addEventListener('click', function () { card.classList.add('show'); speak(key, null); });
+  document.body.appendChild(card); document.body.appendChild(hi); document.body.appendChild(fab);
+  function openCard() { hideHi(); fab.classList.remove('tlo-arrive'); card.classList.add('show'); speak(key, null); }
+  fab.addEventListener('click', openCard);
+  hi.addEventListener('click', openCard);
   card.querySelector('.tlo-play').addEventListener('click', function () { speak(key, null); });
   card.querySelector('.tlo-x').addEventListener('click', function () { card.classList.remove('show'); stopAll(); current = null; });
 
