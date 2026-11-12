@@ -5,6 +5,22 @@
 .tlo-av{width:40px;height:40px;border-radius:50%;background:url(/assets/tello-mark.svg) center/contain no-repeat;box-shadow:0 0 0 3px rgba(232,162,61,.18),0 0 0 4px rgba(232,162,61,.5);flex:0 0 auto;font-size:0;color:transparent;overflow:hidden}
 .tlo-fab.speaking .tlo-av{animation:tloPulse 1s ease-in-out infinite}
 @keyframes tloPulse{0%,100%{box-shadow:0 0 0 0 rgba(232,162,61,.7)}50%{box-shadow:0 0 0 8px rgba(232,162,61,0)}}
+/* Arrival (Part 4): she waves once on load, then settles into a slow idle
+   breathe in the same spirit as tloPulse. Visual only — no sound, no chat
+   opened, no background work. The JS adds .tlo-arrive on load and drops it
+   after the wave; tapping her drops it at once. */
+.tlo-fab .tlo-av{animation:tloIdle 4.5s ease-in-out infinite}
+.tlo-fab.tlo-arrive .tlo-av{animation:tloWave 1.5s ease-in-out 1}
+@keyframes tloWave{0%{transform:rotate(0deg)}20%{transform:rotate(-14deg)}40%{transform:rotate(10deg)}60%{transform:rotate(-6deg)}80%{transform:rotate(3deg)}100%{transform:rotate(0deg)}}
+@keyframes tloIdle{0%,100%{transform:scale(1);box-shadow:0 0 0 3px rgba(232,162,61,.18),0 0 0 4px rgba(232,162,61,.5)}50%{transform:scale(1.07);box-shadow:0 0 0 5px rgba(232,162,61,.18),0 0 0 6px rgba(232,162,61,.45)}}
+/* Speaking wins over arrival/idle when both apply (same specificity, later rule). */
+.tlo-fab.speaking .tlo-av{animation:tloPulse 1s ease-in-out infinite}
+/* One-line greeting beside the fab on arrival, same visual language
+   (green #123a30, gold #e8a23d, cream #f9f5ed). Tapping it opens the card,
+   same as tapping Tello. It hides when the card opens and a few seconds
+   after arrival, so it never sits over the page's main action. */
+.tlo-hi{position:fixed;right:16px;bottom:76px;z-index:60;width:max-content;max-width:min(340px,calc(100vw - 32px));background:#f9f5ed;color:#123a30;border:1px solid rgba(232,162,61,.65);border-radius:999px;padding:.55rem .95rem;font:600 .9rem "Public Sans",sans-serif;box-shadow:0 10px 26px rgba(0,0,0,.2);cursor:pointer;text-align:left;transition:opacity .4s ease,visibility 0s linear .4s}
+.tlo-hi.tlo-hi-off{opacity:0;visibility:hidden;pointer-events:none}
 .tlo-card{position:fixed;right:16px;bottom:76px;z-index:60;width:min(340px,calc(100vw - 32px));background:#f9f5ed;color:#1a2420;border:1px solid #d8e2dc;border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.22);padding:1rem 1rem .9rem;display:none}
 .tlo-card.show{display:block}
 .tlo-card .tlo-h{display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem}
@@ -17,6 +33,10 @@
 .tlo-open{background:#e8a23d;color:#123a30 !important;border:0}
 .tlo-x{position:absolute;top:8px;right:8px;width:36px;height:36px;border:0;background:none;font-size:1.1rem;cursor:pointer;color:#5b6a63}
 .tlo-note{font-size:.72rem;color:#5b6a63;margin-top:.6rem}
+/* Discreet owner path (one Tello, decided 2026-11-12): small text link, not a
+   button, not a chooser. Same muted size as the notes above it. */
+.tlo-owner{display:inline-block;margin-top:.55rem;font-size:.72rem;color:#5b6a63;text-decoration:underline;text-underline-offset:2px}
+.tlo-owner:hover{color:#123a30}
 /* "Tello explains" buttons on cards */
 .tlo-say{display:inline-flex;align-items:center;gap:.35rem;background:#fdf3e2;color:#123a30;border:1px solid #e8a23d;border-radius:999px;padding:.35rem .75rem;font:600 .82rem "Public Sans",sans-serif;cursor:pointer;min-height:36px}
 .tlo-say:hover{background:#fbe6c4}
@@ -24,8 +44,8 @@
 .tlo-say .tlo-mini{width:22px;height:22px;border-radius:50%;background:url(/assets/tello-mark-sm.svg) center/contain no-repeat;font-size:0;color:transparent;overflow:hidden;flex:0 0 auto}
 .tlo-capt{font-size:.85rem;color:#1a2420;background:#fdf3e2;border-left:3px solid #e8a23d;border-radius:6px;padding:.5rem .7rem;margin-top:.5rem;display:none}
 .tlo-capt.show{display:block}
-@media (prefers-reduced-motion:reduce){.tlo-fab.speaking .tlo-av{animation:none}}
-@media print{.tlo-fab,.tlo-card{display:none!important}}
+@media (prefers-reduced-motion:reduce){.tlo-fab .tlo-av,.tlo-fab.tlo-arrive .tlo-av,.tlo-fab.speaking .tlo-av{animation:none}.tlo-hi{transition:none}}
+@media print{.tlo-fab,.tlo-card,.tlo-hi{display:none!important}}
 
 /* Menu: "Meet Tello" carries her mark instead of a chat emoji. */
 .t22nav .menu .ic.tlo-navmark{width:22px;height:22px;border-radius:50%;background:url(/assets/tello-mark-sm.svg) center/contain no-repeat;font-size:0}
