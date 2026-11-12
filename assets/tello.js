@@ -48,7 +48,10 @@
     // with no account (2026-09-29, the owner: let people ask before signing up).
     '<p></p><div class="tlo-row"><button type="button" class="tlo-play">Play again</button><a class="tlo-open" href="' + ASK + '">Ask Tello a question</a></div>' +
     '<div class="tlo-note" style="margin-top:.5rem">No account needed to ask.</div>' +
-    '<div class="tlo-note">AI voice. Tello never gives medical or dosage advice.</div>';
+    '<div class="tlo-note">AI voice. Tello never gives medical or dosage advice.</div>' +
+    // One Tello (decided 2026-11-12): the place decides the job, no chooser.
+    // A discreet owner path only — small text link, not a button.
+    '<a class="tlo-owner" href="https://title22.app/tello">I\'m the owner</a>';
   card.querySelector('p').textContent = LINES[key];
   document.body.appendChild(card); document.body.appendChild(hi); document.body.appendChild(fab);
   function openCard() { hideHi(); fab.classList.remove('tlo-arrive'); card.classList.add('show'); speak(key, null); }
