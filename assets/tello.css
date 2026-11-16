@@ -33,10 +33,15 @@
 .tlo-open{background:#e8a23d;color:#123a30 !important;border:0}
 .tlo-x{position:absolute;top:8px;right:8px;width:36px;height:36px;border:0;background:none;font-size:1.1rem;cursor:pointer;color:#5b6a63}
 .tlo-note{font-size:.72rem;color:#5b6a63;margin-top:.6rem}
-/* Discreet owner path (one Tello, decided 2026-11-12): small text link, not a
-   button, not a chooser. Same muted size as the notes above it. */
-.tlo-owner{display:inline-block;margin-top:.55rem;font-size:.72rem;color:#5b6a63;text-decoration:underline;text-underline-offset:2px}
+/* Owner path (one Tello, decided 2026-11-12): a text link, not a button, not
+   a chooser. Promoted 2026-11-15 from .72rem grey to a clearly readable size
+   and pine color — owners could not find it at the discreet size. */
+.tlo-owner{display:inline-block;margin-top:.55rem;font-size:.9rem;font-weight:600;color:#1e5748;text-decoration:underline;text-underline-offset:2px}
 .tlo-owner:hover{color:#123a30}
+/* Trial next step in the card (2026-11-15): the APP trial URL was declared in
+   tello.js but never attached to an element; this is its pill, same green as
+   the Play button. The .tlo-row a base rule above supplies shape and size. */
+.tlo-trial{background:#1e5748;color:#fff;border:0}
 /* "Tello explains" buttons on cards */
 .tlo-say{display:inline-flex;align-items:center;gap:.35rem;background:#fdf3e2;color:#123a30;border:1px solid #e8a23d;border-radius:999px;padding:.35rem .75rem;font:600 .82rem "Public Sans",sans-serif;cursor:pointer;min-height:36px}
 .tlo-say:hover{background:#fbe6c4}
