@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:image" content="https://title-22.com/share-kit/title22-share-card-1200x630.png">
 <title>RCFE &amp; ARF Compliance Software for California | Title22</title>
-<meta name="description" content="Opening a California RCFE or ARF? Title22 keeps staff files, training hours and clearances current and shows what DSS will ask for. 30-day free trial, no card.">
+<meta name="description" content="Title22 is where California RCFE &amp; ARF caregivers take their required training — and every completion files itself into their staff record. 30-day free trial, no card.">
 <link rel="canonical" href="https://title-22.com/">
-<meta property="og:title" content="Title22 — Staff Files, Training &amp; DSS Readiness for California RCFEs">
-<meta property="og:description" content="Staff files, training hours and clearances kept current, with a DSS readiness checklist. $29/month for one home. No resident records by design.">
+<meta property="og:title" content="Title22 — Staff Training That Files Itself for California RCFEs">
+<meta property="og:description" content="Caregivers take their required training inside Title22 — and every completion files itself into their staff record. $29/month for one home. No resident records by design.">
 <meta property="og:url" content="https://title-22.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Title22">
 <meta property="og:image:alt" content="Title22 readiness dashboard">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Title22 — Staff Files, Training &amp; DSS Readiness for California RCFEs">
-<meta name="twitter:description" content="Staff files, training hours and clearances kept current, with a DSS readiness checklist. $29/month for one home. No resident records by design.">
+<meta name="twitter:title" content="Title22 — Staff Training That Files Itself for California RCFEs">
+<meta name="twitter:description" content="Caregivers take their required training inside Title22 — and every completion files itself into their staff record. $29/month for one home. No resident records by design.">
 <meta name="twitter:image" content="https://title-22.com/share-kit/title22-share-card-1200x630.png">
 <script type="application/ld+json">
 {
@@ -35,7 +35,7 @@
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
   "url": "https://title-22.com/",
-  "description": "Staff files, training hours, clearance tracking and a DSS readiness checklist for California RCFEs and ARFs. No PHI by design: no resident records, no MAR.",
+  "description": "Staff training, staff files, clearance tracking and a DSS readiness checklist for California RCFEs and ARFs. No PHI by design: no resident records, no MAR.",
   "offers": {
     "@type": "Offer",
     "price": "29.00",
@@ -124,6 +124,25 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+  /* Training-first build (Nov 15, 2026): pricing + two-card daily row + closing */
+  .hw-grid.duo { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  @media (max-width: 60rem) { .hw-grid.duo { grid-template-columns: 1fr; } }
+  .price-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  @media (max-width: 52rem) { .price-cards { grid-template-columns: 1fr; } }
+  .price-card { border: 1px solid var(--line); border-radius: 14px; padding: 1.4rem; background: var(--white); }
+  .price-k { font: 500 .8rem "IBM Plex Mono", monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--pine); margin: 0 0 .4rem; }
+  .price-amt { font-family: "Zilla Slab", serif; font-weight: 700; font-size: 2.4rem; line-height: 1; color: var(--deep); margin: 0 0 .6rem; }
+  .price-amt span { font-size: 1.05rem; font-weight: 600; color: var(--muted); }
+  .price-card p { margin: 0 0 .5rem; font-size: 1rem; line-height: 1.55; }
+  .tier-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1rem; margin: .6rem 0 .9rem; }
+  @media (max-width: 52rem) { .tier-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+  .tier-grid div { font-size: 1.05rem; color: var(--deep); }
+  .tier-grid strong { font-family: "Zilla Slab", serif; font-size: 1.5rem; }
+  .tier-grid span { display: block; font-size: .9rem; color: var(--muted); margin-top: .15rem; }
+  .closing h2 { color: #fbf7f0; font-size: 2.2rem; margin: 0 0 .8rem; }
+  .closing p { color: #dbe6d8; max-width: 38rem; margin: 0 auto 1.4rem; font-size: 1.05rem; line-height: 1.6; }
+</style>
 </head>
 <body>
 <script src="/assets/motion.js"></script>
@@ -172,7 +191,7 @@
           <a href="/faq/"><b>FAQ</b><small>Questions operators ask first</small></a>
           <a href="/about/"><b>About</b><small>Built from real facility operations</small></a>
           <a href="/follow/"><b>Follow Title22</b><small>Facebook, Instagram, YouTube, TikTok</small></a>
-          <a href="/contact/"><b>Contact</b><small>hello@title-22.com</small></a>
+          <a href="/contact/"><b>Contact</b><small><span class="__cf_email__" data-cfemail="48202d242427083c213c242d657a7a662b2725">[email&#160;protected]</span></small></a>
         </div>
       </div>
       <a class="top" href="/pilot/">30-Day Proof</a>
@@ -187,20 +206,20 @@
     <div class="wrap">
       <div class="hero-grid" style="display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:2.5rem;align-items:center">
         <div>
-          <p class="eyebrow">For newly opened California RCFEs and ARFs</p>
-          <h1>Your first inspection, without guessing.</h1>
-          <p class="lede">Just opened? Title22 keeps your staff files, training and clearances current, and shows you what DSS will ask for before they do.</p>
+          <p class="eyebrow">For California RCFE &amp; ARF care homes</p>
+          <h1>Your staff train here. Their records file themselves.</h1>
+          <p class="lede">Title22 is where your caregivers take their required training — and the moment one of them finishes a course, the completion is already sitting in their staff file. No scanning. No chasing paper. No "where's the certificate" on survey day.</p>
           <div class="cta-row">
-            <a class="btn hero-start" href="https://title22.app/?src=home-hero">Start free trial</a>
+            <a class="btn hero-start" href="https://title22.app/?src=home-hero">Start the 30-day free trial</a>
             <a class="btn ghost" href="/videos/">Watch the videos</a>
           </div>
           <!-- True only while signup takes just an email, no card, and an expired
                trial turns read-only with records kept (runp8-care). -->
-          <p class="price-line"><strong>No card. Just an email.</strong> $29/month for one home · $79 for up to five · <a href="/pricing/">Pricing</a></p>
+          <p class="price-line"><strong>No card.</strong> Nothing is charged unless you choose a plan after the trial.</p>
           <p class="price-line" style="margin-top:.35rem"><strong>No PHI by design:</strong> no resident records, no medications, no MAR.</p>
           <p class="price-line" style="margin-top:.35rem">Title22 is a private tool, built by people who work in real care-home operations. It is not affiliated with the California Department of Social Services or any government agency.</p>
         </div>
-        <div>
+<div>
           <video controls playsinline preload="none" poster="/videos/title22-story-30s-poster.jpg"
                  style="width:100%;aspect-ratio:16/9;border-radius:14px;display:block;background:#0f2a22;box-shadow:0 18px 40px rgba(0,0,0,.35)"
                  aria-label="Title22 in 30 seconds, narrated, with captions">
@@ -211,125 +230,37 @@
       </div>
     </div>
   </section>
-  <section>
-    <div class="wrap" style="text-align:center;padding-top:2rem">
-      <p style="max-width:44rem;margin:0 auto;font-size:1.05rem;line-height:1.65">Title22 was built by people who lived this work. They watched the same scramble again and again: staff files, training hours, clearances — all of it scattered until DSS asks for it. So they built one place to keep it together. Not a government site. A private tool, built from real homes and real inspections, so what's asked for is already there.</p>
-    </div>
-  </section>
-  <!-- t22belt: curved video belt (PREVIEW build Nov 8, 2026 — self-contained; remove this whole block to remove the belt) -->
-  <style>
-  .t22belt { background: #143c31; padding: 2.4rem 0 2.8rem; overflow: hidden; }
-  .t22belt-head { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.5rem 1.5rem; }
-  .t22belt-head h2 { font-family: "Zilla Slab", serif; font-weight: 700; font-size: 2rem; color: #fbf7f0; margin: 0; }
-  .t22belt-head p { color: #cfdccb; margin: 0.35rem 0 0; font-size: 1rem; }
-  .t22belt-head a { color: #f0c869; font-weight: 600; white-space: nowrap; }
-  .t22belt-viewport { margin-top: 1.2rem; overflow: hidden; padding: 1.6rem 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
-  .t22belt-track { display: flex; width: max-content; animation: t22belt-scroll 70s linear infinite; }
-  /* Always flow (Eli, Nov 8, 2026): no hover/focus pause — the river never stops. */
-  .t22belt-group { display: flex; gap: 1.4rem; padding-right: 1.4rem; align-items: flex-start; }
-  .t22belt-card { --t22belt-y: 0px; --t22belt-r: 0deg; position: relative; flex: 0 0 auto; height: 290px; border-radius: 16px; overflow: hidden; background: #0f2a22; box-shadow: 0 16px 34px rgba(0,0,0,.38); transform: translateY(var(--t22belt-y)) rotate(var(--t22belt-r)); transition: transform .25s ease; }
-  .t22belt-card:hover { transform: translateY(0) rotate(0deg) scale(1.03); z-index: 2; }
-  .t22belt-group .t22belt-card:nth-child(5n+1) { --t22belt-y: 18px; --t22belt-r: -3deg; }
-  .t22belt-group .t22belt-card:nth-child(5n+2) { --t22belt-y: 6px;  --t22belt-r: -1.5deg; }
-  .t22belt-group .t22belt-card:nth-child(5n+3) { --t22belt-y: 0px;  --t22belt-r: 0deg; }
-  .t22belt-group .t22belt-card:nth-child(5n+4) { --t22belt-y: 6px;  --t22belt-r: 1.5deg; }
-  .t22belt-group .t22belt-card:nth-child(5n+5) { --t22belt-y: 18px; --t22belt-r: 3deg; }
-  .t22belt-card img { display: block; height: 100%; width: 100%; object-fit: cover; }
-  .t22belt-cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.6rem 0.9rem 0.7rem; color: #fbf7f0; font-weight: 600; font-size: 0.98rem; background: linear-gradient(transparent, rgba(10,26,20,.88)); display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
-  .t22belt-play { flex: 0 0 auto; width: 2rem; height: 2rem; border-radius: 50%; background: #e8a33d; color: #143c31; display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; }
-  @keyframes t22belt-scroll { to { transform: translateX(-50%); } }
-  @media (max-width: 720px) { .t22belt-card { height: 215px; } .t22belt-head h2 { font-size: 1.6rem; } }
-  @media (min-width: 721px) {
-    /* Desktop even-band fix (Nov 8, 2026): one uniform card height, widths set by
-       poster orientation - landscape stops blowing up to 516px wide. */
-    .t22belt-card { height: 250px; }
-    .t22belt-card[style*="1920/1080"], .t22belt-card[style*="1280/720"] { width: 356px; }
-    .t22belt-card[style*="1080/1920"] { width: 188px; }
-    .t22belt-card[style*="540/1096"] { width: 170px; }
-    .t22belt-group .t22belt-card:nth-child(5n+1) { --t22belt-y: 10px; --t22belt-r: -1.2deg; }
-    .t22belt-group .t22belt-card:nth-child(5n+2) { --t22belt-y: 4px;  --t22belt-r: -0.6deg; }
-    .t22belt-group .t22belt-card:nth-child(5n+4) { --t22belt-y: 4px;  --t22belt-r: 0.6deg; }
-    .t22belt-group .t22belt-card:nth-child(5n+5) { --t22belt-y: 10px; --t22belt-r: 1.2deg; }
-    .t22belt-viewport { -webkit-mask-image: linear-gradient(90deg, transparent, #000 64px, #000 calc(100% - 64px), transparent); mask-image: linear-gradient(90deg, transparent, #000 64px, #000 calc(100% - 64px), transparent); }
-  }
-  @media (prefers-reduced-motion: reduce) { .t22belt-track { animation: none; } .t22belt-viewport { overflow-x: auto; } }
-  </style>
-  <section class="t22belt" aria-label="Title22 videos">
-    <div class="t22belt-head">
-      <div>
-        <h2>Watch it at work</h2>
-        <p>Every Title22 video, flowing by — tap any one to watch.</p>
-      </div>
-      <a href="/videos/">All videos &rarr;</a>
-    </div>
-    <div class="t22belt-viewport">
-      <div class="t22belt-track">
-        <div class="t22belt-group">
-        <a class="t22belt-card" href="/videos/" aria-label="Watch: Title22 overview" style="aspect-ratio:1920/1080"><img src="/videos/title22-overview-poster.jpg" alt="Title22 overview — video poster" loading="lazy"><span class="t22belt-cap">Title22 overview<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-label="Watch: The two add-ons" style="aspect-ratio:1920/1080"><img src="/videos/title22-addons-poster.jpg" alt="The two add-ons — video poster" loading="lazy"><span class="t22belt-cap">The two add-ons<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-label="Watch: Meet Tello" style="aspect-ratio:1080/1920"><img src="/videos/title22-tello-intro-poster.jpg" alt="Meet Tello — video poster" loading="lazy"><span class="t22belt-cap">Meet Tello<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-label="Watch: Title22 + app tour" style="aspect-ratio:1920/1080"><img src="/videos/title22-presentation-poster.jpg" alt="Title22 + app tour — video poster" loading="lazy"><span class="t22belt-cap">Title22 + app tour<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-label="Watch: Read your checklist" style="aspect-ratio:1080/1920"><img src="/videos/howto/checklist-poster.jpg" alt="Read your checklist — video poster" loading="lazy"><span class="t22belt-cap">Read your checklist<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-label="Watch: Title22 in 30 seconds" style="aspect-ratio:1920/1080"><img src="/videos/title22-story-30s-poster.jpg" alt="Title22 in 30 seconds — video poster" loading="lazy"><span class="t22belt-cap">Title22 in 30 seconds<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-label="Watch: Classroom guide" style="aspect-ratio:1080/1920"><img src="/videos/title22-classroom-guide-poster.jpg" alt="Classroom guide — video poster" loading="lazy"><span class="t22belt-cap">Classroom guide<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-label="Watch: The 30-day proof" style="aspect-ratio:1280/720"><img src="/videos/title22-30-day-proof-poster.png" alt="The 30-day proof — video poster" loading="lazy"><span class="t22belt-cap">The 30-day proof<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-label="Watch: Meet Tello — how-to" style="aspect-ratio:1080/1920"><img src="/videos/howto/meet-tello-poster.jpg" alt="Meet Tello — how-to — video poster" loading="lazy"><span class="t22belt-cap">Meet Tello — how-to<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-label="Watch: Guided tour" style="aspect-ratio:1280/720"><img src="/videos/title22-guided-tour-poster.png" alt="Guided tour — video poster" loading="lazy"><span class="t22belt-cap">Guided tour<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-label="Watch: Title22 demo" style="aspect-ratio:1080/1920"><img src="/videos/title22-demo-poster.jpg" alt="Title22 demo — video poster" loading="lazy"><span class="t22belt-cap">Title22 demo<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-label="Watch: Partner explainer" style="aspect-ratio:1920/1080"><img src="/videos/title22-partner-explainer-poster.png" alt="Partner explainer — video poster" loading="lazy"><span class="t22belt-cap">Partner explainer<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-label="Watch: Your documents, in order" style="aspect-ratio:1080/1920"><img src="/videos/howto/docs-poster.jpg" alt="Your documents, in order — video poster" loading="lazy"><span class="t22belt-cap">Your documents, in order<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-label="Watch: For trainers and students" style="aspect-ratio:1080/1920"><img src="/videos/title22-trainers-students-poster.jpg" alt="For trainers and students — video poster" loading="lazy"><span class="t22belt-cap">For trainers and students<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-label="Watch: Partner tour" style="aspect-ratio:540/1096"><img src="/videos/title22-partner-tour-poster.png" alt="Partner tour — video poster" loading="lazy"><span class="t22belt-cap">Partner tour<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-label="Watch: Invite your team" style="aspect-ratio:1080/1920"><img src="/videos/howto/invite-team-poster.jpg" alt="Invite your team — video poster" loading="lazy"><span class="t22belt-cap">Invite your team<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        </div>
-        <div class="t22belt-group" aria-hidden="true">
-        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Title22 overview" style="aspect-ratio:1920/1080"><img src="/videos/title22-overview-poster.jpg" alt="Title22 overview — video poster" loading="lazy"><span class="t22belt-cap">Title22 overview<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: The two add-ons" style="aspect-ratio:1920/1080"><img src="/videos/title22-addons-poster.jpg" alt="The two add-ons — video poster" loading="lazy"><span class="t22belt-cap">The two add-ons<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Meet Tello" style="aspect-ratio:1080/1920"><img src="/videos/title22-tello-intro-poster.jpg" alt="Meet Tello — video poster" loading="lazy"><span class="t22belt-cap">Meet Tello<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Title22 + app tour" style="aspect-ratio:1920/1080"><img src="/videos/title22-presentation-poster.jpg" alt="Title22 + app tour — video poster" loading="lazy"><span class="t22belt-cap">Title22 + app tour<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Read your checklist" style="aspect-ratio:1080/1920"><img src="/videos/howto/checklist-poster.jpg" alt="Read your checklist — video poster" loading="lazy"><span class="t22belt-cap">Read your checklist<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Title22 in 30 seconds" style="aspect-ratio:1920/1080"><img src="/videos/title22-story-30s-poster.jpg" alt="Title22 in 30 seconds — video poster" loading="lazy"><span class="t22belt-cap">Title22 in 30 seconds<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Classroom guide" style="aspect-ratio:1080/1920"><img src="/videos/title22-classroom-guide-poster.jpg" alt="Classroom guide — video poster" loading="lazy"><span class="t22belt-cap">Classroom guide<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: The 30-day proof" style="aspect-ratio:1280/720"><img src="/videos/title22-30-day-proof-poster.png" alt="The 30-day proof — video poster" loading="lazy"><span class="t22belt-cap">The 30-day proof<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Meet Tello — how-to" style="aspect-ratio:1080/1920"><img src="/videos/howto/meet-tello-poster.jpg" alt="Meet Tello — how-to — video poster" loading="lazy"><span class="t22belt-cap">Meet Tello — how-to<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Guided tour" style="aspect-ratio:1280/720"><img src="/videos/title22-guided-tour-poster.png" alt="Guided tour — video poster" loading="lazy"><span class="t22belt-cap">Guided tour<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Title22 demo" style="aspect-ratio:1080/1920"><img src="/videos/title22-demo-poster.jpg" alt="Title22 demo — video poster" loading="lazy"><span class="t22belt-cap">Title22 demo<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Partner explainer" style="aspect-ratio:1920/1080"><img src="/videos/title22-partner-explainer-poster.png" alt="Partner explainer — video poster" loading="lazy"><span class="t22belt-cap">Partner explainer<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Your documents, in order" style="aspect-ratio:1080/1920"><img src="/videos/howto/docs-poster.jpg" alt="Your documents, in order — video poster" loading="lazy"><span class="t22belt-cap">Your documents, in order<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: For trainers and students" style="aspect-ratio:1080/1920"><img src="/videos/title22-trainers-students-poster.jpg" alt="For trainers and students — video poster" loading="lazy"><span class="t22belt-cap">For trainers and students<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Partner tour" style="aspect-ratio:540/1096"><img src="/videos/title22-partner-tour-poster.png" alt="Partner tour — video poster" loading="lazy"><span class="t22belt-cap">Partner tour<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        <a class="t22belt-card" href="/videos/" aria-hidden="true" tabindex="-1" aria-label="Watch: Invite your team" style="aspect-ratio:1080/1920"><img src="/videos/howto/invite-team-poster.jpg" alt="Invite your team — video poster" loading="lazy"><span class="t22belt-cap">Invite your team<span class="t22belt-play" aria-hidden="true">&#9654;</span></span></a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- /t22belt -->
-
   <style>@media (max-width:60rem){.hero-warm .hero-grid{grid-template-columns:1fr !important;gap:1.5rem !important}}</style>
   <style>@media (max-width:720px){#tello .tello-row{grid-template-columns:1fr !important}}</style>
 
-  <section class="hsec" id="watch">
+  <section class="hsec" id="how-it-works">
     <div class="wrap">
-      <div class="hhead"><h2>Watch instead of reading</h2><a href="/videos/">All videos →</a></div>
-      <div class="hv-row">
-        <a class="hv" href="/videos/#overview"><span class="hv-t"><img src="/videos/title22-presentation-poster.jpg" alt="" loading="lazy"><span class="hv-p" aria-hidden="true"></span><span class="hv-d">2:50</span></span><b>Title22 + app tour</b><span>What it is, then the real app</span></a>
-        <a class="hv" href="/videos/#tello"><span class="hv-t"><img src="/videos/title22-tello-intro-poster.jpg" alt="" loading="lazy"><span class="hv-p" aria-hidden="true"></span><span class="hv-d">0:37</span></span><b>Meet Tello</b><span>Your AI morning briefing</span></a>
-        <a class="hv" href="/videos/#howto-checklist"><span class="hv-t"><img src="/videos/howto/checklist-poster.jpg" alt="" loading="lazy"><span class="hv-p" aria-hidden="true"></span><span class="hv-d">0:19</span></span><b>Read your checklist</b><span>What DSS will ask for</span></a>
-        <a class="hv" href="/videos/#howto-team"><span class="hv-t"><img src="/videos/howto/invite-team-poster.jpg" alt="" loading="lazy"><span class="hv-p" aria-hidden="true"></span><span class="hv-d">0:21</span></span><b>Invite your team</b><span>Own login, own role</span></a>
+      <div class="hhead"><h2>Training in, records done.</h2><a href="/walkthrough/">See the walkthrough →</a></div>
+      <div class="hf-grid">
+        <div class="hf"><b>1. Assign the course</b><span>Pick what each staff member needs — the required training for California care homes, inside Title22.</span></div>
+        <div class="hf"><b>2. They take it here</b><span>Staff sign in and complete their courses in Title22, on the home's computer or their phone.</span></div>
+        <div class="hf"><b>3. It files itself</b><span>The completion lands in that staff member's record automatically. When licensing asks, the record is already there.</span></div>
       </div>
     </div>
   </section>
 
-  <section class="hsec">
+  <section id="tello">
     <div class="wrap">
-      <div class="hhead"><h2>What Title22 does</h2><a href="/features/">All features →</a></div>
-      <div class="hf-grid">
-        <div class="hf"><b>Staff files in one place</b><span>Personnel records, training hours and documents for every caregiver.</span><button type="button" class="tlo-say" data-tello="tile-staff"><span class="tlo-mini" aria-hidden="true"></span>Tello explains</button><span class="hf-links"><a href="/features/#staff">See staff files →</a></span></div>
-        <div class="hf"><b>Warnings before anything lapses</b><span>CPR, First Aid, TB, LiveScan and administrator dates, with the person named.</span><button type="button" class="tlo-say" data-tello="tile-alerts"><span class="tlo-mini" aria-hidden="true"></span>Tello explains</button><span class="hf-links"><a href="/videos/#tour-video">Watch the tour →</a></span></div>
-        <div class="hf"><b>DSS readiness checklist</b><span>The facility and staff requirements, with your own dates and a readiness score.</span><button type="button" class="tlo-say" data-tello="tile-checklist"><span class="tlo-mini" aria-hidden="true"></span>Tello explains</button><span class="hf-links"><a href="/videos/#howto-checklist">Watch 19 s →</a></span></div>
-        <div class="hf"><b>Tello, your morning briefing</b><span>A plain-language summary of what needs attention today.</span><button type="button" class="tlo-say" data-tello="tile-tello"><span class="tlo-mini" aria-hidden="true"></span>Tello explains</button><span class="hf-links"><a href="/videos/#tello">Watch 37 s →</a></span></div>
-        <div class="hf"><b>Everyone gets their own login</b><span>Five roles, from administrator to read-only for an inspector.</span><button type="button" class="tlo-say" data-tello="tile-roles"><span class="tlo-mini" aria-hidden="true"></span>Tello explains</button><span class="hf-links"><a href="/videos/#howto-team">Watch 21 s →</a></span></div>
-        <div class="hf"><b>More than one home</b><span>Switch between homes, with each home’s records kept separate.</span><button type="button" class="tlo-say" data-tello="tile-homes"><span class="tlo-mini" aria-hidden="true"></span>Tello explains</button><span class="hf-links"><a href="/pilot/">The 30-Day Proof →</a></span></div>
+      <div class="tello-row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:2.5rem;align-items:center">
+        <div>
+          <p class="eyebrow">Meet Tello</p>
+          <h2>Tello walks your staff through it.</h2>
+          <p>Tello is Title22's AI compliance instructor. She guides first-time users step by step — what to do, in what order, in plain words — so a new caregiver is never staring at a screen wondering what's next.</p>
+          <p>She teaches and prepares; the courses themselves come from a CDSS-approved training provider.</p>
+          </div>
+<div>
+          <video controls playsinline preload="none" poster="/videos/title22-tello-intro-poster.jpg"
+                 style="width:100%;max-width:300px;aspect-ratio:9/16;border-radius:16px;display:block;margin:0 auto;background:#143c31"
+                 aria-label="Meet Tello, a 37-second narrated video">
+            <source src="/videos/title22-tello-intro.mp4" type="video/mp4">
+            <track kind="captions" srclang="en" label="English" src="/videos/title22-tello-intro.en.vtt">
+          </video>
+        </div>
       </div>
     </div>
   </section>
@@ -337,8 +268,8 @@
   <section class="show" aria-label="How Title22 works">
     <div class="wrap">
       <div class="section-head">
-        <h2>See it in ten seconds.</h2>
-        <p>This is the whole product.</p>
+        <h2>And yes — your staff files stay survey-ready.</h2>
+        <p>Every training completion files itself, and the rest of the file lives here too: CPR and First Aid cards, TB, LiveScan, the documents licensing looks for. Title22 watches the expiry dates and warns you before something lapses — so the file you used to keep in a binder keeps itself.</p>
       </div>
 
       <div class="show-grid">
@@ -381,128 +312,50 @@
     </div>
   </section>
 
-  <section class="show motion" aria-label="What Tello watches">
+  <section class="hsec">
     <div class="wrap">
-      <div class="section-head">
-        <h2>Tello watches the dates for you.</h2>
-        <p>Staff files, the checklist and the forms, in one place.</p>
-      </div>
-
-      <div class="show-grid">
-
-        <figure class="show-card" data-mo>
-          <div class="mo-viz">
-            <div class="mo-staff" aria-hidden="true">
-              <div class="av">MR</div>
-              <div class="nm">M. Ramos</div>
-              <div class="rl">Caregiver &middot; sample</div>
-            </div>
-            <span class="mo-tag">CPR &middot; current</span>
-            <span class="mo-tag bad">TB &middot; overdue</span>
-            <span class="mo-tag warn">First Aid &middot; 20 days</span>
-            <span class="mo-tag">Live Scan</span>
-          </div>
-          <figcaption><strong>Every staff file, tagged.</strong> What is current, what is next, what is late.</figcaption>
-        </figure>
-
-        <figure class="show-card" data-mo>
-          <div class="mo-viz">
-            <div class="mo-chat">
-              <div class="mo-t" aria-hidden="true">T</div>
-              <p class="mo-bubble" data-type aria-live="off">Good morning. <b>Two things need you today.</b></p>
-            </div>
-          </div>
-          <figcaption><strong>Tello's morning briefing.</strong> Plain words, names and dates.</figcaption>
-        </figure>
-
-        <figure class="show-card" data-mo>
-          <div class="mo-viz">
-            <div class="mo-orbit" aria-hidden="true">
-              <div class="mo-ring"></div>
-              <div class="mo-spin">
-                <div class="mo-node"><div><i><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.8-3.2 3-5 5.5-5s4.7 1.8 5.5 5"/><path d="M16 5.5a3 3 0 0 1 0 5.6M18 14c1.4.7 2.3 2.4 2.6 4.5"/></svg></i><span>Staff</span></div></div>
-                <div class="mo-node"><div><i><svg viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="17" rx="2"/><path d="m8.5 9 1.5 1.5 3-3M8.5 15l1.5 1.5 3-3"/></svg></i><span>Checklist</span></div></div>
-                <div class="mo-node"><div><i><svg viewBox="0 0 24 24"><path d="M7 3.5h7l4 4v13H7z"/><path d="M14 3.5v4h4M9.5 12.5h6M9.5 16h6"/></svg></i><span>Forms</span></div></div>
-              </div>
-              <div class="mo-t">T</div>
-            </div>
-          </div>
-          <figcaption><strong>One place, one assistant.</strong> Tello keeps an eye on all three.</figcaption>
-        </figure>
-
+      <div class="hhead"><h2>Built for every day, not just survey day.</h2></div>
+      <div class="hw-grid duo">
+        <div class="hw"><span class="hw-k">Every morning</span><h3>Tello's morning briefing</h3><p>The day's picture in one place: who's due for training, what expires soon, what needs you.</p>
+        </div>
+        <div class="hw"><span class="hw-k">Every shift</span><h3>Tello Staff</h3><p>The schedule board and Today's Board, so the home runs its shifts in the same place it runs its training.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <script>
-  // Motion row. Panels start finished (see style.css); this only adds the
-  // movement once a panel is on screen, and types Tello's lines in a loop.
-  (function () {
-    var cards = document.querySelectorAll('[data-mo]');
-    if (!cards.length || !('IntersectionObserver' in window)) return;
-    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var lines = [
-      ['Good morning.', 'Two things need you today.'],
-      ["D. Reyes's TB clearance", 'is overdue.'],
-      ["J. Carter's CPR card", 'runs out in 20 days.'],
-      ['Need a blank LIC 604A?', 'Say "print LIC 604A".']
-    ];
-    function typer(el) {
-      var i = 0, busy = false;
-      function show() {
-        var l = lines[i % lines.length]; i++;
-        el.innerHTML = '';
-        var words = (l[0] + ' |' + l[1]).split(' '), bold = false, n = 0;
-        words.forEach(function (w) {
-          if (w.charAt(0) === '|') { bold = true; w = w.slice(1); }
-          var s = document.createElement(bold ? 'b' : 'span');
-          s.className = 'w'; s.textContent = w;
-          s.style.animationDelay = (n++ * 0.12) + 's';
-          el.appendChild(s); el.appendChild(document.createTextNode(' '));
-        });
-      }
-      return function start() {
-        if (busy || reduce) return; busy = true;
-        show(); setInterval(show, 3600);
-      };
-    }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (!e.isIntersecting) return;
-        e.target.classList.add('mo-go');
-        var t = e.target.querySelector('[data-type]');
-        if (t) typer(t)();
-        io.unobserve(e.target);
-      });
-    }, { threshold: 0 });
-    cards.forEach(function (c) { io.observe(c); });
-  })();
-  </script>
-
-  <section id="tello">
+  <section class="hsec" id="pricing">
     <div class="wrap">
-      <div class="tello-row" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:2.5rem;align-items:center">
-        <div>
-          <p class="eyebrow">Meet Tello</p>
-          <h2>Your morning briefing, in plain words.</h2>
-          <p>Tello is the AI assistant inside Title22. Every morning it tells you what needs attention: whose certification is about to lapse, and what's overdue. Ask it anything about your home's records and get a plain answer.</p>
-          <p>Tello is included on every plan. It never gives medical or dosage advice, and Title22 holds no resident health information.</p>
-          </div>
-        <div>
-          <video controls playsinline preload="none" poster="/videos/title22-tello-intro-poster.jpg"
-                 style="width:100%;max-width:300px;aspect-ratio:9/16;border-radius:16px;display:block;margin:0 auto;background:#143c31"
-                 aria-label="Meet Tello, a 37-second narrated video">
-            <source src="/videos/title22-tello-intro.mp4" type="video/mp4">
-            <track kind="captions" srclang="en" label="English" src="/videos/title22-tello-intro.en.vtt">
-          </video>
+      <div class="hhead"><h2>What it costs. Exactly.</h2><a href="/pricing/">Full pricing →</a></div>
+      <div class="price-cards">
+        <div class="price-card">
+          <p class="price-k">One home</p>
+          <p class="price-amt">$29<span>/month</span></p>
+          <p>Title22 for a single home. <strong>30-day free trial. No card.</strong> If you do nothing, nothing is charged.</p>
         </div>
+        <div class="price-card">
+          <p class="price-k">Up to five homes</p>
+          <p class="price-amt">$79<span>/month</span></p>
+          <p>Title22 for up to five homes, with each home's records kept separate. Same 30-day free trial, no card.</p>
+        </div>
+      </div>
+      <div class="price-card">
+        <p class="price-k">Staff Training add-on — priced by licensed beds</p>
+        <div class="tier-grid">
+          <div><strong>$20</strong>/month<span>1–6 beds</span></div>
+          <div><strong>$35</strong>/month<span>7–15 beds</span></div>
+          <div><strong>$60</strong>/month<span>16–49 beds</span></div>
+          <div><strong>$100</strong>/month<span>50+ beds</span></div>
+        </div>
+        <p>The add-on is off until you turn it on, in your Billing, whenever you're ready.</p>
       </div>
     </div>
   </section>
 
   <section class="hsec">
     <div class="wrap">
-      <div class="hhead"><h2>Who it’s for</h2></div>
+      <div class="hhead"><h2>Made for California care homes</h2></div>
+      <p style="max-width:46rem;font-size:1.05rem;line-height:1.65;margin:0 0 1.2rem">Title22 is built for licensed RCFE and ARF homes in California — the training requirements, the staff files, and the Title 22 rules your home already lives under. The training courses are staff-level courses from a CDSS-approved provider, taken inside Title22.</p>
       <div class="hw-grid">
         <div class="hw"><span class="hw-k">Owners &amp; administrators</span><h3>Run a care home</h3><p>See what’s missing before an inspection, not during one.</p><button type="button" class="tlo-say" data-tello="who-owners"><span class="tlo-mini" aria-hidden="true"></span>Tello explains</button>
         </div>
@@ -510,6 +363,18 @@
         <a class="btn" href="/for-trainers/">Trainer program</a></div>
         <div class="hw"><span class="hw-k">Consultants &amp; affiliates</span><h3>Advise care homes</h3><p>Refer homes you know and earn on every subscription.</p><button type="button" class="tlo-say" data-tello="who-affiliates"><span class="tlo-mini" aria-hidden="true"></span>Tello explains</button>
         <a class="btn" href="/affiliates/">Affiliate program</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hsec" id="watch">
+    <div class="wrap">
+      <div class="hhead"><h2>Watch instead of reading</h2><a href="/videos/">All videos →</a></div>
+      <div class="hv-row">
+        <a class="hv" href="/videos/#overview"><span class="hv-t"><img src="/videos/title22-presentation-poster.jpg" alt="" loading="lazy"><span class="hv-p" aria-hidden="true"></span><span class="hv-d">2:50</span></span><b>Title22 + app tour</b><span>What it is, then the real app</span></a>
+        <a class="hv" href="/videos/#tello"><span class="hv-t"><img src="/videos/title22-tello-intro-poster.jpg" alt="" loading="lazy"><span class="hv-p" aria-hidden="true"></span><span class="hv-d">0:37</span></span><b>Meet Tello</b><span>Your AI morning briefing</span></a>
+        <a class="hv" href="/videos/#howto-checklist"><span class="hv-t"><img src="/videos/howto/checklist-poster.jpg" alt="" loading="lazy"><span class="hv-p" aria-hidden="true"></span><span class="hv-d">0:19</span></span><b>Read your checklist</b><span>What DSS will ask for</span></a>
+        <a class="hv" href="/videos/#howto-team"><span class="hv-t"><img src="/videos/howto/invite-team-poster.jpg" alt="" loading="lazy"><span class="hv-p" aria-hidden="true"></span><span class="hv-d">0:21</span></span><b>Invite your team</b><span>Own login, own role</span></a>
       </div>
     </div>
   </section>
@@ -523,6 +388,7 @@
       <details class="hq"><summary>Does the AI give medical advice?</summary><p>Never. Tello never suggests, corrects or comments on medications or dosage, on any plan.</p></details>
     </div>
   </section>
+
 <style>
   .hsec{padding:2.5rem 0 1rem}
   .hhead{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
@@ -562,6 +428,16 @@
   .hq summary{cursor:pointer;font-weight:600;font-size:1.02rem;color:var(--deep)}
   .hq p{margin:.6rem 0 0;color:var(--muted);max-width:46rem}
 </style>
+
+  <section class="hero-warm">
+    <div class="wrap closing" style="text-align:center">
+      <h2>Start with the training. Watch the records keep themselves.</h2>
+      <p>Thirty days free. No card. Nothing is charged unless you choose a plan after the trial.</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn hero-start" href="https://title22.app/">Start the 30-day free trial — no card</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="site-foot">
@@ -571,6 +447,7 @@
     <div><a href="/about/">About</a> · <a href="/security/">Security</a> · <a href="/faq/">FAQ</a> · <a href="/for-trainers/">For Trainers</a> · <a href="/affiliates/">Affiliates</a> · <a href="/pricing/">Pricing</a> · <a href="/pilot/">30-Day Proof</a> · <a href="/blog/">Blog</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy</a></div>
   </div>
 </footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 
 <script>
 (function () {
