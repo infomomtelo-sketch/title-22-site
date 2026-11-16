@@ -5,7 +5,7 @@
 .t22nav .top:hover,.t22nav .grp.open>.top{background:var(--sage);color:var(--pine)}
 .t22nav .top .caret{font-size:.6em;transition:transform .15s}
 .t22nav .grp.open>.top .caret{transform:rotate(180deg)}
-.t22nav .menu{position:absolute;top:100%;left:0;margin-top:.35rem;min-width:17rem;background:var(--white);border:1px solid var(--line);border-radius:12px;box-shadow:0 14px 34px rgba(20,60,49,.16);padding:.45rem;display:none;z-index:50}
+.t22nav .menu{position:absolute;top:100%;left:0;margin-top:.35rem;min-width:17rem;background:var(--white);border:1px solid var(--line);border-radius:12px;box-shadow:0 14px 34px rgba(20,60,49,.16);padding:.45rem;display:none;z-index:70}
 .t22nav .grp.open>.menu{display:grid;gap:.1rem}
 .t22nav .menu a{display:grid;grid-template-columns:1fr;gap:.1rem .5rem;align-items:start;padding:.55rem .7rem;border-radius:8px;text-decoration:none;color:var(--ink)}
 .t22nav .menu a:hover,.t22nav .menu a:focus-visible{background:var(--sage)}
