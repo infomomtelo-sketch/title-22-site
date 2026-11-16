@@ -58,6 +58,7 @@
     flex-direction: column;
   }
   .price-card.featured { border-color: var(--pine); border-width: 2px; position: relative; }
+  .price-card.tier { background: var(--sage); }
   .price-card .plan-name { font-family: "Zilla Slab", serif; font-weight: 700; font-size: 1.2rem; margin-bottom: 0.25rem; }
   .price-card .plan-amt { font-size: 1.9rem; font-weight: 700; margin: 0.5rem 0; }
   .price-card .plan-amt small { font-size: 0.9rem; font-weight: 400; color: var(--muted); }
@@ -218,22 +219,22 @@
       </div>
 
       <div class="price-grid" style="grid-template-columns:repeat(auto-fit,minmax(11.5rem,1fr));max-width:56rem;margin:1rem auto 0">
-        <div class="price-card">
+        <div class="price-card tier">
           <div class="plan-name">Small</div>
           <div class="plan-amt">$20<small> / month</small></div>
           <p class="plan-sub">1–6 licensed beds · per Home</p>
         </div>
-        <div class="price-card">
+        <div class="price-card tier">
           <div class="plan-name">Medium</div>
           <div class="plan-amt">$35<small> / month</small></div>
           <p class="plan-sub">7–15 licensed beds · per Home</p>
         </div>
-        <div class="price-card">
+        <div class="price-card tier">
           <div class="plan-name">Large</div>
           <div class="plan-amt">$60<small> / month</small></div>
           <p class="plan-sub">16–49 licensed beds · per Home</p>
         </div>
-        <div class="price-card">
+        <div class="price-card tier">
           <div class="plan-name">Extra large</div>
           <div class="plan-amt">$100<small> / month</small></div>
           <p class="plan-sub">50+ licensed beds · per Home</p>
