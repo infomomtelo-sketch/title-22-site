@@ -207,15 +207,20 @@
       <div class="hero-grid" style="display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:2.5rem;align-items:center">
         <div>
           <p class="eyebrow">For California RCFE &amp; ARF care homes</p>
-          <h1>Your staff train here. Their records file themselves.</h1>
-          <p class="lede">Title22 is where your caregivers take their required training — and the moment one of them finishes a course, the completion is already sitting in their staff file. No scanning. No chasing paper. No "where's the certificate" on survey day.</p>
+          <h1>Your staff train here. Across all your homes. Their records file themselves.</h1>
+          <p class="lede">Your caregiver in Home 1 finishes Orientation on her phone. Your caregiver in Home 3 finishes Abuse Reporting. You see both completions in one dashboard — already filed in their staff files.</p>
+          <ul class="hero-points">
+            <li>No scanning.</li>
+            <li>No chasing paper.</li>
+            <li>No "which home was she in when it expired?"</li>
+          </ul>
           <div class="cta-row">
-            <a class="btn hero-start" href="https://title22.app/?src=home-hero">Start the 30-day free trial</a>
-            <a class="btn ghost" href="/videos/">Watch the videos</a>
+            <a class="btn hero-start" href="https://title22.app/?src=home-hero">Start 30 Days Free — No Card</a>
+            <a class="btn ghost" href="#multi-home-dashboard">See It For 2 Homes</a>
           </div>
-          <!-- True only while signup takes just an email, no card, and an expired
-               trial turns read-only with records kept (runp8-care). -->
-          <p class="price-line"><strong>No card.</strong> Nothing is charged unless you choose a plan after the trial.</p>
+          <!-- Free 1-home gate is live (runp8-care PR #204, 2026-11-17): an
+               expired trial drops to a usable free home, not read-only. -->
+          <p class="price-line"><strong>Your first care home is free.</strong> 30-day free trial of the full product — no card, nothing to cancel.</p>
           <p class="price-line" style="margin-top:.35rem"><strong>No PHI by design:</strong> no resident records, no medications, no MAR.</p>
           <p class="price-line" style="margin-top:.35rem">Title22 is a private tool, built by people who work in real care-home operations. It is not affiliated with the California Department of Social Services or any government agency.</p>
         </div>
@@ -231,7 +236,64 @@
     </div>
   </section>
   <style>@media (max-width:60rem){.hero-warm .hero-grid{grid-template-columns:1fr !important;gap:1.5rem !important}main>section.hero-warm:first-of-type{padding-bottom:120px}}</style>
+  <style>.hero-points{list-style:none;margin:0 0 1.1rem;padding:0;color:#dbe6d8;font-size:1.02rem;line-height:1.6}.hero-points li::before{content:"✓ ";color:#f0c869}</style>
   <style>@media (max-width:720px){#tello .tello-row{grid-template-columns:1fr !important}}</style>
+
+  <!-- TRAINING PACKS — added 2026-11-18: decision shortcut for multi-home
+       owners. Packs are built only from courses in the live catalog
+       (title22-addon-pay.pages.dev/catalog.json, 14 courses). Orientation
+       hours are not published anywhere, so no pack states an Orientation
+       hour total — footers count only the hours the course titles state. -->
+  <section class="hsec" id="training-packs">
+    <div class="wrap">
+      <div class="hhead"><h2>Pick a pack. Assign it to all your homes. Done.</h2></div>
+      <p style="max-width:46rem;font-size:1.05rem;line-height:1.65;margin:0 0 1.2rem">Don&rsquo;t assign courses one by one. Pick what each staff member needs — Title22 assigns it across every home they work in.</p>
+      <div class="hf-grid">
+        <div class="hf pack">
+          <span class="pack-label">New Hire Pack &mdash; RCFE</span>
+          <b>For every new caregiver, before they work alone.</b>
+          <ul class="pack-list">
+            <li>RCFE New Staff Orientation</li>
+            <li>Recognizing and Reporting Abuse - 1 Hour</li>
+            <li>Residents&rsquo; Rights for RCFE - 1 Hour</li>
+            <li>Psychosocial Needs of Elders - 2 Hours</li>
+          </ul>
+          <p class="pack-foot">4 hours of listed courses, plus Orientation, toward annual training.</p>
+          <a class="btn" href="https://title22.app/?src=pack-rcfe">Assign to New Hire</a>
+        </div>
+        <div class="hf pack">
+          <span class="pack-label">New Hire Pack &mdash; ARF</span>
+          <b>For every new ARF caregiver.</b>
+          <ul class="pack-list">
+            <li>ARF New Staff Orientation</li>
+            <li>Recognizing and Reporting Abuse - 1 Hour</li>
+            <li>Residents&rsquo; Rights for ARF - 1 Hour</li>
+            <li>Restricted and Prohibited Conditions for ARF, GH and STRTP - 1 Hour</li>
+          </ul>
+          <p class="pack-foot">3 hours of listed courses, plus Orientation, toward annual training.</p>
+          <a class="btn" href="https://title22.app/?src=pack-arf">Assign to New Hire</a>
+        </div>
+        <div class="hf pack">
+          <span class="pack-label">Annual Refresher Pack</span>
+          <b>For existing staff who need their 20-hour annual.</b>
+          <ul class="pack-list">
+            <li>Residents&rsquo; Rights for RCFE - 1 Hour</li>
+            <li>Recognizing and Reporting Abuse - 1 Hour</li>
+            <li>Psychosocial Needs of Elders - 2 Hours</li>
+          </ul>
+          <p class="pack-foot">Total: 4 hours toward the 20-hour annual.</p>
+          <a class="btn" href="https://title22.app/?src=pack-refresher">Assign to All Staff</a>
+        </div>
+      </div>
+      <p style="max-width:46rem;font-size:1.05rem;line-height:1.65;margin:1.4rem 0 .4rem">All courses from Community Training Connection (CTC) — a CDSS-approved training provider. Your staff take them inside Title22.</p>
+      <p style="max-width:46rem;font-size:1.05rem;line-height:1.65;margin:0 0 1.2rem"><strong>Staff courses — not for administrator renewal.</strong></p>
+      <div class="hf samples-box">
+        <span class="pack-label">Free samples — no certificate</span>
+        <p style="margin:.2rem 0 .8rem">Caregiving 101 &nbsp;|&nbsp; Infection Control - 1 Hour &nbsp;|&nbsp; Recognizing and Reporting Abuse - 1 Hour &nbsp;|&nbsp; Residents&rsquo; Rights for ARF - 1 Hour &nbsp;|&nbsp; Residents&rsquo; Rights for RCFE - 1 Hour</p>
+        <a class="btn" href="#training-catalog">Try a Free Sample</a>
+      </div>
+    </div>
+  </section>
 
   <!-- TRAINING CATALOG — added 2026-11-17: the full CTC course catalog at the
        top of the homepage, right under the hero. Owners use Title22 for the
@@ -265,13 +327,36 @@
     </div>
   </section>
 
+  <!-- MULTI-HOME DASHBOARD — added 2026-11-18. Sample data only: the
+       home names and staff names are made up. -->
+  <section class="hsec" id="multi-home-dashboard">
+    <div class="wrap">
+      <div class="hhead"><h2>One dashboard for 2 homes. Or 5.</h2><span class="sample-tag">Sample dashboard</span></div>
+      <div class="hf-grid dash-grid">
+        <div class="hf dash-home">
+          <b>Home 1 — Fresno — Golden Years Home 1</b>
+          <span>6 staff · 4 up to date · 2 need training</span>
+          <div class="cert-row"><span class="cert-name">J. Carter — CPR</span><span class="chip chip-amber">expires in 20 days</span></div>
+        </div>
+        <div class="hf dash-home">
+          <b>Home 2 — Clovis — Golden Years Home 2</b>
+          <span>5 staff · 5 up to date</span>
+          <div class="cert-row"><span class="cert-name">M. Patel — Orientation</span><span class="chip chip-green">complete</span></div>
+        </div>
+      </div>
+      <p class="dash-note">Sample data — home and staff names are made up.</p>
+      <p style="max-width:46rem;font-size:1.05rem;line-height:1.65;margin:1rem 0 .6rem">You don&rsquo;t log into Home 1, then Home 2, then Home 3. You open Title22 and see who is missing what, where.</p>
+      <p style="max-width:46rem;font-size:1.05rem;line-height:1.65;margin:0">Staff sign in and complete their courses in Title22, on the home&rsquo;s computer or their phone. It files itself — the completion lands in that staff member&rsquo;s record automatically. When licensing asks, the record is already there.</p>
+    </div>
+  </section>
+
   <section class="hsec" id="how-it-works">
     <div class="wrap">
       <div class="hhead"><h2>Training in, records done.</h2><a href="/walkthrough/">See the walkthrough →</a></div>
       <div class="hf-grid">
-        <div class="hf"><b>1. Assign the course</b><span>Pick what each staff member needs — the required training for California care homes, inside Title22.</span></div>
-        <div class="hf"><b>2. They take it here</b><span>Staff sign in and complete their courses in Title22, on the home's computer or their phone.</span></div>
-        <div class="hf"><b>3. It files itself</b><span>The completion lands in that staff member's record automatically. When licensing asks, the record is already there.</span></div>
+        <div class="hf"><b>1. Assign a pack</b><span>Pick New Hire RCFE, ARF, or Annual Refresher. Assign to one staff member or all staff across all homes.</span></div>
+        <div class="hf"><b>2. Staff train on phone</b><span>Staff sign in on phone or home computer, watch the CTC course, pass the quiz.</span></div>
+        <div class="hf"><b>3. It files itself</b><span>Completion, date, hours, and certificate land in the staff file. Readiness Score updates. Expiry warnings start automatically.</span></div>
       </div>
     </div>
   </section>
@@ -358,8 +443,18 @@
 
   <section class="hsec" id="pricing">
     <div class="wrap">
-      <div class="hhead"><h2>What it costs. Exactly.</h2><a href="/pricing/">Full pricing →</a></div>
-      <div class="price-cards">
+      <div class="hhead"><h2>Run 2+ homes? Your first home is free — try the full product, training included, free for 30 days.</h2><a href="/pricing/">Full pricing →</a></div>
+      <p style="max-width:46rem;font-size:1.05rem;line-height:1.65;margin:0 0 1.2rem">Your first care home is free. $29/month for one home. $79/month for up to five homes. Training add-on priced per licensed bed. Every trial is 30 days, with no card and nothing to cancel. Students of a partner trainer get 90 days free practice.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:1.4rem">
+        <a class="btn" href="https://title22.app/?src=pricing">Start 30 Days Free</a>
+        <a class="btn ghost" href="/videos/#proof">See the 30-Day Proof</a>
+      </div>
+      <div class="price-cards price-cards-3">
+        <div class="price-card">
+          <p class="price-k">First home</p>
+          <p class="price-amt">Free</p>
+          <p>Your first care home is free — base features included. Add training for $29/month plus the Training Add-On by beds.</p>
+        </div>
         <div class="price-card">
           <p class="price-k">One home</p>
           <p class="price-amt">$29<span>/month</span></p>
@@ -411,10 +506,12 @@
     </div>
   </section>
 
-  <section class="hsec">
+  <section class="hsec" id="faq">
     <div class="wrap">
       <div class="hhead"><h2>Quick answers</h2><a href="/faq/">Full FAQ →</a></div>
-      <details class="hq"><summary>How much does it cost?</summary><p>$29/month for one home, $79/month for up to five. Every trial is 30 days, with no card and nothing to cancel. Students of a partner trainer get 90 days.</p></details>
+      <details class="hq"><summary>How much does it cost?</summary><p>Your first care home is free. $29/month for one home, $79/month for up to five. Every trial is 30 days, with no card and nothing to cancel. Students of a partner trainer get 90 days.</p></details>
+      <details class="hq"><summary>Does this count toward my staff&rsquo;s 40-hour / 20-hour annual?</summary><p>These are staff courses from CTC, a CDSS-approved provider, and the hours count toward the annual requirement. The New Hire RCFE Pack carries 4 hours of listed courses plus Orientation. Administrator renewal CE is separate.</p></details>
+      <details class="hq"><summary>My staff works at 2 homes. Do they take the course twice?</summary><p>No. They take it once. The completion files to their staff record and shows across every home they work in.</p></details>
       <details class="hq"><summary>Is there a MAR or resident records?</summary><p>No. Title22 holds no resident health information: no resident records, no medications, no MAR. That’s why there’s no business associate agreement to sign. Keep using what you use today for medication administration.</p></details>
       <details class="hq"><summary>Who built it?</summary><p>Built from real facility operations, with requirements guided by a certified California RCFE administrator.</p></details>
       <details class="hq"><summary>Does the AI give medical advice?</summary><p>Never. Tello never suggests, corrects or comments on medications or dosage, on any plan.</p></details>
@@ -459,6 +556,20 @@
   .hq{border-bottom:1px solid var(--line);padding:.9rem 0}
   .hq summary{cursor:pointer;font-weight:600;font-size:1.02rem;color:var(--deep)}
   .hq p{margin:.6rem 0 0;color:var(--muted);max-width:46rem}
+  .price-cards-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  @media (max-width:52rem){.price-cards-3{grid-template-columns:1fr}}
+  .hf span.pack-label{font:500 .75rem "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--pine)}
+  .pack-list{list-style:none;margin:.2rem 0 .6rem;padding:0;font-size:.95rem;line-height:1.55;color:var(--ink)}
+  .pack-list li{padding:.15rem 0 .15rem 1.1rem;position:relative}
+  .pack-list li::before{content:"—";position:absolute;left:0;color:var(--pine)}
+  .pack-foot{font-size:.92rem;color:var(--muted);line-height:1.45;margin:0 0 .8rem}
+  .hf.pack .btn,.hf.samples-box .btn{justify-self:start}
+  .samples-box{margin-top:1rem}
+  .sample-tag{font:500 .75rem "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--pine);border:1px solid var(--line);border-radius:999px;padding:.3rem .7rem;white-space:nowrap}
+  .dash-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (max-width:60rem){.dash-grid{grid-template-columns:1fr}}
+  .dash-home .cert-row{margin-top:.6rem}
+  .dash-note{font-size:.85rem;color:var(--muted);margin:.7rem 0 0}
 </style>
 
   <section class="hero-warm">
