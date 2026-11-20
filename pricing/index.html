@@ -70,6 +70,30 @@
     font-family: "IBM Plex Mono", monospace; font-size: 0.7rem;
     padding: 0.15rem 0.5rem; border-radius: 4px;
   }
+  .staff-card {
+    display: flex; align-items: center; gap: 1.5rem;
+    max-width: 56rem; margin: 1rem auto 0;
+    border: 2px solid #46543f; border-radius: 10px;
+    padding: 1.5rem; background: var(--sage);
+  }
+  .staff-viz { flex: 0 0 17rem; }
+  .staff-viz svg { display: block; width: 100%; height: auto; }
+  .staff-kicker {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.72rem;
+    letter-spacing: 0.05em; text-transform: uppercase; color: var(--pine);
+    margin-bottom: 0.35rem;
+  }
+  .staff-text h2 {
+    font-family: "Zilla Slab", serif; font-weight: 700;
+    font-size: 1.35rem; margin: 0 0 0.5rem;
+  }
+  .staff-text p { margin: 0 0 0.6rem; }
+  .staff-price { font-weight: 700; font-size: 1.05rem; }
+  .staff-fine { color: var(--muted); font-size: 0.88rem; margin-bottom: 0; }
+  @media (max-width: 52rem) {
+    .staff-card { flex-direction: column; align-items: stretch; }
+    .staff-viz { flex: none; width: 100%; max-width: 21rem; margin: 0 auto; }
+  }
 </style>
 <link rel="stylesheet" href="/assets/nav.css">
 <link rel="stylesheet" href="/assets/tello.css">
@@ -207,7 +231,50 @@
         </div>
       </div>
 
-      <p style="max-width:56rem;margin:1rem auto 0">Training included. Tello Staff free in your trial, then $10/mo per home. Nothing else to buy to start.</p>
+      <div class="staff-card">
+        <div class="staff-viz">
+          <svg viewBox="0 0 340 250" role="img" aria-label="Illustration of the Tello Staff Today's Board: three shifts for the day, the first one clocked in with a selfie and location check">
+            <rect x="5" y="5" width="330" height="240" rx="12" fill="#ffffff" stroke="#46543f" stroke-width="2"/>
+            <path d="M17 5h301a12 12 0 0 1 12 12v32H5V17a12 12 0 0 1 12-12z" fill="#1e5748"/>
+            <text x="20" y="34" font-family="'Zilla Slab', serif" font-size="17" font-weight="700" fill="#fbf7f0">Today's Board</text>
+            <circle cx="307" cy="27" r="10" fill="none" stroke="#e8a33d" stroke-width="2"/>
+            <path d="M307 21v6l4 3" fill="none" stroke="#e8a33d" stroke-width="2" stroke-linecap="round"/>
+            <rect x="17" y="63" width="306" height="50" rx="8" fill="#e9f1ec" stroke="#46543f" stroke-width="1.5"/>
+            <circle cx="43" cy="88" r="14" fill="#1e5748"/>
+            <text x="43" y="93" text-anchor="middle" font-family="'Public Sans', sans-serif" font-size="12" font-weight="600" fill="#ffffff">M</text>
+            <text x="66" y="84" font-family="'Public Sans', sans-serif" font-size="13" font-weight="600" fill="#1a2420">Maria S.</text>
+            <text x="66" y="101" font-family="'Public Sans', sans-serif" font-size="11" fill="#5b6a63">7:00 AM – 3:00 PM</text>
+            <text x="238" y="92" text-anchor="end" font-family="'Public Sans', sans-serif" font-size="11" font-weight="600" fill="#1e5748">Clocked in</text>
+            <rect x="246" y="73" width="30" height="30" rx="6" fill="#ffffff" stroke="#46543f" stroke-width="1.5"/>
+            <circle cx="261" cy="85" r="5" fill="#1e5748"/>
+            <path d="M254 103c0-4.5 3-7 7-7s7 2.5 7 7z" fill="#1e5748"/>
+            <path d="M290 76c-4.4 0-8 3.4-8 7.8 0 5.6 8 13.2 8 13.2s8-7.6 8-13.2c0-4.4-3.6-7.8-8-7.8z" fill="#e8a33d" stroke="#46543f" stroke-width="1.2"/>
+            <circle cx="290" cy="84" r="3" fill="#ffffff"/>
+            <circle cx="312" cy="88" r="10" fill="#1e5748"/>
+            <path d="M307 88.5l3.5 3.5 6-7" fill="none" stroke="#fbf7f0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="17" y="123" width="306" height="50" rx="8" fill="#fbf7f0" stroke="#d8e2dc" stroke-width="1.5"/>
+            <circle cx="43" cy="148" r="14" fill="#5b6a63"/>
+            <text x="43" y="153" text-anchor="middle" font-family="'Public Sans', sans-serif" font-size="12" font-weight="600" fill="#ffffff">J</text>
+            <text x="66" y="144" font-family="'Public Sans', sans-serif" font-size="13" font-weight="600" fill="#1a2420">James K.</text>
+            <text x="66" y="161" font-family="'Public Sans', sans-serif" font-size="11" fill="#5b6a63">3:00 PM – 11:00 PM</text>
+            <text x="315" y="152" text-anchor="end" font-family="'Public Sans', sans-serif" font-size="11" fill="#5b6a63">Up next</text>
+            <rect x="17" y="183" width="306" height="50" rx="8" fill="#fbf7f0" stroke="#d8e2dc" stroke-width="1.5"/>
+            <circle cx="43" cy="208" r="14" fill="#46543f"/>
+            <text x="43" y="213" text-anchor="middle" font-family="'Public Sans', sans-serif" font-size="12" font-weight="600" fill="#ffffff">A</text>
+            <text x="66" y="204" font-family="'Public Sans', sans-serif" font-size="13" font-weight="600" fill="#1a2420">Ana R.</text>
+            <text x="66" y="221" font-family="'Public Sans', sans-serif" font-size="11" fill="#5b6a63">11:00 PM – 7:00 AM</text>
+            <text x="315" y="212" text-anchor="end" font-family="'Public Sans', sans-serif" font-size="11" fill="#5b6a63">Tonight</text>
+          </svg>
+        </div>
+        <div class="staff-text">
+          <div class="staff-kicker">Training included</div>
+          <h2>Tello Staff — your team's daily board</h2>
+          <p>The schedule, today's shifts, and clock-ins with a selfie and location check — so hours are never a guess.</p>
+          <p class="staff-price">Free in your 30-day trial, then $10/mo per home.</p>
+          <p><a href="https://staff.tello.live">See the board →</a></p>
+          <p class="staff-fine">Nothing else to buy to start.</p>
+        </div>
+      </div>
 
       <div class="agency-row">
         <div>
