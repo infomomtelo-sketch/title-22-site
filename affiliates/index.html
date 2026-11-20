@@ -301,7 +301,7 @@
           <!-- Ready-to-send invitations, filled with the partner's own link. Every
                sentence is a promise the product keeps today: signup asks only for
                an email (no card, no facility details), the trial is 30 days, an
-               expired trial is read-only with its records kept, and nothing about
+               expired trial drops to the Free plan with its records kept, and nothing about
                a resident is held. Change these if any of that changes. -->
           <div class="invite">
             <label>Invite someone — ready to send</label>
@@ -337,7 +337,7 @@
       </details>
       <details class="hq">
         <summary>"What if I get busy?"</summary>
-        <p>Nothing is lost. After the trial the account turns read-only and everything stays.</p>
+        <p>Nothing is lost. After the trial your account drops to the Free plan — one home, still usable — and everything you entered stays.</p>
       </details>
       <details class="hq">
         <summary>"Will it get me through an inspection?"</summary>
@@ -407,7 +407,7 @@
       '- Free for 30 days. There is no card to enter, so nothing can be charged and there is nothing to cancel.\n' +
       '- Signing up only needs an email. You do not enter your license number or address — you start in a practice home with made-up staff.\n' +
       '- It holds no resident health information: no resident records, no medications, no MAR.\n' +
-      '- If you get busy and stop, nothing is deleted. The account turns read-only.\n\n' +
+      '- If you get busy and stop, nothing is deleted. Your account drops to the Free plan — one home, still usable.\n\n' +
       (first || '');
     document.getElementById('inv-text').textContent = textMsg;
     document.getElementById('inv-email').textContent = 'Subject: ' + subject + '\n\n' + emailMsg;

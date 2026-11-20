@@ -14,8 +14,8 @@
 
 ## Pricing and trials
 
-- Lite: $29/month for one home. Multi-Home: $79/month for up to five homes.
-- Every trial is 30 days free, no credit card, nothing to cancel. When a trial ends, the account turns read-only and everything entered stays.
+- Packages: $29/month for one home, $79/month for two to five homes, $139/month for six or more homes. Staff training is included in every package.
+- Every trial is 30 days free, no credit card, nothing to cancel. When a trial ends, the account drops to the Free plan — one home, still usable — and everything entered stays.
 - 30-Day Proof for multi-facility operators: run two homes for 30 days free and compare the portfolio briefing on day 1 and day 30.
 - Students of a partner trainer get a 90-day free trial through their trainer's link.
 
