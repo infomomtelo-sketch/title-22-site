@@ -300,8 +300,9 @@
 
           <!-- Ready-to-send invitations, filled with the partner's own link. Every
                sentence is a promise the product keeps today: signup asks only for
-               an email (no card, no facility details), the trial is 30 days, an
-               expired trial drops to the Free plan with its records kept, and nothing about
+               an email (no card, no facility details), the first home is free with
+               no time limit, the full-access window is 30 days and when it ends the
+               home stays on the Free plan with its records kept, and nothing about
                a resident is held. Change these if any of that changes. -->
           <div class="invite">
             <label>Invite someone — ready to send</label>
@@ -337,7 +338,7 @@
       </details>
       <details class="hq">
         <summary>"What if I get busy?"</summary>
-        <p>Nothing is lost. After the trial your account drops to the Free plan — one home, still usable — and everything you entered stays.</p>
+        <p>Nothing is lost. After the trial your first home stays free — one home on the Free plan, no time limit — and everything you entered stays. Nothing is taken away or locked; only the training and the trial extras pause.</p>
       </details>
       <details class="hq">
         <summary>"Will it get me through an inspection?"</summary>
@@ -399,15 +400,15 @@
         '\nLink: ' + BASE + c + '\nName: ' + (nm || '') + '\nEmail: ' + (em || '') + '\n\nThanks!');
     var link = BASE + c, first = (nm.split(/\s+/)[0] || '');
     var textMsg = 'I wanted to share Title22 — it keeps the Title 22 staff paperwork in one place: certifications, the 40-hour training, clearances and the DSS checklist. ' +
-      'Free for 30 days, no card and nothing to cancel, and you only need an email to look around: ' + link;
-    var subject = 'Title22 — free for 30 days, no card needed';
+      'Your first home is free — no clock, no card and nothing to cancel, and you only need an email to look around: ' + link;
+    var subject = 'Title22 — your first home is free, no card needed';
     var emailMsg = 'Hi,\n\nI wanted to share Title22. It keeps the facility and staff side of Title 22 in one place: staff certifications and clearances, the 40-hour training, the DSS readiness checklist and incident reports.\n\n' +
       'Here is my link: ' + link + '\n\n' +
       'Worth knowing before you click:\n' +
-      '- Free for 30 days. There is no card to enter, so nothing can be charged and there is nothing to cancel.\n' +
+      '- Your first home is free, with no time limit. There is no card to enter, so nothing can be charged and there is nothing to cancel.\n' +
       '- Signing up only needs an email. You do not enter your license number or address — you start in a practice home with made-up staff.\n' +
       '- It holds no resident health information: no resident records, no medications, no MAR.\n' +
-      '- If you get busy and stop, nothing is deleted. Your account drops to the Free plan — one home, still usable.\n\n' +
+      '- If you get busy and stop, nothing is deleted. Your first home stays free on the Free plan — one home, no time limit — and only the training pauses.\n\n' +
       (first || '');
     document.getElementById('inv-text').textContent = textMsg;
     document.getElementById('inv-email').textContent = 'Subject: ' + subject + '\n\n' + emailMsg;
