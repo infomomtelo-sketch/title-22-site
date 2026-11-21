@@ -12,17 +12,18 @@
 - Team access: five roles, from administrator to a read-only view for an inspector.
 - Try it without an account: a read-only sample home with a guided tour, and a guest chat with Tello, are available from the app landing page.
 
-## Pricing and trials
+## Pricing
 
-- Packages: $29/month for one home, $79/month for two to five homes, $139/month for six or more homes. Staff training is included in every package.
-- Every trial is 30 days free, no credit card, nothing to cancel. When a trial ends, the account drops to the Free plan — one home, still usable — and everything entered stays.
+- Your first care home is free — no clock, no card, no gate. It stays free for as long as you run it: staff records, clearances and the DSS checklist — just no online courses. You pay only when you need staff training.
+- Packages (tracking + training in one payment): $29/month for one home, $79/month for two to five homes, $139/month for six or more homes. Staff training is included in every package.
+- Every new account also gets a 30-day full-access window, no card needed; when it ends, your home stays on the free plan — nothing is taken away or locked, and only the training pauses unless you choose a package.
 - 30-Day Proof for multi-facility operators: run two homes for 30 days free and compare the portfolio briefing on day 1 and day 30.
-- Students of a partner trainer get a 90-day free trial through their trainer's link.
+- Students of a partner trainer get 90 days free through their trainer's link.
 
 ## Add-ons
 
 - Staff training courses (in partnership with Community Training Connection, a CDSS-approved training organization): 44 courses, 117.5 hours, priced by licensed beds — $20/month (1–6 beds), $35/month (7–15), $60/month (16–49), $100/month (50+).
-- Tello Staff: a schedule board and Today's Board (coverage, reminders) for each home. Free during the 30-day proof, then $10/month per home.
+- Tello Staff: a schedule board and Today's Board (coverage, reminders) for each home. Free for your first 30 days, then $10/month per home — only if you turn it on.
 
 ## Trainer and partner program
 
@@ -31,12 +32,12 @@
 
 ## Key pages
 
-- [Home](https://title-22.com/): what Title22 is, pricing summary, and the free trial.
+- [Home](https://title-22.com/): what Title22 is, the free first home, and a pricing summary.
 - [The 30-Day Proof](https://title-22.com/pilot/): the multi-facility operator offer — two homes, 30 days, judge it on day 30.
 - [Pricing](https://title-22.com/pricing/): plans, the training add-on tiers, and the T22SAVES10 discount (10% off CTC compliance products).
 - [Videos](https://title-22.com/videos): short explainers, including Meet Tello and the 30-second overview.
 - [Affiliates and trainers](https://title-22.com/affiliates): the partner program — 90-day student trials and 20% recurring commission.
-- [The app](https://title22.app/): sign in, start the free trial, open the no-signup sample home, or ask Tello a question as a guest.
+- [The app](https://title22.app/): sign in, start free, open the no-signup sample home, or ask Tello a question as a guest.
 
 ## Who runs it
 
