@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free RCFE Administrator Practice Exam — 100 Questions, Timed | Title22</title>
+<meta name="description" content="A free, timed practice exam for the California RCFE administrator certification exam: 100 original questions written from Title 22 and the Health & Safety Code, instant scoring by topic, and an explanation with the regulation for every answer.">
+<link rel="canonical" href="https://title-22.com/exam-practice/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://title-22.com/exam-practice/">
+<meta property="og:title" content="Free RCFE Administrator Practice Exam — Title22">
+<meta property="og:description" content="100 timed practice questions written from Title 22. Instant score, a breakdown by topic, and the regulation cited for every answer. Free — no card.">
+<meta property="og:image" content="https://title-22.com/share-kit/title22-share-card-1200x630.png">
+<meta property="og:image:alt" content="Title22 free RCFE administrator practice exam">
+<meta property="og:site_name" content="Title22">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free RCFE Administrator Practice Exam — Title22">
+<meta name="twitter:description" content="100 timed practice questions written from Title 22. Instant score, a breakdown by topic, and the regulation cited for every answer. Free — no card.">
+<meta name="twitter:image" content="https://title-22.com/share-kit/title22-share-card-1200x630.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://title-22.com/" },
+    { "@type": "ListItem", "position": 2, "name": "RCFE Administrator Practice Exam", "item": "https://title-22.com/exam-practice/" }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@600;700&family=Public+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  .exam-hero { background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%); padding: 3rem 0 2rem; }
+  .eyebrow { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--pine); margin: 0 0 .6rem; }
+  .lede { font-size: 1.15rem; color: var(--muted); max-width: 42rem; }
+  .honest { border: 2px solid var(--ink); border-radius: 10px; background: #fff; padding: 1rem 1.1rem; max-width: 46rem; margin: 1.4rem 0; }
+  .honest p { margin: 0; font-size: .98rem; }
+  .facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; margin: 1.5rem 0; max-width: 52rem; }
+  @media (max-width: 52rem) { .facts { grid-template-columns: repeat(2, 1fr); } }
+  .fact { border: 1px solid var(--line); border-radius: 10px; padding: .9rem; background: var(--sage); }
+  .fact b { display: block; font-family: "Zilla Slab", serif; font-size: 1.45rem; color: var(--deep); line-height: 1.1; }
+  .fact span { font-size: .85rem; color: var(--muted); }
+  .chips { display: flex; flex-wrap: wrap; gap: .45rem; margin: .6rem 0 1.6rem; }
+  .start-note { font-size: .92rem; color: var(--muted); margin-top: .8rem; }
+  /* Exam UI */
+  .exam-bar { position: sticky; top: 0; z-index: 5; background: var(--white); border-bottom: 1px solid var(--line); padding: .6rem 0; }
+  .exam-bar .wrap { display: flex; align-items: center; gap: 1rem; justify-content: space-between; }
+  .timer { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 1.15rem; font-weight: 500; color: var(--deep); }
+  .timer.low { color: var(--coral); }
+  .progress-track { height: 8px; background: var(--sage); border-radius: 99px; overflow: hidden; flex: 1; }
+  .progress-fill { height: 100%; background: var(--pine); width: 0%; transition: width .25s ease; }
+  .qcount { font-size: .9rem; color: var(--muted); white-space: nowrap; }
+  .qcard { border: 1px solid var(--line); border-radius: 12px; padding: 1.3rem; margin: 1.4rem 0; background: #fff; }
+  .qtext { font-size: 1.18rem; font-weight: 600; line-height: 1.45; margin: .7rem 0 1.1rem; }
+  .opts { display: grid; gap: .6rem; }
+  .opt { display: flex; gap: .7rem; align-items: flex-start; text-align: left; width: 100%; min-height: 52px; padding: .8rem .9rem; border: 1.5px solid var(--line); border-radius: 10px; background: #fff; font: inherit; font-size: 1rem; color: var(--ink); cursor: pointer; }
+  .opt:hover { border-color: var(--pine); }
+  .opt.sel { border-color: var(--pine); background: var(--sage); }
+  .opt .letter { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: .8rem; border: 1px solid var(--line); border-radius: 4px; padding: .05rem .4rem; background: var(--cream); flex: none; margin-top: .15rem; }
+  .opt.sel .letter { background: var(--pine); color: #fff; border-color: var(--pine); }
+  .exam-nav { display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; margin: 1rem 0 1.6rem; }
+  .btn.small { padding: .55rem 1.1rem; font-size: .9rem; }
+  .btn.flagged { background: var(--marigold); border-color: var(--marigold); color: var(--deep) !important; }
+  .navgrid { display: grid; grid-template-columns: repeat(10, 1fr); gap: .35rem; margin: .8rem 0 1.4rem; }
+  @media (max-width: 40rem) { .navgrid { grid-template-columns: repeat(5, 1fr); } }
+  .navgrid button { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: .8rem; padding: .45rem 0; border: 1px solid var(--line); border-radius: 6px; background: #fff; cursor: pointer; }
+  .navgrid button.answered { background: var(--sage); border-color: var(--pine); }
+  .navgrid button.flagged { box-shadow: inset 0 0 0 2px var(--marigold); }
+  .navgrid button.current { outline: 3px solid var(--marigold); outline-offset: 1px; }
+  details.navwrap { border: 1px solid var(--line); border-radius: 10px; padding: .8rem 1rem; margin-bottom: 2rem; }
+  details.navwrap summary { cursor: pointer; font-weight: 600; }
+  /* Results */
+  .score-big { font-family: "Zilla Slab", serif; font-size: clamp(3rem, 10vw, 4.5rem); line-height: 1; color: var(--deep); }
+  .pass { color: var(--pine); font-weight: 700; }
+  .fail { color: var(--coral); font-weight: 700; }
+  .topic-row { display: grid; grid-template-columns: 1fr auto; gap: .3rem .8rem; padding: .55rem 0; border-bottom: 1px solid var(--line); align-items: center; }
+  .topic-row .bar { grid-column: 1 / -1; height: 8px; background: var(--sage); border-radius: 99px; overflow: hidden; }
+  .topic-row .bar i { display: block; height: 100%; background: var(--pine); }
+  .topic-row.weak .bar i { background: var(--coral); }
+  .cta-card { border: 2px solid var(--ink); border-radius: 12px; background: var(--cream); padding: 1.4rem; margin: 2rem 0; }
+  .review-item { border: 1px solid var(--line); border-radius: 10px; padding: 1rem 1.1rem; margin-bottom: .8rem; background: #fff; }
+  .review-item .rq { font-weight: 600; margin: .5rem 0; }
+  .review-item .ans-ok { color: var(--pine); font-weight: 600; }
+  .review-item .ans-bad { color: var(--coral); font-weight: 600; }
+  .review-item .expl { color: var(--muted); font-size: .95rem; margin: .4rem 0 0; }
+  .faq-list details { border: 1px solid var(--line); border-radius: 10px; padding: 0.9rem 1.1rem; margin-bottom: 0.6rem; background: #fff; }
+  .faq-list summary { cursor: pointer; font-weight: 600; }
+  .faq-list details p { margin: 0.7rem 0 0; color: var(--muted); font-size: 0.95rem; }
+  [hidden] { display: none !important; }
+</style>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">title<span class="tld">-22</span>.com</a>
+    <nav class="nav" aria-label="Main">
+      <a href="/features/">Features</a>
+      <a href="/for-trainers/">For Trainers</a>
+      <a href="/pricing/">Pricing</a>
+      <a class="btn" href="https://title22.app/">Sign in</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ============ START SCREEN ============ -->
+  <section class="exam-hero" id="screen-start">
+    <div class="wrap">
+      <p class="eyebrow">Free practice exam</p>
+      <h1>RCFE Administrator Practice Exam</h1>
+      <p class="lede">A full, timed practice sitting for the California RCFE administrator certification exam — built the same way as the real one: 100 questions, 120 minutes, 70% to pass. When you finish, you get your score, a breakdown by topic so you can see your weak areas, and the regulation behind every answer.</p>
+
+      <div class="honest">
+        <p><strong>Read this first:</strong> this is a <strong>practice</strong> exam. Every question is original, written from Title 22 and the Health &amp; Safety Code — the same public regulations the state exam tests. These are <strong>not</strong> the state's actual exam questions, and no practice exam can promise you a pass. What it can do is show you exactly where you stand.</p>
+      </div>
+
+      <div class="facts">
+        <div class="fact"><b>100</b><span>questions, drawn fresh from a bank of 110 each sitting</span></div>
+        <div class="fact"><b>120 min</b><span>on the clock, same as the state exam</span></div>
+        <div class="fact"><b>70%</b><span>is the passing score — here and at the state</span></div>
+        <div class="fact"><b>Open book</b><span>the real exam allows printed Title 22 &amp; Health &amp; Safety Code</span></div>
+      </div>
+
+      <h2 style="font-size:1.3rem">What it covers</h2>
+      <div class="chips">
+        <span class="reg">Laws, Regulations & Licensing</span>
+        <span class="reg">Admissions, Assessment & Retention</span>
+        <span class="reg">Resident Rights & Basic Services</span>
+        <span class="reg">Medications</span>
+        <span class="reg">Staffing, Training & Personnel</span>
+        <span class="reg">Health Conditions & Medical Care</span>
+        <span class="reg">Dementia Care</span>
+        <span class="reg">Physical Plant & Safety</span>
+        <span class="reg">Disaster Preparedness & Reporting</span>
+        <span class="reg">Food Service, Records & Documentation</span>
+      </div>
+
+      <button class="btn" id="btn-start" type="button" style="font-size:1.05rem;padding:1rem 2rem">Start the practice exam</button>
+      <p class="start-note">Free. No card, no account needed to take it. Practice on your own time — this is not a course and carries no course credit. Format facts: CDSS Administrator Certification Bureau.</p>
+    </div>
+  </section>
+
+  <!-- ============ EXAM SCREEN ============ -->
+  <section id="screen-exam" hidden>
+    <div class="exam-bar">
+      <div class="wrap">
+        <span class="timer" id="timer" aria-label="Time remaining">120:00</span>
+        <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+        <span class="qcount" id="qcount">Question 1 of 100</span>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="qcard">
+        <span class="reg" id="q-topic">Topic</span>
+        <p class="qtext" id="q-text"></p>
+        <div class="opts" id="q-opts" role="radiogroup" aria-label="Answer choices"></div>
+      </div>
+      <div class="exam-nav">
+        <button class="btn ghost small" id="btn-prev" type="button">← Back</button>
+        <button class="btn small" id="btn-next" type="button">Next →</button>
+        <button class="btn ghost small" id="btn-flag" type="button">Flag for review</button>
+        <span style="flex:1"></span>
+        <button class="btn small" id="btn-finish" type="button" style="background:var(--deep)">Finish exam</button>
+      </div>
+      <p id="finish-note" class="start-note" hidden></p>
+      <details class="navwrap">
+        <summary>All questions — tap a number to jump</summary>
+        <div class="navgrid" id="navgrid"></div>
+        <p class="start-note">Shaded = answered · gold outline = flagged for review</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ RESULTS SCREEN ============ -->
+  <section id="screen-results" hidden>
+    <div class="wrap" style="padding-top:2.2rem">
+      <p class="eyebrow">Your result</p>
+      <div class="score-big" id="score-big">0%</div>
+      <p id="score-line" style="font-size:1.1rem"></p>
+      <p id="score-sub" class="start-note"></p>
+
+      <h2 style="margin-top:2rem">How you did, by topic</h2>
+      <div id="topic-breakdown"></div>
+      <p id="weak-line" style="margin-top:1rem"></p>
+
+      <div class="cta-card">
+        <h2 style="margin-top:0">The exam is one day. The job is every day.</h2>
+        <p>Title22 is where California care homes keep staff files, training, and certificates in order — every certificate files itself onto the staff record, and Tello reminds you before anything expires. When you pass and step into the administrator's chair, this is the desk you'll want.</p>
+        <p><strong>Your first home is free.</strong></p>
+        <a class="btn" id="signup-link" href="https://title22.app/" style="font-size:1.02rem;padding:.9rem 1.8rem">Create your free Title22 account</a>
+      </div>
+
+      <div class="exam-nav">
+        <button class="btn" id="btn-retake" type="button">Retake — new draw, reshuffled</button>
+      </div>
+
+      <h2 style="margin-top:2rem">Review every question</h2>
+      <p class="start-note">Your answer, the correct answer, why — and the regulation it comes from.</p>
+      <div id="review-list"></div>
+
+      <div class="cta-card">
+        <p style="margin:0 0 .8rem"><strong>Your first home is free.</strong> Staff train inside Title22, and every certificate goes straight onto their record.</p>
+        <a class="btn signup-link-2" href="https://title22.app/">Create your free Title22 account</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section>
+    <div class="wrap" style="padding-bottom:3rem">
+      <h2>About the real exam</h2>
+      <div class="faq-list">
+        <details>
+          <summary>How many questions are on the RCFE administrator exam, and how long do I get?</summary>
+          <p>The state exam given by the CDSS Administrator Certification Bureau is 100 multiple-choice questions with a 120-minute time limit. This practice exam mirrors that: 100 questions, 120 minutes on the clock.</p>
+        </details>
+        <details>
+          <summary>What score do I need to pass?</summary>
+          <p>70% or more — at least 70 of the 100 questions. The same mark is used to score your practice sitting here.</p>
+        </details>
+        <details>
+          <summary>Is the real exam open book?</summary>
+          <p>Yes. On the state exam you may use printed copies of Title 22 and the Health &amp; Safety Code (electronic copies and personal notes are not permitted). Knowing how to find a rule fast is a real exam skill — practice it here.</p>
+        </details>
+        <details>
+          <summary>Are these the actual state exam questions?</summary>
+          <p>No. The state's questions are not published. Every question here is original, written from the same public regulations — Title 22, Division 6, Chapter 8 and Health &amp; Safety Code sections 1569 and following — with the citation shown for every answer so you can look it up yourself.</p>
+        </details>
+        <details>
+          <summary>How long do I have to pass the state exam after my training course?</summary>
+          <p>After completing the 80-hour Initial Certification Training Program, you have 60 days and up to three attempts to pass, and the exam fee is $100. If you pass, you must apply for your administrator certificate within 30 days.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>© 2026 title-22.com. All rights reserved. Powered by Runp8 L.L.C. dba Title22.<br>
+      <span class="domain-note">Website <strong>title-22.com</strong> · Secure app <strong>title22.app</strong> — same Title22, two addresses.</span></div>
+    <div><a href="/about/">About</a> · <a href="/security/">Security</a> · <a href="/faq/">FAQ</a> · <a href="/for-trainers/">For Trainers</a> · <a href="/affiliates/">Affiliates</a> · <a href="/pricing/">Pricing</a> · <a href="/pilot/">30-Day Proof</a> · <a href="/blog/">Blog</a> · <a href="/contact/">Contact</a> · <a href="/terms/">Terms</a> · <a href="/privacy/">Privacy</a></div>
+  </div>
+</footer>
+
+<script>
+"use strict";
+var BANK = [{"topic": "Laws, Regulations & Licensing", "q": "Which agency licenses and regulates Residential Care Facilities for the Elderly in California?", "options": ["The Department of Social Services, Community Care Licensing Division", "The Department of Public Health", "The Department of Aging", "The county health department"], "answer": 0, "explain": "RCFEs are licensed by the California Department of Social Services (CDSS) through its Community Care Licensing Division (CCLD) under the RCFE Act.", "cite": "Health & Safety Code §1569 et seq. (RCFE Act)", "id": "q001"}, {"topic": "Laws, Regulations & Licensing", "q": "The state RCFE administrator exam consists of how many questions, and how much time is allowed?", "options": ["100 questions in 90 minutes", "150 questions in 180 minutes", "100 questions in 120 minutes", "75 questions in 90 minutes"], "answer": 2, "explain": "Per CDSS, the RCFE administrator certification exam is 100 multiple-choice questions with a 120-minute time limit, and a score of 70% or more passes.", "cite": "CDSS Administrator Certification Bureau — Exam Terms and Conditions", "id": "q002"}, {"topic": "Laws, Regulations & Licensing", "q": "After completing the 80-hour Initial Certification Training Program (ICTP), within what period must a candidate pass the state administrator exam, and how many attempts are allowed?", "options": ["6 months, unlimited attempts", "30 days, 2 attempts", "90 days, 3 attempts", "60 days, 3 attempts"], "answer": 3, "explain": "Candidates have 60 days from ICTP completion and up to three attempts to pass. Missing the window means retaking the ICTP and paying the exam fee again.", "cite": "Health & Safety Code §1569.616; CDSS Exam FAQ", "id": "q003"}, {"topic": "Laws, Regulations & Licensing", "q": "How many hours is the RCFE Initial Certification Training Program (ICTP), and how many of those hours must be interactive instruction with an instructor?", "options": ["80 hours, at least 60 interactive", "80 hours, 40 interactive", "100 hours, 60 interactive", "40 hours, 20 interactive"], "answer": 0, "explain": "The ICTP is 80 hours of coursework; at least 60 hours must be instruction where participants can interact with each other and the instructor.", "cite": "Health & Safety Code §1569.616(b)–(c)", "id": "q004"}, {"topic": "Laws, Regulations & Licensing", "q": "To renew an RCFE administrator certificate, how much continuing education is required in each two-year certification period, and how much of it must cover dementia care?", "options": ["40 hours, at least 8 on dementia", "60 hours, 12 on dementia", "40 hours, none specifically on dementia", "20 hours, 4 on dementia"], "answer": 0, "explain": "Recertification requires at least 40 hours of continuing education every two years, including at least 8 hours on serving residents with dementia.", "cite": "Health & Safety Code §1569.616(f)", "id": "q005"}, {"topic": "Laws, Regulations & Licensing", "q": "What is the minimum age for an RCFE administrator?", "options": ["19 years old", "18 years old", "25 years old", "21 years old"], "answer": 3, "explain": "An administrator must be at least 21 years of age and hold a high school diploma or equivalent (such as a GED).", "cite": "Title 22, §87405", "id": "q006"}, {"topic": "Laws, Regulations & Licensing", "q": "The administrator of a facility licensed for 16 to 49 residents must have completed at least how many college or continuing-education units, and how much experience providing residential care to the elderly?", "options": ["15 semester units (or equivalent quarter units); 1 year of experience", "30 semester units; 2 years of experience", "No units; 6 months of experience", "A bachelor's degree; 3 years of experience"], "answer": 0, "explain": "For facilities of 16–49 residents, the administrator needs at least 15 college or CE semester units (or equivalent quarter units) with a passing grade, plus at least one year of experience providing residential care to the elderly.", "cite": "Title 22, §87405(e)", "id": "q007"}, {"topic": "Laws, Regulations & Licensing", "q": "The administrator of a facility licensed for 50 or more residents must have:", "options": ["Two years of college and at least 3 years of experience providing residential care to the elderly", "15 college units and 2 years of experience", "A bachelor's degree in gerontology", "A high school diploma and 1 year of experience"], "answer": 0, "explain": "Facilities licensed for 50 or more require an administrator with two years of college and at least three years of experience providing residential care to the elderly, or Department-approved equivalent education and experience.", "cite": "Title 22, §87405(f)", "id": "q008"}, {"topic": "Laws, Regulations & Licensing", "q": "Where must the facility's license be posted?", "options": ["In a conspicuous place in the facility where it can be seen by the public", "In the administrator's office, available on request", "Only in the licensing file at the regional office", "On the facility's website"], "answer": 0, "explain": "The license must be posted in a conspicuous place in the facility.", "cite": "Title 22, §87113", "id": "q009"}, {"topic": "Laws, Regulations & Licensing", "q": "A 'Type A' deficiency cited during a licensing evaluation is one that:", "options": ["Must be corrected within 90 days", "Poses a direct and immediate risk to the health, safety, or personal rights of persons in care if not corrected", "Is a minor paperwork error", "Concerns only the physical plant"], "answer": 1, "explain": "Type A deficiencies are violations that, if not corrected, pose a direct and immediate risk to health, safety, or personal rights. Type B deficiencies could become a risk if not corrected.", "cite": "CDSS/CCLD deficiency classifications; Health & Safety Code §1569.49", "id": "q010"}, {"topic": "Laws, Regulations & Licensing", "q": "After passing the state administrator exam, within how many days must the candidate apply for the administrator certificate?", "options": ["30 days", "60 days", "90 days", "10 days"], "answer": 0, "explain": "Within 30 days of passing, the candidate must submit the application for administrator certification (Form LIC 9214) to the Administrator Certification Bureau.", "cite": "Health & Safety Code §1569.616; CDSS Exam FAQ", "id": "q011"}, {"topic": "Laws, Regulations & Licensing", "q": "A person who operates a residential care facility for the elderly without a license:", "options": ["May do so for up to 30 days while the application is pending", "Only needs to notify the local fire department", "Is subject to unlicensed-facility penalties and must stop operating until licensed", "Is allowed if no resident is over 85"], "answer": 2, "explain": "Operating an unlicensed RCFE is unlawful and subject to penalties. Care and supervision of elderly persons may only be provided in a licensed facility.", "cite": "Title 22, §87768; Health & Safety Code §1569.44", "id": "q012"}, {"topic": "Laws, Regulations & Licensing", "q": "A facility's licensed 'capacity' means:", "options": ["The number of residents admitted in a calendar year", "The maximum number of persons authorized to be provided services at any one time", "The number of staff on the largest shift", "The number of beds the facility owns"], "answer": 1, "explain": "'Capacity' is the maximum number of persons authorized to be provided services at any one time in the licensed facility, and it is established by the licensing agency based on the physical plant and fire clearance.", "cite": "Title 22, §87101; §87158", "id": "q013"}, {"topic": "Admissions, Assessment & Retention", "q": "Before a person is admitted to an RCFE, the licensee (or the employee responsible for admissions) must:", "options": ["Collect the first month's payment", "Interview the prospective resident and, if any, their responsible person", "Obtain a criminal record clearance for the resident", "Schedule a fire drill"], "answer": 1, "explain": "Prior to admission, the prospective resident and their responsible person, if any, must be interviewed, and a determination of the resident's suitability for admission must be completed.", "cite": "Title 22, §87457(a), (c)", "id": "q014"}, {"topic": "Admissions, Assessment & Retention", "q": "The pre-admission appraisal must compare the prospective resident's individual service needs against:", "options": ["The facility's current staffing schedule", "The rates charged to other residents", "The admission criteria in the Acceptance and Retention Limitations", "The local hospital's discharge criteria"], "answer": 2, "explain": "Suitability is determined by appraising the person's needs against the acceptance and retention limitations — the facility may only accept people whose needs it can meet within those limits.", "cite": "Title 22, §87457(c); §87455", "id": "q015"}, {"topic": "Admissions, Assessment & Retention", "q": "Before accepting a resident, the licensee must obtain a medical assessment that is signed by a licensed medical professional and was made within what time period?", "options": ["The last 3 years", "The last 30 days", "The last year", "The last 6 months"], "answer": 2, "explain": "The medical assessment must be documented, signed by a licensed medical professional acting within their scope of practice, and made within the last year before acceptance.", "cite": "Title 22, §87458(a)", "id": "q016"}, {"topic": "Admissions, Assessment & Retention", "q": "The resident's medical assessment must include an examination for which of the following?", "options": ["Dental health only", "Communicable tuberculosis and infectious or contagious diseases", "Mental health only", "Vision and hearing only"], "answer": 1, "explain": "The physical examination documented in the medical assessment must address communicable tuberculosis, infectious diseases, contagious diseases, and other medical conditions.", "cite": "Title 22, §87458(c)", "id": "q017"}, {"topic": "Admissions, Assessment & Retention", "q": "The pre-admission appraisal of functional capabilities covers which set of abilities?", "options": ["Driving, cooking, and money management only", "Walking speed and grip strength only", "Reading, writing, and arithmetic", "Bathing, dressing and grooming, toileting, transferring, eating, and continence"], "answer": 3, "explain": "The functional capabilities appraisal documents the person's need for assistance with activities of daily living such as bathing, dressing and grooming, toileting, transferring, eating, and continence.", "cite": "Title 22, §87459", "id": "q018"}, {"topic": "Admissions, Assessment & Retention", "q": "A resident's reappraisal (update of the pre-admission appraisal) must be completed in writing:", "options": ["Only when the resident is hospitalized", "Every 6 months", "As frequently as necessary, or once every 12 months, whichever comes first", "Every 3 years"], "answer": 2, "explain": "The appraisal must be updated in writing as frequently as necessary to note significant changes in condition, or once every 12 months, whichever occurs first.", "cite": "Title 22, §87463(a)", "id": "q019"}, {"topic": "Admissions, Assessment & Retention", "q": "When a significant change in a resident's condition is observed, the licensee must:", "options": ["Notify the licensing agency before taking any action", "Discharge the resident within 30 days", "Bring it to the attention of the appropriate licensed medical professional and adjust the care and supervision provided", "Wait until the next annual reappraisal"], "answer": 2, "explain": "Significant changes must be documented, brought promptly to the attention of the appropriate licensed medical professional, and matched by corresponding changes in the resident's care and supervision.", "cite": "Title 22, §87463; §87466", "id": "q020"}, {"topic": "Admissions, Assessment & Retention", "q": "A person under 60 years of age may be admitted to an RCFE when:", "options": ["Never — RCFEs serve only persons 60 and older", "They pay a higher rate", "Their needs are compatible with the other residents and they require the same amount of care and supervision", "The facility has fewer than 6 residents"], "answer": 2, "explain": "Persons under 60 may be accepted when their needs are compatible with the other residents in care and they require the same amount of care and supervision.", "cite": "Title 22, §87455", "id": "q021"}, {"topic": "Admissions, Assessment & Retention", "q": "An RCFE must NOT accept or retain a person who:", "options": ["Requires 24-hour skilled nursing or intermediate care", "Uses a wheelchair", "Has a diagnosis of dementia", "Needs help with bathing and dressing"], "answer": 0, "explain": "A person who requires 24-hour skilled nursing or intermediate care cannot be accepted or retained — an RCFE is a nonmedical facility.", "cite": "Title 22, §87455; Health & Safety Code §1569.72", "id": "q022"}, {"topic": "Admissions, Assessment & Retention", "q": "The admission agreement must be signed and dated by the resident (or representative) and the licensee (or designated representative) no later than:", "options": ["The day of admission", "Seven days following admission", "Thirty days following admission", "The first billing cycle"], "answer": 1, "explain": "Admission agreements must be signed and dated, acknowledging the contents, no later than seven days following admission; the original is kept in the resident's file and a copy given to the resident or representative.", "cite": "Title 22, §87507(c)–(e)", "id": "q023"}, {"topic": "Admissions, Assessment & Retention", "q": "A separate charge for an additional item or service may be assessed to a resident only if:", "options": ["The charge is included in and authorized by the admission agreement", "The administrator approves it verbally", "It is under $25", "The resident's family agrees by phone"], "answer": 0, "explain": "Separate charges are allowed only when they are included in and authorized by the signed admission agreement.", "cite": "Title 22, §87507", "id": "q024"}, {"topic": "Admissions, Assessment & Retention", "q": "Staff observe that a resident has lost weight and is eating less. Under the observation requirements, the licensee must ensure that:", "options": ["The change is mentioned at the next staff party", "The change is documented and brought to the attention of the resident's physician and responsible person", "Nothing is done unless the resident complains", "The resident is moved to a different room"], "answer": 1, "explain": "Residents must be regularly observed for changes in physical, mental, emotional, and social functioning; changes such as unusual weight loss must be documented and brought to the attention of the resident's physician and responsible person.", "cite": "Title 22, §87466", "id": "q025"}, {"topic": "Admissions, Assessment & Retention", "q": "A resident's original records (or photographic reproductions) must be retained for at least how long after services to that resident end?", "options": ["Three years", "Seven years", "One year", "Two years"], "answer": 0, "explain": "Resident records must be retained for a minimum of three years following termination of service to the resident.", "cite": "Title 22, §87506(e)", "id": "q026"}, {"topic": "Resident Rights & Basic Services", "q": "Which of the following is a personal right of every RCFE resident?", "options": ["To be visited privately by family and friends", "To refuse all facility rules", "To lock staff out of their room at all times", "To have unlimited guests stay overnight"], "answer": 0, "explain": "Residents have the right to receive visitors privately, make and receive confidential phone calls, send and receive unopened mail, and be treated with dignity — among the personal rights guaranteed by statute and regulation.", "cite": "Health & Safety Code §1569.269; Title 22, §87468.1", "id": "q027"}, {"topic": "Resident Rights & Basic Services", "q": "A resident's incoming mail must be:", "options": ["Delivered unopened to the resident", "Opened and screened by the administrator", "Held for 24 hours before delivery", "Read aloud at the front desk"], "answer": 0, "explain": "Residents have the right to send and receive confidential, unopened correspondence through the mail.", "cite": "Health & Safety Code §1569.269", "id": "q028"}, {"topic": "Resident Rights & Basic Services", "q": "Which of these is included in the 'basic services' every RCFE must provide?", "options": ["Care and supervision, three meals and snacks daily, and personal assistance with activities of daily living as indicated in the appraisal", "Daily physician visits", "Private-duty nursing", "Free transportation anywhere in the state"], "answer": 0, "explain": "Basic services include care and supervision, three nutritionally balanced meals and snacks daily (including prescribed modified diets), and personal assistance with ADLs as indicated in the pre-admission appraisal.", "cite": "Title 22, §87464", "id": "q029"}, {"topic": "Resident Rights & Basic Services", "q": "Basic services must be provided in a way that:", "options": ["Continues and promotes the resident's independence and self-direction to the extent possible", "Eliminates all resident choices", "Keeps residents in their rooms", "Maximizes staff convenience"], "answer": 0, "explain": "Services must be conducted so as to continue and promote, to the extent possible, independence and self-direction, and residents must be encouraged to participate in daily living activities.", "cite": "Title 22, §87464(a)", "id": "q030"}, {"topic": "Resident Rights & Basic Services", "q": "A resident tells staff she wants to attend her own church on Sundays. The facility must:", "options": ["Allow it only if other residents also go", "Respect her right to attend religious services and observe her faith", "Refuse — all worship happens on site", "Charge an extra fee for the request"], "answer": 1, "explain": "Residents have the right to attend religious services or activities of their choice and to have visits from their spiritual advisor.", "cite": "Health & Safety Code §1569.269", "id": "q031"}, {"topic": "Resident Rights & Basic Services", "q": "Residents must be encouraged to maintain and develop their quality of life through:", "options": ["A variety of planned activities, including socialization opportunities", "Watching television in their rooms", "Activities only on holidays", "Unstructured free time only"], "answer": 0, "explain": "Facilities must make available a variety of planned activities — including socialization to promote personal relationships — and encourage residents to participate.", "cite": "Title 22, §87219", "id": "q032"}, {"topic": "Resident Rights & Basic Services", "q": "A resident has the right to keep and use personal possessions, including clothing and personal items, subject to:", "options": ["A monthly storage fee in all cases", "Space limitations and the health and safety of other residents", "The administrator's daily approval", "Nothing — the right is absolute in all circumstances"], "answer": 1, "explain": "Residents may wear their own clothes and keep personal possessions where space permits, as long as the health and safety of others is not infringed.", "cite": "Health & Safety Code §1569.269", "id": "q033"}, {"topic": "Resident Rights & Basic Services", "q": "When a resident or their representative has a grievance about care, the facility must:", "options": ["Notify licensing before speaking to the resident", "Have a grievance process and respond without retaliation against the resident", "Ignore it unless it is in writing", "Transfer the resident to another facility"], "answer": 1, "explain": "Residents have the right to present grievances and recommend changes without restraint, interference, discrimination, or reprisal.", "cite": "Health & Safety Code §1569.269", "id": "q034"}, {"topic": "Resident Rights & Basic Services", "q": "A resident's responsible person asks to review the resident's record. Generally, resident records are:", "options": ["Open to any visitor", "Kept secret from the resident", "Confidential, and available to the resident, their representative, and authorized agencies", "Posted in the dining room"], "answer": 2, "explain": "Each resident's record is maintained confidentially, readily available to facility staff who need it and to licensing staff, with the resident and their representative having access rights.", "cite": "Title 22, §87506(a)", "id": "q035"}, {"topic": "Resident Rights & Basic Services", "q": "Which of the following may facility staff NEVER do to a resident?", "options": ["Remind the resident about a scheduled activity", "Use corporal punishment or inflict mental or physical abuse", "Encourage the resident to join a group activity", "Ask the resident to follow the smoking policy"], "answer": 1, "explain": "Residents have the right to be free from corporal or unusual punishment, humiliation, intimidation, mental abuse, and physical abuse — including sexual abuse and neglect.", "cite": "Health & Safety Code §1569.269", "id": "q036"}, {"topic": "Resident Rights & Basic Services", "q": "A resident wants to manage her own money and keep cash in her room. The facility must:", "options": ["Refuse, because cash is prohibited in RCFEs", "Require all money to be held by the administrator", "Charge a money-management fee automatically", "Respect her right to manage her own finances, unless she has been legally removed of that right"], "answer": 3, "explain": "Residents have the right to control their own cash resources and manage their personal financial affairs unless a court or authorized representative arrangement says otherwise.", "cite": "Health & Safety Code §1569.269", "id": "q037"}, {"topic": "Resident Rights & Basic Services", "q": "Before a resident can be evicted, the licensee must generally:", "options": ["Change the locks the same day", "Get permission from other residents", "Give no notice if the administrator decides", "Follow the eviction procedures and notice requirements in the regulations and the admission agreement, including written notice with the reason"], "answer": 3, "explain": "Evictions are tightly regulated: written notice, specified reasons, and timeframes are required, and the admission agreement must state the eviction policy. Same-day lockouts are prohibited.", "cite": "Title 22, §87507; Health & Safety Code §1569.683", "id": "q038"}, {"topic": "Medications", "q": "Unlicensed RCFE staff who help residents with medications may:", "options": ["Assist residents with self-administration of medications they take themselves", "Administer injections when the resident asks", "Decide which PRN medication a resident needs", "Crush and hide medication in food without the resident's knowledge"], "answer": 0, "explain": "Unlicensed staff may only assist with self-administration. They may not administer medications, and assistance never includes forcing medication or hiding it in food without the resident's knowledge and consent.", "cite": "Title 22, §87465; Health & Safety Code §1569.69", "id": "q039"}, {"topic": "Medications", "q": "In a facility licensed for 16 or more persons, an employee who assists with self-administration of medications must complete how much initial training?", "options": ["24 hours (16 hands-on shadowing before assisting, 8 other within the first four weeks)", "40 hours (20 shadowing, 20 other)", "10 hours (6 shadowing, 4 other)", "16 hours (8 shadowing, 8 other)"], "answer": 0, "explain": "For facilities licensed for 16 or more: 24 hours of initial training — 16 hours of hands-on shadowing completed before assisting with any medication, plus 8 hours of other training within the first four weeks — and the employee must pass a competency test.", "cite": "Health & Safety Code §1569.69(a)(1)", "id": "q040"}, {"topic": "Medications", "q": "In a facility licensed for 15 or fewer persons, the initial medication-assistance training requirement is:", "options": ["6 hours total", "10 hours (6 hours hands-on shadowing before assisting, 4 hours of other training within the first two weeks)", "24 hours (16 shadowing, 8 other)", "No training if the administrator supervises"], "answer": 1, "explain": "Smaller facilities (15 or fewer) require 10 hours: 6 hours of hands-on shadowing before the employee assists with any medication, and 4 hours of other training within the first two weeks, plus a passed test.", "cite": "Health & Safety Code §1569.69(a)(2)", "id": "q041"}, {"topic": "Medications", "q": "After the initial training, staff who continue to assist residents with medications must complete how much medication-related in-service training?", "options": ["20 hours per year", "2 hours every two years", "None — the initial training is permanent", "8 hours in each succeeding 12-month period"], "answer": 3, "explain": "Employees who passed the initial training and test must complete 8 hours of in-service training on medication-related issues in each succeeding 12-month period.", "cite": "Health & Safety Code §1569.69(b)", "id": "q042"}, {"topic": "Medications", "q": "A new employee finished classroom medication training but has not completed the hands-on shadowing hours. The employee may:", "options": ["Assist with medications under verbal supervision", "Not assist any resident with self-administration of medication until the shadowing training is complete", "Assist only during the night shift", "Assist only with vitamins"], "answer": 1, "explain": "The hands-on shadowing training must be completed before the employee assists any resident with self-administration of medications — no exceptions.", "cite": "Health & Safety Code §1569.69(a)(3)", "id": "q043"}, {"topic": "Medications", "q": "An employee returns to work for the same licensee after a break in service of more than 180 consecutive days. For medication assistance, the employee must:", "options": ["Do nothing — prior training always counts", "Repeat the medication training requirements", "Complete only the annual 8-hour refresher", "Be supervised for one shift"], "answer": 1, "explain": "The medication training must be repeated if the employee returns after a break of more than 180 consecutive days, or goes to work for a different licensee in a medication-assistance role.", "cite": "Health & Safety Code §1569.69(a)(8)", "id": "q044"}, {"topic": "Medications", "q": "A resident is prescribed a PRN (as-needed) medication but cannot determine his own need for it and cannot clearly communicate symptoms. Before each dose, designated staff must:", "options": ["Give the dose if it was given yesterday", "Check the medication book from last month", "Ask the resident's family by text message", "Contact the resident's physician, describe the symptoms, and receive direction for that dose"], "answer": 3, "explain": "When a resident can neither determine their own need nor communicate symptoms clearly, staff must contact the physician before each dose, describe the symptoms, and receive direction to assist with that dose.", "cite": "Title 22, §87465(d)", "id": "q045"}, {"topic": "Medications", "q": "For every PRN medication the facility assists with, the resident's file must contain:", "options": ["Only the pharmacy receipt", "A signed, dated written physician's order on a prescription blank, and the medication must be labeled", "A verbal note from the night shift", "A note from the resident's family"], "answer": 1, "explain": "Each PRN medication requires a signed, dated written order from a physician on a prescription blank kept in the resident's file, and a label on the medication — both containing the required information.", "cite": "Title 22, §87465(e)", "id": "q046"}, {"topic": "Medications", "q": "A resident refuses her evening medication. Staff should:", "options": ["Skip documenting it — refusals don't count", "Respect her right to refuse, and document and report the refusal as required", "Hide the pill in her dessert so she takes it", "Insist until she gives in"], "answer": 1, "explain": "Assistance with self-administration never includes forcing a resident to take medication or camouflaging it without the resident's knowledge and consent. A resident may refuse; the refusal is documented and the physician informed as appropriate.", "cite": "Title 22, §87465(a)(5)(D)", "id": "q047"}, {"topic": "Medications", "q": "Medications that are centrally stored by the facility must be:", "options": ["Kept on an open shelf in the kitchen", "Sent home with families each week", "Stored in residents' dresser drawers", "Stored according to the centrally-stored medication requirements — labeled, kept safely and locked as required, and accessible only to authorized persons"], "answer": 3, "explain": "Centrally stored medications must meet the storage requirements of the regulations: properly labeled, stored safely (including locked storage where required), and protected from unauthorized access.", "cite": "Title 22, §87465(h)", "id": "q048"}, {"topic": "Medications", "q": "Who may provide the medication-assistance training to facility employees?", "options": ["The facility's cook", "A pharmaceutical sales representative only", "Any employee with one year of experience", "A person meeting the education and experience requirements — including at least five hours of relevant education (or three semester units) and specified practical experience or licensure"], "answer": 3, "explain": "Medication trainers must meet statutory qualifications: relevant education (minimum five hours of initial/certified continuing education or three semester units) plus specified practical experience or professional licensure.", "cite": "Health & Safety Code §1569.69(e)", "id": "q049"}, {"topic": "Medications", "q": "A resident's medication is discontinued by her physician. The leftover medication should be handled by:", "options": ["Destroying or otherwise disposing of it according to the facility's medication procedures and documenting the disposition", "Keeping it indefinitely in case she needs it again", "Giving it to another resident with the same prescription", "Returning it to the pharmacy for a refund to the facility"], "answer": 0, "explain": "Medications are resident-specific. Discontinued or expired medications must never be shared between residents; they are disposed of per regulation and facility procedure, with the disposition documented.", "cite": "Title 22, §87465", "id": "q050"}, {"topic": "Staffing, Training & Personnel", "q": "Facility personnel must, at all times, be:", "options": ["Scheduled at a fixed ratio of one staff to six residents", "Limited to two staff per shift", "The same number on every shift", "Sufficient in numbers, and competent, to provide the services necessary to meet resident needs"], "answer": 3, "explain": "There is no fixed ratio in the regulation: personnel must at all times be sufficient in numbers and competent to meet resident needs, and licensing can require additional staff when resident needs require it.", "cite": "Title 22, §87411(a)", "id": "q051"}, {"topic": "Staffing, Training & Personnel", "q": "All persons who supervise employees, or who supervise or care for residents, must be at least:", "options": ["16 years old", "25 years old", "18 years old", "21 years old"], "answer": 2, "explain": "Persons who supervise employees or supervise or care for residents must be at least 18 years of age. (The administrator must be at least 21.)", "cite": "Title 22, §87411(b)", "id": "q052"}, {"topic": "Staffing, Training & Personnel", "q": "A new employee's health screening — including a chest x-ray or intradermal TB test — must be performed by a physician:", "options": ["Not more than six months prior to, or seven days after, employment or licensure", "Before the employee's first anniversary", "Only if the employee reports symptoms", "Within one year before employment"], "answer": 0, "explain": "Good physical health must be verified by a health screening, including a chest x-ray or intradermal test, performed by a physician not more than six months prior to or seven days after employment or licensure.", "cite": "Title 22, §87411(f)", "id": "q053"}, {"topic": "Staffing, Training & Personnel", "q": "Staff providing care to residents must receive first aid training from:", "options": ["Any senior caregiver", "The administrator, regardless of qualifications", "Persons qualified by agencies such as the American Red Cross", "An online video with no qualified instructor"], "answer": 2, "explain": "Staff providing care shall receive appropriate training in first aid from persons qualified by such agencies as the American Red Cross.", "cite": "Title 22, §87411", "id": "q054"}, {"topic": "Staffing, Training & Personnel", "q": "Before employment or initial presence in the facility, employees and volunteers subject to criminal record review must:", "options": ["Wait 90 days after hire", "Submit fingerprints and obtain a criminal record clearance (or exemption) as required", "Only sign a self-declaration", "Provide three personal references"], "answer": 1, "explain": "Criminal record clearance through fingerprint submission is required prior to employment or initial presence in the facility; personnel records must document the clearance or an exemption.", "cite": "Title 22, §87411(g); §87355; §87412", "id": "q055"}, {"topic": "Staffing, Training & Personnel", "q": "Volunteers in an RCFE:", "options": ["May be counted in the facility staffing plan", "Need no health statement", "May be utilized but may not be included in the staffing plan, and must be supervised", "May work unsupervised with residents"], "answer": 2, "explain": "Volunteers may be used but cannot be counted in the facility staffing plan, must be supervised, and must sign a statement affirming they are in good health.", "cite": "Title 22, §87411(f), (j)", "id": "q056"}, {"topic": "Staffing, Training & Personnel", "q": "Direct care staff who assist residents with activities of daily living must complete how much initial training?", "options": ["10 hours", "40 hours", "80 hours", "24 hours"], "answer": 1, "explain": "Direct care staff must complete 40 hours of initial training: 20 hours (including 6 on dementia care and 4 on postural supports, restricted health conditions, and hospice care) before working independently, and the remaining 20 hours within the first four weeks. Sixteen of the 40 hours must be hands-on.", "cite": "Health & Safety Code §1569.625(b)", "id": "q057"}, {"topic": "Staffing, Training & Personnel", "q": "Of the 40 hours of initial direct care staff training, how many hours must be completed BEFORE the staff member works independently with residents?", "options": ["All 40 hours", "10 hours", "30 hours", "20 hours"], "answer": 3, "explain": "Twenty hours — including six hours of dementia care and four hours on postural supports, restricted health conditions, and hospice care — must be completed before working independently; the rest is due within the first four weeks.", "cite": "Health & Safety Code §1569.625(b)(1)", "id": "q058"}, {"topic": "Staffing, Training & Personnel", "q": "Direct care staff must complete how much training every year after the initial training?", "options": ["20 hours, including 8 on dementia care and 4 on postural supports, restricted health conditions, and hospice care", "12 hours", "8 hours", "40 hours"], "answer": 0, "explain": "The annual requirement is 20 hours, of which 8 hours must be dementia care training and 4 hours must cover postural supports, restricted health conditions, and hospice care.", "cite": "Health & Safety Code §1569.625(b)(2)", "id": "q059"}, {"topic": "Staffing, Training & Personnel", "q": "How much dementia care training is built into the initial training for all direct care staff?", "options": ["12 hours — 6 before working independently and 6 within the first four weeks", "4 hours total", "20 hours", "8 hours total"], "answer": 0, "explain": "All direct care staff receive 12 hours of dementia care training as part of the 40 initial hours: 6 before working independently and 6 within the first four weeks, then 8 hours of dementia in-service each year.", "cite": "Health & Safety Code §1569.626", "id": "q060"}, {"topic": "Staffing, Training & Personnel", "q": "A registered nurse is hired to provide direct care in an RCFE. Before providing direct care, the nurse must receive:", "options": ["No training of any kind", "The full 40 hours like unlicensed staff", "Eight hours of training on resident characteristics, resident records, and facility practices and procedures", "The medication test only"], "answer": 2, "explain": "Licensed or certified health professionals are exempt from the standard staff training, but must receive 8 hours on resident characteristics, resident records, and facility practices and procedures before providing direct care.", "cite": "Health & Safety Code §1569.625(d)", "id": "q061"}, {"topic": "Staffing, Training & Personnel", "q": "Each personnel record maintained by the licensee must include:", "options": ["Only the employee's name and start date", "A copy of the employee's tax returns", "Information including the health screening and, for fingerprinted employees, documentation of criminal record clearance or exemption", "The employee's personal banking information"], "answer": 2, "explain": "Personnel records are maintained on the licensee, administrator, and each employee and must contain the items listed in the regulation, including the health screening and criminal record clearance or exemption documentation.", "cite": "Title 22, §87412", "id": "q062"}, {"topic": "Staffing, Training & Personnel", "q": "A caregiver shows evidence of physical illness or emotional instability that poses a significant threat to residents. The licensee must:", "options": ["Reduce the person's hours by half", "Relieve the person of their duties", "Transfer the person to the kitchen", "Wait for the annual evaluation"], "answer": 1, "explain": "Personnel with evidence of physical illness or emotional instability posing a significant threat to the well-being of residents shall be relieved of their duties.", "cite": "Title 22, §87411(f)", "id": "q063"}, {"topic": "Staffing, Training & Personnel", "q": "The administrator's duties include which of the following?", "options": ["Approving other facilities' licenses", "Performing all resident care personally", "Setting state licensing policy", "Ensuring the facility operates in compliance with applicable laws and regulations and that residents' needs are met"], "answer": 3, "explain": "The administrator is responsible for the day-to-day operation of the facility in compliance with the RCFE Act and regulations — including staffing, records, and resident care oversight.", "cite": "Title 22, §87405", "id": "q064"}, {"topic": "Staffing, Training & Personnel", "q": "An administrator who was employed as an RCFE administrator before July 1, 1982 is:", "options": ["Not required to meet the college requirements of §87405(e)–(f) if there has been no break in employment as an RCFE administrator exceeding three consecutive years", "Exempt from all current requirements", "Required to retake the ICTP every year", "Only allowed to run facilities of 6 or fewer"], "answer": 0, "explain": "Pre-July 1, 1982 administrators are grandfathered out of the college/CE unit requirements, provided they have no break in employment as an RCFE administrator exceeding three consecutive years.", "cite": "Title 22, §87405(g)", "id": "q065"}, {"topic": "Staffing, Training & Personnel", "q": "When a facility is licensed for 16 or more residents, the regulations additionally require that:", "options": ["All staff live on the premises", "A nurse be on duty 24 hours a day", "The administrator hold a college degree", "Sufficient support staff be employed to ensure personal assistance and care, plus staff for cooking, cleaning, laundry, and maintenance as necessary"], "answer": 3, "explain": "Facilities of 16 or more must employ sufficient support staff to ensure the required personal assistance and care, and additional staff as necessary for office work, cooking, house cleaning, laundering, and maintenance.", "cite": "Title 22, §87411(a)", "id": "q066"}, {"topic": "Health Conditions & Medical Care", "q": "Which of the following is a PROHIBITED health condition in an RCFE (the resident generally may not be accepted or retained with it)?", "options": ["A healing wound", "A gastrostomy (feeding) tube", "Catheter care", "Diabetes managed with insulin"], "answer": 1, "explain": "Prohibited health conditions include gastrostomy tubes and Stage 3 and 4 pressure injuries, among others. Diabetes, catheter care, and healing wounds are restricted conditions that may be managed when all requirements are met.", "cite": "Title 22, §87615", "id": "q067"}, {"topic": "Health Conditions & Medical Care", "q": "Stage 3 and Stage 4 pressure injuries are classified as:", "options": ["Prohibited health conditions", "Allowable conditions", "Restricted health conditions", "Not addressed in the regulations"], "answer": 0, "explain": "Stage 3 and 4 pressure injuries are on the prohibited health conditions list — a resident with one generally cannot be accepted or retained in an RCFE.", "cite": "Title 22, §87615", "id": "q068"}, {"topic": "Health Conditions & Medical Care", "q": "Which of the following is a RESTRICTED health condition — allowed only when the licensee meets all specified requirements?", "options": ["Tracheostomy care", "Intravenous therapy", "Colostomy/ileostomy care", "Nasogastric tube feeding"], "answer": 2, "explain": "Restricted health conditions include catheter care, colostomy/ileostomy care, contractures, diabetes, and enemas/suppositories/fecal impaction removal. Nasogastric tubes, IV therapy, and tracheostomies fall on the prohibited side.", "cite": "Title 22, §87612", "id": "q069"}, {"topic": "Health Conditions & Medical Care", "q": "A resident becomes bedridden due to a temporary illness expected to last 10 days. The licensee must notify the local fire authority within:", "options": ["7 days", "No notice is ever required", "48 hours of accepting or retaining the bedridden resident", "24 hours"], "answer": 2, "explain": "The licensee must notify the fire authority having jurisdiction within 48 hours of accepting or retaining a person who is bedridden, including the estimated length of the bedridden status. 'Temporary illness' means an illness persisting 14 days or less.", "cite": "Title 22, §87606(b), (d)", "id": "q070"}, {"topic": "Health Conditions & Medical Care", "q": "For a resident who is bedridden other than for a temporary illness or recovery from surgery, the licensee must:", "options": ["Move the resident to a ground-floor room only", "Hire a private nurse", "Obtain a waiver from the resident's family", "Obtain and maintain an appropriate fire clearance for bedridden residents"], "answer": 3, "explain": "Accepting or retaining a bedridden person (other than for temporary illness or surgical recovery) requires an appropriate fire clearance covering bedridden residents.", "cite": "Title 22, §87606(c)", "id": "q071"}, {"topic": "Health Conditions & Medical Care", "q": "'Bedridden' is defined as a person who:", "options": ["Prefers to stay in bed", "Sleeps more than 12 hours a day", "Either requires assistance in turning and repositioning in bed, or is unable to independently transfer to and from bed", "Uses a hospital bed"], "answer": 2, "explain": "The definition turns on function: needing assistance turning and repositioning in bed, or being unable to independently transfer to and from bed.", "cite": "Title 22, §87606(b)(1)", "id": "q072"}, {"topic": "Health Conditions & Medical Care", "q": "A terminally ill resident may receive hospice services in the facility only when:", "options": ["The resident has lived there over a year", "The licensee holds a hospice care waiver from the Department and services are provided by a state-licensed, Medicare-certified hospice agency contracted by the resident", "The facility employs a chaplain", "The family requests it verbally"], "answer": 1, "explain": "Hospice care in an RCFE requires a hospice care waiver, and the hospice agency — licensed by the state and certified by Medicare — is contracted by the resident (or surrogate), not by the licensee on the resident's behalf.", "cite": "Title 22, §87633", "id": "q073"}, {"topic": "Health Conditions & Medical Care", "q": "Incidental medical and dental care may be provided in an RCFE when:", "options": ["The resident pays an extra fee", "Any staff member volunteers", "The administrator decides it is needed", "It is provided by an appropriately skilled professional and the conditions of the regulations are met"], "answer": 3, "explain": "RCFEs are nonmedical facilities; incidental medical and dental care is allowed only under the conditions of the regulation and must be provided by appropriately skilled professionals — facility staff do not provide skilled nursing care.", "cite": "Title 22, §87465", "id": "q074"}, {"topic": "Health Conditions & Medical Care", "q": "A resident with diabetes is admitted. Diabetes is a restricted health condition, which means the facility must:", "options": ["Refuse admission in all cases", "Require the resident to hire a home health nurse at all times", "Only serve the resident sugar-free meals and nothing more", "Meet the specific requirements for diabetes care, including staff training and monitoring as specified in the regulations"], "answer": 3, "explain": "Restricted conditions like diabetes may be accepted when the licensee meets every requirement of the restricted-condition sections, including the diabetes-specific requirements.", "cite": "Title 22, §87612; §87628", "id": "q075"}, {"topic": "Health Conditions & Medical Care", "q": "A resident uses supplemental oxygen. The facility must comply with requirements covering:", "options": ["Nothing — oxygen is unregulated", "Oxygen administration — gas and liquid — including safe storage and use of oxygen equipment", "Only the color of the oxygen tubing", "Weekly physician visits for all oxygen users"], "answer": 1, "explain": "Oxygen administration (gas and liquid) has its own section covering safe handling, storage, and use in the facility.", "cite": "Title 22, §87618", "id": "q076"}, {"topic": "Health Conditions & Medical Care", "q": "Incontinence care in an RCFE is addressed by the regulations as:", "options": ["Grounds for immediate eviction", "A service the facility may never provide", "A prohibited condition", "Managed incontinence — residents may be accepted and retained with a managed incontinence program meeting the specified requirements"], "answer": 3, "explain": "Incontinence is managed, not punished: the regulations provide for care of residents with incontinence under a managed program with specified requirements.", "cite": "Title 22, §87625", "id": "q077"}, {"topic": "Health Conditions & Medical Care", "q": "A resident develops a healing wound after surgery. Wound care in the facility:", "options": ["Is always prohibited", "Requires the resident to leave until fully healed", "Must be done by the administrator personally", "May be provided when the requirements for healing wounds are met, including appropriate care by skilled professionals as specified"], "answer": 3, "explain": "Healing wounds are addressed in their own section: care may continue in the facility when all specified conditions are met (and the wound is not a prohibited Stage 3 or 4 pressure injury).", "cite": "Title 22, §87631", "id": "q078"}, {"topic": "Dementia Care", "q": "For residents at risk of elopement, the facility must ensure that exterior doors and perimeter fence gates accessible to those residents have:", "options": ["A sign-in sheet", "Padlocks at all times", "An auditory device or other staff alert feature to monitor exits", "Security cameras only"], "answer": 2, "explain": "Facilities caring for persons with dementia must have an auditory device or other staff-alert feature monitoring exits on exterior doors and perimeter gates accessible to residents at risk for elopement.", "cite": "Title 22, §87705(d)", "id": "q079"}, {"topic": "Dementia Care", "q": "A resident with dementia is trying to leave the facility unsupervised. Staff should:", "options": ["Call the family and take no other action", "Lock the resident in their room", "Attempt to redirect the resident, without violating the resident's personal rights", "Physically restrain the resident in a chair"], "answer": 2, "explain": "Staff must attempt to redirect a resident at risk for elopement who may be attempting to leave — while respecting the personal rights guaranteed to all residents.", "cite": "Title 22, §87705; §87468.1", "id": "q080"}, {"topic": "Dementia Care", "q": "Each incident of elopement by a resident with dementia must be:", "options": ["Kept quiet to avoid worrying families", "Mentioned only at the next staff meeting", "Documented only if the resident was gone over an hour", "Reported as specified in the dementia care regulations, including to the licensing agency and the resident's responsible person"], "answer": 3, "explain": "Elopement incidents carry specific reporting duties under the dementia care section — they are never handled informally.", "cite": "Title 22, §87705", "id": "q081"}, {"topic": "Dementia Care", "q": "A facility that advertises or promotes special care, programming, or an environment for persons with dementia:", "options": ["Needs no additional compliance — advertising is unregulated", "Must obtain a separate dementia license category", "Triggers the additional dementia advertising and training requirements, on top of the baseline rules for all RCFEs", "May stop providing the baseline dementia training"], "answer": 2, "explain": "Advertising dementia special care, programming, or environments triggers added requirements — plan of operation, advertising content, and staff training — layered on top of the dementia rules every RCFE already follows.", "cite": "Title 22, §87705–§87707", "id": "q082"}, {"topic": "Dementia Care", "q": "A resident with dementia also has the personal rights of every other resident. This means staff may NOT:", "options": ["Use locked restraints or seclusion as a convenience or substitute for care and supervision", "Redirect the resident away from an exit", "Offer the resident a choice of activities", "Encourage family visits"], "answer": 0, "explain": "Dementia does not remove personal rights. Residents retain the rights in §87468.1 and HSC §1569.269; redirection and supervision replace restraint and seclusion.", "cite": "Title 22, §87468.1; §87705", "id": "q083"}, {"topic": "Dementia Care", "q": "An administrator renewing a certificate must include, within the 40 hours of continuing education, at least how many hours on dementia care?", "options": ["4 hours", "2 hours", "12 hours", "8 hours"], "answer": 3, "explain": "At least 8 of the 40 continuing-education hours in each two-year period must cover serving residents with dementia.", "cite": "Health & Safety Code §1569.616(f)(2)", "id": "q084"}, {"topic": "Dementia Care", "q": "A new caregiver will work with residents who have dementia. Within the first four weeks, the dementia-specific training the caregiver must have completed totals:", "options": ["12 hours (6 before working independently, 6 more within the first four weeks)", "8 hours", "4 hours", "24 hours"], "answer": 0, "explain": "All direct care staff complete 12 hours of dementia care training inside the initial 40 hours: 6 before working independently and the remaining 6 within the first four weeks.", "cite": "Health & Safety Code §1569.626", "id": "q085"}, {"topic": "Dementia Care", "q": "Which behavior change in a resident with dementia must be documented and addressed in the resident's reappraisal?", "options": ["Asking for more family visits", "Preferring a different breakfast food", "Behavioral expression that has caused, or may cause, harm to the resident or others", "Enjoying a new hobby"], "answer": 2, "explain": "When behavioral expression has caused or may cause harm, the licensee must document specified information in the reappraisal and adjust care accordingly.", "cite": "Title 22, §87463(c)", "id": "q086"}, {"topic": "Physical Plant & Safety", "q": "Rooms that residents occupy must be heated to a minimum of:", "options": ["65°F", "60°F", "72°F", "68°F"], "answer": 3, "explain": "The facility shall heat rooms residents occupy to a minimum of 68°F, and cool rooms to a comfortable range between 78°F and 85°F (or 30°F below outside temperature in extreme heat).", "cite": "Title 22, §87303", "id": "q087"}, {"topic": "Physical Plant & Safety", "q": "Hot water delivered from faucets residents use for personal care must be automatically regulated to between:", "options": ["120°F and 140°F", "105°F and 120°F", "Any temperature the water heater produces", "90°F and 105°F"], "answer": 1, "explain": "Hot water temperature controls must maintain water used by residents at not less than 105°F and not more than 120°F — hot enough to be useful, never hot enough to scald.", "cite": "Title 22, §87303(e)", "id": "q088"}, {"topic": "Physical Plant & Safety", "q": "The facility and its grounds must be maintained:", "options": ["To the standard the administrator prefers", "Cleaned once a month", "Clean, safe, sanitary, and in good repair at all times", "Only before announced inspections"], "answer": 2, "explain": "The physical plant standard is continuous: clean, safe, sanitary, and in good repair at all times.", "cite": "Title 22, §87303", "id": "q089"}, {"topic": "Physical Plant & Safety", "q": "How many residents may sleep in one bedroom at most?", "options": ["One", "Three", "Four", "Two"], "answer": 3, "explain": "Not more than two residents shall sleep in a bedroom, and no resident's bedroom may be used as a passageway to another room, bath, or toilet.", "cite": "Title 22, §87307(a)", "id": "q090"}, {"topic": "Physical Plant & Safety", "q": "The minimum toilet and bathing fixtures required are:", "options": ["Whatever the building already has", "At least one toilet and washbasin for each 6 persons, and at least one bathtub or shower for each 10 persons (counting residents, family, and personnel)", "One bathroom per resident", "One toilet per 10 persons and one tub or shower per 15"], "answer": 1, "explain": "Capacity is tied to fixtures: at least one toilet and washbasin for each six persons, and at least one bathtub or shower for each ten persons, including residents, family, and live-in personnel.", "cite": "Title 22, §87307(b)", "id": "q091"}, {"topic": "Physical Plant & Safety", "q": "Clean linen for residents must be changed:", "options": ["Every day without exception", "Only when a resident requests it", "At least once per week, or more often when indicated", "Once a month"], "answer": 2, "explain": "The facility must supply clean linen in sufficient quantity to permit changing at least once per week or more often when needed; common wash cloths and towels are prohibited.", "cite": "Title 22, §87307(a)", "id": "q092"}, {"topic": "Physical Plant & Safety", "q": "Whether a facility may care for nonambulatory residents is determined by:", "options": ["The administrator's preference", "The number of staff on the night shift", "The fire clearance issued for the facility, which sets the ambulatory/nonambulatory capacity", "The residents' families"], "answer": 2, "explain": "Fire clearance from the local fire authority (or State Fire Marshal) establishes how many nonambulatory and bedridden residents the facility may accept.", "cite": "Title 22, §87202; §87158", "id": "q093"}, {"topic": "Physical Plant & Safety", "q": "Residents must have access to telephone service so they can:", "options": ["Call out only with staff listening", "Use the phone only during business hours", "Make and receive confidential calls, including private conversations", "Only call the front desk"], "answer": 2, "explain": "Facilities must maintain telephone service, and residents' personal rights include making and receiving confidential telephone calls.", "cite": "Title 22, §87311; Health & Safety Code §1569.269", "id": "q094"}, {"topic": "Disaster Preparedness & Reporting", "q": "Every facility must have a disaster and mass casualty plan that is:", "options": ["Optional for facilities under 16 residents", "Filed only with the fire department", "Kept in the administrator's head", "In writing and readily available, and subject to review by the Department"], "answer": 3, "explain": "The disaster and mass casualty plan of action must be written, readily available in the facility, and subject to Department review.", "cite": "Title 22, §87212(a)–(b)", "id": "q095"}, {"topic": "Disaster Preparedness & Reporting", "q": "The facility's evacuation plan must include:", "options": ["Nothing specific — evacuation is improvised", "A list of nearby hotels only", "A fire safety plan and assembly of residents at a predetermined evacuation site, with supervision during evacuation and follow-up contact after relocation", "Instructions for staff to leave first"], "answer": 2, "explain": "The plan must cover evacuation — including the fire safety plan, a predetermined assembly site, supervision of residents during evacuation or relocation, and contact after relocation to confirm it was completed.", "cite": "Title 22, §87212(b)", "id": "q096"}, {"topic": "Disaster Preparedness & Reporting", "q": "A resident dies at the facility. The licensee must submit a written report to the licensing agency (and the person responsible for the resident) within:", "options": ["Three days", "24 hours", "Thirty days", "Seven days of the occurrence"], "answer": 3, "explain": "Deaths and the other specified serious occurrences require a written report within seven days, including the resident's name, age, sex, date of admission, the date and nature of the event, the attending physician's findings and treatment, and the disposition of the case.", "cite": "Title 22, §87211", "id": "q097"}, {"topic": "Disaster Preparedness & Reporting", "q": "An epidemic outbreak or poisoning threatens the welfare of residents. It must be reported to the licensing agency (and the local health officer when appropriate):", "options": ["At the next scheduled inspection", "Within 24 hours, by telephone or facsimile", "Within seven days, in writing only", "Only if a resident is hospitalized"], "answer": 1, "explain": "Epidemic outbreaks, poisonings, catastrophes, and major accidents threatening welfare, safety, or health must be reported within 24 hours by telephone or facsimile.", "cite": "Title 22, §87211", "id": "q098"}, {"topic": "Disaster Preparedness & Reporting", "q": "A fire occurs on the premises. The licensee must report it:", "options": ["To the licensing agency within a week", "Immediately to the local fire authority, and no later than the next working day to the licensing agency", "Only if there is property damage over $1,000", "To the residents' families only"], "answer": 1, "explain": "Fires or explosions on the premises are reported immediately to the local fire authority (or within 24 hours to the State Fire Marshal where there is no organized fire service) and by the next working day to licensing.", "cite": "Title 22, §87211", "id": "q099"}, {"topic": "Disaster Preparedness & Reporting", "q": "A mandated reporter who knows of or reasonably suspects elder abuse must report it:", "options": ["Within seven working days, in writing only", "By telephone (or the confidential Internet reporting tool) immediately or as soon as practicably possible, with a written report within two working days", "Only to the administrator, who decides", "At the end of the month"], "answer": 1, "explain": "Mandated reporters report known or suspected elder abuse immediately or as soon as practicably possible by phone or the authorized online tool; if reported by phone, the written report follows within two working days.", "cite": "Title 22, §87211; Welfare & Institutions Code §15630", "id": "q100"}, {"topic": "Disaster Preparedness & Reporting", "q": "Suspected physical abuse results in serious bodily injury to a resident. The mandated reporter must contact local law enforcement:", "options": ["Only after the administrator investigates", "Within two working days", "Within 24 hours", "Immediately, and no later than within two hours, with written reports to law enforcement, the ombudsman, and licensing within two hours"], "answer": 3, "explain": "When suspected abuse results in serious bodily injury, the telephone report to local law enforcement is immediate and no later than two hours, and the written reports go to law enforcement, the long-term care ombudsman, and the licensing agency within two hours.", "cite": "Title 22, §87211; Welfare & Institutions Code §15630", "id": "q101"}, {"topic": "Disaster Preparedness & Reporting", "q": "Resident property worth $150 is discovered stolen, and the administrator has reason to believe it was stolen. The facility must:", "options": ["Wait to see if it turns up", "Document it within a month", "Report it to the local law enforcement agency within 36 hours (theft of $100 or more), and document thefts/losses of $25 or more within 72 hours", "Replace the property and say nothing"], "answer": 2, "explain": "Theft and loss records: losses or thefts of $25 or more are documented within 72 hours of discovery; suspected theft of property worth $100 or more is reported to local law enforcement within 36 hours.", "cite": "Title 22, §87218", "id": "q102"}, {"topic": "Food Service, Records & Documentation", "q": "Where the facility provides all food, each resident must have available at least:", "options": ["Three meals, with no timing rules", "Two meals per day", "Three meals per day, with not more than 15 hours between the third meal and the first meal of the next day", "One hot meal and two snacks"], "answer": 2, "explain": "At least three meals per day must be available, and not more than 15 hours may elapse between the third (evening) meal and the first meal of the following day.", "cite": "Title 22, §87555", "id": "q103"}, {"topic": "Food Service, Records & Documentation", "q": "Between-meal nourishment or snacks must be:", "options": ["Made available for all residents, unless limited by dietary restrictions prescribed by a physician", "Served only at 2 p.m.", "Available only to private-pay residents", "Charged as an extra in all cases"], "answer": 0, "explain": "Snacks and between-meal nourishment are part of the food service for every resident, subject only to physician-prescribed dietary restrictions.", "cite": "Title 22, §87555", "id": "q104"}, {"topic": "Food Service, Records & Documentation", "q": "In facilities licensed for 16 or more persons, menus must be:", "options": ["Kept for one year", "Written the same morning", "Posted only in the kitchen", "Written at least one week in advance, with copies of menus as served dated and kept on file for at least 30 days"], "answer": 3, "explain": "Facilities of 16 or more plan menus at least a week ahead and keep the dated menus-as-served on file for at least 30 days; smaller facilities keep a sample menu on file.", "cite": "Title 22, §87555", "id": "q105"}, {"topic": "Food Service, Records & Documentation", "q": "A facility licensed for 50 or more persons that provides three meals a day must have:", "options": ["Two refrigerators", "A commercial catering contract", "A resident volunteer run the kitchen", "A full-time employee qualified by formal training or experience responsible for the food service, with regular consultation from a nutritionist, dietitian, or home economist if that employee is not so qualified"], "answer": 3, "explain": "At 50 or more, a qualified full-time employee must run the food service; if that person is not a nutritionist, dietitian, or home economist, regular documented consultation from one is required.", "cite": "Title 22, §87555", "id": "q106"}, {"topic": "Food Service, Records & Documentation", "q": "A resident's physician prescribes a low-salt diet. The facility must:", "options": ["Serve the regular menu — diets are suggestions", "Provide the modified diet as a basic service, since basic services include modified diets prescribed by a doctor as a medical necessity", "Charge the resident's family for special shopping in all cases", "Refuse to admit residents with special diets"], "answer": 1, "explain": "Basic services include three nutritionally balanced meals and snacks daily, including low-salt or other modified diets prescribed by a doctor as a medical necessity.", "cite": "Title 22, §87464; §87555", "id": "q107"}, {"topic": "Food Service, Records & Documentation", "q": "For each resident, the licensee must ensure that:", "options": ["A separate, complete, and current record is maintained, in the facility or a central administrative location readily available to facility and licensing staff", "Only financial records are kept", "A summary card is kept at the nurses' station", "Records are stored at the administrator's home"], "answer": 0, "explain": "A separate, complete, current record for every resident is mandatory, kept where facility staff and licensing staff can readily access it.", "cite": "Title 22, §87506(a)", "id": "q108"}, {"topic": "Food Service, Records & Documentation", "q": "The written report of a resident's death or serious incident must include, among other items:", "options": ["A statement from every employee", "The resident's name, age, sex, and date of admission; the date and nature of the event; the attending physician's name, findings, and treatment; and the disposition of the case", "Only the date of the event", "The resident's bank balance"], "answer": 1, "explain": "The regulation lists the report contents: resident identifiers and admission date, the event's date and nature, the attending physician's findings and treatment, and how the case was resolved.", "cite": "Title 22, §87211", "id": "q109"}, {"topic": "Food Service, Records & Documentation", "q": "When medications are centrally stored, a record of dosages must be maintained by the facility:", "options": ["When requested by the prescribing physician or the Department", "Only for controlled substances", "Never — dosage records are the pharmacy's job", "Only during inspections"], "answer": 0, "explain": "When the prescribing physician or the Department requests it, the facility must maintain a record of dosages of centrally stored medications.", "cite": "Title 22, §87465(a)(6)", "id": "q110"}];
+var EXAM_LEN = 100, PASS_MARK = 70, TIME_LIMIT_MS = 120 * 60 * 1000;
+
+/* Trainer code: preserved from this page's URL through to the signup door. */
+function trainerCode() {
+  try {
+    var raw = new URLSearchParams(location.search).get("trainer") || "";
+    return raw.toLowerCase().replace(/[^a-z0-9-]/g, "").slice(0, 64);
+  } catch (e) { return ""; }
+}
+function signupUrl() {
+  var code = trainerCode();
+  return code ? "https://title22.app/?classroom=1&trainer=" + encodeURIComponent(code)
+              : "https://title22.app/";
+}
+
+function shuffle(arr, rng) {
+  for (var i = arr.length - 1; i > 0; i--) {
+    var j = Math.floor(rng() * (i + 1));
+    var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+  }
+  return arr;
+}
+
+/* Draw EXAM_LEN questions from the bank; shuffle each question's options and
+   remember which shuffled position is correct. */
+function drawExam(rng) {
+  rng = rng || Math.random;
+  var pool = shuffle(BANK.slice(), rng).slice(0, EXAM_LEN);
+  return pool.map(function (q) {
+    var order = shuffle([0, 1, 2, 3], rng);
+    return {
+      id: q.id, topic: q.topic, q: q.q,
+      options: order.map(function (k) { return q.options[k]; }),
+      correct: order.indexOf(q.answer),
+      explain: q.explain, cite: q.cite
+    };
+  });
+}
+
+function gradeExam(exam, answers) {
+  var correct = 0, topics = {};
+  exam.forEach(function (q, i) {
+    if (!topics[q.topic]) topics[q.topic] = { right: 0, total: 0 };
+    topics[q.topic].total++;
+    if (answers[i] === q.correct) { correct++; topics[q.topic].right++; }
+  });
+  return { correct: correct, total: exam.length,
+           pct: Math.round(100 * correct / exam.length),
+           passed: (100 * correct / exam.length) >= PASS_MARK,
+           topics: topics };
+}
+
+/* ---------------- Live exam state ---------------- */
+var S = null; // {exam, answers, flags, cur, deadline, timerId, finished}
+var $ = function (id) { return document.getElementById(id); };
+
+function show(id) {
+  ["screen-start", "screen-exam", "screen-results"].forEach(function (s) {
+    $(s).hidden = (s !== id);
+  });
+  window.scrollTo(0, 0);
+}
+
+function startExam() {
+  var exam = drawExam();
+  S = { exam: exam,
+        answers: new Array(exam.length).fill(null),
+        flags: new Array(exam.length).fill(false),
+        cur: 0, deadline: Date.now() + TIME_LIMIT_MS,
+        timerId: null, finished: false };
+  buildNavGrid();
+  renderQuestion();
+  show("screen-exam");
+  tick();
+  S.timerId = setInterval(tick, 500);
+}
+
+function tick() {
+  if (!S || S.finished) return;
+  var left = Math.max(0, S.deadline - Date.now());
+  var s = Math.ceil(left / 1000);
+  var mm = String(Math.floor(s / 60)), ss = String(s % 60).padStart(2, "0");
+  $("timer").textContent = mm + ":" + ss;
+  $("timer").classList.toggle("low", left < 5 * 60 * 1000);
+  if (left <= 0) finishExam(true);
+}
+
+function renderQuestion() {
+  var q = S.exam[S.cur];
+  $("q-topic").textContent = q.topic;
+  $("q-text").textContent = (S.cur + 1) + ". " + q.q;
+  $("qcount").textContent = "Question " + (S.cur + 1) + " of " + S.exam.length;
+  var answered = S.answers.filter(function (a) { return a !== null; }).length;
+  $("progress-fill").style.width = (100 * answered / S.exam.length) + "%";
+  var box = $("q-opts"); box.innerHTML = "";
+  q.options.forEach(function (text, i) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "opt" + (S.answers[S.cur] === i ? " sel" : "");
+    b.setAttribute("role", "radio");
+    b.setAttribute("aria-checked", S.answers[S.cur] === i ? "true" : "false");
+    var letter = document.createElement("span");
+    letter.className = "letter"; letter.textContent = "ABCD"[i];
+    b.appendChild(letter);
+    b.appendChild(document.createTextNode(text));
+    b.addEventListener("click", function () {
+      S.answers[S.cur] = i; renderQuestion();
+    });
+    box.appendChild(b);
+  });
+  $("btn-flag").textContent = S.flags[S.cur] ? "Flagged ✓ — tap to unflag" : "Flag for review";
+  $("btn-flag").classList.toggle("flagged", S.flags[S.cur]);
+  $("btn-prev").disabled = S.cur === 0;
+  $("btn-next").disabled = S.cur === S.exam.length - 1;
+  $("finish-note").hidden = true;
+  updateNavGrid();
+}
+
+function buildNavGrid() {
+  var g = $("navgrid"); g.innerHTML = "";
+  S.exam.forEach(function (_, i) {
+    var b = document.createElement("button");
+    b.type = "button"; b.textContent = i + 1; b.dataset.idx = i;
+    b.addEventListener("click", function () { S.cur = i; renderQuestion(); });
+    g.appendChild(b);
+  });
+}
+function updateNavGrid() {
+  var g = $("navgrid");
+  for (var i = 0; i < g.children.length; i++) {
+    var b = g.children[i];
+    b.classList.toggle("answered", S.answers[i] !== null);
+    b.classList.toggle("flagged", !!S.flags[i]);
+    b.classList.toggle("current", i === S.cur);
+  }
+}
+
+function finishExam(auto) {
+  if (!S || S.finished) return;
+  var unanswered = S.answers.filter(function (a) { return a === null; }).length;
+  if (!auto && unanswered > 0) {
+    var note = $("finish-note");
+    note.hidden = false;
+    note.textContent = "You still have " + unanswered + " unanswered question" +
+      (unanswered === 1 ? "" : "s") + ". Unanswered questions count as wrong. Tap Finish exam again to submit anyway.";
+    if (S.confirmFinish) { /* second tap falls through */ }
+    else { S.confirmFinish = true; return; }
+  }
+  S.finished = true;
+  if (S.timerId) clearInterval(S.timerId);
+  renderResults(gradeExam(S.exam, S.answers), auto);
+}
+
+function renderResults(r, auto) {
+  $("score-big").textContent = r.pct + "%";
+  $("score-line").innerHTML = r.passed
+    ? '<span class="pass">That is a passing score.</span> You answered ' + r.correct + " of " + r.total + " correctly — the state pass mark is " + PASS_MARK + "%."
+    : '<span class="fail">Not yet.</span> You answered ' + r.correct + " of " + r.total + " correctly — the state pass mark is " + PASS_MARK + "%. Your topic breakdown below shows exactly where to study.";
+  $("score-sub").textContent = auto
+    ? "Time ran out, so the exam submitted itself — just like the real one."
+    : "This is a practice result. The state exam is scored the same way: 70% or more passes.";
+  var rows = Object.keys(r.topics).map(function (t) {
+    var d = r.topics[t], pct = Math.round(100 * d.right / d.total);
+    return { t: t, right: d.right, total: d.total, pct: pct };
+  }).sort(function (a, b) { return a.pct - b.pct; });
+  $("topic-breakdown").innerHTML = rows.map(function (row) {
+    return '<div class="topic-row' + (row.pct < PASS_MARK ? " weak" : "") + '">' +
+      "<span>" + row.t + '</span><span>' + row.right + " / " + row.total + " · " + row.pct + '%</span>' +
+      '<span class="bar"><i style="width:' + row.pct + '%"></i></span></div>';
+  }).join("");
+  var weak = rows.filter(function (row) { return row.pct < PASS_MARK; });
+  $("weak-line").innerHTML = weak.length
+    ? "<strong>Study these first:</strong> " + weak.map(function (w) { return w.t; }).join(" · ")
+    : "<strong>No topic below the pass mark.</strong> Keep the whole book warm — the real draw is different every sitting.";
+  var url = signupUrl();
+  $("signup-link").href = url;
+  var l2 = document.querySelector(".signup-link-2"); if (l2) l2.href = url;
+  var list = $("review-list"); list.innerHTML = "";
+  S.exam.forEach(function (q, i) {
+    var mine = S.answers[i], ok = mine === q.correct;
+    var div = document.createElement("div");
+    div.className = "review-item";
+    var html = '<span class="reg">' + q.topic + "</span>" +
+      '<p class="rq">' + (i + 1) + ". " + escapeHtml(q.q) + "</p>" +
+      '<p class="' + (ok ? "ans-ok" : "ans-bad") + '">' +
+        (mine === null ? "You did not answer. " : "Your answer: " + "ABCD"[mine] + ". ") +
+        "Correct answer: " + "ABCD"[q.correct] + " — " + escapeHtml(q.options[q.correct]) + "</p>" +
+      '<p class="expl">' + escapeHtml(q.explain) + "</p>" +
+      '<p class="expl"><span class="reg">' + escapeHtml(q.cite) + "</span></p>";
+    div.innerHTML = html;
+    list.appendChild(div);
+  });
+  show("screen-results");
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, function (c) {
+    return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+  });
+}
+
+$("btn-start").addEventListener("click", startExam);
+$("btn-retake").addEventListener("click", startExam);
+$("btn-prev").addEventListener("click", function () { if (S.cur > 0) { S.cur--; renderQuestion(); } });
+$("btn-next").addEventListener("click", function () { if (S.cur < S.exam.length - 1) { S.cur++; renderQuestion(); } });
+$("btn-flag").addEventListener("click", function () { S.flags[S.cur] = !S.flags[S.cur]; renderQuestion(); });
+$("btn-finish").addEventListener("click", function () { finishExam(false); });
+
+/* Hooks for automated verification. */
+window.T22Exam = { drawExam: drawExam, gradeExam: gradeExam, BANK: BANK,
+                   startExam: startExam, finishExam: finishExam,
+                   getState: function () { return S; }, signupUrl: signupUrl };
+</script>
+</body>
+</html>
