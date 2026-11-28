@@ -1,6 +1,6 @@
 # Title22
 
-> Title22 is compliance software for California Residential Care Facilities for the Elderly (RCFEs) and Adult Residential Facilities (ARFs). It keeps staff files, training hours, and clearances current, tracks expiration dates (CPR, First Aid, TB, LiveScan, administrator certification), provides a DSS readiness checklist with a readiness score, and includes Tello, an AI assistant that gives the owner a plain-language morning briefing of what needs attention. Title22 holds no resident health information by design: no resident records, no medications, no MAR, and no business associate agreement is required.
+> Title22 is compliance software for California Residential Care Facilities for the Elderly (RCFEs) and Adult Residential Facilities (ARFs). It keeps staff files, training hours, and clearances current, tracks expiration dates (CPR, First Aid, TB, LiveScan, administrator certification), provides a DSS readiness checklist with a readiness score, and includes Tello, an AI assistant that gives the owner a plain-language morning briefing of what needs attention. Title22 itself holds no resident health information by design — no resident records and no medications in the app; resident records live in the separate Resident Binder add-on, in its own store covered by a business associate agreement.
 
 ## What it does
 
@@ -24,6 +24,7 @@
 
 - Staff training courses (in partnership with Community Training Connection, a CDSS-approved training organization): 44 courses, 117.5 hours, priced by licensed beds — $20/month (1–6 beds), $35/month (7–15), $60/month (16–49), $100/month (50+).
 - Tello Staff: a schedule board and Today's Board (coverage, reminders) for each home. Free for your first 30 days, then $10/month per home — only if you turn it on.
+- Resident Binder: the residents' side — the paper resident binder on a screen: one binder per resident (MAR, PRN records, ADL charting, daily logs, the LIC 622 medication page) plus a Daily Binder for the whole home. Resident records live in a separate store covered by a business associate agreement, apart from Title22's database. It opens inside Title22 after the home signs one agreement. $30/month per home, or $20/month per home with any package.
 
 ## Trainer and partner program
 
@@ -38,6 +39,7 @@
 - [Videos](https://title-22.com/videos): short explainers, including Meet Tello and the 30-second overview.
 - [Affiliates and trainers](https://title-22.com/affiliates): the partner program — 90-day student trials and 20% recurring commission.
 - [The app](https://title22.app/): sign in, start free, open the no-signup sample home, or ask Tello a question as a guest.
+- [The Resident Binder](https://binder.title22.app/): the residents' side of Title22 — MAR, ADL charting, and daily resident records.
 
 ## Who runs it
 
